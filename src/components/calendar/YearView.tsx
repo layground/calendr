@@ -1,5 +1,5 @@
 import { FC, useMemo } from 'react'
-import { getMonthDays, isWeekend } from '@/lib/utils/dates'
+import { getMonthGridDays, isWeekend } from '@/lib/utils/dates'
 import { MonthView } from './MonthView'
 import { Event } from '@/lib/types/event'
 
@@ -10,18 +10,17 @@ interface YearViewProps {
   events?: Event[]
   today?: Date
   selectedDate?: Date | null
+  showEvents?: boolean
 }
 
-export const YearView: FC<YearViewProps> = ({ year, onMonthSelect, onDateSelect, events = [], today, selectedDate }) => {
+export const YearView: FC<YearViewProps> = ({ year, onMonthSelect, onDateSelect, events = [], today, selectedDate, showEvents = false }) => {
   // Mini month grid for year view (compact, not stretched)
   return (
     <div className="h-[calc(100vh-12rem)] overflow-y-auto">
       <div className="grid grid-cols-3 gap-4 p-2">
         {Array.from({ length: 12 }).map((_, i) => {
-          const days = useMemo(() => getMonthDays(year, i), [year, i])
+          const days = useMemo(() => getMonthGridDays(year, i), [year, i])
           const weekDays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
-          const monthEvents = events.filter(e => new Date(e.startDate).getMonth() === i)
-          const firstDayOfMonth = new Date(year, i, 1);
 
           return (
             <div id={`month-grid-${i}`} key={i} className="rounded-lg border bg-white dark:bg-gray-900 p-2 shadow-sm hover:shadow-md transition">
@@ -42,10 +41,7 @@ export const YearView: FC<YearViewProps> = ({ year, onMonthSelect, onDateSelect,
                 ))}
               </div>
               <div className="grid grid-cols-7 gap-0.5">
-                {Array.from({ length: firstDayOfMonth.getDay() }).map((_, j) => (
-                  <div key={`empty-${j}`} />
-                ))}
-                {days.map(date => {
+                {days.map(({ date, isCurrentMonth }) => {
                   const isToday = today &&
                     date.getFullYear() === today.getFullYear() &&
                     date.getMonth() === today.getMonth() &&
@@ -72,14 +68,19 @@ export const YearView: FC<YearViewProps> = ({ year, onMonthSelect, onDateSelect,
                     onWeekend ? 'text-red-500' :
                     isPublicHoliday ? 'text-red-500' : '';
 
+                  const inactiveDateColorClass =
+                    onWeekend && isPublicHoliday ? 'text-purple-500 opacity-50' :
+                    onWeekend ? 'text-red-500 opacity-50' :
+                    isPublicHoliday ? 'text-red-500 opacity-50' : 'text-gray-400';
+
                   return (
                     <div
                       key={date.toISOString()}
                       className={`
                         flex flex-col items-center justify-center text-center text-xs rounded cursor-pointer
                         aspect-square select-none
-                        ${dateColorClass}
-                        ${onWeekend ? 'bg-gray-50 dark:bg-gray-800' : ''}
+                        ${isCurrentMonth ? dateColorClass : inactiveDateColorClass}
+                        ${onWeekend && isCurrentMonth ? 'bg-gray-50 dark:bg-gray-800' : ''}
                         ${isToday ? 'ring-1 ring-primary-500 bg-primary-100 dark:bg-primary-900' : ''}
                         ${isSelected ? 'border border-primary-600' : ''}
                         group
@@ -87,18 +88,15 @@ export const YearView: FC<YearViewProps> = ({ year, onMonthSelect, onDateSelect,
                       onClick={() => onDateSelect && onDateSelect(date)}
                     >
                       <span className="font-extrabold">{date.getDate()}</span>
-                      <div className="flex gap-0.5 mt-1 h-1.5">
-                        {dayEvents.length > 0 && (
+                      <div className="flex items-center justify-center gap-1 mt-0.5 h-1.5">
+                        {showEvents && isCurrentMonth && (
                           <>
-                            {dayEvents.filter(e => !e.isPublicHoliday).map((event, idx) => (
-                              <span
-                                key={event.id || idx}
-                                className={`h-1.5 w-1.5 rounded-full 
-                                  ${event.isOptionalHoliday ? 'bg-red-500' : 'bg-gray-500'}
-                                  group-hover:opacity-80
-                                `}
-                              />
-                            ))}
+                            {dayEvents.some(e => e.isOptionalHoliday) && (
+                              <span className="inline-block h-1.5 w-1.5 rounded-full bg-red-500"></span>
+                            )}
+                            {dayEvents.some(e => !e.isPublicHoliday && !e.isOptionalHoliday) && (
+                              <span className="inline-block h-1.5 w-1.5 rounded-full bg-gray-500"></span>
+                            )}
                           </>
                         )}
                       </div>

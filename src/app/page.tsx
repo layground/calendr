@@ -49,6 +49,7 @@ export default function Home() {
   const [country, setCountry] = useState('ID')
   const [region, setRegion] = useState('YO')
   const [events, setEvents] = useState<RegionEvent[]>([])
+  const [showEvents, setShowEvents] = useState(false)
 
   useEffect(() => {
     // Load events for selected year/region
@@ -113,6 +114,10 @@ export default function Home() {
     <div className="flex min-h-screen-dynamic flex-col md:flex-row">
       {/* Left panel - Calendar (60%) */}
       <div className="flex flex-col gap-4 border-b border-gray-200 p-4 dark:border-gray-700 md:border-b-0 md:border-r md:w-[60vw] w-full min-w-0">
+        <div className="flex items-center justify-between mb-2">
+          <Logo />
+          <ThemeToggle />
+        </div>
         {/* Action Bar */}
         <div className="flex items-center gap-2 mb-2">
           <button onClick={handlePrevYear} className="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-800" aria-label="Previous year">◀</button>
@@ -122,6 +127,7 @@ export default function Home() {
           {/* Country/Region Selectors (future) */}
           <button className="ml-2 rounded px-3 py-1 border border-gray-300 dark:border-gray-700">Indonesia</button>
           <button className="rounded px-3 py-1 border border-gray-300 dark:border-gray-700">Yogyakarta</button>
+          <button onClick={() => setShowEvents(!showEvents)} className={`ml-2 rounded px-3 py-1 border ${showEvents ? 'bg-primary-100 dark:bg-primary-900' : ''}`}>Show Events</button>
           {/* View Mode Switcher */}
           <div className="ml-auto flex gap-1">
             <button onClick={() => setViewMode('year')} className={`px-2 py-1 rounded ${viewMode === 'year' ? 'bg-primary-100 dark:bg-primary-900' : ''}`}>Year</button>
@@ -129,10 +135,6 @@ export default function Home() {
             <button onClick={() => setViewMode('week')} className={`px-2 py-1 rounded ${viewMode === 'week' ? 'bg-primary-100 dark:bg-primary-900' : ''}`}>Week</button>
             <button onClick={() => setViewMode('day')} className={`px-2 py-1 rounded ${viewMode === 'day' ? 'bg-primary-100 dark:bg-primary-900' : ''}`}>Day</button>
           </div>
-        </div>
-        <div className="flex items-center justify-between mb-2">
-          <Logo />
-          <ThemeToggle />
         </div>
         {/* Calendar View (dynamic) */}
         <div className="flex-1 min-h-0">
@@ -158,6 +160,7 @@ export default function Home() {
                 region: e.region || 'Yogyakarta',
                 country: e.country || 'Indonesia',
               }))}
+              showEvents={showEvents}
             />
           )}
           {viewMode === 'month' && (
@@ -183,6 +186,7 @@ export default function Home() {
               onDoubleClickDate={handleDateDoubleClick}
               today={new Date()}
               selectedDate={selectedDate}
+              showEvents={showEvents}
             />
           )}
           {viewMode === 'week' && (

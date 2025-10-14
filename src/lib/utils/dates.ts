@@ -53,3 +53,24 @@ export const formatTime = (date: Date): string => {
     hour12: true,
   }).format(date)
 }
+
+export const getMonthGridDays = (year: number, month: number): { date: Date, isCurrentMonth: boolean }[] => {
+  const days = [];
+  const firstDay = new Date(year, month, 1);
+  const firstDayOfWeek = firstDay.getDay(); // 0 for Sunday, 1 for Monday, etc.
+
+  // Start from the first day of the week of the first day of the month
+  const startDate = new Date(firstDay);
+  startDate.setDate(startDate.getDate() - firstDayOfWeek);
+
+  for (let i = 0; i < 42; i++) {
+    const date = new Date(startDate);
+    date.setDate(startDate.getDate() + i);
+    days.push({
+      date: date,
+      isCurrentMonth: date.getMonth() === month,
+    });
+  }
+
+  return days;
+};
