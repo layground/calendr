@@ -61,7 +61,8 @@ export const MonthView = ({ year, month, events, onSelectDate, onDoubleClickDate
           const dateEvents = getEventsForDate(date)
           const isToday = today && isSameDay(date, today)
           const isSelected = selectedDate && isSameDay(date, selectedDate)
-          const isPublicHoliday = dateEvents.some(e => e.isPublicHoliday);
+          const isPublicHoliday = dateEvents.some(e => e.isPublicHoliday && !e.isOptionalHoliday);
+          const isOptionalHoliday = dateEvents.some(e => e.isOptionalHoliday);
           const onWeekend = isWeekend(date);
 
           const dateColorClass =
@@ -91,6 +92,7 @@ export const MonthView = ({ year, month, events, onSelectDate, onDoubleClickDate
               `}
             >
               <span className="font-extrabold">{date.getDate()}</span>
+              {isOptionalHoliday && isCurrentMonth && <div className="w-1.5 h-1.5 bg-red-500 rounded-full mt-1"></div>}
               <div className="flex flex-col gap-1 w-full mt-1 overflow-hidden">
                 {showEvents && isCurrentMonth && (
                   <>

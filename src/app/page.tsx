@@ -27,17 +27,6 @@ interface CountryData {
   regions: Region[]
 }
 
-import idData from '@/data/id.json'
-
-const getEventsForYear = (data: CountryData, regionCode: string, year: number) => {
-  const region = data.regions.find(r => r.regionCode === regionCode)
-  if (!region) return []
-  return region.events.filter(e => {
-    const d = new Date(e.startDate)
-    return d.getFullYear() === year
-  })
-}
-
 export default function Home() {
 
   const [selectedDate, setSelectedDate] = useState<Date | null>(null)
@@ -52,9 +41,29 @@ export default function Home() {
   const [showEvents, setShowEvents] = useState(false)
 
   useEffect(() => {
-    // Load events for selected year/region
-    setEvents(getEventsForYear(idData as CountryData, region, year))
-  }, [year, region])
+    const fetchEvents = async () => {
+        try {
+            const yogyakartaEventsPromise = import(`@/data/id/y${year}/id_${year}_yogyakarta.json`);
+            const nationalEventsPromise = import(`@/data/id/y${year}/id_${year}_national.json`);
+
+            const [yogyakartaEvents, nationalEvents] = await Promise.all([
+                yogyakartaEventsPromise.catch(e => ({ regions: [] })),
+                nationalEventsPromise.catch(e => ({ regions: [] }))
+            ]);
+
+            const allEvents = [
+                ...yogyakartaEvents.regions.flatMap(r => r.events),
+                ...nationalEvents.regions.flatMap(r => r.events)
+            ];
+            setEvents(allEvents);
+        } catch (error) {
+            console.error("Error loading events for year:", year, error);
+            setEvents([]);
+        }
+    };
+
+    fetchEvents();
+}, [year, region]);
 
   const handleDateSelect = (date: Date) => {
     setSelectedDate(date);

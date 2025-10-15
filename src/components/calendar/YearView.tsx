@@ -60,7 +60,8 @@ export const YearView: FC<YearViewProps> = ({ year, onMonthSelect, onDateSelect,
                     )
                   });
 
-                  const isPublicHoliday = dayEvents.some(e => e.isPublicHoliday);
+                  const isPublicHoliday = dayEvents.some(e => e.isPublicHoliday && !e.isOptionalHoliday);
+                  const isOptionalHoliday = dayEvents.some(e => e.isOptionalHoliday);
                   const onWeekend = isWeekend(date);
 
                   const dateColorClass = 
@@ -91,7 +92,7 @@ export const YearView: FC<YearViewProps> = ({ year, onMonthSelect, onDateSelect,
                       <div className="flex items-center justify-center gap-1 mt-0.5 h-1.5">
                         {showEvents && isCurrentMonth && (
                           <>
-                            {dayEvents.some(e => e.isOptionalHoliday) && (
+                            {isOptionalHoliday && (
                               <span className="inline-block h-1.5 w-1.5 rounded-full bg-red-500"></span>
                             )}
                             {dayEvents.some(e => !e.isPublicHoliday && !e.isOptionalHoliday) && (
