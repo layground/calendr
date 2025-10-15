@@ -21,6 +21,10 @@ export const YearView: FC<YearViewProps> = ({ year, onMonthSelect, onDateSelect,
         {Array.from({ length: 12 }).map((_, i) => {
           const days = useMemo(() => getMonthGridDays(year, i), [year, i])
           const weekDays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
+          const monthHolidays = events.filter(e => {
+            const eventDate = new Date(e.startDate);
+            return e.isPublicHoliday && !e.isOptionalHoliday && eventDate.getMonth() === i && e.region === 'National';
+          });
 
           return (
             <div id={`month-grid-${i}`} key={i} className="rounded-lg border bg-white dark:bg-gray-900 p-2 shadow-sm hover:shadow-md transition">
@@ -90,20 +94,23 @@ export const YearView: FC<YearViewProps> = ({ year, onMonthSelect, onDateSelect,
                     >
                       <span className="font-extrabold">{date.getDate()}</span>
                       <div className="flex items-center justify-center gap-1 mt-0.5 h-1.5">
-                        {showEvents && isCurrentMonth && (
-                          <>
-                            {isOptionalHoliday && (
-                              <span className="inline-block h-1.5 w-1.5 rounded-full bg-red-500"></span>
-                            )}
-                            {dayEvents.some(e => !e.isPublicHoliday && !e.isOptionalHoliday) && (
-                              <span className="inline-block h-1.5 w-1.5 rounded-full bg-gray-500"></span>
-                            )}
-                          </>
+                        {isOptionalHoliday && isCurrentMonth && (
+                          <span className="inline-block h-1.5 w-1.5 rounded-full bg-red-500"></span>
+                        )}
+                        {showEvents && isCurrentMonth && dayEvents.some(e => !e.isPublicHoliday && !e.isOptionalHoliday) && (
+                          <span className="inline-block h-1.5 w-1.5 rounded-full bg-gray-500"></span>
                         )}
                       </div>
                     </div>
                   )
                 })}
+              </div>
+              <div className="mt-2 text-xs">
+                <ul>
+                  {monthHolidays.map(holiday => (
+                    <li key={holiday.id}>{new Date(holiday.startDate).getDate()} - {holiday.title}</li>
+                  ))}
+                </ul>
               </div>
             </div>
           )

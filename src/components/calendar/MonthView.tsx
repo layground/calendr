@@ -64,6 +64,8 @@ export const MonthView = ({ year, month, events, onSelectDate, onDoubleClickDate
           const isPublicHoliday = dateEvents.some(e => e.isPublicHoliday && !e.isOptionalHoliday);
           const isOptionalHoliday = dateEvents.some(e => e.isOptionalHoliday);
           const onWeekend = isWeekend(date);
+          const mandatoryPublicHolidays = dateEvents.filter(e => e.isPublicHoliday && !e.isOptionalHoliday);
+          const otherEvents = dateEvents.filter(e => !e.isPublicHoliday || e.isOptionalHoliday);
 
           const dateColorClass =
             onWeekend && isPublicHoliday ? 'text-purple-500' :
@@ -94,30 +96,30 @@ export const MonthView = ({ year, month, events, onSelectDate, onDoubleClickDate
               <span className="font-extrabold">{date.getDate()}</span>
               {isOptionalHoliday && isCurrentMonth && <div className="w-1.5 h-1.5 bg-red-500 rounded-full mt-1"></div>}
               <div className="flex flex-col gap-1 w-full mt-1 overflow-hidden">
+                {isCurrentMonth && mandatoryPublicHolidays.map(event => (
+                    <div
+                    key={event.id}
+                    className={`rounded-md px-1 py-0.5 text-xs text-left truncate bg-red-500 text-white`}
+                    >
+                    {event.title}
+                    </div>
+                ))}
                 {showEvents && isCurrentMonth && (
                   <>
-                    {dateEvents.length <= 4 && dateEvents.map(event => (
+                    {otherEvents.length <= 4 && otherEvents.map(event => (
                       <div
                         key={event.id}
-                        className={`rounded-md px-1 py-0.5 text-xs text-left truncate ${
-                          event.isPublicHoliday
-                            ? 'bg-red-500 text-white'
-                            : 'bg-primary-100 dark:bg-primary-900'
-                        }`}
+                        className={`rounded-md px-1 py-0.5 text-xs text-left truncate bg-primary-100 dark:bg-primary-900`}
                       >
                         {event.title}
                       </div>
                     ))}
-                    {dateEvents.length > 4 && (
+                    {otherEvents.length > 4 && (
                       <>
-                        {dateEvents.slice(0, 3).map(event => (
+                        {otherEvents.slice(0, 3).map(event => (
                           <div
                             key={event.id}
-                            className={`rounded-md px-1 py-0.5 text-xs text-left truncate ${
-                              event.isPublicHoliday
-                                ? 'bg-red-500 text-white'
-                                : 'bg-primary-100 dark:bg-primary-900'
-                            }`}
+                            className={`rounded-md px-1 py-0.5 text-xs text-left truncate bg-primary-100 dark:bg-primary-900`}
                           >
                             {event.title}
                           </div>
@@ -126,7 +128,7 @@ export const MonthView = ({ year, month, events, onSelectDate, onDoubleClickDate
                           key="more-events"
                           className="rounded-md px-1 py-0.5 text-xs text-left truncate bg-gray-200 dark:bg-gray-700"
                         >
-                          ({dateEvents.length - 3}) more events
+                          ({otherEvents.length - 3}) more events
                         </div>
                       </>
                     )}

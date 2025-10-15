@@ -36,23 +36,29 @@ export default function Home() {
   const [viewMode, setViewMode] = useState<ViewMode>('month')
   const [year, setYear] = useState(currentDate.getFullYear())
   const [country, setCountry] = useState('ID')
-  const [region, setRegion] = useState('YO')
+  const [region, setRegion] = useState('-')
   const [events, setEvents] = useState<RegionEvent[]>([])
   const [showEvents, setShowEvents] = useState(false)
 
   useEffect(() => {
+    const regionMap: { [key: string]: string } = {
+        YO: 'yogyakarta',
+        SB: 'surabaya'
+    };
+    const regionFileName = regionMap[region];
+
     const fetchEvents = async () => {
         try {
-            const yogyakartaEventsPromise = import(`@/data/id/y${year}/id_${year}_yogyakarta.json`);
+            const regionEventsPromise = regionFileName && region !== '-' ? import(`@/data/id/y${year}/id_${year}_${regionFileName}.json`) : Promise.resolve({ regions: [] });
             const nationalEventsPromise = import(`@/data/id/y${year}/id_${year}_national.json`);
 
-            const [yogyakartaEvents, nationalEvents] = await Promise.all([
-                yogyakartaEventsPromise.catch(e => ({ regions: [] })),
+            const [regionEvents, nationalEvents] = await Promise.all([
+                regionEventsPromise.catch(e => ({ regions: [] })),
                 nationalEventsPromise.catch(e => ({ regions: [] }))
             ]);
 
             const allEvents = [
-                ...yogyakartaEvents.regions.flatMap(r => r.events),
+                ...regionEvents.regions.flatMap(r => r.events),
                 ...nationalEvents.regions.flatMap(r => r.events)
             ];
             setEvents(allEvents);
@@ -135,7 +141,15 @@ export default function Home() {
           <button onClick={handleToday} className="ml-2 rounded px-3 py-1 bg-primary-500 text-white hover:bg-primary-600 transition-colors">Go to Today</button>
           {/* Country/Region Selectors (future) */}
           <button className="ml-2 rounded px-3 py-1 border border-gray-300 dark:border-gray-700">Indonesia</button>
-          <button className="rounded px-3 py-1 border border-gray-300 dark:border-gray-700">Yogyakarta</button>
+          <select
+            className="rounded px-3 py-1 border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900"
+            value={region}
+            onChange={(e) => setRegion(e.target.value)}
+          >
+            <option value="-">-</option>
+            <option value="YO">Yogyakarta</option>
+            <option value="SB">Surabaya</option>
+          </select>
           <button onClick={() => setShowEvents(!showEvents)} className={`ml-2 rounded px-3 py-1 border ${showEvents ? 'bg-primary-100 dark:bg-primary-900' : ''}`}>Show Events</button>
           {/* View Mode Switcher */}
           <div className="ml-auto flex gap-1">
