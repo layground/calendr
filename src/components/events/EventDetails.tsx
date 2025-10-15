@@ -59,12 +59,37 @@ export const EventDetails = ({ event }: EventDetailsProps) => {
               <> - {formatDate(endDate)} {formatTime(endDate)}</>
             )}
           </p>
+          <button
+            onClick={() => {
+              // Add to calendar logic here
+              const startTime = startDate.toISOString().replace(/-|:|\.\d\d\d/g, '')
+              const endTime = endDate.toISOString().replace(/-|:|\.\d\d\d/g, '')
+              const url = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(
+                event.title
+              )}&dates=${startTime}/${endTime}&details=${encodeURIComponent(
+                event.description
+              )}&location=${encodeURIComponent(event.location.name)}`
+              window.open(url, '_blank')
+            }}
+            className="mt-2 rounded-md bg-primary-600 px-2 py-1 text-xs text-white hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900"
+          >
+            Add to Calendar
+          </button>
         </div>
 
         <div>
           <h3 className="font-medium">Location</h3>
           <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">
-            {event.location.name}
+            <a
+              href={event.location.coordinates 
+                ? `https://www.google.com/maps?q=${event.location.coordinates.lat},${event.location.coordinates.lng}`
+                : `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(event.location.name)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary-600 hover:underline dark:text-primary-400"
+            >
+              {event.location.name}
+            </a>
           </p>
         </div>
 
@@ -75,7 +100,7 @@ export const EventDetails = ({ event }: EventDetailsProps) => {
               {event.accessLabels.map(label => (
                 <div
                   key={label}
-                  className="flex items-center gap-1 rounded-full bg-gray-100 px-3 py-1 text-sm dark:bg-gray-800"
+                  className="flex items-center gap-1 rounded-full bg-gray-100 px-3 py-1 text-sm dark:bg-ray-800"
                 >
                   {AccessLabelIcons[label]}
                   <span>{label.replace('-', ' ')}</span>
@@ -102,24 +127,6 @@ export const EventDetails = ({ event }: EventDetailsProps) => {
           )}
         </div>
 
-        <div className="mt-auto pt-4">
-          <button
-            onClick={() => {
-              // Add to calendar logic here
-              const startTime = startDate.toISOString().replace(/-|:|\.\d\d\d/g, '')
-              const endTime = endDate.toISOString().replace(/-|:|\.\d\d\d/g, '')
-              const url = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(
-                event.title
-              )}&dates=${startTime}/${endTime}&details=${encodeURIComponent(
-                event.description
-              )}&location=${encodeURIComponent(event.location.name)}`
-              window.open(url, '_blank')
-            }}
-            className="w-full rounded-lg bg-primary-600 px-4 py-2 text-center text-white hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900"
-          >
-            Add to Calendar
-          </button>
-        </div>
       </div>
     </div>
   )

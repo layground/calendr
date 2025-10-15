@@ -29,11 +29,12 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${dm_sans.variable} font-sans min-h-screen-dynamic bg-white text-gray-900 antialiased dark:bg-gray-900 dark:text-gray-100`}
+        className={`${dm_sans.variable} font-sans bg-white text-gray-900 antialiased dark:bg-gray-900 dark:text-gray-100`}
       >
-        <main className="flex min-h-screen-dynamic flex-col">
-          {children}
-        </main>
+        <main className="">{children}</main>
+        <footer className="fixed bottom-0 left-0 right-0 bg-white dark:bg-gray-900 text-center p-4 text-sm text-gray-500">
+          2025 &copy; Layground
+        </footer>
       </body>
     </html>
   );
