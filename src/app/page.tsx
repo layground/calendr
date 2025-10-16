@@ -235,20 +235,37 @@ export default function Home() {
               <span className="text-sm md:text-base">◀</span>
             </button>
             <span className="font-semibold text-sm md:text-lg flex-1 text-center truncate">
-              {viewMode === 'year' && year}
-              {viewMode === 'month' && currentDate.toLocaleString('default', { 
-                month: window.innerWidth < 768 ? 'short' : 'long', 
-                year: 'numeric' 
-              })}
-              {viewMode === 'week' && `Week of ${currentDate.toLocaleDateString(undefined, {
-                month: window.innerWidth < 768 ? 'short' : 'long',
-                day: 'numeric'
-              })}`}
-              {viewMode === 'day' && currentDate.toLocaleDateString(undefined, {
-                weekday: window.innerWidth < 768 ? 'short' : 'long',
-                month: window.innerWidth < 768 ? 'short' : 'long',
-                day: 'numeric'
-              })}
+            {viewMode === 'year' && year}
+            {viewMode === 'month' && (
+              <>
+                <span className="hidden md:inline">
+                  {currentDate.toLocaleString('default', { month: 'long', year: 'numeric' })}
+                </span>
+                <span className="md:hidden">
+                  {currentDate.toLocaleString('default', { month: 'short', year: 'numeric' })}
+                </span>
+              </>
+            )}
+            {viewMode === 'week' && (
+              <>
+                <span className="hidden md:inline">
+                  Week of {currentDate.toLocaleDateString(undefined, { month: 'long', day: 'numeric' })}
+                </span>
+                <span className="md:hidden">
+                  Week of {currentDate.toLocaleDateString(undefined, { month: 'short', day: 'numeric' })}
+                </span>
+              </>
+            )}
+            {viewMode === 'day' && (
+              <>
+                <span className="hidden md:inline">
+                  {currentDate.toLocaleDateString(undefined, { weekday: 'long', month: 'long', day: 'numeric' })}
+                </span>
+                <span className="md:hidden">
+                  {currentDate.toLocaleDateString(undefined, { weekday: 'short', month: 'short', day: 'numeric' })}
+                </span>
+              </>
+            )}
             </span>
             <button onClick={handleNext} className="rounded p-1.5 md:p-2 hover:bg-gray-100 dark:hover:bg-gray-800" aria-label="Next">
               <span className="text-sm md:text-base">▶</span>
@@ -272,7 +289,8 @@ export default function Home() {
                 onClick={() => setShowEvents(!showEvents)} 
                 className={`rounded px-2 py-0.5 md:px-3 md:py-1 border text-xs md:text-sm ${showEvents ? 'bg-primary-100 dark:bg-primary-900' : ''}`}
               >
-                {window.innerWidth < 768 ? 'Events' : 'Show Events'}
+                <span className="md:hidden">Events</span>
+                <span className="hidden md:inline">Show Events</span>
               </button>
             </div>
 
