@@ -39,6 +39,7 @@ export default function Home() {
   const [region, setRegion] = useState('-')
   const [events, setEvents] = useState<RegionEvent[]>([])
   const [showEvents, setShowEvents] = useState(false)
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
   useEffect(() => {
     const regionMap: { [key: string]: string } = {
@@ -104,8 +105,70 @@ export default function Home() {
     setSelectedEvent(found || null);
   };
 
-  const handlePrevYear = () => setYear(y => y - 1)
-  const handleNextYear = () => setYear(y => y + 1)
+  const handlePrev = () => {
+    switch (viewMode) {
+      case 'year':
+        setYear(y => y - 1);
+        break;
+      case 'month':
+        setCurrentDate(d => {
+          const newDate = new Date(d);
+          newDate.setMonth(d.getMonth() - 1);
+          setYear(newDate.getFullYear());
+          return newDate;
+        });
+        break;
+      case 'week':
+        setCurrentDate(d => {
+          const newDate = new Date(d);
+          newDate.setDate(d.getDate() - 7);
+          setYear(newDate.getFullYear());
+          return newDate;
+        });
+        break;
+      case 'day':
+        setCurrentDate(d => {
+          const newDate = new Date(d);
+          newDate.setDate(d.getDate() - 1);
+          setYear(newDate.getFullYear());
+          return newDate;
+        });
+        break;
+    }
+  };
+
+  const handleNext = () => {
+    switch (viewMode) {
+      case 'year':
+        setYear(y => y + 1);
+        break;
+      case 'month':
+        setCurrentDate(d => {
+          const newDate = new Date(d);
+          newDate.setMonth(d.getMonth() + 1);
+          setYear(newDate.getFullYear());
+          return newDate;
+        });
+        break;
+      case 'week':
+        setCurrentDate(d => {
+          const newDate = new Date(d);
+          newDate.setDate(d.getDate() + 7);
+          setYear(newDate.getFullYear());
+          return newDate;
+        });
+        break;
+      case 'day':
+        setCurrentDate(d => {
+          const newDate = new Date(d);
+          newDate.setDate(d.getDate() + 1);
+          setYear(newDate.getFullYear());
+          return newDate;
+        });
+        break;
+    }
+  };
+
   const handleToday = () => {
     const today = new Date()
     setCurrentDate(today)
@@ -127,18 +190,47 @@ export default function Home() {
 
   return (
     <div className="flex min-h-screen-dynamic flex-col md:flex-row">
+      {/* Left Drawer for Settings */}
+      {isDrawerOpen && (
+        <div className="fixed inset-0 z-30">
+          <div className="absolute inset-0 bg-gray-500 bg-opacity-75 transition-opacity" onClick={() => setIsDrawerOpen(false)}></div>
+          <div className="relative flex w-64 h-full bg-white dark:bg-gray-800 shadow-xl">
+            <div className="p-4">
+              <h2 className="text-lg font-semibold">Settings</h2>
+              {/* Settings content goes here */}
+            </div>
+            <button onClick={() => setIsDrawerOpen(false)} className="absolute top-0 right-0 p-4">
+              &times;
+            </button>
+          </div>
+        </div>
+      )}
+
       {/* Left panel - Calendar (60%) */}
       <div className="flex flex-col gap-4 border-b border-gray-200 p-4 dark:border-gray-700 md:border-b-0 md:border-r md:w-[60vw] w-full min-w-0">
         <div className="flex items-center justify-between mb-2">
           <Logo />
-          <ThemeToggle />
+          <div className="flex items-center gap-2">
+            <button onClick={handleToday} className="rounded px-3 py-1 bg-primary-500 text-white hover:bg-primary-600 transition-colors">Go to Today</button>
+            <ThemeToggle />
+            <button onClick={() => setIsDrawerOpen(true)} className="p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.096 2.572-1.065z" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+            </button>
+          </div>
         </div>
         {/* Action Bar */}
         <div className="flex items-center gap-2 mb-2">
-          <button onClick={handlePrevYear} className="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-800" aria-label="Previous year">◀</button>
-          <span className="font-semibold text-lg w-16 text-center">{year}</span>
-          <button onClick={handleNextYear} className="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-800" aria-label="Next year">▶</button>
-          <button onClick={handleToday} className="ml-2 rounded px-3 py-1 bg-primary-500 text-white hover:bg-primary-600 transition-colors">Go to Today</button>
+          <button onClick={handlePrev} className="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-800" aria-label="Previous year">◀</button>
+          <span className="font-semibold text-lg w-48 text-center">
+            {viewMode === 'year' && year}
+            {viewMode === 'month' && currentDate.toLocaleString('default', { month: 'long', year: 'numeric' })}
+            {viewMode === 'week' && `Week of ${currentDate.toLocaleDateString()}`}
+            {viewMode === 'day' && currentDate.toLocaleDateString(undefined, { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}
+          </span>
+          <button onClick={handleNext} className="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-800" aria-label="Next year">▶</button>
           {/* Country/Region Selectors (future) */}
           <button className="ml-2 rounded px-3 py-1 border border-gray-300 dark:border-gray-700">Indonesia</button>
           <select

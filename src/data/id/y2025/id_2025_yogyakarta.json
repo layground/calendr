@@ -1,4 +1,3 @@
-
 {
   "country": "Indonesia",
   "countryCode": "ID",
@@ -7,6 +6,101 @@
       "region": "Yogyakarta",
       "regionCode": "YO",
       "events": [
+        {
+          "id": "e-yo-25-09-1",
+          "title": "Jogja Book Fair 2025",
+          "description": "The biggest literacy festival in Yogyakarta featuring book exhibitions, author talks, workshops, and cultural performances.",
+          "startDate": "2025-09-04T10:00:00+07:00",
+          "endDate": "2025-09-14T21:00:00+07:00",
+          "location": {
+            "name": "Taman Budaya Yogyakarta",
+            "coordinates": {
+              "lat": -7.8019,
+              "lng": 110.3644
+            }
+          },
+          "accessLabels": ["public-transport", "wheelchair"],
+          "isPublicHoliday": false,
+          "isOptionalHoliday": false,
+          "region": "Yogyakarta",
+          "country": "Indonesia"
+        },
+        {
+          "id": "e-yo-25-09-2",
+          "title": "Garebeg Mulud 2025",
+          "description": "Traditional Javanese ceremony at Keraton Yogyakarta celebrating the birth of Prophet Muhammad.",
+          "startDate": "2025-09-05T08:00:00+07:00",
+          "endDate": "2025-09-05T16:00:00+07:00",
+          "location": {
+            "name": "Keraton Yogyakarta",
+            "coordinates": {
+              "lat": -7.8053,
+              "lng": 110.3641
+            }
+          },
+          "accessLabels": ["public-transport"],
+          "isPublicHoliday": false,
+          "isOptionalHoliday": true,
+          "region": "Yogyakarta",
+          "country": "Indonesia"
+        },
+        {
+          "id": "e-yo-25-09-3",
+          "title": "Jogja Coffee Week #5: Journey to the Brew",
+          "description": "The biggest coffee exhibition in Yogyakarta 2025, featuring local coffee vendors, workshops, and tasting sessions.",
+          "startDate": "2025-09-05T10:00:00+07:00",
+          "endDate": "2025-09-07T22:00:00+07:00",
+          "location": {
+            "name": "Jogja Expo Center",
+            "coordinates": {
+              "lat": -7.7953,
+              "lng": 110.4021
+            }
+          },
+          "accessLabels": ["parking", "public-transport"],
+          "isPublicHoliday": false,
+          "isOptionalHoliday": false,
+          "region": "Yogyakarta",
+          "country": "Indonesia"
+        },
+        {
+          "id": "e-yo-25-09-4",
+          "title": "Biennale Jogja 18: KAWRUH – Tanah Lelaku (Phase 1)",
+          "description": "First phase of the art biennale focusing on local knowledge and land-based practices.",
+          "startDate": "2025-09-19T10:00:00+07:00",
+          "endDate": "2025-09-24T18:00:00+07:00",
+          "location": {
+            "name": "Padukuhan Boro, Desa Karangsewu",
+            "coordinates": {
+              "lat": -7.9161,
+              "lng": 110.2141
+            }
+          },
+          "accessLabels": ["public-transport"],
+          "isPublicHoliday": false,
+          "isOptionalHoliday": false,
+          "region": "Yogyakarta",
+          "country": "Indonesia"
+        },
+        {
+          "id": "e-yo-25-09-5",
+          "title": "CRSL Land Festival 2025",
+          "description": "Two-day music festival featuring Hindia, Nadin Amizah, .Feast, JKT48, Lomba Sihir, and more performers.",
+          "startDate": "2025-09-27T14:00:00+07:00",
+          "endDate": "2025-09-28T23:00:00+07:00",
+          "location": {
+            "name": "Lapangan Kenari",
+            "coordinates": {
+              "lat": -7.7827,
+              "lng": 110.3672
+            }
+          },
+          "accessLabels": ["public-transport", "parking"],
+          "isPublicHoliday": false,
+          "isOptionalHoliday": false,
+          "region": "Yogyakarta",
+          "country": "Indonesia"
+        },
         {
           "id": "e1",
           "title": "New Year's Day",
@@ -149,537 +243,229 @@
           "country": "Indonesia"
         },
         {
-          "id": "e7",
-          "title": "SARGA FESTIVAL 2025 - Where Music Meets Vibes!",
-          "description": "A vibrant music festival featuring local and international artists in Yogyakarta.",
-          "startDate": "2025-11-08T16:00:00+07:00",
-          "endDate": "2025-11-08T23:00:00+07:00",
+          "id": "e-yo-25-10-1",
+          "title": "Land of Leisures",
+          "description": "Theme: 'Resonance of Us'. Live music (Barasuara, Skandal), games, exhibition of 90 curated brands. Free entry.",
+          "startDate": "2025-10-02T00:00:00+07:00",
+          "endDate": "2025-10-05T23:59:59+07:00",
           "location": {
-            "name": "Yogyakarta City",
+            "name": "Ambarrukmo Plaza",
             "coordinates": {
-              "lat": -7.7956,
-              "lng": 110.3695
+              "lat": -7.7821,
+              "lng": 110.4021
             }
           },
-          "coverImage": "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
-          "accessLabels": [
-            "public-transport"
-          ],
+          "accessLabels": ["parking", "wheelchair", "public-transport", "free-entry"],
           "isPublicHoliday": false,
           "isOptionalHoliday": false,
-          "articleUrl": "https://visitingjogja.jogjaprov.go.id/43704/sarga-festival-2025-where-music-meets-vibes-8-november-2025/",
           "region": "Yogyakarta",
           "country": "Indonesia"
         },
         {
-          "id": "e8",
-          "title": "Kirab & Pergelaran Beksan Trunajaya",
-          "description": "A traditional parade and dance performance celebrating Javanese culture.",
-          "startDate": "2025-10-22T09:00:00+07:00",
-          "endDate": "2025-10-22T12:00:00+07:00",
+          "id": "e-yo-25-10-2",
+          "title": "Malioboro Run",
+          "description": "Route: 5K and 10K, passing through Jalan Malioboro. Running event with a heritage Jogja atmosphere.",
+          "startDate": "2025-10-05T00:00:00+07:00",
+          "endDate": "2025-10-05T23:59:59+07:00",
           "location": {
-            "name": "Yogyakarta City",
+            "name": "Jalan Malioboro",
             "coordinates": {
-              "lat": -7.7956,
-              "lng": 110.3695
+              "lat": -7.7932,
+              "lng": 110.3666
             }
           },
-          "coverImage": "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
-          "accessLabels": [
-            "public-transport"
-          ],
+          "accessLabels": ["public-transport", "parking"],
           "isPublicHoliday": false,
           "isOptionalHoliday": false,
-          "articleUrl": "https://visitingjogja.jogjaprov.go.id/43697/kirab-pergelaran-beksan-trunajaya-22-oktober-2025/",
           "region": "Yogyakarta",
           "country": "Indonesia"
         },
         {
-          "id": "e9",
-          "title": "Selasa Wagen Bulan Batik",
-          "description": "A monthly batik-themed event with workshops and exhibitions.",
-          "startDate": "2025-10-14T10:00:00+07:00",
-          "endDate": "2025-10-14T18:00:00+07:00",
+          "id": "e-yo-25-10-3",
+          "title": "Babak II Biennale",
+          "description": "Art exhibition held twice a year. Over 60 artists and groups from Indonesia, Asia, and Europe.",
+          "startDate": "2025-10-05T00:00:00+07:00",
+          "endDate": "2025-11-20T23:59:59+07:00",
           "location": {
-            "name": "Yogyakarta City",
+            "name": "Museum Benteng Vredeburg, Kantor Pos Besar, Desa Bangunjiwo, Desa Panggungharjo",
             "coordinates": {
-              "lat": -7.7956,
-              "lng": 110.3695
+              "lat": -7.8001,
+              "lng": 110.3652
             }
           },
-          "coverImage": "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
-          "accessLabels": [
-            "public-transport"
-          ],
+          "accessLabels": ["public-transport", "wheelchair", "free-entry"],
           "isPublicHoliday": false,
           "isOptionalHoliday": false,
-          "articleUrl": "https://visitingjogja.jogjaprov.go.id/43677/selasa-wagen-bulan-batik-14-oktober-2025/",
           "region": "Yogyakarta",
           "country": "Indonesia"
         },
         {
-          "id": "e10",
-          "title": "Jogja International Kids and Teens Fashion Parade 2025",
-          "description": "A fashion parade for kids and teens, showcasing creative designs and performances.",
-          "startDate": "2025-10-11T10:00:00+07:00",
-          "endDate": "2025-10-12T18:00:00+07:00",
+          "id": "e-yo-25-10-4",
+          "title": "Kustomfest 2025",
+          "description": "Custom bike show, custom car show. Ticket Price: Rp100,000 per day or Rp160,000 for two days.",
+          "startDate": "2025-10-04T00:00:00+07:00",
+          "endDate": "2025-10-05T23:59:59+07:00",
           "location": {
-            "name": "Yogyakarta City",
+            "name": "Jogja Expo Center (JEC)",
             "coordinates": {
-              "lat": -7.7956,
-              "lng": 110.3695
+              "lat": -7.7953,
+              "lng": 110.4021
             }
           },
-          "coverImage": "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
-          "accessLabels": [
-            "public-transport"
-          ],
+          "accessLabels": ["parking", "public-transport", "wheelchair"],
           "isPublicHoliday": false,
           "isOptionalHoliday": false,
-          "articleUrl": "https://visitingjogja.jogjaprov.go.id/43672/jogja-international-kids-and-teens-fashion-parade-2025-11-12-okrober-2025/",
           "region": "Yogyakarta",
           "country": "Indonesia"
         },
         {
-          "id": "e11",
-          "title": "Konser Sumbu Filosofi Yogyakarta",
-          "description": "A concert celebrating the philosophical axis of Yogyakarta.",
+          "id": "e-yo-25-10-5",
+          "title": "Batik City Run",
+          "description": "Routes: 5K (Rp175,000) and 10K (Rp200,000). Inclusions: Jersey, mini batik scarf, medal, and other facilities.",
           "startDate": "2025-10-12T00:00:00+07:00",
           "endDate": "2025-10-12T23:59:59+07:00",
           "location": {
-            "name": "Yogyakarta"
+            "name": "Museum Benteng Vredeburg",
+            "coordinates": {
+              "lat": -7.8001,
+              "lng": 110.3652
+            }
           },
+          "accessLabels": ["public-transport", "parking"],
           "isPublicHoliday": false,
           "isOptionalHoliday": false,
           "region": "Yogyakarta",
           "country": "Indonesia"
         },
         {
-          "id": "e12",
-          "title": "Nandur Srawung #12 Annual Arts Exhibition: “Eling | Awakening”",
-          "description": "An annual arts exhibition.",
-          "startDate": "2025-10-09T00:00:00+07:00",
-          "endDate": "2025-10-18T23:59:59+07:00",
-          "location": {
-            "name": "Yogyakarta"
-          },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Yogyakarta",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e13",
-          "title": "Comic Paradise 5 (Comipara 2025) – Festival Komik & Kreator Indonesia",
-          "description": "A comic and creator festival.",
-          "startDate": "2025-10-18T00:00:00+07:00",
+          "id": "e-yo-25-10-6",
+          "title": "Glagah Tropical Run",
+          "description": "Time: 06.00 WIB until finished. Colorful running event with a tropical aerotropolis background and Instagrammable spots. Ticket Price: Starting from Rp150,000 per person, includes facilities and attractive door prizes.",
+          "startDate": "2025-10-19T06:00:00+07:00",
           "endDate": "2025-10-19T23:59:59+07:00",
           "location": {
-            "name": "Yogyakarta"
-          },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Yogyakarta",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e14",
-          "title": "Jogja Ekraf Week 2025: Festival Ekonomi Kreatif Yogyakarta",
-          "description": "A creative economy festival.",
-          "startDate": "2025-10-24T00:00:00+07:00",
-          "endDate": "2025-10-26T23:59:59+07:00",
-          "location": {
-            "name": "Yogyakarta"
-          },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Yogyakarta",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e15",
-          "title": "Gendhing Budaya 2025",
-          "description": "A cultural event.",
-          "startDate": "2025-11-30T00:00:00+07:00",
-          "endDate": "2025-11-30T23:59:59+07:00",
-          "location": {
-            "name": "Yogyakarta"
-          },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Yogyakarta",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e16",
-          "title": "Festival Kebudayaan Yogyakarta 2025",
-          "description": "A cultural festival.",
-          "startDate": "2025-10-11T00:00:00+07:00",
-          "endDate": "2025-10-18T23:59:59+07:00",
-          "location": {
-            "name": "Yogyakarta"
-          },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Yogyakarta",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e17",
-          "title": "Candiloka #3 2025",
-          "description": "A cultural event.",
-          "startDate": "2025-10-10T00:00:00+07:00",
-          "endDate": "2025-10-11T23:59:59+07:00",
-          "location": {
-            "name": "Yogyakarta"
-          },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Yogyakarta",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e18",
-          "title": "Pink Ribbon Run 2025",
-          "description": "A charity run to raise awareness for breast cancer.",
-          "startDate": "2025-10-19T00:00:00+07:00",
-          "endDate": "2025-10-19T23:59:59+07:00",
-          "location": {
-            "name": "Yogyakarta"
-          },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Yogyakarta",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e19",
-          "title": "Bedog ArtsFest 2025: Sambung Menyambung",
-          "description": "An arts festival.",
-          "startDate": "2025-10-17T00:00:00+07:00",
-          "endDate": "2025-10-19T23:59:59+07:00",
-          "location": {
-            "name": "Yogyakarta"
-          },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Yogyakarta",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e20",
-          "title": "Sriharjo Forest Trail Run #3",
-          "description": "A trail running event.",
-          "startDate": "2025-11-09T00:00:00+07:00",
-          "endDate": "2025-11-09T23:59:59+07:00",
-          "location": {
-            "name": "Yogyakarta"
-          },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Yogyakarta",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e23",
-          "title": "Kustomfest Jogja Expo Center",
-          "description": "",
-          "startDate": "2025-10-04T10:00:00+07:00",
-          "endDate": "2025-10-04T22:00:00+07:00",
-          "location": {
-            "name": "Kabupaten Bantul",
+            "name": "Glagah Beach, Kulon Progo",
             "coordinates": {
-              "lat": -7.7956,
-              "lng": 110.3695
+              "lat": -7.9116,
+              "lng": 110.0550
             }
           },
-          "coverImage": "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
-          "accessLabels": [],
+          "accessLabels": ["parking", "public-transport"],
           "isPublicHoliday": false,
           "isOptionalHoliday": false,
-          "articleUrl": "",
           "region": "Yogyakarta",
           "country": "Indonesia"
         },
         {
-          "id": "e24",
-          "title": "JVWF (Jogja VW Festival) Gelanggang Inovasi dan Kretivitas UGM",
-          "description": "",
-          "startDate": "2025-07-10T10:00:00+07:00",
-          "endDate": "2025-07-10T22:00:00+07:00",
-          "location": {
-            "name": "Kabupaten Sleman",
-            "coordinates": {
-              "lat": -7.7956,
-              "lng": 110.3695
-            }
-          },
-          "coverImage": "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
-          "accessLabels": [],
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "articleUrl": "",
-          "region": "Yogyakarta",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e25",
-          "title": "Jogja VW Festival 2025 Gelanggang Inovasi dan Kreativitas UGM",
-          "description": "",
-          "startDate": "2025-07-10T10:00:00+07:00",
-          "endDate": "2025-07-10T21:00:00+07:00",
-          "location": {
-            "name": "Kabupaten Sleman",
-            "coordinates": {
-              "lat": -7.7956,
-              "lng": 110.3695
-            }
-          },
-          "coverImage": "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
-          "accessLabels": [],
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "articleUrl": "",
-          "region": "Yogyakarta",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e26",
-          "title": "KERONCONG PLESIRAN VOL 9 Desa Wisata Tinalah",
-          "description": "",
-          "startDate": "2025-05-24T16:00:00+07:00",
-          "endDate": "2025-05-24T23:00:00+07:00",
-          "location": {
-            "name": "Kabupaten Kulon Progo",
-            "coordinates": {
-              "lat": -7.7956,
-              "lng": 110.3695
-            }
-          },
-          "coverImage": "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
-          "accessLabels": [],
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "articleUrl": "",
-          "region": "Yogyakarta",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e27",
-          "title": "Comic Paradise 4 Jogja Expo Center",
-          "description": "",
-          "startDate": "2025-05-17T00:00:00+07:00",
-          "endDate": "2025-05-17T23:59:59+07:00",
-          "location": {
-            "name": "Kabupaten Bantul",
-            "coordinates": {
-              "lat": -7.7956,
-              "lng": 110.3695
-            }
-          },
-          "coverImage": "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
-          "accessLabels": [],
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "articleUrl": "",
-          "region": "Yogyakarta",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e28",
-          "title": "Bethesda Heritage Fun Run 2025 RS Bethessda Yogyakarta",
-          "description": "",
-          "startDate": "2025-05-11T00:00:00+07:00",
-          "endDate": "2025-05-11T23:59:59+07:00",
-          "location": {
-            "name": "Kota Yogyakarta",
-            "coordinates": {
-              "lat": -7.7956,
-              "lng": 110.3695
-            }
-          },
-          "coverImage": "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
-          "accessLabels": [],
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "articleUrl": "",
-          "region": "Yogyakarta",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e29",
-          "title": "POGI RUN 2025 Balaikota Yogyakarta",
-          "description": "",
-          "startDate": "2025-05-04T00:00:00+07:00",
-          "endDate": "2025-05-04T23:59:59+07:00",
-          "location": {
-            "name": "Kota Yogyakarta",
-            "coordinates": {
-              "lat": -7.7956,
-              "lng": 110.3695
-            }
-          },
-          "coverImage": "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
-          "accessLabels": [],
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "articleUrl": "",
-          "region": "Yogyakarta",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e30",
-          "title": "YKC10K “Yogyakarta City 10k Race” Kompleks Kepatihan Yogyakarta",
-          "description": "",
-          "startDate": "2025-04-27T00:00:00+07:00",
-          "endDate": "2025-04-27T23:59:59+07:00",
-          "location": {
-            "name": "Kota Yogyakarta",
-            "coordinates": {
-              "lat": -7.7956,
-              "lng": 110.3695
-            }
-          },
-          "coverImage": "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
-          "accessLabels": [],
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "articleUrl": "",
-          "region": "Yogyakarta",
-          "country": "Indonesia"
-        },
-        {
+          "id": "e-yo-25-10-7",
           "title": "Jelajah Ruang Menoreh Geo Heritage Fun Run & Walk",
+          "description": "Fun run & walk, dangdut entertainment, art and cultural performances, talk show about geo heritage. Ticket Price: Starting from Rp25,000 to Rp125,000.",
           "startDate": "2025-10-25T00:00:00+07:00",
           "endDate": "2025-10-25T23:59:59+07:00",
-          "id": "e38",
-          "description": "",
           "location": {
-            "name": "Yogyakarta",
-            "coordinates": {
-              "lat": -7.7956,
-              "lng": 110.3695
-            }
+            "name": "Lapangan Boro Banjarasri"
           },
-          "coverImage": "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
-          "accessLabels": [],
           "isPublicHoliday": false,
           "isOptionalHoliday": false,
-          "articleUrl": "",
           "region": "Yogyakarta",
           "country": "Indonesia"
         },
         {
-          "title": "Babak II Biennale Jogja 18 Kawruh: Tanah Lelaku",
-          "startDate": "2025-10-05T00:00:00+07:00",
-          "endDate": "2025-11-20T23:59:59+07:00",
-          "id": "e40",
-          "description": "",
+          "id": "e-yo-25-10-8",
+          "title": "Lantern Festival de Paris",
+          "description": "Lantern festival, stand-up comedy, live music (Tyok Satrio). Ticket Price: Starting from Rp175,000 for one person to Rp900,000 for 5 people.",
+          "startDate": "2025-10-25T00:00:00+07:00",
+          "endDate": "2025-10-25T23:59:59+07:00",
           "location": {
-            "name": "Yogyakarta",
-            "coordinates": {
-              "lat": -7.7956,
-              "lng": 110.3695
-            }
+            "name": "Parangtritis Beach Area"
           },
-          "coverImage": "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
-          "accessLabels": [],
           "isPublicHoliday": false,
           "isOptionalHoliday": false,
-          "articleUrl": "",
           "region": "Yogyakarta",
           "country": "Indonesia"
         },
         {
-          "title": "Pameran Pangastho Aji: Laku Sultan Kedelapan di Keraton Yogyakarta 2025",
-          "startDate": "2025-09-26T00:00:00+07:00",
-          "endDate": "2026-01-24T23:59:59+07:00",
-          "id": "e42",
-          "description": "",
+          "id": "e-yo-25-10-9",
+          "title": "Nandur Srawung #12 Annual Arts Exhibition",
+          "description": "Art exhibition with the theme 'Eling | Awakening', featuring cross-artist collaborations and cultural performances.",
+          "startDate": "2025-10-09T10:00:00+07:00",
+          "endDate": "2025-10-18T21:00:00+07:00",
           "location": {
-            "name": "Yogyakarta",
+            "name": "Gedung Militaire Societeit, Taman Budaya Yogyakarta",
             "coordinates": {
-              "lat": -7.7956,
-              "lng": 110.3695
+              "lat": -7.8019,
+              "lng": 110.3644
             }
           },
-          "coverImage": "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
-          "accessLabels": [],
+          "accessLabels": ["public-transport", "wheelchair"],
           "isPublicHoliday": false,
           "isOptionalHoliday": false,
-          "articleUrl": "",
           "region": "Yogyakarta",
           "country": "Indonesia"
         },
         {
-          "title": "Spekta Mbiro Karnaval",
-          "startDate": "2025-09-28T00:00:00+07:00",
-          "endDate": "2025-09-28T23:59:59+07:00",
-          "id": "e43",
-          "description": "",
+          "id": "e-yo-25-10-10",
+          "title": "Festival Kebudayaan Yogyakarta 2025",
+          "description": "Annual cultural festival showcasing traditional arts, performances, and exhibitions.",
+          "startDate": "2025-10-11T09:00:00+07:00",
+          "endDate": "2025-10-18T22:00:00+07:00",
           "location": {
-            "name": "Yogyakarta",
+            "name": "Various locations in Yogyakarta",
             "coordinates": {
               "lat": -7.7956,
               "lng": 110.3695
             }
           },
-          "coverImage": "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
-          "accessLabels": [],
+          "accessLabels": ["public-transport"],
           "isPublicHoliday": false,
           "isOptionalHoliday": false,
-          "articleUrl": "",
           "region": "Yogyakarta",
           "country": "Indonesia"
         },
         {
-          "title": "Kedaulatan Rakyat Run 2025",
-          "startDate": "2820-09-28T00:00:00+07:00",
-          "endDate": "2820-09-28T23:59:59+07:00",
-          "id": "e47",
-          "description": "",
+          "id": "e-yo-25-10-11",
+          "title": "Bedog ArtsFest 2025: Sambung Menyambung",
+          "description": "Three-day arts festival featuring art performances, exhibitions, workshops, community market, and film screenings. Free entry.",
+          "startDate": "2025-10-17T16:00:00+07:00",
+          "endDate": "2025-10-19T22:00:00+07:00",
           "location": {
-            "name": "Yogyakarta",
+            "name": "Studio Banjarmili, Bantaran Sungai Bedog",
             "coordinates": {
-              "lat": -7.7956,
-              "lng": 110.3695
+              "lat": -7.7851,
+              "lng": 110.3505
             }
           },
-          "coverImage": "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
-          "accessLabels": [],
+          "accessLabels": ["public-transport", "free-entry"],
           "isPublicHoliday": false,
           "isOptionalHoliday": false,
-          "articleUrl": "",
           "region": "Yogyakarta",
           "country": "Indonesia"
         },
         {
-          "title": "Erafone Run 2025",
-          "startDate": "2220-11-22T00:00:00+07:00",
-          "endDate": "2220-11-22T23:59:59+07:00",
-          "id": "e48",
-          "description": "",
+          "id": "e-yo-25-10-12",
+          "title": "Comic Paradise 5 (Comipara 2025)",
+          "description": "Comic and creative culture festival featuring 350+ creator booths, guild missions, talkshows, and creative competitions. Entry: Rp50,000/day.",
+          "startDate": "2025-10-18T10:00:00+07:00",
+          "endDate": "2025-10-19T21:00:00+07:00",
           "location": {
-            "name": "Yogyakarta",
+            "name": "Jogja Expo Center, Grand Bima Hall",
             "coordinates": {
-              "lat": -7.7956,
-              "lng": 110.3695
+              "lat": -7.7953,
+              "lng": 110.4021
             }
           },
-          "coverImage": "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
-          "accessLabels": [],
+          "accessLabels": ["parking", "public-transport"],
           "isPublicHoliday": false,
           "isOptionalHoliday": false,
-          "articleUrl": "",
           "region": "Yogyakarta",
           "country": "Indonesia"
         },
         {
-          "title": "Lomba Seni Suara Alam Burung Derkuku Piala Raja Hamengkubuwono Cup 2025",
-          "startDate": "2120-09-21T00:00:00+07:00",
-          "endDate": "2120-09-21T23:59:59+07:00",
-          "id": "e49",
-          "description": "",
+          "id": "e-yo-25-11-1",
+          "title": "SARGA FESTIVAL 2025",
+          "description": "Where Music Meets Vibes! A music festival celebrating local and national artists.",
+          "startDate": "2025-11-08T15:00:00+07:00",
+          "endDate": "2025-11-08T23:00:00+07:00",
           "location": {
             "name": "Yogyakarta",
             "coordinates": {
@@ -687,1061 +473,9 @@
               "lng": 110.3695
             }
           },
-          "coverImage": "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
-          "accessLabels": [],
+          "accessLabels": ["public-transport", "parking"],
           "isPublicHoliday": false,
           "isOptionalHoliday": false,
-          "articleUrl": "",
-          "region": "Yogyakarta",
-          "country": "Indonesia"
-        },
-        {
-          "title": "Biennale Jogja 18: KAWRUH – Tanah Lelaku",
-          "startDate": "2020-09-19T00:00:00+07:00",
-          "endDate": "2020-11-20T23:59:59+07:00",
-          "id": "e53",
-          "description": "",
-          "location": {
-            "name": "Yogyakarta",
-            "coordinates": {
-              "lat": -7.7956,
-              "lng": 110.3695
-            }
-          },
-          "coverImage": "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
-          "accessLabels": [],
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "articleUrl": "",
-          "region": "Yogyakarta",
-          "country": "Indonesia"
-        },
-        {
-          "title": "J150K 2025",
-          "startDate": "2025-08-23T00:00:00+07:00",
-          "endDate": "2025-08-23T23:59:59+07:00",
-          "id": "e55",
-          "description": "",
-          "location": {
-            "name": "Yogyakarta",
-            "coordinates": {
-              "lat": -7.7956,
-              "lng": 110.3695
-            }
-          },
-          "coverImage": "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
-          "accessLabels": [],
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "articleUrl": "",
-          "region": "Yogyakarta",
-          "country": "Indonesia"
-        },
-        {
-          "title": "Pembukaan Rangkaian Peringatan 13 Tahun Undang-Undang Keistimewaan DIY",
-          "startDate": "2025-08-13T00:00:00+07:00",
-          "endDate": "2025-08-13T23:59:59+07:00",
-          "id": "e56",
-          "description": "",
-          "location": {
-            "name": "Yogyakarta",
-            "coordinates": {
-              "lat": -7.7956,
-              "lng": 110.3695
-            }
-          },
-          "coverImage": "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
-          "accessLabels": [],
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "articleUrl": "",
-          "region": "Yogyakarta",
-          "country": "Indonesia"
-        },
-        {
-          "title": "MILO ACTIV Indonesia Race 2025 Yogyakarta Series",
-          "startDate": "2025-08-10T00:00:00+07:00",
-          "endDate": "2025-08-10T23:59:59+07:00",
-          "id": "e57",
-          "description": "",
-          "location": {
-            "name": "Yogyakarta",
-            "coordinates": {
-              "lat": -7.7956,
-              "lng": 110.3695
-            }
-          },
-          "coverImage": "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
-          "accessLabels": [],
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "articleUrl": "",
-          "region": "Yogyakarta",
-          "country": "Indonesia"
-        },
-        {
-          "title": "Indonesian Street Performance “Nusantara Menari”",
-          "startDate": "2025-08-06T00:00:00+07:00",
-          "endDate": "2025-08-06T23:59:59+07:00",
-          "id": "e58",
-          "description": "",
-          "location": {
-            "name": "Yogyakarta",
-            "coordinates": {
-              "lat": -7.7956,
-              "lng": 110.3695
-            }
-          },
-          "coverImage": "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
-          "accessLabels": [],
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "articleUrl": "",
-          "region": "Yogyakarta",
-          "country": "Indonesia"
-        },
-        {
-          "title": "Selasa Wagen",
-          "startDate": "2025-08-05T00:00:00+07:00",
-          "endDate": "2025-08-05T23:59:59+07:00",
-          "id": "e59",
-          "description": "",
-          "location": {
-            "name": "Yogyakarta",
-            "coordinates": {
-              "lat": -7.7956,
-              "lng": 110.3695
-            }
-          },
-          "coverImage": "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
-          "accessLabels": [],
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "articleUrl": "",
-          "region": "Yogyakarta",
-          "country": "Indonesia"
-        },
-        {
-          "title": "Merapi Run 2025",
-          "startDate": "2025-08-03T00:00:00+07:00",
-          "endDate": "2025-08-03T23:59:59+07:00",
-          "id": "e65",
-          "description": "",
-          "location": {
-            "name": "Yogyakarta",
-            "coordinates": {
-              "lat": -7.7956,
-              "lng": 110.3695
-            }
-          },
-          "coverImage": "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
-          "accessLabels": [],
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "articleUrl": "",
-          "region": "Yogyakarta",
-          "country": "Indonesia"
-        },
-        {
-          "title": "Pawai Alegoris Harmoni Jogja 2025",
-          "startDate": "2025-07-12T00:00:00+07:00",
-          "endDate": "2025-07-12T23:59:59+07:00",
-          "id": "e66",
-          "description": "",
-          "location": {
-            "name": "Yogyakarta",
-            "coordinates": {
-              "lat": -7.7956,
-              "lng": 110.3695
-            }
-          },
-          "coverImage": "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
-          "accessLabels": [],
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "articleUrl": "",
-          "region": "Yogyakarta",
-          "country": "Indonesia"
-        },
-        {
-          "title": "Big Bad Wolf Tour Yogyakarta 2025",
-          "startDate": "2025-06-26T00:00:00+07:00",
-          "endDate": "2025-07-06T23:59:59+07:00",
-          "id": "e68",
-          "description": "",
-          "location": {
-            "name": "Yogyakarta",
-            "coordinates": {
-              "lat": -7.7956,
-              "lng": 110.3695
-            }
-          },
-          "coverImage": "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
-          "accessLabels": [],
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "articleUrl": "",
-          "region": "Yogyakarta",
-          "country": "Indonesia"
-        },
-        {
-          "title": "Pameran Perdana Jogja National Museum Tonggak: Ziarah #1",
-          "startDate": "2025-06-20T00:00:00+07:00",
-          "endDate": "2025-09-07T23:59:59+07:00",
-          "id": "e70",
-          "description": "",
-          "location": {
-            "name": "Yogyakarta",
-            "coordinates": {
-              "lat": -7.7956,
-              "lng": 110.3695
-            }
-          },
-          "coverImage": "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
-          "accessLabels": [],
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "articleUrl": "",
-          "region": "Yogyakarta",
-          "country": "Indonesia"
-        },
-        {
-          "title": "KIDUNG PERTIWI",
-          "startDate": "2025-06-21T00:00:00+07:00",
-          "endDate": "2025-06-21T23:59:59+07:00",
-          "id": "e74",
-          "description": "",
-          "location": {
-            "name": "Yogyakarta",
-            "coordinates": {
-              "lat": -7.7956,
-              "lng": 110.3695
-            }
-          },
-          "coverImage": "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
-          "accessLabels": [],
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "articleUrl": "",
-          "region": "Yogyakarta",
-          "country": "Indonesia"
-        },
-        {
-          "title": "Keroncong Pesisiran",
-          "startDate": "2025-06-20T00:00:00+07:00",
-          "endDate": "2025-06-20T23:59:59+07:00",
-          "id": "e75",
-          "description": "",
-          "location": {
-            "name": "Yogyakarta",
-            "coordinates": {
-              "lat": -7.7956,
-              "lng": 110.3695
-            }
-          },
-          "coverImage": "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
-          "accessLabels": [],
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "articleUrl": "",
-          "region": "Yogyakarta",
-          "country": "Indonesia"
-        },
-        {
-          "title": "Mandiri Jogja Marathon 2025",
-          "startDate": "2025-06-22T00:00:00+07:00",
-          "endDate": "2025-06-22T23:59:59+07:00",
-          "id": "e77",
-          "description": "",
-          "location": {
-            "name": "Yogyakarta",
-            "coordinates": {
-              "lat": -7.7956,
-              "lng": 110.3695
-            }
-          },
-          "coverImage": "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
-          "accessLabels": [],
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "articleUrl": "",
-          "region": "Yogyakarta",
-          "country": "Indonesia"
-        },
-        {
-          "title": "Pameran temporer Abhinaya Karya 2025: A Glimpse into The Past, Looking Forward to The Future",
-          "startDate": "2025-06-03T00:00:00+07:00",
-          "endDate": "2025-07-13T23:59:59+07:00",
-          "id": "e79",
-          "description": "",
-          "location": {
-            "name": "Yogyakarta",
-            "coordinates": {
-              "lat": -7.7956,
-              "lng": 110.3695
-            }
-          },
-          "coverImage": "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
-          "accessLabels": [],
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "articleUrl": "",
-          "region": "Yogyakarta",
-          "country": "Indonesia"
-        },
-        {
-          "title": "Musikoloji: Sinestesia",
-          "startDate": "2025-09-13T00:00:00+07:00",
-          "endDate": "2025-09-13T23:59:59+07:00",
-          "id": "e81",
-          "description": "",
-          "location": {
-            "name": "Yogyakarta",
-            "coordinates": {
-              "lat": -7.7956,
-              "lng": 110.3695
-            }
-          },
-          "coverImage": "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
-          "accessLabels": [],
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "articleUrl": "",
-          "region": "Yogyakarta",
-          "country": "Indonesia"
-        },
-        {
-          "title": "FESTIVAL KULINER – PASAR RAMADHAN 1446 H Jogja City Mall",
-          "startDate": "2025-03-24T00:00:00+07:00",
-          "endDate": "2025-04-06T23:59:59+07:00",
-          "id": "e83",
-          "description": "",
-          "location": {
-            "name": "Yogyakarta",
-            "coordinates": {
-              "lat": -7.7956,
-              "lng": 110.3695
-            }
-          },
-          "coverImage": "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
-          "accessLabels": [],
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "articleUrl": "",
-          "region": "Yogyakarta",
-          "country": "Indonesia"
-        },
-        {
-          "title": "Afternoon Sketch and Photography",
-          "startDate": "2025-03-23T00:00:00+07:00",
-          "endDate": "2025-03-23T23:59:59+07:00",
-          "id": "e84",
-          "description": "",
-          "location": {
-            "name": "Yogyakarta",
-            "coordinates": {
-              "lat": -7.7956,
-              "lng": 110.3695
-            }
-          },
-          "coverImage": "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
-          "accessLabels": [],
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "articleUrl": "",
-          "region": "Yogyakarta",
-          "country": "Indonesia"
-        },
-        {
-          "title": "Malioboro Run 2025",
-          "startDate": "2025-10-05T00:00:00+07:00",
-          "endDate": "2025-10-05T23:59:59+07:00",
-          "id": "e85",
-          "description": "",
-          "location": {
-            "name": "Yogyakarta",
-            "coordinates": {
-              "lat": -7.7956,
-              "lng": 110.3695
-            }
-          },
-          "coverImage": "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
-          "accessLabels": [],
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "articleUrl": "",
-          "region": "Yogyakarta",
-          "country": "Indonesia"
-        },
-        {
-          "title": "Upacara Tawur Agung Kesanga",
-          "startDate": "2025-03-28T00:00:00+07:00",
-          "endDate": "2025-03-28T23:59:59+07:00",
-          "id": "e86",
-          "description": "",
-          "location": {
-            "name": "Yogyakarta",
-            "coordinates": {
-              "lat": -7.7956,
-              "lng": 110.3695
-            }
-          },
-          "coverImage": "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
-          "accessLabels": [],
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "articleUrl": "",
-          "region": "Yogyakarta",
-          "country": "Indonesia"
-        },
-        {
-          "title": "Ramadhan Ceria Run 2025",
-          "startDate": "2025-03-16T00:00:00+07:00",
-          "endDate": "2025-03-16T23:59:59+07:00",
-          "id": "e87",
-          "description": "",
-          "location": {
-            "name": "Yogyakarta",
-            "coordinates": {
-              "lat": -7.7956,
-              "lng": 110.3695
-            }
-          },
-          "coverImage": "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
-          "accessLabels": [],
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "articleUrl": "",
-          "region": "Yogyakarta",
-          "country": "Indonesia"
-        },
-        {
-          "title": "SIMAK SIAR VOL. 18 “JAZZ MBEN SENEN& BENTARA BUDAYA YK”",
-          "startDate": "2025-05-19T00:00:00+07:00",
-          "endDate": "2025-05-19T23:59:59+07:00",
-          "id": "e91",
-          "description": "",
-          "location": {
-            "name": "Yogyakarta",
-            "coordinates": {
-              "lat": -7.7956,
-              "lng": 110.3695
-            }
-          },
-          "coverImage": "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
-          "accessLabels": [],
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "articleUrl": "",
-          "region": "Yogyakarta",
-          "country": "Indonesia"
-        },
-        {
-          "title": "JOGJA CULTURE SHOW",
-          "startDate": "2025-05-23T00:00:00+07:00",
-          "endDate": "2025-05-23T23:59:59+07:00",
-          "id": "e92",
-          "description": "",
-          "location": {
-            "name": "Yogyakarta",
-            "coordinates": {
-              "lat": -7.7956,
-              "lng": 110.3695
-            }
-          },
-          "coverImage": "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
-          "accessLabels": [],
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "articleUrl": "",
-          "region": "Yogyakarta",
-          "country": "Indonesia"
-        },
-        {
-          "title": "HIPHOP SORINGIN FESTIVAL 2025",
-          "startDate": "2025-05-10T00:00:00+07:00",
-          "endDate": "2025-05-10T23:59:59+07:00",
-          "id": "e94",
-          "description": "",
-          "location": {
-            "name": "Yogyakarta",
-            "coordinates": {
-              "lat": -7.7956,
-              "lng": 110.3695
-            }
-          },
-          "coverImage": "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
-          "accessLabels": [],
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "articleUrl": "",
-          "region": "Yogyakarta",
-          "country": "Indonesia"
-        },
-        {
-          "title": "PENTAS REBON TBY",
-          "startDate": "2025-05-07T00:00:00+07:00",
-          "endDate": "2025-05-07T23:59:59+07:00",
-          "id": "e95",
-          "description": "",
-          "location": {
-            "name": "Yogyakarta",
-            "coordinates": {
-              "lat": -7.7956,
-              "lng": 110.3695
-            }
-          },
-          "coverImage": "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
-          "accessLabels": [],
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "articleUrl": "",
-          "region": "Yogyakarta",
-          "country": "Indonesia"
-        },
-        {
-          "title": "KERONCONG PLESIRAN IX",
-          "startDate": "2025-05-24T00:00:00+07:00",
-          "endDate": "2025-05-24T23:59:59+07:00",
-          "id": "e97",
-          "description": "",
-          "location": {
-            "name": "Yogyakarta",
-            "coordinates": {
-              "lat": -7.7956,
-              "lng": 110.3695
-            }
-          },
-          "coverImage": "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
-          "accessLabels": [],
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "articleUrl": "",
-          "region": "Yogyakarta",
-          "country": "Indonesia"
-        },
-        {
-          "title": "SUSUR TUBUH – SENI, TUBUH, DAN KESADARAN KONTEKSTUAL",
-          "startDate": "2025-04-19T00:00:00+07:00",
-          "endDate": "2025-04-19T23:59:59+07:00",
-          "id": "e101",
-          "description": "",
-          "location": {
-            "name": "Yogyakarta",
-            "coordinates": {
-              "lat": -7.7956,
-              "lng": 110.3695
-            }
-          },
-          "coverImage": "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
-          "accessLabels": [],
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "articleUrl": "",
-          "region": "Yogyakarta",
-          "country": "Indonesia"
-        },
-        {
-          "title": "FESTIVAL JERON BETENG 2025",
-          "startDate": "2025-04-12T00:00:00+07:00",
-          "endDate": "2025-04-12T23:59:59+07:00",
-          "id": "e102",
-          "description": "",
-          "location": {
-            "name": "Yogyakarta",
-            "coordinates": {
-              "lat": -7.7956,
-              "lng": 110.3695
-            }
-          },
-          "coverImage": "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
-          "accessLabels": [],
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "articleUrl": "",
-          "region": "Yogyakarta",
-          "country": "Indonesia"
-        },
-        {
-          "title": "OPEN REHEARSAL: YOGYAKARTA ROYAL ORCHESTRA GOES TO JAKARTA 2025",
-          "startDate": "2025-04-14T00:00:00+07:00",
-          "endDate": "2025-04-14T23:59:59+07:00",
-          "id": "e103",
-          "description": "",
-          "location": {
-            "name": "Yogyakarta",
-            "coordinates": {
-              "lat": -7.7956,
-              "lng": 110.3695
-            }
-          },
-          "coverImage": "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
-          "accessLabels": [],
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "articleUrl": "",
-          "region": "Yogyakarta",
-          "country": "Indonesia"
-        },
-        {
-          "title": "PAMERAN TEMPORER ‘HAMONG NAGARI’",
-          "startDate": "2025-03-08T00:00:00+07:00",
-          "endDate": "2025-08-17T23:59:59+07:00",
-          "id": "e111",
-          "description": "",
-          "location": {
-            "name": "Yogyakarta",
-            "coordinates": {
-              "lat": -7.7956,
-              "lng": 110.3695
-            }
-          },
-          "coverImage": "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
-          "accessLabels": [],
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "articleUrl": "",
-          "region": "Yogyakarta",
-          "country": "Indonesia"
-        },
-        {
-          "title": "PENTAS REBON",
-          "startDate": "2025-02-26T00:00:00+07:00",
-          "endDate": "2025-02-26T23:59:59+07:00",
-          "id": "e112",
-          "description": "",
-          "location": {
-            "name": "Yogyakarta",
-            "coordinates": {
-              "lat": -7.7956,
-              "lng": 110.3695
-            }
-          },
-          "coverImage": "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
-          "accessLabels": [],
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "articleUrl": "",
-          "region": "Yogyakarta",
-          "country": "Indonesia"
-        },
-        {
-          "title": "PASAR GEDHE 2025",
-          "startDate": "2025-02-22T00:00:00+07:00",
-          "endDate": "2025-03-01T23:59:59+07:00",
-          "id": "e113",
-          "description": "",
-          "location": {
-            "name": "Yogyakarta",
-            "coordinates": {
-              "lat": -7.7956,
-              "lng": 110.3695
-            }
-          },
-          "coverImage": "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
-          "accessLabels": [],
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "articleUrl": "",
-          "region": "Yogyakarta",
-          "country": "Indonesia"
-        },
-        {
-          "title": "WADITRA PRALAGA: WARAWADITRA VS NARAWADITRA",
-          "startDate": "2025-02-14T00:00:00+07:00",
-          "endDate": "2025-02-14T23:59:59+07:00",
-          "id": "e115",
-          "description": "",
-          "location": {
-            "name": "Yogyakarta",
-            "coordinates": {
-              "lat": -7.7956,
-              "lng": 110.3695
-            }
-          },
-          "coverImage": "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
-          "accessLabels": [],
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "articleUrl": "",
-          "region": "Yogyakarta",
-          "country": "Indonesia"
-        },
-        {
-          "title": "TOUR OF KEMALA YOGYAKARTA 2025",
-          "startDate": "1516-02-15T00:00:00+07:00",
-          "endDate": "1516-02-15T23:59:59+07:00",
-          "id": "e116",
-          "description": "",
-          "location": {
-            "name": "Yogyakarta",
-            "coordinates": {
-              "lat": -7.7956,
-              "lng": 110.3695
-            }
-          },
-          "coverImage": "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
-          "accessLabels": [],
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "articleUrl": "",
-          "region": "Yogyakarta",
-          "country": "Indonesia"
-        },
-        {
-          "title": "Tour de Menoreh 2024",
-          "startDate": "2024-11-02T00:00:00+07:00",
-          "endDate": "2024-11-02T23:59:59+07:00",
-          "id": "e117",
-          "description": "",
-          "location": {
-            "name": "Yogyakarta",
-            "coordinates": {
-              "lat": -7.7956,
-              "lng": 110.3695
-            }
-          },
-          "coverImage": "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
-          "accessLabels": [],
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "articleUrl": "",
-          "region": "Yogyakarta",
-          "country": "Indonesia"
-        },
-        {
-          "title": "Pameran Sastra Rupa #2: GAMBAR BABAD DIPONEGORO",
-          "startDate": "2014-10-16T00:00:00+07:00",
-          "endDate": "2014-11-03T23:59:59+07:00",
-          "id": "e118",
-          "description": "",
-          "location": {
-            "name": "Yogyakarta",
-            "coordinates": {
-              "lat": -7.7956,
-              "lng": 110.3695
-            }
-          },
-          "coverImage": "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
-          "accessLabels": [],
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "articleUrl": "",
-          "region": "Yogyakarta",
-          "country": "Indonesia"
-        },
-        {
-          "title": "Konser Cinta Istimewa",
-          "startDate": "2024-10-19T00:00:00+07:00",
-          "endDate": "2024-10-19T23:59:59+07:00",
-          "id": "e119",
-          "description": "",
-          "location": {
-            "name": "Yogyakarta",
-            "coordinates": {
-              "lat": -7.7956,
-              "lng": 110.3695
-            }
-          },
-          "coverImage": "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
-          "accessLabels": [],
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "articleUrl": "",
-          "region": "Yogyakarta",
-          "country": "Indonesia"
-        },
-        {
-          "title": "Run 'n Shine 2025",
-          "startDate": "2025-09-14T00:00:00+07:00",
-          "endDate": "2025-09-14T23:59:59+07:00",
-          "id": "e120",
-          "description": "",
-          "location": {
-            "name": "Yogyakarta",
-            "coordinates": {
-              "lat": -7.7956,
-              "lng": 110.3695
-            }
-          },
-          "coverImage": "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
-          "accessLabels": [],
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "articleUrl": "",
-          "region": "Yogyakarta",
-          "country": "Indonesia"
-        },
-        {
-          "title": "NGUBER DRUMMER STREET JAM GOES TO MALIOBORO",
-          "startDate": "2025-01-18T00:00:00+07:00",
-          "endDate": "2025-01-18T23:59:59+07:00",
-          "id": "e121",
-          "description": "",
-          "location": {
-            "name": "Yogyakarta",
-            "coordinates": {
-              "lat": -7.7956,
-              "lng": 110.3695
-            }
-          },
-          "coverImage": "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
-          "accessLabels": [],
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "articleUrl": "",
-          "region": "Yogyakarta",
-          "country": "Indonesia"
-        },
-        {
-          "title": "SR12 FEST EXPLORASA",
-          "startDate": "2025-02-08T00:00:00+07:00",
-          "endDate": "2025-02-08T23:59:59+07:00",
-          "id": "e122",
-          "description": "",
-          "location": {
-            "name": "Yogyakarta",
-            "coordinates": {
-              "lat": -7.7956,
-              "lng": 110.3695
-            }
-          },
-          "coverImage": "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
-          "accessLabels": [],
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "articleUrl": "",
-          "region": "Yogyakarta",
-          "country": "Indonesia"
-        },
-        {
-          "title": "EQUAL RUN 2025",
-          "startDate": "2025-02-16T00:00:00+07:00",
-          "endDate": "2025-02-16T23:59:59+07:00",
-          "id": "e123",
-          "description": "",
-          "location": {
-            "name": "Yogyakarta",
-            "coordinates": {
-              "lat": -7.7956,
-              "lng": 110.3695
-            }
-          },
-          "coverImage": "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
-          "accessLabels": [],
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "articleUrl": "",
-          "region": "Yogyakarta",
-          "country": "Indonesia"
-        },
-        {
-          "title": "MERONA FEST 2025",
-          "startDate": "2025-02-15T00:00:00+07:00",
-          "endDate": "2025-02-15T23:59:59+07:00",
-          "id": "e125",
-          "description": "",
-          "location": {
-            "name": "Yogyakarta",
-            "coordinates": {
-              "lat": -7.7956,
-              "lng": 110.3695
-            }
-          },
-          "coverImage": "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
-          "accessLabels": [],
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "articleUrl": "",
-          "region": "Yogyakarta",
-          "country": "Indonesia"
-        },
-        {
-          "title": "KEJUARAAN PACUAN KUDA PIALA RAJA HAMENGKU BUWONO X CUP KE-14",
-          "startDate": "2024-12-15T00:00:00+07:00",
-          "endDate": "2024-12-15T23:59:59+07:00",
-          "id": "e126",
-          "description": "",
-          "location": {
-            "name": "Yogyakarta",
-            "coordinates": {
-              "lat": -7.7956,
-              "lng": 110.3695
-            }
-          },
-          "coverImage": "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
-          "accessLabels": [],
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "articleUrl": "",
-          "region": "Yogyakarta",
-          "country": "Indonesia"
-        },
-        {
-          "title": "WARAWADITRA – WOMEN ORCHESTRA CONCERT",
-          "startDate": "2024-12-14T00:00:00+07:00",
-          "endDate": "2024-12-14T23:59:59+07:00",
-          "id": "e127",
-          "description": "",
-          "location": {
-            "name": "Yogyakarta",
-            "coordinates": {
-              "lat": -7.7956,
-              "lng": 110.3695
-            }
-          },
-          "coverImage": "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
-          "accessLabels": [],
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "articleUrl": "",
-          "region": "Yogyakarta",
-          "country": "Indonesia"
-        },
-        {
-          "title": "SASI KI”RUN”NA",
-          "startDate": "2024-12-22T00:00:00+07:00",
-          "endDate": "2024-12-22T23:59:59+07:00",
-          "id": "e128",
-          "description": "",
-          "location": {
-            "name": "Yogyakarta",
-            "coordinates": {
-              "lat": -7.7956,
-              "lng": 110.3695
-            }
-          },
-          "coverImage": "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
-          "accessLabels": [],
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "articleUrl": "",
-          "region": "Yogyakarta",
-          "country": "Indonesia"
-        },
-        {
-          "title": "Parama Iswari, Mahasakti Keraton Yogyakarta",
-          "startDate": "2024-10-06T00:00:00+07:00",
-          "endDate": "2025-10-26T23:59:59+07:00",
-          "id": "e131",
-          "description": "",
-          "location": {
-            "name": "Yogyakarta",
-            "coordinates": {
-              "lat": -7.7956,
-              "lng": 110.3695
-            }
-          },
-          "coverImage": "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
-          "accessLabels": [],
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "articleUrl": "",
-          "region": "Yogyakarta",
-          "country": "Indonesia"
-        },
-        {
-          "title": "FESTIVAL MALIOBORO 2024",
-          "startDate": "2024-10-12T00:00:00+07:00",
-          "endDate": "2024-10-12T23:59:59+07:00",
-          "id": "e132",
-          "description": "",
-          "location": {
-            "name": "Yogyakarta",
-            "coordinates": {
-              "lat": -7.7956,
-              "lng": 110.3695
-            }
-          },
-          "coverImage": "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
-          "accessLabels": [],
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "articleUrl": "",
-          "region": "Yogyakarta",
-          "country": "Indonesia"
-        },
-        {
-          "title": "BIOSFERUN 2024",
-          "startDate": "2024-10-13T00:00:00+07:00",
-          "endDate": "2024-10-13T23:59:59+07:00",
-          "id": "e134",
-          "description": "",
-          "location": {
-            "name": "Yogyakarta",
-            "coordinates": {
-              "lat": -7.7956,
-              "lng": 110.3695
-            }
-          },
-          "coverImage": "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
-          "accessLabels": [],
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "articleUrl": "",
-          "region": "Yogyakarta",
-          "country": "Indonesia"
-        },
-        {
-          "title": "WJNC #9 : Gatotkaca Wirajaya",
-          "startDate": "2024-10-07T00:00:00+07:00",
-          "endDate": "2024-10-07T23:59:59+07:00",
-          "id": "e135",
-          "description": "",
-          "location": {
-            "name": "Yogyakarta",
-            "coordinates": {
-              "lat": -7.7956,
-              "lng": 110.3695
-            }
-          },
-          "coverImage": "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
-          "accessLabels": [],
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "articleUrl": "",
-          "region": "Yogyakarta",
-          "country": "Indonesia"
-        },
-        {
-          "title": "Cadenza",
-          "startDate": "2024-10-05T00:00:00+07:00",
-          "endDate": "2024-10-05T23:59:59+07:00",
-          "id": "e136",
-          "description": "",
-          "location": {
-            "name": "Yogyakarta",
-            "coordinates": {
-              "lat": -7.7956,
-              "lng": 110.3695
-            }
-          },
-          "coverImage": "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
-          "accessLabels": [],
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "articleUrl": "",
-          "region": "Yogyakarta",
-          "country": "Indonesia"
-        },
-        {
-          "title": "Exotic 2024",
-          "startDate": "2024-09-27T00:00:00+07:00",
-          "endDate": "2024-09-27T23:59:59+07:00",
-          "id": "e137",
-          "description": "",
-          "location": {
-            "name": "Yogyakarta",
-            "coordinates": {
-              "lat": -7.7956,
-              "lng": 110.3695
-            }
-          },
-          "coverImage": "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
-          "accessLabels": [],
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "articleUrl": "",
           "region": "Yogyakarta",
           "country": "Indonesia"
         }
