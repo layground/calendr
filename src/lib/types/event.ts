@@ -14,7 +14,7 @@ export interface Event {
     }
   }
   coverImage?: string
-  accessLabels?: AccessLabel[]
+  accessLabels?: AccessLabel[] | string[]
   isPublicHoliday: boolean
   isOptionalHoliday: boolean
   articleUrl?: string
