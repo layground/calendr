@@ -17,7 +17,7 @@ export const YearView: FC<YearViewProps> = ({ year, onMonthSelect, onDateSelect,
   // Mini month grid for year view (compact, not stretched)
   return (
     <div className="h-[calc(100vh-12rem)] overflow-y-auto mobile-snap-y">
-      <div className="flex flex-col gap-6 p-2 md:p-4">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 p-2 md:p-4">
         {Array.from({ length: 12 }).map((_, i) => {
           const days = useMemo(() => getMonthGridDays(year, i), [year, i])
           const weekDays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
@@ -27,14 +27,14 @@ export const YearView: FC<YearViewProps> = ({ year, onMonthSelect, onDateSelect,
           });
 
           return (
-            <div id={`month-grid-${i}`} key={i} className="rounded-lg border bg-white dark:bg-gray-900 p-4 shadow-sm hover:shadow-md transition mobile-snap-center">
+            <div id={`month-grid-${i}`} key={i} className="rounded-lg border bg-white dark:bg-gray-900 p-2 md:p-3 shadow-sm hover:shadow-md transition mobile-snap-center">
               <div
-                className="text-center font-semibold mb-4 text-primary-700 dark:text-primary-300 text-base md:text-lg cursor-pointer"
+                className="text-center font-semibold mb-2 text-primary-700 dark:text-primary-300 text-sm cursor-pointer"
                 onClick={() => onMonthSelect(i)}
               >
                 {new Date(year, i, 1).toLocaleString('default', { month: 'long' })}
               </div>
-              <div className="grid grid-cols-7 gap-1 mb-2">
+              <div className="grid grid-cols-7 gap-0.5 mb-1">
                 {weekDays.map((day, idx) => (
                   <div
                     key={day}
@@ -83,8 +83,8 @@ export const YearView: FC<YearViewProps> = ({ year, onMonthSelect, onDateSelect,
                     <div
                       key={date.toISOString()}
                       className={`
-                        flex flex-col items-center justify-center text-center text-sm md:text-base rounded cursor-pointer
-                        aspect-square select-none p-1 md:p-2
+                        flex flex-col items-center justify-center text-center text-xs rounded cursor-pointer
+                        aspect-square select-none
                         ${isCurrentMonth ? dateColorClass : inactiveDateColorClass}
                         ${onWeekend && isCurrentMonth ? 'bg-gray-50 dark:bg-gray-800' : ''}
                         ${isToday ? 'ring-1 ring-primary-500 bg-primary-100 dark:bg-primary-900' : ''}
@@ -106,10 +106,10 @@ export const YearView: FC<YearViewProps> = ({ year, onMonthSelect, onDateSelect,
                   )
                 })}
               </div>
-              <div className="mt-4 text-sm">
-                <ul className="space-y-1">
+              <div className="mt-2 text-xs">
+                <ul>
                   {monthHolidays.map(holiday => (
-                    <li key={holiday.id} className="text-red-500 dark:text-red-400">
+                    <li key={holiday.id} className="text-red-500 dark:text-red-400 truncate">
                       {new Date(holiday.startDate).getDate()} - {holiday.title}
                     </li>
                   ))}
