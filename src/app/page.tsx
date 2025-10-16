@@ -207,14 +207,19 @@ export default function Home() {
       )}
 
       {/* Left panel - Calendar (60%) */}
-      <div className="flex flex-col gap-4 border-b border-gray-200 p-4 dark:border-gray-700 md:border-b-0 md:border-r md:w-[60vw] w-full min-w-0">
-        <div className="flex items-center justify-between mb-2">
-          <Logo />
+      <div className="flex flex-col gap-2 md:gap-4 border-b border-gray-200 p-2 md:p-4 dark:border-gray-700 md:border-b-0 md:border-r md:w-[60vw] w-full min-w-0">
+        <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <button onClick={handleToday} className="rounded px-3 py-1 bg-primary-500 text-white hover:bg-primary-600 transition-colors">Go to Today</button>
+            <Logo />
+            <div className="hidden md:flex">
+              <button onClick={handleToday} className="rounded px-3 py-1 bg-primary-500 text-white hover:bg-primary-600 transition-colors text-sm">Today</button>
+            </div>
+          </div>
+          <div className="flex items-center gap-1 md:gap-2">
+            <button onClick={handleToday} className="md:hidden rounded px-2 py-1 bg-primary-500 text-white hover:bg-primary-600 transition-colors text-xs">Today</button>
             <ThemeToggle />
-            <button onClick={() => setIsDrawerOpen(true)} className="p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <button onClick={() => setIsDrawerOpen(true)} className="p-1.5 md:p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 md:h-6 md:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.096 2.572-1.065z" />
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
               </svg>
@@ -222,33 +227,62 @@ export default function Home() {
           </div>
         </div>
         {/* Action Bar */}
-        <div className="flex items-center gap-2 mb-2">
-          <button onClick={handlePrev} className="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-800" aria-label="Previous year">◀</button>
-          <span className="font-semibold text-lg w-48 text-center">
-            {viewMode === 'year' && year}
-            {viewMode === 'month' && currentDate.toLocaleString('default', { month: 'long', year: 'numeric' })}
-            {viewMode === 'week' && `Week of ${currentDate.toLocaleDateString()}`}
-            {viewMode === 'day' && currentDate.toLocaleDateString(undefined, { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}
-          </span>
-          <button onClick={handleNext} className="rounded p-2 hover:bg-gray-100 dark:hover:bg-gray-800" aria-label="Next year">▶</button>
-          {/* Country/Region Selectors (future) */}
-          <button className="ml-2 rounded px-3 py-1 border border-gray-300 dark:border-gray-700">Indonesia</button>
-          <select
-            className="rounded px-3 py-1 border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900"
-            value={region}
-            onChange={(e) => setRegion(e.target.value)}
-          >
-            <option value="-">-</option>
-            <option value="YO">Yogyakarta</option>
-            <option value="SB">Surabaya</option>
-          </select>
-          <button onClick={() => setShowEvents(!showEvents)} className={`ml-2 rounded px-3 py-1 border ${showEvents ? 'bg-primary-100 dark:bg-primary-900' : ''}`}>Show Events</button>
-          {/* View Mode Switcher */}
-          <div className="ml-auto flex gap-1">
-            <button onClick={() => setViewMode('year')} className={`px-2 py-1 rounded ${viewMode === 'year' ? 'bg-primary-100 dark:bg-primary-900' : ''}`}>Year</button>
-            <button onClick={() => setViewMode('month')} className={`px-2 py-1 rounded ${viewMode === 'month' ? 'bg-primary-100 dark:bg-primary-900' : ''}`}>Month</button>
-            <button onClick={() => setViewMode('week')} className={`px-2 py-1 rounded ${viewMode === 'week' ? 'bg-primary-100 dark:bg-primary-900' : ''}`}>Week</button>
-            <button onClick={() => setViewMode('day')} className={`px-2 py-1 rounded ${viewMode === 'day' ? 'bg-primary-100 dark:bg-primary-900' : ''}`}>Day</button>
+        {/* Navigation Bar */}
+        <div className="flex flex-col gap-2 md:gap-3">
+          {/* Date Navigation */}
+          <div className="flex items-center gap-1 md:gap-2">
+            <button onClick={handlePrev} className="rounded p-1.5 md:p-2 hover:bg-gray-100 dark:hover:bg-gray-800" aria-label="Previous">
+              <span className="text-sm md:text-base">◀</span>
+            </button>
+            <span className="font-semibold text-sm md:text-lg flex-1 text-center truncate">
+              {viewMode === 'year' && year}
+              {viewMode === 'month' && currentDate.toLocaleString('default', { 
+                month: window.innerWidth < 768 ? 'short' : 'long', 
+                year: 'numeric' 
+              })}
+              {viewMode === 'week' && `Week of ${currentDate.toLocaleDateString(undefined, {
+                month: window.innerWidth < 768 ? 'short' : 'long',
+                day: 'numeric'
+              })}`}
+              {viewMode === 'day' && currentDate.toLocaleDateString(undefined, {
+                weekday: window.innerWidth < 768 ? 'short' : 'long',
+                month: window.innerWidth < 768 ? 'short' : 'long',
+                day: 'numeric'
+              })}
+            </span>
+            <button onClick={handleNext} className="rounded p-1.5 md:p-2 hover:bg-gray-100 dark:hover:bg-gray-800" aria-label="Next">
+              <span className="text-sm md:text-base">▶</span>
+            </button>
+          </div>
+
+          {/* Controls Bar */}
+          <div className="flex flex-wrap items-center gap-1 md:gap-2 text-sm">
+            <div className="flex items-center gap-1 md:gap-2 order-2 md:order-1">
+              <button className="rounded px-2 py-0.5 md:px-3 md:py-1 border border-gray-300 dark:border-gray-700 text-xs md:text-sm">Indonesia</button>
+              <select
+                className="rounded px-2 py-0.5 md:px-3 md:py-1 border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-xs md:text-sm"
+                value={region}
+                onChange={(e) => setRegion(e.target.value)}
+              >
+                <option value="-">Region</option>
+                <option value="YO">Yogyakarta</option>
+                <option value="SB">Surabaya</option>
+              </select>
+              <button 
+                onClick={() => setShowEvents(!showEvents)} 
+                className={`rounded px-2 py-0.5 md:px-3 md:py-1 border text-xs md:text-sm ${showEvents ? 'bg-primary-100 dark:bg-primary-900' : ''}`}
+              >
+                {window.innerWidth < 768 ? 'Events' : 'Show Events'}
+              </button>
+            </div>
+
+            {/* View Mode Switcher */}
+            <div className="flex gap-0.5 md:gap-1 order-1 md:order-2 md:ml-auto">
+              <button onClick={() => setViewMode('year')} className={`px-2 py-0.5 md:px-3 md:py-1 rounded text-xs md:text-sm ${viewMode === 'year' ? 'bg-primary-100 dark:bg-primary-900' : ''}`}>Year</button>
+              <button onClick={() => setViewMode('month')} className={`px-2 py-0.5 md:px-3 md:py-1 rounded text-xs md:text-sm ${viewMode === 'month' ? 'bg-primary-100 dark:bg-primary-900' : ''}`}>Month</button>
+              <button onClick={() => setViewMode('week')} className={`px-2 py-0.5 md:px-3 md:py-1 rounded text-xs md:text-sm ${viewMode === 'week' ? 'bg-primary-100 dark:bg-primary-900' : ''}`}>Week</button>
+              <button onClick={() => setViewMode('day')} className={`px-2 py-0.5 md:px-3 md:py-1 rounded text-xs md:text-sm ${viewMode === 'day' ? 'bg-primary-100 dark:bg-primary-900' : ''}`}>Day</button>
+            </div>
           </div>
         </div>
         {/* Calendar View (dynamic) */}

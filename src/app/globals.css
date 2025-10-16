@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 :root {
+  --vh: 1vh;
 }
 
 /* Apply Inter font variable from next/font */
@@ -59,4 +60,36 @@ html {
 /* Prevent text selection on interactive elements */
 .user-select-none {
   user-select: none;
+}
+
+/* Dynamic viewport height */
+.min-h-screen-dynamic {
+  min-height: 100vh; /* Fallback */
+  min-height: calc(var(--vh, 1vh) * 100);
+}
+
+/* Safe area padding for mobile */
+@supports(padding: max(0px)) {
+  .safe-bottom {
+    padding-bottom: max(env(safe-area-inset-bottom), 1rem);
+  }
+}
+
+/* Responsive font sizes */
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+/* Custom scrolling behavior for mobile */
+@media (max-width: 768px) {
+  .mobile-snap-x {
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .mobile-snap-center {
+    scroll-snap-align: center;
+  }
 }
