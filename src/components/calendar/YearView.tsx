@@ -57,12 +57,16 @@ export const YearView: FC<YearViewProps> = ({ year, onMonthSelect, onDateSelect,
                     date.getDate() === selectedDate.getDate()
                   
                   const dayEvents = events.filter(e => {
-                    const eventDate = new Date(e.startDate)
-                    return (
-                      eventDate.getFullYear() === date.getFullYear() &&
-                      eventDate.getMonth() === date.getMonth() &&
-                      eventDate.getDate() === date.getDate()
-                    )
+                    const startDate = new Date(e.startDate);
+                    const endDate = new Date(e.endDate);
+                    const currentDate = new Date(date);
+
+                    // Normalize dates to midnight to compare only the date part
+                    startDate.setHours(0, 0, 0, 0);
+                    endDate.setHours(0, 0, 0, 0);
+                    currentDate.setHours(0, 0, 0, 0);
+
+                    return currentDate >= startDate && currentDate <= endDate;
                   });
 
                   const isPublicHoliday = dayEvents.some(e => e.isPublicHoliday && !e.isOptionalHoliday);

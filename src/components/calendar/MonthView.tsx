@@ -27,13 +27,17 @@ export const MonthView = ({ year, month, events, onSelectDate, onDoubleClickDate
 
   const getEventsForDate = (date: Date) => {
     return events.filter(event => {
-      const eventStart = new Date(event.startDate)
-      return (
-        eventStart.getFullYear() === date.getFullYear() &&
-        eventStart.getMonth() === date.getMonth() &&
-        eventStart.getDate() === date.getDate()
-      )
-    })
+      const startDate = new Date(event.startDate);
+      const endDate = new Date(event.endDate);
+      const currentDate = new Date(date);
+
+      // Normalize dates to midnight to compare only the date part
+      startDate.setHours(0, 0, 0, 0);
+      endDate.setHours(0, 0, 0, 0);
+      currentDate.setHours(0, 0, 0, 0);
+
+      return currentDate >= startDate && currentDate <= endDate;
+    });
   }
 
   const isSameDay = (d1: Date, d2: Date) =>

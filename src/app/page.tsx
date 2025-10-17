@@ -75,12 +75,16 @@ export default function Home() {
   const handleDateSelect = (date: Date) => {
     setSelectedDate(date);
     const eventsForDay = events.filter(event => {
-      const eventDate = new Date(event.startDate);
-      return (
-        eventDate.getFullYear() === date.getFullYear() &&
-        eventDate.getMonth() === date.getMonth() &&
-        eventDate.getDate() === date.getDate()
-      );
+      const startDate = new Date(event.startDate);
+      const endDate = new Date(event.endDate);
+      const currentDate = new Date(date);
+
+      // Normalize dates to midnight to compare only the date part
+      startDate.setHours(0, 0, 0, 0);
+      endDate.setHours(0, 0, 0, 0);
+      currentDate.setHours(0, 0, 0, 0);
+
+      return currentDate >= startDate && currentDate <= endDate;
     });
 
     if (eventsForDay.length > 1) {

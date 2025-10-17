@@ -7,11 +7,152 @@
       "regionCode": "YO",
       "events": [
         {
+          "id": "e-yo-25-10-13",
+          "title": "SiBakul Financetopia X Festival Teras Malioboro #3",
+          "description": "A festival celebrating local finance and culture in Malioboro.",
+          "startDate": "2025-10-15T10:00:00+07:00",
+          "endDate": "2025-10-19T22:00:00+07:00",
+          "location": { "name": "Malioboro, Yogyakarta" },
+          "isPublicHoliday": false,
+          "isOptionalHoliday": false,
+          "region": "Yogyakarta",
+          "country": "Indonesia"
+        },
+        {
+          "id": "e-yo-25-10-14",
+          "title": "LOAKARTA 2025",
+          "description": "A creative market and festival.",
+          "startDate": "2025-10-18T10:00:00+07:00",
+          "endDate": "2025-10-22T22:00:00+07:00",
+          "location": { "name": "Yogyakarta" },
+          "isPublicHoliday": false,
+          "isOptionalHoliday": false,
+          "region": "Yogyakarta",
+          "country": "Indonesia"
+        },
+        {
+          "id": "e-yo-25-10-15",
+          "title": "Selasa Wagen Bulan Batik",
+          "description": "A celebration of Batik on the special Javanese day of Selasa Wagen.",
+          "startDate": "2025-10-14T10:00:00+07:00",
+          "endDate": "2025-10-14T22:00:00+07:00",
+          "location": { "name": "Yogyakarta" },
+          "isPublicHoliday": false,
+          "isOptionalHoliday": false,
+          "region": "Yogyakarta",
+          "country": "Indonesia"
+        },
+        {
+          "id": "e-yo-25-10-16",
+          "title": "Jogja International Kids and Teens Fashion Parade 2025",
+          "description": "A fashion event showcasing local and international designers for kids and teens.",
+          "startDate": "2025-10-11T10:00:00+07:00",
+          "endDate": "2025-10-12T22:00:00+07:00",
+          "location": { "name": "Sleman City Hall, Yogyakarta" },
+          "isPublicHoliday": false,
+          "isOptionalHoliday": false,
+          "region": "Yogyakarta",
+          "country": "Indonesia"
+        },
+        {
+          "id": "e-yo-25-10-17",
+          "title": "Konser Sumbu Filosofi Yogyakarta",
+          "description": "A concert celebrating the philosophical axis of Yogyakarta.",
+          "startDate": "2025-10-12T19:00:00+07:00",
+          "endDate": "2025-10-12T23:00:00+07:00",
+          "location": { "name": "Yogyakarta" },
+          "isPublicHoliday": false,
+          "isOptionalHoliday": false,
+          "region": "Yogyakarta",
+          "country": "Indonesia"
+        },
+        {
+          "id": "e-yo-25-10-18",
+          "title": "Jogja Ekraf Week 2025",
+          "description": "A week-long festival of the creative economy in Yogyakarta.",
+          "startDate": "2025-10-24T10:00:00+07:00",
+          "endDate": "2025-10-26T22:00:00+07:00",
+          "location": { "name": "Atrium Rama, Sleman City Hall" },
+          "isPublicHoliday": false,
+          "isOptionalHoliday": false,
+          "region": "Yogyakarta",
+          "country": "Indonesia"
+        },
+        {
+          "id": "e-yo-25-11-2",
+          "title": "Gendhing Budaya 2025",
+          "description": "A cultural performance of traditional Javanese music and dance.",
+          "startDate": "2025-11-30T19:00:00+07:00",
+          "endDate": "2025-11-30T23:00:00+07:00",
+          "location": { "name": "Yogyakarta" },
+          "isPublicHoliday": false,
+          "isOptionalHoliday": false,
+          "region": "Yogyakarta",
+          "country": "Indonesia"
+        },
+        {
           "id": "e-yo-25-09-1",
           "title": "Jogja Book Fair 2025",
           "description": "The biggest literacy festival in Yogyakarta featuring book exhibitions, author talks, workshops, and cultural performances.",
           "startDate": "2025-09-04T10:00:00+07:00",
           "endDate": "2025-09-14T21:00:00+07:00",
+          "location": {
+            "name": "Taman Budaya Yogyakarta",
+            "coordinates": {
+              "lat": -7.8019,
+              "lng": 110.3644
+            }
+          },
+          "accessLabels": ["public-transport", "wheelchair"],
+          "isPublicHoliday": false,
+          "isOptionalHoliday": false,
+          "region": "Yogyakarta",
+          "country": "Indonesia"
+        },
+        {
+          "id": "e-yo-25-02-1",
+          "title": "Yogyakarta Art Festival",
+          "description": "A month-long celebration of contemporary and traditional art from local and international artists.",
+          "startDate": "2025-02-15T10:00:00+07:00",
+          "endDate": "2025-03-15T21:00:00+07:00",
+          "location": {
+            "name": "Jogja National Museum",
+            "coordinates": {
+              "lat": -7.8019,
+              "lng": 110.3644
+            }
+          },
+          "accessLabels": ["public-transport", "wheelchair"],
+          "isPublicHoliday": false,
+          "isOptionalHoliday": false,
+          "region": "Yogyakarta",
+          "country": "Indonesia"
+        },
+        {
+          "id": "e-yo-25-04-1",
+          "title": "Prambanan Jazz Festival",
+          "description": "An international jazz festival held at the magnificent Prambanan Temple.",
+          "startDate": "2025-04-25T16:00:00+07:00",
+          "endDate": "2025-04-27T23:00:00+07:00",
+          "location": {
+            "name": "Prambanan Temple",
+            "coordinates": {
+              "lat": -7.7520,
+              "lng": 110.4915
+            }
+          },
+          "accessLabels": ["parking", "public-transport"],
+          "isPublicHoliday": false,
+          "isOptionalHoliday": false,
+          "region": "Yogyakarta",
+          "country": "Indonesia"
+        },
+        {
+          "id": "e-yo-25-06-1",
+          "title": "Festival Kesenian Yogyakarta (FKY)",
+          "description": "The Yogyakarta Arts Festival, a major annual event showcasing a wide range of artistic and cultural performances.",
+          "startDate": "2025-06-20T10:00:00+07:00",
+          "endDate": "2025-07-05T22:00:00+07:00",
           "location": {
             "name": "Taman Budaya Yogyakarta",
             "coordinates": {
