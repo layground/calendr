@@ -33,9 +33,6 @@ export default function RootLayout({
       >
                 <div className="flex flex-col min-h-screen">
           <main className="flex-grow">{children}</main>
-          <footer className="bg-white dark:bg-slate-900 text-center p-2 md:p-4 text-xs md:text-sm text-gray-500 border-t dark:border-slate-800">
-            2025 &copy; Layground
-          </footer>
         </div>
       </body>
     </html>

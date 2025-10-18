@@ -16,7 +16,7 @@ interface YearViewProps {
 export const YearView: FC<YearViewProps> = ({ year, onMonthSelect, onDateSelect, events = [], today, selectedDate, showEvents = false }) => {
   // Mini month grid for year view (compact, not stretched)
   return (
-    <div className="h-[calc(100vh-12rem)] overflow-y-auto mobile-snap-y">
+    <div id="year-view-scroll-container" className="h-[calc(100vh-12rem)] overflow-y-auto mobile-snap-y">
       <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-4 md:gap-6 p-2 md:p-4">
         {Array.from({ length: 12 }).map((_, i) => {
           const days = useMemo(() => getMonthGridDays(year, i), [year, i])

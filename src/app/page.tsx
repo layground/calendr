@@ -184,9 +184,12 @@ export default function Home() {
     if (viewMode === 'year') {
       // Scroll to current month in year view
       setTimeout(() => {
-        const monthEl = document.getElementById(`month-grid-${today.getMonth()}`)
-        if (monthEl) {
-          monthEl.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'center' })
+        const monthEl = document.getElementById(`month-grid-${today.getMonth()}`);
+        const container = document.getElementById('year-view-scroll-container');
+        if (monthEl && container) {
+          const containerRect = container.getBoundingClientRect();
+          const monthRect = monthEl.getBoundingClientRect();
+          container.scrollTop = monthRect.top - containerRect.top - (containerRect.height / 2) + (monthRect.height / 2);
         }
       }, 0)
     }
@@ -207,19 +210,11 @@ export default function Home() {
           <div className="relative flex w-64 h-full bg-white dark:bg-slate-800 shadow-xl">
             <div className="p-4 space-y-4">
               <h2 className="text-lg font-semibold">Settings</h2>
-              <div className="flex items-center justify-between">
-                <label htmlFor="show-events-toggle" className="text-sm font-medium">Show Events</label>
-                <button
-                  id="show-events-toggle"
-                  onClick={() => setShowEvents(!showEvents)}
-                  className={`relative inline-flex items-center h-6 rounded-full w-11 transition-colors duration-200 ease-in-out ${showEvents ? 'bg-primary-600' : 'bg-gray-200 dark:bg-gray-700'}`}>
-                  <span
-                    className={`inline-block w-4 h-4 transform bg-white rounded-full transition-transform duration-200 ease-in-out ${showEvents ? 'translate-x-6' : 'translate-x-1'}`}
-                  ></span>
-                </button>
-              </div>
-              <div className="border-t border-gray-200 dark:border-slate-700"></div>
-              <button onClick={() => setShowTerms(true)} className="w-full text-left text-sm font-medium hover:underline">Terms of Use</button>
+
+              <button onClick={() => setShowTerms(true)} className="w-full text-left text-sm font-medium p-2 rounded-md hover:bg-gray-100 dark:hover:bg-slate-700">Terms of Use</button>
+              <footer className="text-center text-xs text-gray-500 absolute bottom-4 left-0 right-0">
+                2025 &copy; Layground
+              </footer>
             </div>
             <button onClick={() => setIsDrawerOpen(false)} className="absolute top-2 right-2 p-2 rounded-full hover:bg-gray-200 dark:hover:bg-slate-700">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -235,32 +230,31 @@ export default function Home() {
         <div className="flex items-center justify-between">
             <Logo />
             <div className="flex items-center gap-1 md:gap-2">
-              <div className="hidden md:flex items-center gap-1 md:gap-2">
-                <button onClick={handleToday} className="rounded px-3 py-1 bg-primary-500 text-white hover:bg-primary-600 transition-colors text-sm">Today</button>
-                <button 
-                  onClick={() => setShowEvents(!showEvents)} 
-                  className={`rounded px-2 py-1 md:px-3 md:py-1 border text-xs md:text-sm flex items-center gap-1 ${showEvents ? 'bg-primary-100 dark:bg-primary-800' : ''}`}
-                >
-                  {showEvents ? (
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-1.293-1.293a3 3 0 014.242 0l1.293 1.293m-3.232 3.232l3.232-3.232M3 3l18 18" />
-                    </svg>
-                  ) : (
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.522 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.478 0-8.268-2.943-9.542-7z" />
-                    </svg>
-                  )}
-                  <span className="hidden md:inline">{showEvents ? 'Hide Events' : 'Show Events'}</span>
-                </button>
-              </div>
-              <ThemeToggle />
-              <button onClick={() => setIsDrawerOpen(true)} className="p-1.5 md:p-2 rounded-md hover:bg-gray-100 dark:hover:bg-slate-800 z-50 flex">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 md:h-6 md:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-              </button>
-            </div>
+                            <div className="hidden md:flex items-center gap-1 md:gap-2">
+                              <button onClick={handleToday} className="rounded px-3 py-1 bg-primary-500 text-white hover:bg-primary-600 transition-colors text-sm">Today</button>
+                            </div>
+                            <button
+                              onClick={() => setShowEvents(!showEvents)}
+                              className={`rounded p-2 md:px-3 md:py-1 border text-xs md:text-sm flex items-center gap-1 ${showEvents ? 'bg-primary-100 dark:bg-primary-800' : ''}`}
+                            >
+                              {showEvents ? (
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-1.293-1.293a3 3 0 014.242 0l1.293 1.293m-3.232 3.232l3.232-3.232M3 3l18 18" />
+                                </svg>
+                              ) : (
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.522 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.478 0-8.268-2.943-9.542-7z" />
+                                </svg>
+                              )}
+                              <span className="hidden md:inline">{showEvents ? 'Hide Events' : 'Show Events'}</span>
+                            </button>
+                            <ThemeToggle />
+                            <button onClick={() => setIsDrawerOpen(true)} className="p-1.5 md:p-2 rounded-md hover:bg-gray-100 dark:hover:bg-slate-800 z-50 flex">
+                              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 md:h-6 md:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                              </svg>
+                            </button>            </div>
         </div>
         {/* Action Bar */}
         <div className="border rounded-lg p-2 md:p-3 dark:border-slate-700">
