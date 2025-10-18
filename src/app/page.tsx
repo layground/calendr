@@ -259,6 +259,49 @@ export default function Home() {
         {/* Action Bar */}
         <div className="border rounded-lg p-2 md:p-3 dark:border-slate-700">
           <div className="flex flex-col gap-2 md:gap-3">
+            
+            {/* Controls Bar */}
+            <div className="flex flex-wrap items-center gap-1 md:gap-2 text-xs">
+              <div className="flex items-center gap-1 md:gap-2 order-2 md:order-1">
+                <button className="rounded-md px-2 py-1 md:px-3 md:py-2 border border-gray-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-xs md:text-sm hover:bg-gray-50 dark:hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-primary-500">Indonesia</button>
+                <select
+                  className="rounded-md px-2 py-1 md:px-3 md:py-2 border border-gray-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-xs md:text-sm hover:bg-gray-50 dark:hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-primary-500"
+                  value={region}
+                  onChange={(e) => setRegion(e.target.value)}
+                >
+                  <option value="-">Region</option>
+                  <option value="YO">Yogyakarta</option>
+                  <option value="SB">Surabaya</option>
+                </select>
+              </div>
+
+              {/* View Mode Switcher */}
+              <div className="flex gap-0.5 md:gap-1 order-1 md:order-2 md:ml-auto">
+                <button onClick={() => setViewMode('year')} className={`px-2 py-1 rounded text-xs ${viewMode === 'year' ? 'bg-primary-100 dark:bg-primary-800' : ''}`}>Year</button>
+                <button onClick={() => setViewMode('month')} className={`px-2 py-1 rounded text-xs ${viewMode === 'month' ? 'bg-primary-100 dark:bg-primary-800' : ''}`}>Month</button>
+                <button onClick={() => setViewMode('week')} className={`px-2 py-1 rounded text-xs ${viewMode === 'week' ? 'bg-primary-100 dark:bg-primary-800' : ''}`}>Week</button>
+                <button onClick={() => setViewMode('day')} className={`px-2 py-1 rounded text-xs ${viewMode === 'day' ? 'bg-primary-100 dark:bg-primary-800' : ''}`}>Day</button>
+              </div>
+              <div className="relative order-3">
+                <button onClick={() => setShowLegend(!showLegend)} className="p-1.5 rounded-md hover:bg-gray-100 dark:hover:bg-slate-800">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </button>
+                {showLegend && (
+                  <div className="absolute right-0 mt-2 w-64 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-lg shadow-lg z-20 p-4">
+                    <h4 className="font-bold mb-2">Legend</h4>
+                    <ul>
+                      <li className="flex items-center mb-1"><span className="w-4 h-4 rounded-full bg-red-500 mr-2"></span> Public Holiday</li>
+                      <li className="flex items-center mb-1"><span className="w-4 h-4 rounded-full bg-purple-500 mr-2"></span> Public Holiday (Weekend)</li>
+                      <li className="flex items-center mb-1"><span className="w-1.5 h-1.5 rounded-full bg-red-500 mr-2"></span> Joint Public Holiday</li>
+                      <li className="flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-gray-500 mr-2"></span> Local Event</li>
+                    </ul>
+                  </div>
+                )}
+              </div>
+            </div>
+            
             {/* Date Navigation */}
             <div className="flex items-center gap-1 md:gap-2">
               <button onClick={handlePrev} className="rounded-md p-2 hover:bg-gray-100 dark:hover:bg-slate-800 border border-gray-300 dark:border-slate-700" aria-label="Previous">
@@ -306,47 +349,6 @@ export default function Home() {
               </button>
             </div>
 
-            {/* Controls Bar */}
-            <div className="flex flex-wrap items-center gap-1 md:gap-2 text-xs">
-              <div className="flex items-center gap-1 md:gap-2 order-2 md:order-1">
-                <button className="rounded-md px-2 py-1 md:px-3 md:py-2 border border-gray-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-xs md:text-sm hover:bg-gray-50 dark:hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-primary-500">Indonesia</button>
-                <select
-                  className="rounded-md px-2 py-1 md:px-3 md:py-2 border border-gray-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-xs md:text-sm hover:bg-gray-50 dark:hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-primary-500"
-                  value={region}
-                  onChange={(e) => setRegion(e.target.value)}
-                >
-                  <option value="-">Region</option>
-                  <option value="YO">Yogyakarta</option>
-                  <option value="SB">Surabaya</option>
-                </select>
-              </div>
-
-              {/* View Mode Switcher */}
-              <div className="flex gap-0.5 md:gap-1 order-1 md:order-2 md:ml-auto">
-                <button onClick={() => setViewMode('year')} className={`px-2 py-1 rounded text-xs ${viewMode === 'year' ? 'bg-primary-100 dark:bg-primary-800' : ''}`}>Year</button>
-                <button onClick={() => setViewMode('month')} className={`px-2 py-1 rounded text-xs ${viewMode === 'month' ? 'bg-primary-100 dark:bg-primary-800' : ''}`}>Month</button>
-                <button onClick={() => setViewMode('week')} className={`px-2 py-1 rounded text-xs ${viewMode === 'week' ? 'bg-primary-100 dark:bg-primary-800' : ''}`}>Week</button>
-                <button onClick={() => setViewMode('day')} className={`px-2 py-1 rounded text-xs ${viewMode === 'day' ? 'bg-primary-100 dark:bg-primary-800' : ''}`}>Day</button>
-              </div>
-              <div className="relative order-3">
-                <button onClick={() => setShowLegend(!showLegend)} className="p-1.5 rounded-md hover:bg-gray-100 dark:hover:bg-slate-800">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                </button>
-                {showLegend && (
-                  <div className="absolute right-0 mt-2 w-64 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-lg shadow-lg z-10 p-4">
-                    <h4 className="font-bold mb-2">Legend</h4>
-                    <ul>
-                      <li className="flex items-center mb-1"><span className="w-4 h-4 rounded-full bg-red-500 mr-2"></span> Public Holiday</li>
-                      <li className="flex items-center mb-1"><span className="w-4 h-4 rounded-full bg-purple-500 mr-2"></span> Public Holiday (Weekend)</li>
-                      <li className="flex items-center mb-1"><span className="w-1.5 h-1.5 rounded-full bg-red-500 mr-2"></span> Joint Public Holiday</li>
-                      <li className="flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-gray-500 mr-2"></span> Local Event</li>
-                    </ul>
-                  </div>
-                )}
-              </div>
-            </div>
           </div>
         </div>
         {/* Calendar View (dynamic) */}
