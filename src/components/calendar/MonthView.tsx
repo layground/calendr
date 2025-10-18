@@ -72,14 +72,14 @@ export const MonthView = ({ year, month, events, onSelectDate, onDoubleClickDate
           const otherEvents = dateEvents.filter(e => !e.isPublicHoliday || e.isOptionalHoliday);
 
           const dateColorClass =
-            onWeekend && isPublicHoliday ? 'text-purple-500' :
-            onWeekend ? 'text-red-500' :
-            isPublicHoliday ? 'text-red-500' : '';
+            onWeekend && isPublicHoliday ? 'text-purple-500 dark:text-purple-400' :
+            onWeekend ? 'text-red-500 dark:text-red-400' :
+            isPublicHoliday ? 'text-red-500 dark:text-red-400' : '';
 
           const inactiveDateColorClass =
-            onWeekend && isPublicHoliday ? 'text-purple-500 opacity-50' :
-            onWeekend ? 'text-red-500 opacity-50' :
-            isPublicHoliday ? 'text-red-500 opacity-50' : 'text-gray-400';
+            onWeekend && isPublicHoliday ? 'text-purple-500 opacity-50 dark:text-purple-400' :
+            onWeekend ? 'text-red-500 opacity-50 dark:text-red-400' :
+            isPublicHoliday ? 'text-red-500 opacity-50 dark:text-red-400' : 'text-gray-400 dark:text-slate-500';
 
           return (
             <button
@@ -88,17 +88,16 @@ export const MonthView = ({ year, month, events, onSelectDate, onDoubleClickDate
               onDoubleClick={() => onDoubleClickDate && onDoubleClickDate(date)}
               className={`
                 relative rounded-lg p-2 text-base h-full min-h-[3.5rem] flex flex-col items-center justify-start
-                hover:bg-gray-100 dark:hover:bg-gray-800
-                focus:outline-none focus:ring-2 focus:ring-primary-500
+                hover:bg-gray-100 dark:hover:bg-slate-800
+                focus:outline-none
+                ${isSelected ? 'bg-primary-200 dark:bg-primary-700' : (isToday ? 'bg-primary-100 dark:bg-primary-800' : (onWeekend && isCurrentMonth ? 'bg-gray-50 dark:bg-slate-800' : ''))}
                 ${isCurrentMonth ? dateColorClass : inactiveDateColorClass}
-                ${onWeekend && isCurrentMonth ? 'bg-gray-50 dark:bg-gray-800' : ''}
-                ${isToday ? 'ring-2 ring-primary-500 bg-primary-100 dark:bg-primary-900' : ''}
-                ${isSelected ? 'border-2 border-primary-600' : ''}
+                ${isToday ? 'ring-2 ring-primary-500' : ''}
                 group
               `}
             >
               <span className="font-extrabold">{date.getDate()}</span>
-              {isOptionalHoliday && isCurrentMonth && <div className="w-1.5 h-1.5 bg-red-500 rounded-full mt-1"></div>}
+              {isOptionalHoliday && isCurrentMonth && <div className="w-1 h-1 bg-red-500 rounded-full mt-1"></div>}
               <div className="flex flex-col gap-1 w-full mt-1 overflow-hidden">
                 {isCurrentMonth && mandatoryPublicHolidays.map(event => (
                     <div
@@ -113,7 +112,7 @@ export const MonthView = ({ year, month, events, onSelectDate, onDoubleClickDate
                     {otherEvents.length <= 4 && otherEvents.map(event => (
                       <div
                         key={event.id}
-                        className={`rounded-md px-1 py-0.5 text-xs text-left truncate bg-primary-100 dark:bg-primary-900`}
+                        className={`rounded-md px-1 py-0.5 text-xs text-left truncate bg-primary-100 dark:bg-primary-800`}
                       >
                         {event.title}
                       </div>
@@ -123,14 +122,14 @@ export const MonthView = ({ year, month, events, onSelectDate, onDoubleClickDate
                         {otherEvents.slice(0, 3).map(event => (
                           <div
                             key={event.id}
-                            className={`rounded-md px-1 py-0.5 text-xs text-left truncate bg-primary-100 dark:bg-primary-900`}
+                            className={`rounded-md px-1 py-0.5 text-xs text-left truncate bg-primary-100 dark:bg-primary-800`}
                           >
                             {event.title}
                           </div>
                         ))}
                         <div
                           key="more-events"
-                          className="rounded-md px-1 py-0.5 text-xs text-left truncate bg-gray-200 dark:bg-gray-700"
+                          className="rounded-md px-1 py-0.5 text-xs text-left truncate bg-gray-200 dark:bg-slate-700"
                         >
                           ({otherEvents.length - 3}) more events
                         </div>

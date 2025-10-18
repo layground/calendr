@@ -12,6 +12,11 @@ export const Logo = () => {
         </svg>
       </div>
       <span className="text-xl">Calendr</span>
+      <div title="Do not use this site as actual references.">
+        <span className="rounded-full bg-yellow-200 px-2 py-0.5 text-xs font-medium text-yellow-800">
+          beta
+        </span>
+      </div>
     </div>
   )
 }

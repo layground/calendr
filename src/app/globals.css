@@ -45,16 +45,16 @@ html {
 }
 
 .dark ::-webkit-scrollbar-track {
-  background: rgb(40, 40, 40);
+  background: rgb(15 23 42);
 }
 
 .dark ::-webkit-scrollbar-thumb {
-  background-color: rgb(80, 80, 80);
-  border-color: rgb(40, 40, 40);
+  background-color: rgb(30 41 59);
+  border-color: rgb(15 23 42);
 }
 
 .dark ::-webkit-scrollbar-thumb:hover {
-  background-color: #cccccc;
+  background-color: rgb(51 65 85);
 }
 
 /* Prevent text selection on interactive elements */

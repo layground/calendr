@@ -4,7 +4,8 @@ import { Event } from '@/lib/types/event'
 import { formatDate, formatTime, isSameDay } from '@/lib/utils/dates'
 
 interface EventDetailsProps {
-  event: Event
+  event: Event;
+  onBack?: () => void;
 }
 
 const AccessLabelIcons: Record<string, JSX.Element> = {
@@ -35,12 +36,17 @@ const AccessLabelIcons: Record<string, JSX.Element> = {
   ),
 }
 
-export const EventDetails = ({ event }: EventDetailsProps) => {
+export const EventDetails = ({ event, onBack }: EventDetailsProps) => {
   const startDate = new Date(event.startDate)
   const endDate = new Date(event.endDate)
 
   return (
-    <div className="flex h-full flex-col overflow-hidden">
+    <div className="flex h-full flex-col overflow-hidden bg-white dark:bg-slate-900">
+      {onBack && (
+        <button onClick={onBack} className="p-2 m-4 border rounded-lg hover:bg-gray-100 dark:hover:bg-slate-700 flex-shrink-0 self-start dark:border-slate-700">
+          &larr; Back to list
+        </button>
+      )}
       {event.coverImage && (
         <div className="relative h-48 w-full overflow-hidden">
           <img
@@ -50,10 +56,10 @@ export const EventDetails = ({ event }: EventDetailsProps) => {
           />
         </div>
       )}
-      <div className="flex flex-1 flex-col gap-4 overflow-y-auto p-4">
+      <div className="flex flex-1 flex-col gap-4 p-4">
         <div>
           <h2 className="text-2xl font-bold">{event.title}</h2>
-          <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">
+          <p className="mt-1 text-sm text-gray-600 dark:text-slate-400">
             {formatDate(startDate)} {formatTime(startDate)}
             {!isSameDay(startDate, endDate) && (
               <> - {formatDate(endDate)} {formatTime(endDate)}</>
@@ -71,7 +77,7 @@ export const EventDetails = ({ event }: EventDetailsProps) => {
               )}&location=${encodeURIComponent(event.location.name)}`
               window.open(url, '_blank')
             }}
-            className="mt-2 rounded-md bg-primary-600 px-2 py-1 text-xs text-white hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900"
+            className="mt-2 rounded-md bg-primary-600 px-2 py-1 text-xs text-white hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 dark:focus:ring-offset-slate-900"
           >
             Add to Calendar
           </button>
@@ -79,7 +85,7 @@ export const EventDetails = ({ event }: EventDetailsProps) => {
 
         <div>
           <h3 className="font-medium">Location</h3>
-          <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">
+          <p className="mt-1 text-sm text-gray-600 dark:text-slate-400">
             <a
               href={event.location.coordinates 
                 ? `https://www.google.com/maps?q=${event.location.coordinates.lat},${event.location.coordinates.lng}`
@@ -100,7 +106,7 @@ export const EventDetails = ({ event }: EventDetailsProps) => {
               {event.accessLabels.map(label => (
                 <div
                   key={label}
-                  className="flex items-center gap-1 rounded-full bg-gray-100 px-3 py-1 text-sm dark:bg-ray-800"
+                  className="flex items-center gap-1 rounded-full bg-gray-100 px-3 py-1 text-sm dark:bg-slate-800"
                 >
                   {AccessLabelIcons[label]}
                   <span>{label.replace('-', ' ')}</span>
@@ -112,7 +118,7 @@ export const EventDetails = ({ event }: EventDetailsProps) => {
 
         <div>
           <h3 className="font-medium">Description</h3>
-          <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">
+          <p className="mt-1 text-sm text-gray-600 dark:text-slate-400">
             {event.description}
           </p>
           {event.articleUrl && (

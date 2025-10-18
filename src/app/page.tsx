@@ -40,6 +40,8 @@ export default function Home() {
   const [events, setEvents] = useState<RegionEvent[]>([])
   const [showEvents, setShowEvents] = useState(false)
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  const [showLegend, setShowLegend] = useState(false);
+  const [showTerms, setShowTerms] = useState(false);
 
   useEffect(() => {
     const regionMap: { [key: string]: string } = {
@@ -192,118 +194,164 @@ export default function Home() {
 
   // TODO: Add country/region selector logic
 
+  // Regarding the privacy policy, it is a good practice to have one, especially if you plan to collect any user data.
+  // For now, this app does not collect any personal data, so it is not strictly necessary.
+  // However, if you add features like user accounts, analytics, or even a contact form, you should add a privacy policy.
+
   return (
     <div className="flex min-h-screen-dynamic flex-col md:flex-row">
       {/* Left Drawer for Settings */}
       {isDrawerOpen && (
         <div className="fixed inset-0 z-30">
           <div className="absolute inset-0 bg-gray-500 bg-opacity-75 transition-opacity" onClick={() => setIsDrawerOpen(false)}></div>
-          <div className="relative flex w-64 h-full bg-white dark:bg-gray-800 shadow-xl">
-            <div className="p-4">
+          <div className="relative flex w-64 h-full bg-white dark:bg-slate-800 shadow-xl">
+            <div className="p-4 space-y-4">
               <h2 className="text-lg font-semibold">Settings</h2>
-              {/* Settings content goes here */}
+              <div className="flex items-center justify-between">
+                <label htmlFor="show-events-toggle" className="text-sm font-medium">Show Events</label>
+                <button
+                  id="show-events-toggle"
+                  onClick={() => setShowEvents(!showEvents)}
+                  className={`relative inline-flex items-center h-6 rounded-full w-11 transition-colors duration-200 ease-in-out ${showEvents ? 'bg-primary-600' : 'bg-gray-200 dark:bg-gray-700'}`}>
+                  <span
+                    className={`inline-block w-4 h-4 transform bg-white rounded-full transition-transform duration-200 ease-in-out ${showEvents ? 'translate-x-6' : 'translate-x-1'}`}
+                  ></span>
+                </button>
+              </div>
+              <div className="border-t border-gray-200 dark:border-slate-700"></div>
+              <button onClick={() => setShowTerms(true)} className="w-full text-left text-sm font-medium hover:underline">Terms of Use</button>
             </div>
-            <button onClick={() => setIsDrawerOpen(false)} className="absolute top-0 right-0 p-4">
-              &times;
+            <button onClick={() => setIsDrawerOpen(false)} className="absolute top-2 right-2 p-2 rounded-full hover:bg-gray-200 dark:hover:bg-slate-700">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
             </button>
           </div>
         </div>
       )}
 
-      {/* Left panel - Calendar (60%) */}
-      <div className="flex flex-col gap-2 md:gap-4 border-b border-gray-200 p-2 md:p-4 dark:border-gray-700 md:border-b-0 md:border-r md:w-[60vw] w-full min-w-0">
+      {/* Left panel - Calendar (50% on md, 68% on lg) */}
+      <div className="flex flex-col gap-2 md:gap-4 border-b border-gray-200 p-2 md:p-4 dark:border-slate-700 md:border-b-0 md:border-r md:w-[50vw] lg:w-[68vw] w-full min-w-0">
         <div className="flex items-center justify-between">
-          <div className="flex items-center gap-2">
             <Logo />
-            <div className="hidden md:flex">
-              <button onClick={handleToday} className="rounded px-3 py-1 bg-primary-500 text-white hover:bg-primary-600 transition-colors text-sm">Today</button>
+            <div className="flex items-center gap-1 md:gap-2">
+              <div className="hidden md:flex items-center gap-1 md:gap-2">
+                <button onClick={handleToday} className="rounded px-3 py-1 bg-primary-500 text-white hover:bg-primary-600 transition-colors text-sm">Today</button>
+                <button 
+                  onClick={() => setShowEvents(!showEvents)} 
+                  className={`rounded px-2 py-1 md:px-3 md:py-1 border text-xs md:text-sm flex items-center gap-1 ${showEvents ? 'bg-primary-100 dark:bg-primary-800' : ''}`}
+                >
+                  {showEvents ? (
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-1.293-1.293a3 3 0 014.242 0l1.293 1.293m-3.232 3.232l3.232-3.232M3 3l18 18" />
+                    </svg>
+                  ) : (
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.522 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.478 0-8.268-2.943-9.542-7z" />
+                    </svg>
+                  )}
+                  <span className="hidden md:inline">{showEvents ? 'Hide Events' : 'Show Events'}</span>
+                </button>
+              </div>
+              <ThemeToggle />
+              <button onClick={() => setIsDrawerOpen(true)} className="p-1.5 md:p-2 rounded-md hover:bg-gray-100 dark:hover:bg-slate-800 z-50 flex">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 md:h-6 md:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              </button>
             </div>
-          </div>
-          <div className="flex items-center gap-1 md:gap-2">
-            <button onClick={handleToday} className="md:hidden rounded px-2 py-1 bg-primary-500 text-white hover:bg-primary-600 transition-colors text-xs">Today</button>
-            <ThemeToggle />
-            <button onClick={() => setIsDrawerOpen(true)} className="p-1.5 md:p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 md:h-6 md:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.096 2.572-1.065z" />
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-              </svg>
-            </button>
-          </div>
         </div>
         {/* Action Bar */}
-        {/* Navigation Bar */}
-        <div className="flex flex-col gap-2 md:gap-3">
-          {/* Date Navigation */}
-          <div className="flex items-center gap-1 md:gap-2">
-            <button onClick={handlePrev} className="rounded p-1.5 md:p-2 hover:bg-gray-100 dark:hover:bg-gray-800" aria-label="Previous">
-              <span className="text-sm md:text-base">◀</span>
-            </button>
-            <span className="font-semibold text-sm md:text-lg flex-1 text-center truncate">
-            {viewMode === 'year' && year}
-            {viewMode === 'month' && (
-              <>
-                <span className="hidden md:inline">
-                  {currentDate.toLocaleString('default', { month: 'long', year: 'numeric' })}
-                </span>
-                <span className="md:hidden">
-                  {currentDate.toLocaleString('default', { month: 'short', year: 'numeric' })}
-                </span>
-              </>
-            )}
-            {viewMode === 'week' && (
-              <>
-                <span className="hidden md:inline">
-                  Week of {currentDate.toLocaleDateString(undefined, { month: 'long', day: 'numeric' })}
-                </span>
-                <span className="md:hidden">
-                  Week of {currentDate.toLocaleDateString(undefined, { month: 'short', day: 'numeric' })}
-                </span>
-              </>
-            )}
-            {viewMode === 'day' && (
-              <>
-                <span className="hidden md:inline">
-                  {currentDate.toLocaleDateString(undefined, { weekday: 'long', month: 'long', day: 'numeric' })}
-                </span>
-                <span className="md:hidden">
-                  {currentDate.toLocaleDateString(undefined, { weekday: 'short', month: 'short', day: 'numeric' })}
-                </span>
-              </>
-            )}
-            </span>
-            <button onClick={handleNext} className="rounded p-1.5 md:p-2 hover:bg-gray-100 dark:hover:bg-gray-800" aria-label="Next">
-              <span className="text-sm md:text-base">▶</span>
-            </button>
-          </div>
-
-          {/* Controls Bar */}
-          <div className="flex flex-wrap items-center gap-1 md:gap-2 text-sm">
-            <div className="flex items-center gap-1 md:gap-2 order-2 md:order-1">
-              <button className="rounded px-2 py-0.5 md:px-3 md:py-1 border border-gray-300 dark:border-gray-700 text-xs md:text-sm">Indonesia</button>
-              <select
-                className="rounded px-2 py-0.5 md:px-3 md:py-1 border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-xs md:text-sm"
-                value={region}
-                onChange={(e) => setRegion(e.target.value)}
-              >
-                <option value="-">Region</option>
-                <option value="YO">Yogyakarta</option>
-                <option value="SB">Surabaya</option>
-              </select>
-              <button 
-                onClick={() => setShowEvents(!showEvents)} 
-                className={`rounded px-2 py-0.5 md:px-3 md:py-1 border text-xs md:text-sm ${showEvents ? 'bg-primary-100 dark:bg-primary-900' : ''}`}
-              >
-                <span className="md:hidden">Events</span>
-                <span className="hidden md:inline">Show Events</span>
+        <div className="border rounded-lg p-2 md:p-3 dark:border-slate-700">
+          <div className="flex flex-col gap-2 md:gap-3">
+            {/* Date Navigation */}
+            <div className="flex items-center gap-1 md:gap-2">
+              <button onClick={handlePrev} className="rounded-md p-2 hover:bg-gray-100 dark:hover:bg-slate-800 border border-gray-300 dark:border-slate-700" aria-label="Previous">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                </svg>
+              </button>
+              <span className="font-semibold text-sm md:text-lg flex-1 text-center truncate">
+              {viewMode === 'year' && year}
+              {viewMode === 'month' && (
+                <>
+                  <span className="hidden md:inline">
+                    {currentDate.toLocaleString('default', { month: 'long', year: 'numeric' })}
+                  </span>
+                  <span className="md:hidden">
+                    {currentDate.toLocaleString('default', { month: 'short', year: 'numeric' })}
+                  </span>
+                </>
+              )}
+              {viewMode === 'week' && (
+                <>
+                  <span className="hidden md:inline">
+                    Week of {currentDate.toLocaleDateString(undefined, { month: 'long', day: 'numeric' })}
+                  </span>
+                  <span className="md:hidden">
+                    Week of {currentDate.toLocaleDateString(undefined, { month: 'short', day: 'numeric' })}
+                  </span>
+                </>
+              )}
+              {viewMode === 'day' && (
+                <>
+                  <span className="hidden md:inline">
+                    {currentDate.toLocaleDateString(undefined, { weekday: 'long', month: 'long', day: 'numeric' })}
+                  </span>
+                  <span className="md:hidden">
+                    {currentDate.toLocaleDateString(undefined, { weekday: 'short', month: 'short', day: 'numeric' })}
+                  </span>
+                </>
+              )}
+              </span>
+              <button onClick={handleNext} className="rounded-md p-2 hover:bg-gray-100 dark:hover:bg-slate-800 border border-gray-300 dark:border-slate-700" aria-label="Next">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
               </button>
             </div>
 
-            {/* View Mode Switcher */}
-            <div className="flex gap-0.5 md:gap-1 order-1 md:order-2 md:ml-auto">
-              <button onClick={() => setViewMode('year')} className={`px-2 py-0.5 md:px-3 md:py-1 rounded text-xs md:text-sm ${viewMode === 'year' ? 'bg-primary-100 dark:bg-primary-900' : ''}`}>Year</button>
-              <button onClick={() => setViewMode('month')} className={`px-2 py-0.5 md:px-3 md:py-1 rounded text-xs md:text-sm ${viewMode === 'month' ? 'bg-primary-100 dark:bg-primary-900' : ''}`}>Month</button>
-              <button onClick={() => setViewMode('week')} className={`px-2 py-0.5 md:px-3 md:py-1 rounded text-xs md:text-sm ${viewMode === 'week' ? 'bg-primary-100 dark:bg-primary-900' : ''}`}>Week</button>
-              <button onClick={() => setViewMode('day')} className={`px-2 py-0.5 md:px-3 md:py-1 rounded text-xs md:text-sm ${viewMode === 'day' ? 'bg-primary-100 dark:bg-primary-900' : ''}`}>Day</button>
+            {/* Controls Bar */}
+            <div className="flex flex-wrap items-center gap-1 md:gap-2 text-xs">
+              <div className="flex items-center gap-1 md:gap-2 order-2 md:order-1">
+                <button className="rounded-md px-2 py-1 md:px-3 md:py-2 border border-gray-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-xs md:text-sm hover:bg-gray-50 dark:hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-primary-500">Indonesia</button>
+                <select
+                  className="rounded-md px-2 py-1 md:px-3 md:py-2 border border-gray-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-xs md:text-sm hover:bg-gray-50 dark:hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-primary-500"
+                  value={region}
+                  onChange={(e) => setRegion(e.target.value)}
+                >
+                  <option value="-">Region</option>
+                  <option value="YO">Yogyakarta</option>
+                  <option value="SB">Surabaya</option>
+                </select>
+              </div>
+
+              {/* View Mode Switcher */}
+              <div className="flex gap-0.5 md:gap-1 order-1 md:order-2 md:ml-auto">
+                <button onClick={() => setViewMode('year')} className={`px-2 py-1 rounded text-xs ${viewMode === 'year' ? 'bg-primary-100 dark:bg-primary-800' : ''}`}>Year</button>
+                <button onClick={() => setViewMode('month')} className={`px-2 py-1 rounded text-xs ${viewMode === 'month' ? 'bg-primary-100 dark:bg-primary-800' : ''}`}>Month</button>
+                <button onClick={() => setViewMode('week')} className={`px-2 py-1 rounded text-xs ${viewMode === 'week' ? 'bg-primary-100 dark:bg-primary-800' : ''}`}>Week</button>
+                <button onClick={() => setViewMode('day')} className={`px-2 py-1 rounded text-xs ${viewMode === 'day' ? 'bg-primary-100 dark:bg-primary-800' : ''}`}>Day</button>
+              </div>
+              <div className="relative order-3">
+                <button onClick={() => setShowLegend(!showLegend)} className="p-1.5 rounded-md hover:bg-gray-100 dark:hover:bg-slate-800">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </button>
+                {showLegend && (
+                  <div className="absolute right-0 mt-2 w-64 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-lg shadow-lg z-10 p-4">
+                    <h4 className="font-bold mb-2">Legend</h4>
+                    <ul>
+                      <li className="flex items-center mb-1"><span className="w-4 h-4 rounded-full bg-red-500 mr-2"></span> Public Holiday</li>
+                      <li className="flex items-center mb-1"><span className="w-4 h-4 rounded-full bg-purple-500 mr-2"></span> Public Holiday (Weekend)</li>
+                      <li className="flex items-center mb-1"><span className="w-1.5 h-1.5 rounded-full bg-red-500 mr-2"></span> Joint Public Holiday</li>
+                      <li className="flex items-center"><span className="w-1.5 h-1.5 rounded-full bg-gray-500 mr-2"></span> Local Event</li>
+                    </ul>
+                  </div>
+                )}
+              </div>
             </div>
           </div>
         </div>
@@ -406,19 +454,14 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Right panel - Event Details (desktop, 40%) */}
-      <div className="hidden md:flex flex-col w-[40vw] min-w-0 max-w-full h-screen">
+      {/* Right panel - Event Details (desktop, 50% on md, 32% on lg) */}
+      <div className="hidden md:flex flex-col w-[50vw] lg:w-[32vw] min-w-0 max-w-full h-screen">
         {dailyEvents && !selectedEvent ? (
           <DailyEventsList events={dailyEvents} onEventSelect={setSelectedEvent} />
         ) : selectedEvent ? (
           <div className="flex flex-col h-full">
-            {dailyEvents && (
-              <button onClick={() => setSelectedEvent(null)} className="p-2 m-4 border rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 flex-shrink-0">
-                &larr; Back to list
-              </button>
-            )}
             <div className="flex-grow">
-              <EventDetails event={{
+              <EventDetails onBack={() => setSelectedEvent(null)} event={{
                 id: selectedEvent.id,
                 title: selectedEvent.title,
                 description: selectedEvent.description,
@@ -463,6 +506,28 @@ export default function Home() {
           onClose={() => setSelectedEvent(null)}
         />
       </div>
+      <div className="md:hidden fixed bottom-4 right-4 z-10">
+        <button onClick={handleToday} className="rounded-full bg-primary-500 text-white p-3 shadow-lg hover:bg-primary-600 transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+          </svg>
+        </button>
+      </div>
+      {showTerms && (
+        <div className="fixed inset-0 z-40 flex items-center justify-center bg-black bg-opacity-50">
+          <div className="bg-white dark:bg-slate-800 rounded-lg shadow-xl p-6 max-w-lg w-full">
+            <h3 className="text-lg font-bold mb-4">Terms of Use</h3>
+            <div className="text-sm space-y-4 max-h-96 overflow-y-auto">
+                <p>Welcome to Calendr. By using our website, you agree to these terms. Please read them carefully.</p>
+                <p><strong>Content:</strong> Our content is for informational purposes only. We do not guarantee its accuracy and are not liable for any errors.</p>
+                <p><strong>Use of Website:</strong> You may use our website for personal, non-commercial purposes. You may not modify, copy, distribute, transmit, display, perform, reproduce, publish, license, create derivative works from, transfer, or sell any information, software, products or services obtained from this website.</p>
+                <p><strong>Disclaimer:</strong> The materials on Calendr's website are provided on an 'as is' basis. Calendr makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties including, without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights.</p>
+                <p><strong>Limitation of Liability:</strong> In no event shall Calendr or its suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use the materials on Calendr's website, even if Calendr or a Calendr authorized representative has been notified orally or in writing of the possibility of such damage.</p>
+            </div>
+            <button onClick={() => setShowTerms(false)} className="mt-4 rounded-md bg-primary-600 px-4 py-2 text-sm font-medium text-white hover:bg-primary-700">Close</button>
+          </div>
+        </div>
+      )}
     </div>
   )
 }

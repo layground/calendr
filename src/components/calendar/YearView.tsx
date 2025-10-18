@@ -17,7 +17,7 @@ export const YearView: FC<YearViewProps> = ({ year, onMonthSelect, onDateSelect,
   // Mini month grid for year view (compact, not stretched)
   return (
     <div className="h-[calc(100vh-12rem)] overflow-y-auto mobile-snap-y">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 p-2 md:p-4">
+      <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-4 md:gap-6 p-2 md:p-4">
         {Array.from({ length: 12 }).map((_, i) => {
           const days = useMemo(() => getMonthGridDays(year, i), [year, i])
           const weekDays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
@@ -27,9 +27,9 @@ export const YearView: FC<YearViewProps> = ({ year, onMonthSelect, onDateSelect,
           });
 
           return (
-            <div id={`month-grid-${i}`} key={i} className="rounded-lg border bg-white dark:bg-gray-900 p-2 md:p-3 shadow-sm hover:shadow-md transition mobile-snap-center">
+            <div id={`month-grid-${i}`} key={i} className="rounded-lg border bg-white dark:bg-slate-900 p-2 md:p-3 shadow-sm hover:shadow-md transition mobile-snap-center dark:border-slate-700">
               <div
-                className="text-center font-semibold mb-2 text-primary-700 dark:text-primary-300 text-sm cursor-pointer"
+                className="text-center font-semibold mb-2 text-primary-700 dark:text-primary-400 text-sm cursor-pointer"
                 onClick={() => onMonthSelect(i)}
               >
                 {new Date(year, i, 1).toLocaleString('default', { month: 'long' })}
@@ -74,14 +74,14 @@ export const YearView: FC<YearViewProps> = ({ year, onMonthSelect, onDateSelect,
                   const onWeekend = isWeekend(date);
 
                   const dateColorClass = 
-                    onWeekend && isPublicHoliday ? 'text-purple-500' :
-                    onWeekend ? 'text-red-500' :
-                    isPublicHoliday ? 'text-red-500' : '';
+                    onWeekend && isPublicHoliday ? 'text-purple-500 dark:text-purple-400' :
+                    onWeekend ? 'text-red-500 dark:text-red-400' :
+                    isPublicHoliday ? 'text-red-500 dark:text-red-400' : '';
 
                   const inactiveDateColorClass =
-                    onWeekend && isPublicHoliday ? 'text-purple-500 opacity-50' :
-                    onWeekend ? 'text-red-500 opacity-50' :
-                    isPublicHoliday ? 'text-red-500 opacity-50' : 'text-gray-400';
+                    onWeekend && isPublicHoliday ? 'text-purple-500 opacity-50 dark:text-purple-400' :
+                    onWeekend ? 'text-red-500 opacity-50 dark:text-red-400' :
+                    isPublicHoliday ? 'text-red-500 opacity-50 dark:text-red-400' : 'text-gray-400 dark:text-slate-500';
 
                   return (
                     <div
@@ -90,20 +90,18 @@ export const YearView: FC<YearViewProps> = ({ year, onMonthSelect, onDateSelect,
                         flex flex-col items-center justify-center text-center text-xs rounded cursor-pointer
                         aspect-square select-none
                         ${isCurrentMonth ? dateColorClass : inactiveDateColorClass}
-                        ${onWeekend && isCurrentMonth ? 'bg-gray-50 dark:bg-gray-800' : ''}
-                        ${isToday ? 'ring-1 ring-primary-500 bg-primary-100 dark:bg-primary-900' : ''}
-                        ${isSelected ? 'border border-primary-600' : ''}
+                        ${isSelected ? 'bg-primary-200 dark:bg-primary-700' : (isToday ? 'ring-1 ring-primary-500 bg-primary-100 dark:bg-primary-800' : (onWeekend && isCurrentMonth ? 'bg-gray-50 dark:bg-slate-800' : ''))}
                         group
                       `}
                       onClick={() => onDateSelect && onDateSelect(date)}
                     >
                       <span className="font-extrabold">{date.getDate()}</span>
-                      <div className="flex items-center justify-center gap-1 mt-0.5 h-1.5">
+                      <div className="flex items-center justify-center gap-1 mt-0.5 h-1">
                         {isOptionalHoliday && isCurrentMonth && (
-                          <span className="inline-block h-1.5 w-1.5 rounded-full bg-red-500"></span>
+                          <span className="inline-block h-1 w-1 rounded-full bg-red-500"></span>
                         )}
                         {showEvents && isCurrentMonth && dayEvents.some(e => !e.isPublicHoliday && !e.isOptionalHoliday) && (
-                          <span className="inline-block h-1.5 w-1.5 rounded-full bg-gray-500"></span>
+                          <span className="inline-block h-1 w-1 rounded-full bg-gray-500"></span>
                         )}
                       </div>
                     </div>
