@@ -1,626 +1,1026 @@
 {
+  "year": 2025,
   "country": "Indonesia",
-  "countryCode": "ID",
-  "regions": [
+  "country_code": "ID",
+  "region": "Yogyakarta",
+  "region_code": "YK",
+  "events": [
     {
-      "region": "Yogyakarta",
-      "regionCode": "YO",
-      "events": [
-        {
-          "id": "e-yo-25-10-13",
-          "title": "SiBakul Financetopia X Festival Teras Malioboro #3",
-          "description": "A festival celebrating local finance and culture in Malioboro.",
-          "startDate": "2025-10-15T10:00:00+07:00",
-          "endDate": "2025-10-19T22:00:00+07:00",
-          "location": { "name": "Malioboro, Yogyakarta" },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Yogyakarta",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e-yo-25-10-14",
-          "title": "LOAKARTA 2025",
-          "description": "A creative market and festival.",
-          "startDate": "2025-10-18T10:00:00+07:00",
-          "endDate": "2025-10-22T22:00:00+07:00",
-          "location": { "name": "Yogyakarta" },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Yogyakarta",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e-yo-25-10-15",
-          "title": "Selasa Wagen Bulan Batik",
-          "description": "A celebration of Batik on the special Javanese day of Selasa Wagen.",
-          "startDate": "2025-10-14T10:00:00+07:00",
-          "endDate": "2025-10-14T22:00:00+07:00",
-          "location": { "name": "Yogyakarta" },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Yogyakarta",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e-yo-25-10-16",
-          "title": "Jogja International Kids and Teens Fashion Parade 2025",
-          "description": "A fashion event showcasing local and international designers for kids and teens.",
-          "startDate": "2025-10-11T10:00:00+07:00",
-          "endDate": "2025-10-12T22:00:00+07:00",
-          "location": { "name": "Sleman City Hall, Yogyakarta" },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Yogyakarta",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e-yo-25-10-17",
-          "title": "Konser Sumbu Filosofi Yogyakarta",
-          "description": "A concert celebrating the philosophical axis of Yogyakarta.",
-          "startDate": "2025-10-12T19:00:00+07:00",
-          "endDate": "2025-10-12T23:00:00+07:00",
-          "location": { "name": "Yogyakarta" },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Yogyakarta",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e-yo-25-10-18",
-          "title": "Jogja Ekraf Week 2025",
-          "description": "A week-long festival of the creative economy in Yogyakarta.",
-          "startDate": "2025-10-24T10:00:00+07:00",
-          "endDate": "2025-10-26T22:00:00+07:00",
-          "location": { "name": "Atrium Rama, Sleman City Hall" },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Yogyakarta",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e-yo-25-11-2",
-          "title": "Gendhing Budaya 2025",
-          "description": "A cultural performance of traditional Javanese music and dance.",
-          "startDate": "2025-11-30T19:00:00+07:00",
-          "endDate": "2025-11-30T23:00:00+07:00",
-          "location": { "name": "Yogyakarta" },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Yogyakarta",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e-yo-25-09-1",
-          "title": "Jogja Book Fair 2025",
-          "description": "The biggest literacy festival in Yogyakarta featuring book exhibitions, author talks, workshops, and cultural performances.",
-          "startDate": "2025-09-04T10:00:00+07:00",
-          "endDate": "2025-09-14T21:00:00+07:00",
-          "location": {
-            "name": "Taman Budaya Yogyakarta",
-            "coordinates": {
-              "lat": -7.8019,
-              "lng": 110.3644
-            }
-          },
-          "accessLabels": ["public-transport", "wheelchair"],
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Yogyakarta",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e-yo-25-02-1",
-          "title": "Yogyakarta Art Festival",
-          "description": "A month-long celebration of contemporary and traditional art from local and international artists.",
-          "startDate": "2025-02-15T10:00:00+07:00",
-          "endDate": "2025-03-15T21:00:00+07:00",
-          "location": {
-            "name": "Jogja National Museum",
-            "coordinates": {
-              "lat": -7.8019,
-              "lng": 110.3644
-            }
-          },
-          "accessLabels": ["public-transport", "wheelchair"],
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Yogyakarta",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e-yo-25-04-1",
-          "title": "Prambanan Jazz Festival",
-          "description": "An international jazz festival held at the magnificent Prambanan Temple.",
-          "startDate": "2025-04-25T16:00:00+07:00",
-          "endDate": "2025-04-27T23:00:00+07:00",
-          "location": {
-            "name": "Prambanan Temple",
-            "coordinates": {
-              "lat": -7.7520,
-              "lng": 110.4915
-            }
-          },
-          "accessLabels": ["parking", "public-transport"],
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Yogyakarta",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e-yo-25-06-1",
-          "title": "Festival Kesenian Yogyakarta (FKY)",
-          "description": "The Yogyakarta Arts Festival, a major annual event showcasing a wide range of artistic and cultural performances.",
-          "startDate": "2025-06-20T10:00:00+07:00",
-          "endDate": "2025-07-05T22:00:00+07:00",
-          "location": {
-            "name": "Taman Budaya Yogyakarta",
-            "coordinates": {
-              "lat": -7.8019,
-              "lng": 110.3644
-            }
-          },
-          "accessLabels": ["public-transport", "wheelchair"],
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Yogyakarta",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e-yo-25-09-2",
-          "title": "Garebeg Mulud 2025",
-          "description": "Traditional Javanese ceremony at Keraton Yogyakarta celebrating the birth of Prophet Muhammad.",
-          "startDate": "2025-09-05T08:00:00+07:00",
-          "endDate": "2025-09-05T16:00:00+07:00",
-          "location": {
-            "name": "Keraton Yogyakarta",
-            "coordinates": {
-              "lat": -7.8053,
-              "lng": 110.3641
-            }
-          },
-          "accessLabels": ["public-transport"],
-          "isPublicHoliday": false,
-          "isOptionalHoliday": true,
-          "region": "Yogyakarta",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e-yo-25-09-3",
-          "title": "Jogja Coffee Week #5: Journey to the Brew",
-          "description": "The biggest coffee exhibition in Yogyakarta 2025, featuring local coffee vendors, workshops, and tasting sessions.",
-          "startDate": "2025-09-05T10:00:00+07:00",
-          "endDate": "2025-09-07T22:00:00+07:00",
-          "location": {
-            "name": "Jogja Expo Center",
-            "coordinates": {
-              "lat": -7.7953,
-              "lng": 110.4021
-            }
-          },
-          "accessLabels": ["parking", "public-transport"],
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Yogyakarta",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e-yo-25-09-4",
-          "title": "Biennale Jogja 18: KAWRUH – Tanah Lelaku (Phase 1)",
-          "description": "First phase of the art biennale focusing on local knowledge and land-based practices.",
-          "startDate": "2025-09-19T10:00:00+07:00",
-          "endDate": "2025-09-24T18:00:00+07:00",
-          "location": {
-            "name": "Padukuhan Boro, Desa Karangsewu",
-            "coordinates": {
-              "lat": -7.9161,
-              "lng": 110.2141
-            }
-          },
-          "accessLabels": ["public-transport"],
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Yogyakarta",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e-yo-25-09-5",
-          "title": "CRSL Land Festival 2025",
-          "description": "Two-day music festival featuring Hindia, Nadin Amizah, .Feast, JKT48, Lomba Sihir, and more performers.",
-          "startDate": "2025-09-27T14:00:00+07:00",
-          "endDate": "2025-09-28T23:00:00+07:00",
-          "location": {
-            "name": "Lapangan Kenari",
-            "coordinates": {
-              "lat": -7.7827,
-              "lng": 110.3672
-            }
-          },
-          "accessLabels": ["public-transport", "parking"],
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Yogyakarta",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e1",
-          "title": "New Year's Day",
-          "description": "New Year's Day is a public holiday in Indonesia, celebrated with fireworks and cultural events.",
-          "startDate": "2025-01-01T00:00:00+07:00",
-          "endDate": "2025-01-01T23:59:59+07:00",
-          "location": {
-            "name": "Yogyakarta City",
-            "coordinates": {
-              "lat": -7.7956,
-              "lng": 110.3695
-            }
-          },
-          "coverImage": "https://images.unsplash.com/photo-1467810563316-b5476525c0f9",
-          "accessLabels": [
-            "public-transport",
-            "wheelchair"
-          ],
-          "isPublicHoliday": true,
-          "isOptionalHoliday": false,
-          "articleUrl": "https://indonesia.go.id/new-year-2025",
-          "region": "Yogyakarta",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e2",
-          "title": "Isra Mi'raj",
-          "description": "Commemorates the Prophet Muhammad's night journey and ascension to heaven.",
-          "startDate": "2025-01-27T00:00:00+07:00",
-          "endDate": "2025-01-27T23:59:59+07:00",
-          "location": {
-            "name": "Yogyakarta City",
-            "coordinates": {
-              "lat": -7.7956,
-              "lng": 110.3695
-            }
-          },
-          "coverImage": "https://images.unsplash.com/photo-1467810563316-b5476525c0f9",
-          "accessLabels": [
-            "public-transport"
-          ],
-          "isPublicHoliday": true,
-          "isOptionalHoliday": false,
-          "articleUrl": "https://publicholidays.co.id/isra-miraj/",
-          "region": "Yogyakarta",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e3",
-          "title": "Chinese New Year",
-          "description": "Celebration of the Chinese Lunar New Year with cultural performances and family gatherings.",
-          "startDate": "2025-01-29T00:00:00+07:00",
-          "endDate": "2025-01-29T23:59:59+07:00",
-          "location": {
-            "name": "Yogyakarta City",
-            "coordinates": {
-              "lat": -7.7956,
-              "lng": 110.3695
-            }
-          },
-          "coverImage": "https://images.unsplash.com/photo-1467810563316-b5476525c0f9",
-          "accessLabels": [
-            "public-transport"
-          ],
-          "isPublicHoliday": true,
-          "isOptionalHoliday": false,
-          "articleUrl": "https://publicholidays.co.id/chinese-new-year/",
-          "region": "Yogyakarta",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e4",
-          "title": "Good Friday",
-          "description": "Christian holiday commemorating the crucifixion of Jesus Christ.",
-          "startDate": "2025-04-18T00:00:00+07:00",
-          "endDate": "2025-04-18T23:59:59+07:00",
-          "location": {
-            "name": "Yogyakarta City",
-            "coordinates": {
-              "lat": -7.7956,
-              "lng": 110.3695
-            }
-          },
-          "coverImage": "https://images.unsplash.com/photo-1467810563316-b5476525c0f9",
-          "accessLabels": [
-            "public-transport"
-          ],
-          "isPublicHoliday": true,
-          "isOptionalHoliday": false,
-          "articleUrl": "https://publicholidays.co.id/good-friday/",
-          "region": "Yogyakarta",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e5",
-          "title": "Labour Day",
-          "description": "International Workers' Day, celebrated with rallies and parades.",
-          "startDate": "2025-05-01T00:00:00+07:00",
-          "endDate": "2025-05-01T23:59:59+07:00",
-          "location": {
-            "name": "Yogyakarta City",
-            "coordinates": {
-              "lat": -7.7956,
-              "lng": 110.3695
-            }
-          },
-          "coverImage": "https://images.unsplash.com/photo-1467810563316-b5476525c0f9",
-          "accessLabels": [
-            "public-transport"
-          ],
-          "isPublicHoliday": true,
-          "isOptionalHoliday": false,
-          "articleUrl": "https://publicholidays.co.id/labour-day/",
-          "region": "Yogyakarta",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e6",
-          "title": "Independence Day",
-          "description": "Commemorates Indonesia's declaration of independence from the Netherlands in 1945. Features flag ceremonies, parades, and cultural performances.",
-          "startDate": "2025-08-17T08:00:00+07:00",
-          "endDate": "2025-08-17T22:00:00+07:00",
-          "location": {
-            "name": "Malioboro Street, Yogyakarta",
-            "coordinates": {
-              "lat": -7.7932,
-              "lng": 110.3666
-            }
-          },
-          "coverImage": "https://images.unsplash.com/photo-1576353769312-bfefcc20ecdf",
-          "accessLabels": [
-            "parking",
-            "wheelchair",
-            "public-transport"
-          ],
-          "isPublicHoliday": true,
-          "isOptionalHoliday": false,
-          "articleUrl": "https://indonesia.go.id/independence-day-2025",
-          "region": "Yogyakarta",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e-yo-25-10-1",
-          "title": "Land of Leisures",
-          "description": "Theme: 'Resonance of Us'. Live music (Barasuara, Skandal), games, exhibition of 90 curated brands. Free entry.",
-          "startDate": "2025-10-02T00:00:00+07:00",
-          "endDate": "2025-10-05T23:59:59+07:00",
-          "location": {
-            "name": "Ambarrukmo Plaza",
-            "coordinates": {
-              "lat": -7.7821,
-              "lng": 110.4021
-            }
-          },
-          "accessLabels": ["parking", "wheelchair", "public-transport", "free-entry"],
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Yogyakarta",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e-yo-25-10-2",
-          "title": "Malioboro Run",
-          "description": "Route: 5K and 10K, passing through Jalan Malioboro. Running event with a heritage Jogja atmosphere.",
-          "startDate": "2025-10-05T00:00:00+07:00",
-          "endDate": "2025-10-05T23:59:59+07:00",
-          "location": {
-            "name": "Jalan Malioboro",
-            "coordinates": {
-              "lat": -7.7932,
-              "lng": 110.3666
-            }
-          },
-          "accessLabels": ["public-transport", "parking"],
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Yogyakarta",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e-yo-25-10-3",
-          "title": "Babak II Biennale",
-          "description": "Art exhibition held twice a year. Over 60 artists and groups from Indonesia, Asia, and Europe.",
-          "startDate": "2025-10-05T00:00:00+07:00",
-          "endDate": "2025-11-20T23:59:59+07:00",
-          "location": {
-            "name": "Museum Benteng Vredeburg, Kantor Pos Besar, Desa Bangunjiwo, Desa Panggungharjo",
-            "coordinates": {
-              "lat": -7.8001,
-              "lng": 110.3652
-            }
-          },
-          "accessLabels": ["public-transport", "wheelchair", "free-entry"],
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Yogyakarta",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e-yo-25-10-4",
-          "title": "Kustomfest 2025",
-          "description": "Custom bike show, custom car show. Ticket Price: Rp100,000 per day or Rp160,000 for two days.",
-          "startDate": "2025-10-04T00:00:00+07:00",
-          "endDate": "2025-10-05T23:59:59+07:00",
-          "location": {
-            "name": "Jogja Expo Center (JEC)",
-            "coordinates": {
-              "lat": -7.7953,
-              "lng": 110.4021
-            }
-          },
-          "accessLabels": ["parking", "public-transport", "wheelchair"],
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Yogyakarta",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e-yo-25-10-5",
-          "title": "Batik City Run",
-          "description": "Routes: 5K (Rp175,000) and 10K (Rp200,000). Inclusions: Jersey, mini batik scarf, medal, and other facilities.",
-          "startDate": "2025-10-12T00:00:00+07:00",
-          "endDate": "2025-10-12T23:59:59+07:00",
-          "location": {
-            "name": "Museum Benteng Vredeburg",
-            "coordinates": {
-              "lat": -7.8001,
-              "lng": 110.3652
-            }
-          },
-          "accessLabels": ["public-transport", "parking"],
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Yogyakarta",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e-yo-25-10-6",
-          "title": "Glagah Tropical Run",
-          "description": "Time: 06.00 WIB until finished. Colorful running event with a tropical aerotropolis background and Instagrammable spots. Ticket Price: Starting from Rp150,000 per person, includes facilities and attractive door prizes.",
-          "startDate": "2025-10-19T06:00:00+07:00",
-          "endDate": "2025-10-19T23:59:59+07:00",
-          "location": {
-            "name": "Glagah Beach, Kulon Progo",
-            "coordinates": {
-              "lat": -7.9116,
-              "lng": 110.0550
-            }
-          },
-          "accessLabels": ["parking", "public-transport"],
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Yogyakarta",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e-yo-25-10-7",
-          "title": "Jelajah Ruang Menoreh Geo Heritage Fun Run & Walk",
-          "description": "Fun run & walk, dangdut entertainment, art and cultural performances, talk show about geo heritage. Ticket Price: Starting from Rp25,000 to Rp125,000.",
-          "startDate": "2025-10-25T00:00:00+07:00",
-          "endDate": "2025-10-25T23:59:59+07:00",
-          "location": {
-            "name": "Lapangan Boro Banjarasri"
-          },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Yogyakarta",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e-yo-25-10-8",
-          "title": "Lantern Festival de Paris",
-          "description": "Lantern festival, stand-up comedy, live music (Tyok Satrio). Ticket Price: Starting from Rp175,000 for one person to Rp900,000 for 5 people.",
-          "startDate": "2025-10-25T00:00:00+07:00",
-          "endDate": "2025-10-25T23:59:59+07:00",
-          "location": {
-            "name": "Parangtritis Beach Area"
-          },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Yogyakarta",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e-yo-25-10-9",
-          "title": "Nandur Srawung #12 Annual Arts Exhibition",
-          "description": "Art exhibition with the theme 'Eling | Awakening', featuring cross-artist collaborations and cultural performances.",
-          "startDate": "2025-10-09T10:00:00+07:00",
-          "endDate": "2025-10-18T21:00:00+07:00",
-          "location": {
-            "name": "Gedung Militaire Societeit, Taman Budaya Yogyakarta",
-            "coordinates": {
-              "lat": -7.8019,
-              "lng": 110.3644
-            }
-          },
-          "accessLabels": ["public-transport", "wheelchair"],
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Yogyakarta",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e-yo-25-10-10",
-          "title": "Festival Kebudayaan Yogyakarta 2025",
-          "description": "Annual cultural festival showcasing traditional arts, performances, and exhibitions.",
-          "startDate": "2025-10-11T09:00:00+07:00",
-          "endDate": "2025-10-18T22:00:00+07:00",
-          "location": {
-            "name": "Various locations in Yogyakarta",
-            "coordinates": {
-              "lat": -7.7956,
-              "lng": 110.3695
-            }
-          },
-          "accessLabels": ["public-transport"],
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Yogyakarta",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e-yo-25-10-11",
-          "title": "Bedog ArtsFest 2025: Sambung Menyambung",
-          "description": "Three-day arts festival featuring art performances, exhibitions, workshops, community market, and film screenings. Free entry.",
-          "startDate": "2025-10-17T16:00:00+07:00",
-          "endDate": "2025-10-19T22:00:00+07:00",
-          "location": {
-            "name": "Studio Banjarmili, Bantaran Sungai Bedog",
-            "coordinates": {
-              "lat": -7.7851,
-              "lng": 110.3505
-            }
-          },
-          "accessLabels": ["public-transport", "free-entry"],
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Yogyakarta",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e-yo-25-10-12",
-          "title": "Comic Paradise 5 (Comipara 2025)",
-          "description": "Comic and creative culture festival featuring 350+ creator booths, guild missions, talkshows, and creative competitions. Entry: Rp50,000/day.",
-          "startDate": "2025-10-18T10:00:00+07:00",
-          "endDate": "2025-10-19T21:00:00+07:00",
-          "location": {
-            "name": "Jogja Expo Center, Grand Bima Hall",
-            "coordinates": {
-              "lat": -7.7953,
-              "lng": 110.4021
-            }
-          },
-          "accessLabels": ["parking", "public-transport"],
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Yogyakarta",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e-yo-25-11-1",
-          "title": "SARGA FESTIVAL 2025",
-          "description": "Where Music Meets Vibes! A music festival celebrating local and national artists.",
-          "startDate": "2025-11-08T15:00:00+07:00",
-          "endDate": "2025-11-08T23:00:00+07:00",
-          "location": {
-            "name": "Yogyakarta",
-            "coordinates": {
-              "lat": -7.7956,
-              "lng": 110.3695
-            }
-          },
-          "accessLabels": ["public-transport", "parking"],
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Yogyakarta",
-          "country": "Indonesia"
-        }
-      ]
+      "id": "e-yo-25-gen-3",
+      "title": "Pameran Temporer Parama Iswari",
+      "description": "Pameran yang menampilkan koleksi adibusana dan perhiasan milik permaisuri Keraton Yogyakarta dari masa ke masa, digelar dalam rangka 'Satu Abad Kriya' di Keraton.",
+      "start_date_time": "2024-10-05T09:00:00+07:00",
+      "end_date_time": "2025-01-26T17:00:00+07:00",
+      "labels": [
+        "budaya",
+        "pameran",
+        "sejarah"
+      ],
+      "location": {
+        "address": "Kompleks Kedhaton, Keraton Yogyakarta, Jl. Rotowijayan Blok No. 1, Panembahan, Kota Yogyakarta",
+        "link_to_maps": "https://maps.app.goo.gl/3Jq2xS8jQjYQJq4t7"
+      },
+      "image": "https://visitingjogja.jogjaprov.go.id/wp-content/uploads/2024/10/WhatsApp-Image-2024-10-05-at-13.39.23-1.jpeg",
+      "source": {
+        "name": "Visiting Jogja",
+        "link": "https://visitingjogja.jogjaprov.go.id/43477/pameran-temporer-parama-iswari-5-oktober-2024-26-januari-2025/"
+      }
+    },
+    {
+      "id": "e1",
+      "title": "Hari Tahun Baru Masehi",
+      "description": "Hari Tahun Baru adalah hari libur umum di Indonesia, dirayakan dengan kembang api dan acara budaya.",
+      "start_date_time": "2025-01-01T00:00:00+07:00",
+      "end_date_time": "2025-01-01T23:59:59+07:00",
+      "labels": [
+        "public-transport",
+        "wheelchair",
+        "libur-nasional"
+      ],
+      "location": {
+        "address": "Kota Yogyakarta",
+        "link_to_maps": null
+      },
+      "image": "https://images.unsplash.com/photo-1467810563316-b5476525c0f9",
+      "source": {
+        "name": "Indonesia.go.id",
+        "link": "https://indonesia.go.id/new-year-2025"
+      }
+    },
+    {
+      "id": "e-yo-25-gen-1",
+      "title": "Pentas Seni Selasa Wagen",
+      "description": "Acara rutin bulanan yang digelar setiap hari Selasa Wage di sepanjang Jalan Malioboro. Menampilkan berbagai atraksi seni dan budaya dari berbagai komunitas di Yogyakarta.",
+      "start_date_time": "2025-01-01T18:00:00+07:00",
+      "end_date_time": "2025-12-31T22:00:00+07:00",
+      "labels": [
+        "seni",
+        "budaya",
+        "gratis"
+      ],
+      "location": {
+        "address": "Sepanjang Jalan Malioboro, Yogyakarta",
+        "link_to_maps": "https://maps.app.goo.gl/P4y4W9s82t45P81464"
+      },
+      "image": "https://assets.pikiran-rakyat.com/crop/0x0:0x0/x/photo/2022/07/26/160893540.jpg",
+      "source": {
+        "name": "TVRI News",
+        "link": "https://hiburan.tvrinews.com/berita/tkl5knh-188-agenda-kebudayaan-siap-ramaikan-yogyakarta-di-tahun-2025"
+      }
+    },
+    {
+      "id": "e-yo-25-gen-2",
+      "title": "Sendratari Ramayana Prambanan",
+      "description": "Pertunjukan spektakuler yang menceritakan kisah legendaris Ramayana dengan latar Candi Prambanan. Diadakan secara rutin beberapa kali seminggu, terutama saat musim kemarau di panggung terbuka.",
+      "start_date_time": "2025-01-01T19:30:00+07:00",
+      "end_date_time": "2025-12-31T21:30:00+07:00",
+      "labels": [
+        "seni-pertunjukan",
+        "budaya"
+      ],
+      "location": {
+        "address": "Panggung Terbuka Ramayana, Kompleks Candi Prambanan, Jl. Raya Solo - Yogyakarta No.16, Kranggan, Bokoharjo, Sleman, DIY 55571",
+        "link_to_maps": "https://maps.app.goo.gl/P4y4W9s82t45P81460"
+      },
+      "image": "https://borobudurpark.com/wp-content/uploads/2022/10/sendratari-ramayana-prambanan-pertunjukan-spektakuler-di-yogyakarta.jpg",
+      "source": {
+        "name": "Borobudur Park",
+        "link": "https://borobudurpark.com/sendratari-ramayana/"
+      }
+    },
+    {
+      "id": "e2",
+      "title": "Isra Mi'raj",
+      "description": "Memperingati perjalanan malam Nabi Muhammad SAW dan kenaikan beliau ke surga.",
+      "start_date_time": "2025-01-27T00:00:00+07:00",
+      "end_date_time": "2025-01-27T23:59:59+07:00",
+      "labels": [
+        "public-transport",
+        "libur-nasional"
+      ],
+      "location": {
+        "address": "Kota Yogyakarta",
+        "link_to_maps": null
+      },
+      "image": "https://images.unsplash.com/photo-1467810563316-b5476525c0f9",
+      "source": {
+        "name": "Public Holidays",
+        "link": "https://publicholidays.co.id/isra-miraj/"
+      }
+    },
+    {
+      "id": "e3",
+      "title": "Tahun Baru Imlek",
+      "description": "Perayaan Tahun Baru Lunar Tionghoa dengan pertunjukan budaya dan kumpul keluarga.",
+      "start_date_time": "2025-01-29T00:00:00+07:00",
+      "end_date_time": "2025-01-29T23:59:59+07:00",
+      "labels": [
+        "public-transport",
+        "libur-nasional"
+      ],
+      "location": {
+        "address": "Kota Yogyakarta",
+        "link_to_maps": null
+      },
+      "image": "https://images.unsplash.com/photo-1467810563316-b5476525c0f9",
+      "source": {
+        "name": "Public Holidays",
+        "link": "https://publicholidays.co.id/chinese-new-year/"
+      }
+    },
+    {
+      "id": "e-yo-25-02-1",
+      "title": "Festival Seni Yogyakarta",
+      "description": "Perayaan seni kontemporer dan tradisional selama sebulan penuh dari seniman lokal dan internasional.",
+      "start_date_time": "2025-02-15T10:00:00+07:00",
+      "end_date_time": "2025-03-15T21:00:00+07:00",
+      "labels": [
+        "public-transport",
+        "wheelchair",
+        "seni",
+        "pameran"
+      ],
+      "location": {
+        "address": "Jogja National Museum",
+        "link_to_maps": "https://maps.app.goo.gl/uX3QW62f27Lh4j8D8"
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e-yo-25-gen-4",
+      "title": "Upacara Labuhan Merapi",
+      "description": "Upacara adat tahunan dari Keraton Yogyakarta yang dilaksanakan di Gunung Merapi sebagai bentuk rasa syukur dan untuk memohon keselamatan. Upacara ini merupakan bagian dari peringatan Tingalan Dalem Jumenengan (ulang tahun penobatan) Sri Sultan.",
+      "start_date_time": "2025-02-20T08:00:00+07:00",
+      "end_date_time": "2025-02-20T12:00:00+07:00",
+      "labels": [
+        "adat",
+        "budaya"
+      ],
+      "location": {
+        "address": "Bangsal Sri Manganti, Keraton Yogyakarta dan Lereng Gunung Merapi (via Kinahrejo), Sleman",
+        "link_to_maps": "https://maps.app.goo.gl/P4y4W9s82t45P81460"
+      },
+      "image": "https://assets.pikiran-rakyat.com/crop/0x0:0x0/x/photo/2023/02/09/1665427503.jpeg",
+      "source": {
+        "name": "Kraton Jogja",
+        "link": "https://www.kratonjogja.id/upacara-adat/29/upacara-labuhan"
+      }
+    },
+    {
+      "id": "e-yo-25-gen-5",
+      "title": "Jogja Fashion Week (JFW)",
+      "description": "Acara mode tahunan terbesar di Yogyakarta yang menampilkan karya-karya perancang busana lokal dan nasional. Biasanya berlangsung selama beberapa hari dengan peragaan busana, pameran, dan talkshow.",
+      "start_date_time": "2025-03-05T10:00:00+07:00",
+      "end_date_time": "2025-03-09T22:00:00+07:00",
+      "labels": [
+        "fashion",
+        "pameran"
+      ],
+      "location": {
+        "address": "Jogja Expo Center (JEC) atau lokasi lain yang ditentukan.",
+        "link_to_maps": "https://maps.app.goo.gl/5M78z6hVf4n6WpY78"
+      },
+      "image": "https://www.indonesianfashionchamber.com/wp-content/uploads/2023/08/IMG_7781.jpg",
+      "source": {
+        "name": "Indonesian Fashion Chamber",
+        "link": "https://www.indonesianfashionchamber.com/"
+      }
+    },
+    {
+      "id": "e-yo-25-gen-6",
+      "title": "Garebeg Sawal",
+      "description": "Upacara adat Keraton Yogyakarta untuk merayakan Hari Raya Idul Fitri. Prosesi ini melibatkan arak-arakan gunungan dari keraton ke Masjid Gedhe sebagai simbol sedekah raja kepada rakyatnya.",
+      "start_date_time": "2025-03-31T08:00:00+07:00",
+      "end_date_time": "2025-03-31T12:00:00+07:00",
+      "labels": [
+        "adat",
+        "budaya"
+      ],
+      "location": {
+        "address": "Dari Keraton Yogyakarta ke Masjid Gedhe Kauman, Yogyakarta",
+        "link_to_maps": "https://maps.app.goo.gl/3Jq2xS8jQjYQJq4t7"
+      },
+      "image": "https://media.jogjaprov.go.id/image/2024/04/11/OPD.Diskominfo/214341c2-c651-40b4-a690-09c071d701ad.jpg",
+      "source": {
+        "name": "Pemerintah DIY",
+        "link": "https://jogjaprov.go.id/berita/detail-berita/wujud-rasa-syukur-keraton-yogyakarta-bagikan-7-gunungan-garebeg-syawal"
+      }
+    },
+    {
+      "id": "e4",
+      "title": "Jumat Agung",
+      "description": "Hari libur umat Kristen untuk memperingati penyaliban Yesus Kristus.",
+      "start_date_time": "2025-04-18T00:00:00+07:00",
+      "end_date_time": "2025-04-18T23:59:59+07:00",
+      "labels": [
+        "public-transport",
+        "libur-nasional"
+      ],
+      "location": {
+        "address": "Kota Yogyakarta",
+        "link_to_maps": null
+      },
+      "image": "https://images.unsplash.com/photo-1467810563316-b5476525c0f9",
+      "source": {
+        "name": "Public Holidays",
+        "link": "https://publicholidays.co.id/good-friday/"
+      }
+    },
+    {
+      "id": "e-yo-25-04-1",
+      "title": "Prambanan Jazz Festival",
+      "description": "Sebuah festival jazz internasional yang diadakan di Candi Prambanan yang megah.",
+      "start_date_time": "2025-04-25T16:00:00+07:00",
+      "end_date_time": "2025-04-27T23:00:00+07:00",
+      "labels": [
+        "parking",
+        "public-transport",
+        "musik"
+      ],
+      "location": {
+        "address": "Candi Prambanan",
+        "link_to_maps": "https://maps.app.goo.gl/P4y4W9s82t45P81460"
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e5",
+      "title": "Hari Buruh",
+      "description": "Hari Pekerja Internasional, dirayakan dengan unjuk rasa dan pawai.",
+      "start_date_time": "2025-05-01T00:00:00+07:00",
+      "end_date_time": "2025-05-01T23:59:59+07:00",
+      "labels": [
+        "public-transport",
+        "libur-nasional"
+      ],
+      "location": {
+        "address": "Kota Yogyakarta",
+        "link_to_maps": null
+      },
+      "image": "https://images.unsplash.com/photo-1467810563316-b5476525c0f9",
+      "source": {
+        "name": "Public Holidays",
+        "link": "https://publicholidays.co.id/labour-day/"
+      }
+    },
+    {
+      "id": "e-yo-25-gen-7",
+      "title": "Jogja Art Week (JAW)",
+      "description": "Sebuah perayaan seni kontemporer di seluruh kota, menampilkan pameran, bincang seniman, dan studio terbuka di berbagai galeri dan ruang seni di Yogyakarta.",
+      "start_date_time": "2025-06-01T10:00:00+07:00",
+      "end_date_time": "2025-07-31T21:00:00+07:00",
+      "labels": [
+        "seni",
+        "pameran"
+      ],
+      "location": {
+        "address": "Jl. Prof. DR. Ki Amri Yahya No.1, Pakuncen, Wirobrajan, Kota Yogyakarta, DIY 55253 (Pusat utama di Jogja National Museum, tersebar di berbagai lokasi)",
+        "link_to_maps": "https://maps.app.goo.gl/uX3QW62f27Lh4j8D8"
+      },
+      "image": "https://i0.wp.com/www.sarasvati.co.id/wp-content/uploads/2023/06/Pamflet-IGS-3-JAW-5.jpg",
+      "source": {
+        "name": "Situs Resmi Jogja Art Weeks",
+        "link": "https://jogjaartweeks.com/"
+      }
+    },
+    {
+      "id": "e-yo-25-06-1",
+      "title": "Festival Kesenian Yogyakarta (FKY)",
+      "description": "Festival Kesenian Yogyakarta, sebuah acara tahunan besar yang menampilkan berbagai pertunjukan seni dan budaya. Tanggal merupakan estimasi.",
+      "start_date_time": "2025-06-20T10:00:00+07:00",
+      "end_date_time": "2025-07-05T22:00:00+07:00",
+      "labels": [
+        "public-transport",
+        "wheelchair",
+        "seni",
+        "budaya"
+      ],
+      "location": {
+        "address": "Taman Budaya Yogyakarta (TBY), Jl. Sriwedani No.1, Ngupasan, Gondomanan, Kota Yogyakarta",
+        "link_to_maps": "https://maps.app.goo.gl/P4y4W9s82t45P81461"
+      },
+      "image": "https://assets.pikiran-rakyat.com/crop/0x0:0x0/x/photo/2023/09/16/3663004383.jpg",
+      "source": {
+        "name": "Dinas Kebudayaan DIY",
+        "link": "https://budaya.jogjaprov.go.id/"
+      }
+    },
+    {
+      "id": "e-yo-25-gen-8",
+      "title": "Mandiri Jogja Marathon",
+      "description": "Acara lari maraton tahunan berskala internasional dengan rute yang melintasi pemandangan alam dan pedesaan di sekitar kompleks Candi Prambanan.",
+      "start_date_time": "2025-06-22T05:00:00+07:00",
+      "end_date_time": "2025-06-22T12:00:00+07:00",
+      "labels": [
+        "olahraga"
+      ],
+      "location": {
+        "address": "Kompleks Candi Prambanan, Jl. Raya Solo - Yogyakarta No.16, Kranggan, Bokoharjo, Sleman",
+        "link_to_maps": "https://maps.app.goo.gl/P4y4W9s82t45P81460"
+      },
+      "image": "https://majalahcsr.id/wp-content/uploads/2023/06/Bank-Mandiri-Gelar-Mandiri-Jogja-Marathon-2023-di-Prambanan-Ajak-5.000-Pelari-Nikmati-Keindahan-Alam-Yogyakarta.jpg",
+      "source": {
+        "name": "Tempo.co",
+        "link": "https://www.tempo.co/hiburan/agenda-yogyakarta-juni-2025-ada-artjog-hingga-maraton-1632866"
+      }
+    },
+    {
+      "id": "e-yo-25-gen-9",
+      "title": "Upacara Adat Mubeng Beteng",
+      "description": "Ritual tahunan Keraton Yogyakarta untuk menyambut Tahun Baru Jawa (1 Suro). Abdi dalem dan masyarakat berjalan kaki dalam diam (tapa bisu) mengelilingi benteng keraton.",
+      "start_date_time": "2025-06-27T20:00:00+07:00",
+      "end_date_time": "2025-06-28T01:00:00+07:00",
+      "labels": [
+        "adat",
+        "budaya"
+      ],
+      "location": {
+        "address": "Berawal dan berakhir di Pelataran Kamandungan Kidul, Keraton Yogyakarta",
+        "link_to_maps": "https://maps.app.goo.gl/3Jq2xS8jQjYQJq4t7"
+      },
+      "image": "https://asset.kompas.com/crops/p8bKqO7a8S8V0i8Z_9p6d5R4b3I=/0x0:1280x853/750x500/data/photo/2023/07/19/64b73b52d2b27.jpg",
+      "source": {
+        "name": "Kompas.com",
+        "link": "https://yogyakarta.kompas.com/read/2023/07/18/173909778/malam-1-suro-di-yogyakarta-ada-tradisi-mubeng-beteng-dan-jamasan-pusaka"
+      }
+    },
+    {
+      "id": "e-yo-25-gen-10",
+      "title": "ARTJOG",
+      "description": "Pameran dan pasar seni rupa kontemporer tahunan terbesar di Indonesia. Menjadi tolok ukur penting dalam kancah seni rupa Asia Tenggara dan menarik puluhan ribu pengunjung setiap tahunnya.",
+      "start_date_time": "2025-06-28T10:00:00+07:00",
+      "end_date_time": "2025-08-31T21:00:00+07:00",
+      "labels": [
+        "seni",
+        "pameran",
+        "wheelchair"
+      ],
+      "location": {
+        "address": "Jogja National Museum (JNM), Jl. Prof. DR. Ki Amri Yahya No.1, Pakuncen, Wirobrajan, Kota Yogyakarta, DIY 55253",
+        "link_to_maps": "https://maps.app.goo.gl/uX3QW62f27Lh4j8D8"
+      },
+      "image": "https://www.static-src.com/s3/hl-pdp-images/blog/2023/07/201103_most-anticipated-annual-art-exhibition-artjog-is-back_Nl21.jpg",
+      "source": {
+        "name": "Situs Resmi ARTJOG",
+        "link": "http://www.artjog.id/"
+      }
+    },
+    {
+      "id": "e-yo-25-gen-11",
+      "title": "Pasar Kangen Jogja",
+      "description": "Acara tahunan yang menghadirkan nostalgia melalui kuliner, kerajinan tangan, dan kesenian tempo dulu. Pengunjung dapat menikmati jajanan langka dan melihat barang-barang antik.",
+      "start_date_time": "2025-07-18T10:00:00+07:00",
+      "end_date_time": "2025-07-27T21:00:00+07:00",
+      "labels": [
+        "kuliner",
+        "budaya",
+        "pasar"
+      ],
+      "location": {
+        "address": "Taman Budaya Yogyakarta (TBY), Jl. Sriwedani No.1, Ngupasan, Gondomanan, Kota Yogyakarta, DIY 55122",
+        "link_to_maps": "https://maps.app.goo.gl/P4y4W9s82t45P81461"
+      },
+      "image": "https://asset.kompas.com/crops/W6d6h4H1SjUjM3S1m0Q1R9B1y1o=/0x0:1080x720/750x500/data/photo/2023/07/28/64c39f046c827.jpg",
+      "source": {
+        "name": "Instagram Pasar Kangen",
+        "link": "https://www.instagram.com/pasarkangen/"
+      }
+    },
+    {
+      "id": "e6",
+      "title": "Hari Kemerdekaan",
+      "description": "Memperingati proklamasi kemerdekaan Indonesia dari Belanda pada tahun 1945. Diisi dengan upacara bendera, pawai, dan pertunjukan budaya.",
+      "start_date_time": "2025-08-17T08:00:00+07:00",
+      "end_date_time": "2025-08-17T22:00:00+07:00",
+      "labels": [
+        "parking",
+        "wheelchair",
+        "public-transport",
+        "libur-nasional"
+      ],
+      "location": {
+        "address": "Jalan Malioboro, Yogyakarta",
+        "link_to_maps": null
+      },
+      "image": "https://images.unsplash.com/photo-1576353769312-bfefcc20ecdf",
+      "source": {
+        "name": "Indonesia.go.id",
+        "link": "https://indonesia.go.id/independence-day-2025"
+      }
+    },
+    {
+      "id": "e-yo-25-gen-12",
+      "title": "Sekaten",
+      "description": "Festival tradisi Jawa yang berlangsung selama seminggu untuk memperingati kelahiran Nabi Muhammad SAW. Dimeriahkan dengan pasar malam yang menjual makanan tradisional, kerajinan, dan hiburan.",
+      "start_date_time": "2025-08-30T10:00:00+07:00",
+      "end_date_time": "2025-09-05T22:00:00+07:00",
+      "labels": [
+        "adat",
+        "budaya",
+        "pasar"
+      ],
+      "location": {
+        "address": "Alun-Alun Utara, Jl. Alun-Alun Utara, Panembahan, Kecamatan Kraton, Kota Yogyakarta, DIY 55131",
+        "link_to_maps": "https://maps.app.goo.gl/P4y4W9s82t45P8146"
+      },
+      "image": "https://events.pinhome.id/wp-content/uploads/2023/11/upacara-adat-sekaten-yogyakarta-source-kratonjogja-1024x682.jpg",
+      "source": {
+        "name": "Situs Resmi Kraton Jogja",
+        "link": "https://www.kratonjogja.id/"
+      }
+    },
+    {
+      "id": "e-yo-25-09-1",
+      "title": "Jogja Book Fair 2025",
+      "description": "Festival literasi terbesar di Yogyakarta yang menampilkan pameran buku, bincang penulis, lokakarya, dan pertunjukan budaya.",
+      "start_date_time": "2025-09-04T10:00:00+07:00",
+      "end_date_time": "2025-09-14T21:00:00+07:00",
+      "labels": [
+        "public-transport",
+        "wheelchair",
+        "literasi",
+        "pameran"
+      ],
+      "location": {
+        "address": "Taman Budaya Yogyakarta",
+        "link_to_maps": "https://maps.app.goo.gl/P4y4W9s82t45P81461"
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e-yo-25-09-2",
+      "title": "Garebeg Mulud 2025",
+      "description": "Upacara tradisional Jawa di Keraton Yogyakarta untuk merayakan kelahiran Nabi Muhammad. Merupakan puncak dari perayaan Sekaten, ditandai dengan arak-arakan gunungan.",
+      "start_date_time": "2025-09-05T08:00:00+07:00",
+      "end_date_time": "2025-09-05T16:00:00+07:00",
+      "labels": [
+        "public-transport",
+        "adat",
+        "budaya"
+      ],
+      "location": {
+        "address": "Keraton Yogyakarta",
+        "link_to_maps": "https://maps.app.goo.gl/3Jq2xS8jQjYQJq4t7"
+      },
+      "image": "https://static.promediateknologi.id/crop/0x0:0x0/750x500/webp/photo/p2/14/2023/09/28/Grebeg-Mulud-3204961555.jpg",
+      "source": {
+        "name": "Situs Resmi Kraton Jogja",
+        "link": "https://www.kratonjogja.id/"
+      }
+    },
+    {
+      "id": "e-yo-25-09-3",
+      "title": "Jogja Coffee Week #5: Journey to the Brew",
+      "description": "Pameran kopi terbesar di Yogyakarta 2025, menampilkan penjual kopi lokal, lokakarya, dan sesi mencicipi.",
+      "start_date_time": "2025-09-05T10:00:00+07:00",
+      "end_date_time": "2025-09-07T22:00:00+07:00",
+      "labels": [
+        "parking",
+        "public-transport",
+        "kuliner",
+        "pameran"
+      ],
+      "location": {
+        "address": "Jogja Expo Center",
+        "link_to_maps": "https://maps.app.goo.gl/5M78z6hVf4n6WpY78"
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e-yo-25-09-4",
+      "title": "Biennale Jogja 18: KAWRUH – Tanah Lelaku (Tahap 1)",
+      "description": "Tahap pertama dari biennale seni yang berfokus pada pengetahuan lokal dan praktik berbasis lahan.",
+      "start_date_time": "2025-09-19T10:00:00+07:00",
+      "end_date_time": "2025-09-24T18:00:00+07:00",
+      "labels": [
+        "public-transport",
+        "seni",
+        "pameran"
+      ],
+      "location": {
+        "address": "Padukuhan Boro, Desa Karangsewu",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e-yo-25-09-5",
+      "title": "CRSL Land Festival 2025",
+      "description": "Festival musik dua hari yang menampilkan Hindia, Nadin Amizah, .Feast, JKT48, Lomba Sihir, dan penampil lainnya.",
+      "start_date_time": "2025-09-27T14:00:00+07:00",
+      "end_date_time": "2025-09-28T23:00:00+07:00",
+      "labels": [
+        "public-transport",
+        "parking",
+        "musik"
+      ],
+      "location": {
+        "address": "Lapangan Kenari",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e-yo-25-10-1",
+      "title": "Land of Leisures",
+      "description": "Tema: 'Resonance of Us'. Musik langsung (Barasuara, Skandal), permainan, pameran dari 90 merek terkurasi. Masuk gratis.",
+      "start_date_time": "2025-10-02T00:00:00+07:00",
+      "end_date_time": "2025-10-05T23:59:59+07:00",
+      "labels": [
+        "parking",
+        "wheelchair",
+        "public-transport",
+        "free-entry",
+        "musik",
+        "pameran"
+      ],
+      "location": {
+        "address": "Ambarrukmo Plaza",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e-yo-25-10-4",
+      "title": "Kustomfest 2025",
+      "description": "Festival kustom kultur terbesar di Indonesia, menampilkan motor dan mobil kustom, serta seni, musik, dan pameran produk terkait. Harga Tiket: Rp100.000 per hari atau Rp160.000 untuk dua hari.",
+      "start_date_time": "2025-10-04T00:00:00+07:00",
+      "end_date_time": "2025-10-05T23:59:59+07:00",
+      "labels": [
+        "parking",
+        "public-transport",
+        "wheelchair",
+        "otomotif",
+        "pameran"
+      ],
+      "location": {
+        "address": "Jogja Expo Center (JEC)",
+        "link_to_maps": "https://maps.app.goo.gl/5M78z6hVf4n6WpY78"
+      },
+      "image": "https://www.naikmotor.com/wp-content/uploads/2023/09/WhatsApp-Image-2023-09-29-at-15.01.52.jpeg",
+      "source": {
+        "name": "Situs Resmi Kustomfest",
+        "link": "https://kustomfest.com/"
+      }
+    },
+    {
+      "id": "e-yo-25-10-3",
+      "title": "Babak II Biennale",
+      "description": "Pameran seni yang diadakan dua kali setahun. Menampilkan lebih dari 60 seniman dan kelompok dari Indonesia, Asia, dan Eropa.",
+      "start_date_time": "2025-10-05T00:00:00+07:00",
+      "end_date_time": "2025-11-20T23:59:59+07:00",
+      "labels": [
+        "public-transport",
+        "wheelchair",
+        "free-entry",
+        "seni",
+        "pameran"
+      ],
+      "location": {
+        "address": "Museum Benteng Vredeburg, Kantor Pos Besar, Desa Bangunjiwo, Desa Panggungharjo",
+        "link_to_maps": null
+      },
+      "image": "https://biennalejogja.org/wp-content/uploads/2023/09/Biennale-Jogja-17-TITEN-1-scaled.jpg",
+      "source": {
+        "name": "Biennale Jogja",
+        "link": "https://biennalejogja.org/"
+      }
+    },
+    {
+      "id": "e-yo-25-gen-13",
+      "title": "Wayang Jogja Night Carnival",
+      "description": "Karnaval jalanan spektakuler yang diadakan pada malam hari untuk merayakan ulang tahun Kota Yogyakarta. Menampilkan pertunjukan bertema wayang dengan kostum dan properti yang megah.",
+      "start_date_time": "2025-10-07T18:00:00+07:00",
+      "end_date_time": "2025-10-07T23:00:00+07:00",
+      "labels": [
+        "karnaval",
+        "budaya"
+      ],
+      "location": {
+        "address": "Sepanjang Jalan Jenderal Sudirman hingga Tugu Yogyakarta",
+        "link_to_maps": "https://maps.app.goo.gl/P4y4W9s82t45P81461"
+      },
+      "image": "https://yogyakarta.travel/wp-content/uploads/2022/02/wayang-jogja-night-carnival-event-tahunan-pemkot-yogyakarta.jpg",
+      "source": {
+        "name": "Yogyakarta Travel",
+        "link": "https://yogyakarta.travel/wayang-jogja-night-carnival-selebrasi-penuh-gaya-di-hari-ulang-tahun-kota-jogja/"
+      }
+    },
+    {
+      "id": "e-yo-25-10-9",
+      "title": "Pameran Seni Tahunan Nandur Srawung #12",
+      "description": "Pameran seni dengan tema 'Eling | Kebangkitan', menampilkan kolaborasi lintas seniman dan pertunjukan budaya.",
+      "start_date_time": "2025-10-09T10:00:00+07:00",
+      "end_date_time": "2025-10-18T21:00:00+07:00",
+      "labels": [
+        "public-transport",
+        "wheelchair",
+        "seni",
+        "pameran"
+      ],
+      "location": {
+        "address": "Gedung Militaire Societeit, Taman Budaya Yogyakarta",
+        "link_to_maps": "https://maps.app.goo.gl/P4y4W9s82t45P81461"
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e-yo-25-10-10",
+      "title": "Festival Kebudayaan Yogyakarta 2025",
+      "description": "Festival budaya tahunan yang menampilkan seni tradisional, pertunjukan, dan pameran.",
+      "start_date_time": "2025-10-11T09:00:00+07:00",
+      "end_date_time": "2025-10-18T22:00:00+07:00",
+      "labels": [
+        "public-transport",
+        "budaya"
+      ],
+      "location": {
+        "address": "Berbagai lokasi di Yogyakarta",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e-yo-25-10-16",
+      "title": "Jogja International Kids and Teens Fashion Parade 2025",
+      "description": "Acara mode yang menampilkan desainer lokal dan internasional untuk anak-anak dan remaja.",
+      "start_date_time": "2025-10-11T10:00:00+07:00",
+      "end_date_time": "2025-10-12T22:00:00+07:00",
+      "labels": [
+        "fashion"
+      ],
+      "location": {
+        "address": "Sleman City Hall, Yogyakarta",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e-yo-25-10-5",
+      "title": "Batik City Run",
+      "description": "Rute: 5K (Rp175.000) dan 10K (Rp200.000). Termasuk: Jersey, syal batik mini, medali, dan fasilitas lainnya.",
+      "start_date_time": "2025-10-12T00:00:00+07:00",
+      "end_date_time": "2025-10-12T23:59:59+07:00",
+      "labels": [
+        "public-transport",
+        "parking",
+        "olahraga"
+      ],
+      "location": {
+        "address": "Museum Benteng Vredeburg",
+        "link_to_maps": "https://maps.app.goo.gl/P4y4W9s82t45P81462"
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e-yo-25-10-17",
+      "title": "Konser Sumbu Filosofi Yogyakarta",
+      "description": "Sebuah konser untuk merayakan sumbu filosofi Yogyakarta.",
+      "start_date_time": "2025-10-12T19:00:00+07:00",
+      "end_date_time": "2025-10-12T23:00:00+07:00",
+      "labels": [
+        "musik",
+        "budaya"
+      ],
+      "location": {
+        "address": "Yogyakarta",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e-yo-25-10-15",
+      "title": "Selasa Wagen Bulan Batik",
+      "description": "Perayaan Batik pada hari khusus Jawa, Selasa Wagen.",
+      "start_date_time": "2025-10-14T10:00:00+07:00",
+      "end_date_time": "2025-10-14T22:00:00+07:00",
+      "labels": [
+        "budaya"
+      ],
+      "location": {
+        "address": "Yogyakarta",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e-yo-25-10-13",
+      "title": "SiBakul Financetopia X Festival Teras Malioboro #3",
+      "description": "Sebuah festival yang merayakan keuangan dan budaya lokal di Malioboro.",
+      "start_date_time": "2025-10-15T10:00:00+07:00",
+      "end_date_time": "2025-10-19T22:00:00+07:00",
+      "labels": [
+        "festival"
+      ],
+      "location": {
+        "address": "Malioboro, Yogyakarta",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e-yo-25-10-11",
+      "title": "Bedog ArtsFest 2025: Sambung Menyambung",
+      "description": "Festival seni tiga hari yang menampilkan pertunjukan seni, pameran, lokakarya, pasar komunitas, dan pemutaran film. Masuk gratis.",
+      "start_date_time": "2025-10-17T16:00:00+07:00",
+      "end_date_time": "2025-10-19T22:00:00+07:00",
+      "labels": [
+        "public-transport",
+        "free-entry",
+        "seni",
+        "festival"
+      ],
+      "location": {
+        "address": "Studio Banjarmili, Bantaran Sungai Bedog",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e-yo-25-10-12",
+      "title": "Comic Paradise 5 (Comipara 2025)",
+      "description": "Festival budaya komik dan kreatif yang menampilkan 350+ stan kreator, misi guild, talkshow, dan kompetisi kreatif. Tiket: Rp50.000/hari.",
+      "start_date_time": "2025-10-18T10:00:00+07:00",
+      "end_date_time": "2025-10-19T21:00:00+07:00",
+      "labels": [
+        "parking",
+        "public-transport",
+        "komik",
+        "kreatif"
+      ],
+      "location": {
+        "address": "Jogja Expo Center, Grand Bima Hall",
+        "link_to_maps": "https://maps.app.goo.gl/5M78z6hVf4n6WpY78"
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e-yo-25-10-14",
+      "title": "LOAKARTA 2025",
+      "description": "Pasar kreatif dan festival.",
+      "start_date_time": "2025-10-18T10:00:00+07:00",
+      "end_date_time": "2025-10-22T22:00:00+07:00",
+      "labels": [
+        "pasar",
+        "kreatif"
+      ],
+      "location": {
+        "address": "Yogyakarta",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e-yo-25-10-6",
+      "title": "Glagah Tropical Run",
+      "description": "Waktu: 06.00 WIB hingga selesai. Acara lari penuh warna dengan latar belakang aerotropolis tropis dan spot foto Instagramable. Harga Tiket: Mulai dari Rp150.000 per orang, termasuk fasilitas dan doorprize menarik.",
+      "start_date_time": "2025-10-19T06:00:00+07:00",
+      "end_date_time": "2025-10-19T23:59:59+07:00",
+      "labels": [
+        "parking",
+        "public-transport",
+        "olahraga"
+      ],
+      "location": {
+        "address": "Pantai Glagah, Kulon Progo",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e-yo-25-10-18",
+      "title": "Jogja Ekraf Week 2025",
+      "description": "Festival ekonomi kreatif selama seminggu di Yogyakarta.",
+      "start_date_time": "2025-10-24T10:00:00+07:00",
+      "end_date_time": "2025-10-26T22:00:00+07:00",
+      "labels": [
+        "kreatif",
+        "pameran"
+      ],
+      "location": {
+        "address": "Atrium Rama, Sleman City Hall",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e-yo-25-10-7",
+      "title": "Jelajah Ruang Menoreh Geo Heritage Fun Run & Walk",
+      "description": "Fun run & walk, hiburan dangdut, pertunjukan seni dan budaya, talk show tentang warisan geologi. Harga Tiket: Mulai dari Rp25.000 hingga Rp125.000.",
+      "start_date_time": "2025-10-25T00:00:00+07:00",
+      "end_date_time": "2025-10-25T23:59:59+07:00",
+      "labels": [
+        "olahraga",
+        "hiburan"
+      ],
+      "location": {
+        "address": "Lapangan Boro Banjarasri",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e-yo-25-10-8",
+      "title": "Lantern Festival de Paris",
+      "description": "Festival lampion, stand-up comedy, musik langsung (Tyok Satrio). Harga Tiket: Mulai dari Rp175.000 untuk satu orang hingga Rp900.000 untuk 5 orang.",
+      "start_date_time": "2025-10-25T00:00:00+07:00",
+      "end_date_time": "2025-10-25T23:59:59+07:00",
+      "labels": [
+        "festival",
+        "hiburan"
+      ],
+      "location": {
+        "address": "Area Pantai Parangtritis",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e-yo-25-gen-14",
+      "title": "Malioboro Run",
+      "description": "Ajang lari yang bertujuan untuk mempromosikan pariwisata olahraga dengan rute unik melintasi ikon-ikon wisata di jantung kota Yogyakarta, terutama kawasan Malioboro.",
+      "start_date_time": "2025-10-26T05:30:00+07:00",
+      "end_date_time": "2025-10-26T10:00:00+07:00",
+      "labels": [
+        "public-transport",
+        "parking",
+        "olahraga"
+      ],
+      "location": {
+        "address": "Start dan Finish di Titik Nol Kilometer Yogyakarta",
+        "link_to_maps": "https://maps.app.goo.gl/P4y4W9s82t45P81462"
+      },
+      "image": "https://static.promediateknologi.id/crop/0x0:0x0/750x500/webp/photo/p2/145/2023/10/22/Bank-Mayapada-Malioboro-Run-2023-diikuti-4000-pelari-2895689163.jpg",
+      "source": {
+        "name": "Malioboro Run",
+        "link": "https://maliobororun.com/"
+      }
+    },
+    {
+      "id": "e-yo-25-11-1",
+      "title": "SARGA FESTIVAL 2025",
+      "description": "Tempat Musik Bertemu Suasana! Sebuah festival musik yang merayakan artis lokal dan nasional.",
+      "start_date_time": "2025-11-08T15:00:00+07:00",
+      "end_date_time": "2025-11-08T23:00:00+07:00",
+      "labels": [
+        "public-transport",
+        "parking",
+        "musik"
+      ],
+      "location": {
+        "address": "Yogyakarta",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e-yo-25-gen-15",
+      "title": "Ngayogjazz",
+      "description": "Festival jazz tahunan yang unik dan gratis, diadakan di pedesaan sekitar Yogyakarta. Menggabungkan musik jazz internasional dengan budaya lokal dan semangat komunitas.",
+      "start_date_time": "2025-11-15T14:00:00+07:00",
+      "end_date_time": "2025-11-15T23:00:00+07:00",
+      "labels": [
+        "musik",
+        "gratis",
+        "komunitas"
+      ],
+      "location": {
+        "address": "Lokasi desa akan diumumkan mendekati tanggal acara",
+        "link_to_maps": null
+      },
+      "image": "https://ngayogjazz.com/wp-content/uploads/2023/10/NYJ-23-WEB-1280x720-1.png",
+      "source": {
+        "name": "Situs Resmi Ngayogjazz",
+        "link": "https://ngayogjazz.com/"
+      }
+    },
+    {
+      "id": "e-yo-25-gen-16",
+      "title": "Jogja-NETPAC Asian Film Festival (JAFF)",
+      "description": "Festival film terkemuka di Indonesia yang berfokus pada perkembangan sinema Asia. Acara ini mencakup pemutaran film, diskusi, dan penganugerahan penghargaan bagi para sineas.",
+      "start_date_time": "2025-11-30T11:00:00+07:00",
+      "end_date_time": "2025-12-07T23:00:00+07:00",
+      "labels": [
+        "film",
+        "festival"
+      ],
+      "location": {
+        "address": "Empire XXI dan lokasi pemutaran lainnya di Yogyakarta",
+        "link_to_maps": "https://maps.app.goo.gl/P4y4W9s82t45P81463"
+      },
+      "image": "https://jaff-filmfest.org/wp-content/uploads/2023/07/2023-JAFF-WEBSITE-BANNER-scaled.jpg",
+      "source": {
+        "name": "Situs Resmi JAFF",
+        "link": "https://jaff-filmfest.org/"
+      }
+    },
+    {
+      "id": "e-yo-25-11-2",
+      "title": "Gendhing Budaya 2025",
+      "description": "Sebuah pertunjukan budaya musik dan tari tradisional Jawa.",
+      "start_date_time": "2025-11-30T19:00:00+07:00",
+      "end_date_time": "2025-11-30T23:00:00+07:00",
+      "labels": [
+        "budaya",
+        "seni-pertunjukan"
+      ],
+      "location": {
+        "address": "Yogyakarta",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
     }
   ]
 }

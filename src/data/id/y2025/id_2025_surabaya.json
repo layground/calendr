@@ -1,1272 +1,1894 @@
 {
+  "year": 2025,
   "country": "Indonesia",
-  "countryCode": "ID",
-  "regions": [
+  "country_code": "ID",
+  "region": "Surabaya",
+  "region_code": "SBY",
+  "events": [
     {
-      "region": "Surabaya",
-      "regionCode": "SB",
-      "events": [
-        {
-          "id": "e1-sb-2025",
-          "title": "Berjalan Lebih Jauh: Banda Neira di Gedung Cak Durasim",
-          "description": "",
-          "startDate": "2025-01-16T00:00:00+07:00",
-          "endDate": "2025-01-16T23:59:59+07:00",
-          "location": {
-            "name": "Gedung Cak Durasim"
-          },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Surabaya",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e2-sb-2025",
-          "title": "Holistic Fest 3.0 di Ciputra World Mall",
-          "description": "",
-          "startDate": "2025-01-17T00:00:00+07:00",
-          "endDate": "2025-01-17T23:59:59+07:00",
-          "location": {
-            "name": "Ciputra World Mall"
-          },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Surabaya",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e3-sb-2025",
-          "title": "Liberty 2K25:Hivi, Yovie & Nuno di Jatim Expo",
-          "description": "",
-          "startDate": "2025-01-18T00:00:00+07:00",
-          "endDate": "2025-01-18T23:59:59+07:00",
-          "location": {
-            "name": "Jatim Expo"
-          },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Surabaya",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e4-sb-2025",
-          "title": "Red Festival 2025 di Royal Plaza",
-          "description": "",
-          "startDate": "2025-01-23T00:00:00+07:00",
-          "endDate": "2025-01-23T23:59:59+07:00",
-          "location": {
-            "name": "Royal Plaza"
-          },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Surabaya",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e5-sb-2025",
-          "title": "Kungfu Panda Village di Royal Plaza",
-          "description": "",
-          "startDate": "2025-01-23T00:00:00+07:00",
-          "endDate": "2025-02-23T23:59:59+07:00",
-          "location": {
-            "name": "Royal Plaza"
-          },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Surabaya",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e6-sb-2025",
-          "title": "Turnamen Volly Praliga di DBL Arena",
-          "description": "",
-          "startDate": "2025-01-24T00:00:00+07:00",
-          "endDate": "2025-01-26T23:59:59+07:00",
-          "location": {
-            "name": "DBL Arena"
-          },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Surabaya",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e7-sb-2025",
-          "title": "Buzz Youth Fest di Lapangan Bumi Maritim Karang Pilang",
-          "description": "",
-          "startDate": "2025-01-25T00:00:00+07:00",
-          "endDate": "2025-01-25T23:59:59+07:00",
-          "location": {
-            "name": "Lapangan Bumi Maritim Karang Pilang"
-          },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Surabaya",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e8-sb-2025",
-          "title": "Liga Pro Futsal League Tingkat Nasional di GBT Indoor Stadium",
-          "description": "",
-          "startDate": "2025-01-26T00:00:00+07:00",
-          "endDate": "2025-01-26T23:59:59+07:00",
-          "location": {
-            "name": "GBT Indoor Stadium"
-          },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Surabaya",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e9-sb-2025",
-          "title": "Surabaya X Beauty di Grand City Mall& Convex",
-          "description": "",
-          "startDate": "2025-02-07T00:00:00+07:00",
-          "endDate": "2025-02-09T23:59:59+07:00",
-          "location": {
-            "name": "Grand City Mall& Convex"
-          },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Surabaya",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e10-sb-2025",
-          "title": "La Pianista Piano Competition di Grand City Mall& Convex",
-          "description": "",
-          "startDate": "2025-02-08T00:00:00+07:00",
-          "endDate": "2025-02-08T23:59:59+07:00",
-          "location": {
-            "name": "Grand City Mall& Convex"
-          },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Surabaya",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e11-sb-2025",
-          "title": "Willow BabyExpo di Grand City Mall & Convex",
-          "description": "",
-          "startDate": "2025-02-13T00:00:00+07:00",
-          "endDate": "2025-02-16T23:59:59+07:00",
-          "location": {
-            "name": "Grand City Mall & Convex"
-          },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Surabaya",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e12-sb-2025",
-          "title": "Golf Nasional Open MENKOMDIGI CUP 2025 di Golf Graha Famili",
-          "description": "",
-          "startDate": "2025-02-14T00:00:00+07:00",
-          "endDate": "2025-02-16T23:59:59+07:00",
-          "location": {
-            "name": "Golf Graha Famili"
-          },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Surabaya",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e13-sb-2025",
-          "title": "Haul Sunan Ampel di Masjid Agung Sunan Ampel",
-          "description": "",
-          "startDate": "2025-02-15T00:00:00+07:00",
-          "endDate": "2025-02-15T23:59:59+07:00",
-          "location": {
-            "name": "Masjid Agung Sunan Ampel"
-          },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Surabaya",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e14-sb-2025",
-          "title": "The Script & Hoobastank di Jatim Expo",
-          "description": "",
-          "startDate": "2025-02-16T00:00:00+07:00",
-          "endDate": "2025-02-16T23:59:59+07:00",
-          "location": {
-            "name": "Jatim Expo"
-          },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Surabaya",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e15-sb-2025",
-          "title": "Galaxy Mall Foam Run di Galaxy Mall",
-          "description": "",
-          "startDate": "2025-02-16T00:00:00+07:00",
-          "endDate": "2025-02-16T23:59:59+07:00",
-          "location": {
-            "name": "Galaxy Mall"
-          },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Surabaya",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e16-sb-2025",
-          "title": "Vegan Fest & Vegan Power Run 2025 di Grand City Mall & Convex",
-          "description": "",
-          "startDate": "2025-02-20T00:00:00+07:00",
-          "endDate": "2025-02-23T23:59:59+07:00",
-          "location": {
-            "name": "Grand City Mall & Convex"
-          },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Surabaya",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e17-sb-2025",
-          "title": "Kya-kya Fest Cap Gomeh",
-          "description": "",
-          "startDate": "2025-02-21T00:00:00+07:00",
-          "endDate": "2025-02-23T23:59:59+07:00",
-          "location": {
-            "name": "Surabaya"
-          },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Surabaya",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e18-sb-2025",
-          "title": "Parade Surya Sendja di Kota Lama Surabaya",
-          "description": "",
-          "startDate": "2025-02-27T00:00:00+07:00",
-          "endDate": "2025-02-27T23:59:59+07:00",
-          "location": {
-            "name": "Kota Lama Surabaya"
-          },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Surabaya",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e19-sb-2025",
-          "title": "Pasar Malam Tjap Toendjoengan di Food Junction",
-          "description": "",
-          "startDate": "2025-02-28T00:00:00+07:00",
-          "endDate": "2025-04-06T23:59:59+07:00",
-          "location": {
-            "name": "Food Junction"
-          },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Surabaya",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e20-sb-2025",
-          "title": "Premiere Wedding Fair di Grand City Mall& Convex",
-          "description": "",
-          "startDate": "2025-03-07T00:00:00+07:00",
-          "endDate": "2025-03-07T23:59:59+07:00",
-          "location": {
-            "name": "Grand City Mall& Convex"
-          },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Surabaya",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e21-sb-2025",
-          "title": "Majestic Ramadhan di Royal Plaza",
-          "description": "",
-          "startDate": "2025-03-01T00:00:00+07:00",
-          "endDate": "2025-04-13T23:59:59+07:00",
-          "location": {
-            "name": "Royal Plaza"
-          },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Surabaya",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e22-sb-2025",
-          "title": "Ramadhan Beach Fest di THP Kenjeran Utara",
-          "description": "",
-          "startDate": "2025-03-12T00:00:00+07:00",
-          "endDate": "2025-03-16T23:59:59+07:00",
-          "location": {
-            "name": "THP Kenjeran Utara"
-          },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Surabaya",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e23-sb-2025",
-          "title": "Big Bang Festival Edisi Ramadan di Grand City Mall& Convex",
-          "description": "",
-          "startDate": "2025-03-14T00:00:00+07:00",
-          "endDate": "2025-03-23T23:59:59+07:00",
-          "location": {
-            "name": "Grand City Mall& Convex"
-          },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Surabaya",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e24-sb-2025",
-          "title": "Ramadhan Kreatif Fest di Kota Lama Surabaya",
-          "description": "",
-          "startDate": "2025-03-14T00:00:00+07:00",
-          "endDate": "2025-03-23T23:59:59+07:00",
-          "location": {
-            "name": "Kota Lama Surabaya"
-          },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Surabaya",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e25-sb-2025",
-          "title": "Sparkling Ramadhan di Balai Pemuda (Alun-Alun Surabaya)",
-          "description": "",
-          "startDate": "2025-03-14T00:00:00+07:00",
-          "endDate": "2025-03-16T23:59:59+07:00",
-          "location": {
-            "name": "Balai Pemuda (Alun-Alun Surabaya)"
-          },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Surabaya",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e26-sb-2025",
-          "title": "Ngabuburit di Tugu Pahlawan",
-          "description": "",
-          "startDate": "2025-03-15T00:00:00+07:00",
-          "endDate": "2025-03-16T23:59:59+07:00",
-          "location": {
-            "name": "Tugu Pahlawan"
-          },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Surabaya",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e27-sb-2025",
-          "title": "Global Unity Fair Ramadhan di Kampus ITS",
-          "description": "",
-          "startDate": "2025-03-20T00:00:00+07:00",
-          "endDate": "2025-03-20T23:59:59+07:00",
-          "location": {
-            "name": "Kampus ITS"
-          },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Surabaya",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e28-sb-2025",
-          "title": "Upacara Melasti di THP Kenjeran",
-          "description": "",
-          "startDate": "2025-03-23T00:00:00+07:00",
-          "endDate": "2025-03-23T23:59:59+07:00",
-          "location": {
-            "name": "THP Kenjeran"
-          },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Surabaya",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e29-sb-2025",
-          "title": "Bararti International di GBT, Lapangan Thor, Lapangan Bogowonto, Stadion Gelora 10 November & komplek Balai Pemuda",
-          "description": "",
-          "startDate": "2025-04-15T00:00:00+07:00",
-          "endDate": "2025-04-20T23:59:59+07:00",
-          "location": {
-            "name": "GBT, Lapangan Thor, Lapangan Bogowonto, Stadion Gelora 10 November & komplek Balai Pemuda"
-          },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Surabaya",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e30-sb-2025",
-          "title": "Fadhillah Intan In Concert di Balai Pemuda Surabaya",
-          "description": "",
-          "startDate": "2025-04-20T00:00:00+07:00",
-          "endDate": "2025-04-21T23:59:59+07:00",
-          "location": {
-            "name": "Balai Pemuda Surabaya"
-          },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Surabaya",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e31-sb-2025",
-          "title": "Disney on lce di Jatim Expo Surabaya",
-          "description": "",
-          "startDate": "2025-04-23T00:00:00+07:00",
-          "endDate": "2025-04-27T23:59:59+07:00",
-          "location": {
-            "name": "Jatim Expo Surabaya"
-          },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Surabaya",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e32-sb-2025",
-          "title": "Batik Bordir & Aksesoris Fest di Grand City Mall & Convex",
-          "description": "",
-          "startDate": "2025-04-30T00:00:00+07:00",
-          "endDate": "2025-05-04T23:59:59+07:00",
-          "location": {
-            "name": "Grand City Mall & Convex"
-          },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Surabaya",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e33-sb-2025",
-          "title": "Surabaya Shopping Festival Seluruh Mall di Surabaya",
-          "description": "",
-          "startDate": "2025-05-01T00:00:00+07:00",
-          "endDate": "2025-05-31T23:59:59+07:00",
-          "location": {
-            "name": "Seluruh Mall di Surabaya"
-          },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Surabaya",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e34-sb-2025",
-          "title": "Medic Air Run 2025 di FK Unair",
-          "description": "",
-          "startDate": "2025-05-04T00:00:00+07:00",
-          "endDate": "2025-05-04T23:59:59+07:00",
-          "location": {
-            "name": "FK Unair"
-          },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Surabaya",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e35-sb-2025",
-          "title": "Munaslub VIl Apeksi 2025 di Surabaya",
-          "description": "",
-          "startDate": "2025-05-06T00:00:00+07:00",
-          "endDate": "2025-05-10T23:59:59+07:00",
-          "location": {
-            "name": "Surabaya"
-          },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Surabaya",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e36-sb-2025",
-          "title": "Festival Kuliner Legendaris Surabaya di Grand City Mall & Convex",
-          "description": "",
-          "startDate": "2025-05-08T00:00:00+07:00",
-          "endDate": "2025-05-10T23:59:59+07:00",
-          "location": {
-            "name": "Grand City Mall & Convex"
-          },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Surabaya",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e37-sb-2025",
-          "title": "Indonesia City Expo di Grand City Mall& Convex",
-          "description": "",
-          "startDate": "2025-05-09T00:00:00+07:00",
-          "endDate": "2025-05-09T23:59:59+07:00",
-          "location": {
-            "name": "Grand City Mall& Convex"
-          },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Surabaya",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e38-sb-2025",
-          "title": "Creative Community Days di Komplek Balai Pemuda",
-          "description": "",
-          "startDate": "2025-05-09T00:00:00+07:00",
-          "endDate": "2025-05-11T23:59:59+07:00",
-          "location": {
-            "name": "Komplek Balai Pemuda"
-          },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Surabaya",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e39-sb-2025",
-          "title": "Karnaval Budaya Apeksi di Surabaya Pameran Cross Musea di Museum Dr Soetomo",
-          "description": "",
-          "startDate": "2025-05-14T00:00:00+07:00",
-          "endDate": "2025-05-14T23:59:59+07:00",
-          "location": {
-            "name": "Museum Dr Soetomo"
-          },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Surabaya",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e40-sb-2025",
-          "title": "Bursa Pariwisata di Grand City Mall & Convex",
-          "description": "",
-          "startDate": "2025-05-15T00:00:00+07:00",
-          "endDate": "2025-05-18T23:59:59+07:00",
-          "location": {
-            "name": "Grand City Mall & Convex"
-          },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Surabaya",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e41-sb-2025",
-          "title": "Festival Rujak Uleg di Surabaya Expo Center",
-          "description": "",
-          "startDate": "2025-05-17T00:00:00+07:00",
-          "endDate": "2025-05-18T23:59:59+07:00",
-          "location": {
-            "name": "Surabaya Expo Center"
-          },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Surabaya",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e42-sb-2025",
-          "title": "Lomba Perahu Layar",
-          "description": "",
-          "startDate": "2025-05-17T00:00:00+07:00",
-          "endDate": "2025-05-17T23:59:59+07:00",
-          "location": {
-            "name": "Surabaya"
-          },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Surabaya",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e43-sb-2025",
-          "title": "Hospital Expo'25 di Grand City Mal& Convex",
-          "description": "",
-          "startDate": "2025-05-21T00:00:00+07:00",
-          "endDate": "2025-05-23T23:59:59+07:00",
-          "location": {
-            "name": "Grand City Mal& Convex"
-          },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Surabaya",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e44-sb-2025",
-          "title": "Festival Musik Surabaya Hebat",
-          "description": "",
-          "startDate": "2025-05-24T00:00:00+07:00",
-          "endDate": "2025-05-24T23:59:59+07:00",
-          "location": {
-            "name": "Surabaya"
-          },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Surabaya",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e45-sb-2025",
-          "title": "Indonesia International Motor Show di Grand City Mall& Convex",
-          "description": "",
-          "startDate": "2025-05-28T00:00:00+07:00",
-          "endDate": "2025-06-01T23:59:59+07:00",
-          "location": {
-            "name": "Grand City Mall& Convex"
-          },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Surabaya",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e46-sb-2025",
-          "title": "Surabaya Pestapora di THP Kenjeran",
-          "description": "",
-          "startDate": "2025-05-29T00:00:00+07:00",
-          "endDate": "2025-06-01T23:59:59+07:00",
-          "location": {
-            "name": "THP Kenjeran"
-          },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Surabaya",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e47-sb-2025",
-          "title": "Surabaya Tourism Awards di Ciputra World Mall",
-          "description": "",
-          "startDate": "2025-05-31T00:00:00+07:00",
-          "endDate": "2025-05-31T23:59:59+07:00",
-          "location": {
-            "name": "Ciputra World Mall"
-          },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Surabaya",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e48-sb-2025",
-          "title": "Ruwatan & Pagelaran Wayang Kulit di Tugu Pahlawan",
-          "description": "",
-          "startDate": "2025-05-31T00:00:00+07:00",
-          "endDate": "2025-05-31T23:59:59+07:00",
-          "location": {
-            "name": "Tugu Pahlawan"
-          },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Surabaya",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e49-sb-2025",
-          "title": "Konser HJKS: NDX Aka Surabaya",
-          "description": "",
-          "startDate": "2025-05-31T00:00:00+07:00",
-          "endDate": "2025-05-31T23:59:59+07:00",
-          "location": {
-            "name": "Surabaya"
-          },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Surabaya",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e50-sb-2025",
-          "title": "Surabaya Music Expo di Grand City Mall& Convex",
-          "description": "",
-          "startDate": "2025-06-05T00:00:00+07:00",
-          "endDate": "2025-06-08T23:59:59+07:00",
-          "location": {
-            "name": "Grand City Mall& Convex"
-          },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Surabaya",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e51-sb-2025",
-          "title": "Festival Cinema Australia-Indonesia di XXI Ciputra World",
-          "description": "",
-          "startDate": "2025-06-14T00:00:00+07:00",
-          "endDate": "2025-06-14T23:59:59+07:00",
-          "location": {
-            "name": "XXI Ciputra World"
-          },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Surabaya",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e52-sb-2025",
-          "title": "Jatim Environment",
-          "description": "",
-          "startDate": "2025-06-25T00:00:00+07:00",
-          "endDate": "2025-06-29T23:59:59+07:00",
-          "location": {
-            "name": "Surabaya"
-          },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Surabaya",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e53-sb-2025",
-          "title": "Exhibition Forum Grand City Mall & Convex",
-          "description": "",
-          "startDate": "2025-06-29T00:00:00+07:00",
-          "endDate": "2025-06-29T23:59:59+07:00",
-          "location": {
-            "name": "Grand City Mall & Convex"
-          },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Surabaya",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e54-sb-2025",
-          "title": "Halal Market di Balai Pemuda (Alun-alun Surabaya)",
-          "description": "",
-          "startDate": "2025-06-27T00:00:00+07:00",
-          "endDate": "2025-06-29T23:59:59+07:00",
-          "location": {
-            "name": "Balai Pemuda (Alun-alun Surabaya)"
-          },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Surabaya",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e55-sb-2025",
-          "title": "Pemilihan Cak Dan Ning Cilik di Surabaya",
-          "description": "",
-          "startDate": "2025-06-28T00:00:00+07:00",
-          "endDate": "2025-06-28T23:59:59+07:00",
-          "location": {
-            "name": "Surabaya"
-          },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Surabaya",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e56-sb-2025",
-          "title": "De Poppin Rythm Festival di Surabaya",
-          "description": "",
-          "startDate": "2025-06-28T00:00:00+07:00",
-          "endDate": "2025-06-28T23:59:59+07:00",
-          "location": {
-            "name": "Surabaya"
-          },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Surabaya",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e57-sb-2025",
-          "title": "Indo Livestock Expo & Forum 2025 di Grand City Mall & Convex",
-          "description": "",
-          "startDate": "2025-07-02T00:00:00+07:00",
-          "endDate": "2025-07-04T23:59:59+07:00",
-          "location": {
-            "name": "Grand City Mall & Convex"
-          },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Surabaya",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e58-sb-2025",
-          "title": "Halu Fest: Yura, Yovie Nuno, Dikta, NDX Aka di Surabaya",
-          "description": "",
-          "startDate": "2025-07-05T00:00:00+07:00",
-          "endDate": "2025-07-06T23:59:59+07:00",
-          "location": {
-            "name": "Surabaya"
-          },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Surabaya",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e59-sb-2025",
-          "title": "Green Force Run di Surabaya",
-          "description": "",
-          "startDate": "2025-07-06T00:00:00+07:00",
-          "endDate": "2025-07-06T23:59:59+07:00",
-          "location": {
-            "name": "Surabaya"
-          },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Surabaya",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e60-sb-2025",
-          "title": "Fide Rated International Standart & Blitz Chess Choice City Hote, di BG Junction",
-          "description": "",
-          "startDate": "2025-07-09T00:00:00+07:00",
-          "endDate": "2025-07-13T23:59:59+07:00",
-          "location": {
-            "name": "BG Junction"
-          },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Surabaya",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e61-sb-2025",
-          "title": "Manufacturing Surabaya Expo di Grand City Mall& Convex",
-          "description": "",
-          "startDate": "2025-07-16T00:00:00+07:00",
-          "endDate": "2025-07-19T23:59:59+07:00",
-          "location": {
-            "name": "Grand City Mall& Convex"
-          },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Surabaya",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e62-sb-2025",
-          "title": "East Java Trade Expo & Forum '25 di Grand City Mall & Convex",
-          "description": "",
-          "startDate": "2025-07-16T00:00:00+07:00",
-          "endDate": "2025-07-19T23:59:59+07:00",
-          "location": {
-            "name": "Grand City Mall & Convex"
-          },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Surabaya",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e63-sb-2025",
-          "title": "Sounds Of Downtown Surabaya",
-          "description": "",
-          "startDate": "2025-08-01T00:00:00+07:00",
-          "endDate": "2025-08-03T23:59:59+07:00",
-          "location": {
-            "name": "Surabaya"
-          },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Surabaya",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e64-sb-2025",
-          "title": "Java Coffee Culture Surabaya",
-          "description": "",
-          "startDate": "2025-08-01T00:00:00+07:00",
-          "endDate": "2025-08-03T23:59:59+07:00",
-          "location": {
-            "name": "Surabaya"
-          },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Surabaya",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e65-sb-2025",
-          "title": "Artsubs 2025 di Balai Pemuda (Alun-Alun Surabaya)",
-          "description": "",
-          "startDate": "2025-08-02T00:00:00+07:00",
-          "endDate": "2025-08-07T23:59:59+07:00",
-          "location": {
-            "name": "Balai Pemuda (Alun-Alun Surabaya)"
-          },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Surabaya",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e66-sb-2025",
-          "title": "Surabaya Great Expo di Grand City Mall & Convex",
-          "description": "",
-          "startDate": "2025-08-13T00:00:00+07:00",
-          "endDate": "2025-08-17T23:59:59+07:00",
-          "location": {
-            "name": "Grand City Mall & Convex"
-          },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Surabaya",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e67-sb-2025",
-          "title": "Pameran Cross Musea di Museum Dr Soetomo",
-          "description": "",
-          "startDate": "2025-08-20T00:00:00+07:00",
-          "endDate": "2025-08-20T23:59:59+07:00",
-          "location": {
-            "name": "Museum Dr Soetomo"
-          },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Surabaya",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e68-sb-2025",
-          "title": "Gaikindo Indonesia International Auto Show di Grand City Mall& Convex",
-          "description": "",
-          "startDate": "2025-08-27T00:00:00+07:00",
-          "endDate": "2025-08-31T23:59:59+07:00",
-          "location": {
-            "name": "Grand City Mall& Convex"
-          },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Surabaya",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e69-sb-2025",
-          "title": "Festival Layang Layang di Pakuwon City Women's U-21 Volley World Championship Surabaya",
-          "description": "",
-          "startDate": "2025-08-27T00:00:00+07:00",
-          "endDate": "2025-08-31T23:59:59+07:00",
-          "location": {
-            "name": "Pakuwon City"
-          },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Surabaya",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e70-sb-2025",
-          "title": "Pemilihan Cak dan Ning Surabaya",
-          "description": "",
-          "startDate": "2025-09-09T00:00:00+07:00",
-          "endDate": "2025-09-09T23:59:59+07:00",
-          "location": {
-            "name": "Surabaya"
-          },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Surabaya",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e71-sb-2025",
-          "title": "Teatrikal Perobekan Bendera di Hotel Majapahit",
-          "description": "",
-          "startDate": "2025-09-19T00:00:00+07:00",
-          "endDate": "2025-09-19T23:59:59+07:00",
-          "location": {
-            "name": "Hotel Majapahit"
-          },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Surabaya",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e72-sb-2025",
-          "title": "Jazz Traffic Festival di Grand City Mall & Convex",
-          "description": "",
-          "startDate": "2025-09-27T00:00:00+07:00",
-          "endDate": "2025-09-28T23:59:59+07:00",
-          "location": {
-            "name": "Grand City Mall & Convex"
-          },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Surabaya",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e73-sb-2025",
-          "title": "Festival Kuliner Halal Nusantara di Balai Pemuda",
-          "description": "",
-          "startDate": "2025-09-27T00:00:00+07:00",
-          "endDate": "2025-09-28T23:59:59+07:00",
-          "location": {
-            "name": "Balai Pemuda"
-          },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Surabaya",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e74-sb-2025",
-          "title": "Sedekah Bumi di Kelurahan Made",
-          "description": "",
-          "startDate": "2025-09-27T00:00:00+07:00",
-          "endDate": "2025-09-28T23:59:59+07:00",
-          "location": {
-            "name": "Kelurahan Made"
-          },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Surabaya",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e75-sb-2025",
-          "title": "Jatim Fest 2025 di Grand City Mall & Convex",
-          "description": "",
-          "startDate": "2025-10-01T00:00:00+07:00",
-          "endDate": "2025-10-05T23:59:59+07:00",
-          "location": {
-            "name": "Grand City Mall & Convex"
-          },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Surabaya",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e76-sb-2025",
-          "title": "Pekan Raya Jatim di Grand City Mall & Convex",
-          "description": "",
-          "startDate": "2025-10-09T00:00:00+07:00",
-          "endDate": "2025-10-18T23:59:59+07:00",
-          "location": {
-            "name": "Grand City Mall & Convex"
-          },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Surabaya",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e77-sb-2025",
-          "title": "Global Unity Fair di Kampus ITS",
-          "description": "",
-          "startDate": "2025-10-16T00:00:00+07:00",
-          "endDate": "2025-10-16T23:59:59+07:00",
-          "location": {
-            "name": "Kampus ITS"
-          },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Surabaya",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e78-sb-2025",
-          "title": "IsoPlus Run 2025 Surabaya",
-          "description": "",
-          "startDate": "2025-10-19T00:00:00+07:00",
-          "endDate": "2025-10-19T23:59:59+07:00",
-          "location": {
-            "name": "Surabaya"
-          },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Surabaya",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e79-sb-2025",
-          "title": "Pesona Indonesia Festival di Balai Pemuda (Alun-Alun Surabaya)",
-          "description": "",
-          "startDate": "2025-10-24T00:00:00+07:00",
-          "endDate": "2025-10-26T23:59:59+07:00",
-          "location": {
-            "name": "Balai Pemuda (Alun-Alun Surabaya)"
-          },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Surabaya",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e80-sb-2025",
-          "title": "Tjangkroekan Djoeang di Tugu Pahlawan",
-          "description": "",
-          "startDate": "2025-10-31T00:00:00+07:00",
-          "endDate": "2025-11-01T23:59:59+07:00",
-          "location": {
-            "name": "Tugu Pahlawan"
-          },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Surabaya",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e81-sb-2025",
-          "title": "Herock MOB di Kota Lama Surabaya",
-          "description": "",
-          "startDate": "2025-11-01T00:00:00+07:00",
-          "endDate": "2025-11-01T23:59:59+07:00",
-          "location": {
-            "name": "Kota Lama Surabaya"
-          },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Surabaya",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e82-sb-2025",
-          "title": "Parade Surabaya Juang di Tugu Pahlawan-Balai Kota",
-          "description": "",
-          "startDate": "2025-11-02T00:00:00+07:00",
-          "endDate": "2025-11-02T23:59:59+07:00",
-          "location": {
-            "name": "Tugu Pahlawan-Balai Kota"
-          },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Surabaya",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e83-sb-2025",
-          "title": "Surabaya World Choral Festival Surabaya",
-          "description": "",
-          "startDate": "2025-11-12T00:00:00+07:00",
-          "endDate": "2025-11-15T23:59:59+07:00",
-          "location": {
-            "name": "Surabaya"
-          },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Surabaya",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e84-sb-2025",
-          "title": "Batik Fashion Fair di Grand City Mal& Convex",
-          "description": "",
-          "startDate": "2025-11-12T00:00:00+07:00",
-          "endDate": "2025-11-16T23:59:59+07:00",
-          "location": {
-            "name": "Grand City Mal& Convex"
-          },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Surabaya",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e85-sb-2025",
-          "title": "Christmas Wonderland di Pakuwon City Mall",
-          "description": "",
-          "startDate": "2025-11-13T00:00:00+07:00",
-          "endDate": "2026-01-01T23:59:59+07:00",
-          "location": {
-            "name": "Pakuwon City Mall"
-          },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Surabaya",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e86-sb-2025",
-          "title": "Malam Kesenian Arek Suroboyo Surabaya",
-          "description": "",
-          "startDate": "2025-11-15T00:00:00+07:00",
-          "endDate": "2025-11-15T23:59:59+07:00",
-          "location": {
-            "name": "Surabaya"
-          },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Surabaya",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e87-sb-2025",
-          "title": "Pameran Cross Musea di Tugu Pahlawan",
-          "description": "",
-          "startDate": "2025-11-20T00:00:00+07:00",
-          "endDate": "2025-11-20T23:59:59+07:00",
-          "location": {
-            "name": "Tugu Pahlawan"
-          },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Surabaya",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e88-sb-2025",
-          "title": "Festival Cinema Perancis di IFISurabaya",
-          "description": "",
-          "startDate": "2025-11-20T00:00:00+07:00",
-          "endDate": "2025-11-20T23:59:59+07:00",
-          "location": {
-            "name": "IFISurabaya"
-          },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Surabaya",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e89-sb-2025",
-          "title": "Hari Armada Surabaya",
-          "description": "",
-          "startDate": "2025-12-05T00:00:00+07:00",
-          "endDate": "2025-12-15T23:59:59+07:00",
-          "location": {
-            "name": "Surabaya"
-          },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Surabaya",
-          "country": "Indonesia"
-        },
-        {
-          "id": "e90-sb-2025",
-          "title": "New Year Eve Festival di Kota Lama, Balai Kota, dan Jembatan Suroboyo",
-          "description": "",
-          "startDate": "2025-12-31T00:00:00+07:00",
-          "endDate": "2025-12-31T23:59:59+07:00",
-          "location": {
-            "name": "Kota Lama, Balai Kota, dan Jembatan Suroboyo"
-          },
-          "isPublicHoliday": false,
-          "isOptionalHoliday": false,
-          "region": "Surabaya",
-          "country": "Indonesia"
-        }
-      ]
+      "id": "e1-sby-2025",
+      "title": "Berjalan Lebih Jauh: Banda Neira di Gedung Cak Durasim",
+      "description": "Sebuah pertunjukan musik oleh Banda Neira yang diadakan di Gedung Cak Durasim.",
+      "start_date_time": "2025-01-16T00:00:00+07:00",
+      "end_date_time": "2025-01-16T23:59:59+07:00",
+      "labels": [
+        "musik",
+        "konser"
+      ],
+      "location": {
+        "address": "Gedung Cak Durasim, Surabaya",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e2-sby-2025",
+      "title": "Holistic Fest 3.0 di Ciputra World Mall",
+      "description": "Festival yang berfokus pada kesehatan dan gaya hidup holistik, diselenggarakan di Ciputra World Mall.",
+      "start_date_time": "2025-01-17T00:00:00+07:00",
+      "end_date_time": "2025-01-17T23:59:59+07:00",
+      "labels": [
+        "kesehatan",
+        "festival"
+      ],
+      "location": {
+        "address": "Ciputra World Mall, Surabaya",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e3-sby-2025",
+      "title": "Liberty 2K25: Hivi, Yovie & Nuno di Jatim Expo",
+      "description": "Konser musik yang menampilkan Hivi, Yovie & Nuno, sebagai bagian dari acara Liberty 2K25 di Jatim Expo.",
+      "start_date_time": "2025-01-18T00:00:00+07:00",
+      "end_date_time": "2025-01-18T23:59:59+07:00",
+      "labels": [
+        "musik",
+        "konser"
+      ],
+      "location": {
+        "address": "Jatim Expo, Surabaya",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e4-sby-2025",
+      "title": "Red Festival 2025 di Royal Plaza",
+      "description": "Sebuah festival yang diselenggarakan di Royal Plaza dengan tema 'Red' untuk merayakan momen spesial.",
+      "start_date_time": "2025-01-23T00:00:00+07:00",
+      "end_date_time": "2025-01-23T23:59:59+07:00",
+      "labels": [
+        "festival",
+        "hiburan"
+      ],
+      "location": {
+        "address": "Royal Plaza, Surabaya",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e5-sby-2025",
+      "title": "Kungfu Panda Village di Royal Plaza",
+      "description": "Acara tematik 'Kungfu Panda Village' yang menghadirkan dekorasi dan kegiatan menarik di Royal Plaza.",
+      "start_date_time": "2025-01-23T00:00:00+07:00",
+      "end_date_time": "2025-02-23T23:59:59+07:00",
+      "labels": [
+        "hiburan",
+        "keluarga"
+      ],
+      "location": {
+        "address": "Royal Plaza, Surabaya",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e6-sby-2025",
+      "title": "Turnamen Voli Praliga di DBL Arena",
+      "description": "Kompetisi bola voli tingkat Praliga yang diselenggarakan di DBL Arena.",
+      "start_date_time": "2025-01-24T00:00:00+07:00",
+      "end_date_time": "2025-01-26T23:59:59+07:00",
+      "labels": [
+        "olahraga",
+        "voli"
+      ],
+      "location": {
+        "address": "DBL Arena, Surabaya",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e7-sby-2025",
+      "title": "Buzz Youth Fest di Lapangan Bumi Maritim Karang Pilang",
+      "description": "Festival anak muda yang diadakan di Lapangan Bumi Maritim Karang Pilang.",
+      "start_date_time": "2025-01-25T00:00:00+07:00",
+      "end_date_time": "2025-01-25T23:59:59+07:00",
+      "labels": [
+        "festival",
+        "anak-muda"
+      ],
+      "location": {
+        "address": "Lapangan Bumi Maritim Karang Pilang, Surabaya",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e8-sby-2025",
+      "title": "Liga Pro Futsal League Tingkat Nasional di GBT Indoor Stadium",
+      "description": "Pertandingan futsal profesional tingkat nasional yang digelar di GBT Indoor Stadium.",
+      "start_date_time": "2025-01-26T00:00:00+07:00",
+      "end_date_time": "2025-01-26T23:59:59+07:00",
+      "labels": [
+        "olahraga",
+        "futsal"
+      ],
+      "location": {
+        "address": "GBT Indoor Stadium, Surabaya",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e9-sby-2025",
+      "title": "Surabaya X Beauty di Grand City Mall & Convex",
+      "description": "Pameran kecantikan terbesar yang menghadirkan berbagai merek produk kecantikan, talkshow, dan diskon.",
+      "start_date_time": "2025-02-07T00:00:00+07:00",
+      "end_date_time": "2025-02-09T23:59:59+07:00",
+      "labels": [
+        "kecantikan",
+        "pameran"
+      ],
+      "location": {
+        "address": "Grand City Mall & Convex, Surabaya",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e10-sby-2025",
+      "title": "La Pianista Piano Competition di Grand City Mall & Convex",
+      "description": "Kompetisi piano 'La Pianista' yang diadakan di Grand City Mall & Convex.",
+      "start_date_time": "2025-02-08T00:00:00+07:00",
+      "end_date_time": "2025-02-08T23:59:59+07:00",
+      "labels": [
+        "musik",
+        "kompetisi"
+      ],
+      "location": {
+        "address": "Grand City Mall & Convex, Surabaya",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e11-sby-2025",
+      "title": "Willow BabyExpo di Grand City Mall & Convex",
+      "description": "Pameran perlengkapan bayi dan anak 'Willow BabyExpo' di Grand City Mall & Convex.",
+      "start_date_time": "2025-02-13T00:00:00+07:00",
+      "end_date_time": "2025-02-16T23:59:59+07:00",
+      "labels": [
+        "pameran",
+        "keluarga"
+      ],
+      "location": {
+        "address": "Grand City Mall & Convex, Surabaya",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e12-sby-2025",
+      "title": "Golf Nasional Open MENKOMDIGI CUP 2025 di Golf Graha Famili",
+      "description": "Turnamen golf terbuka tingkat nasional memperebutkan piala MENKOMDIGI di Golf Graha Famili.",
+      "start_date_time": "2025-02-14T00:00:00+07:00",
+      "end_date_time": "2025-02-16T23:59:59+07:00",
+      "labels": [
+        "olahraga",
+        "golf"
+      ],
+      "location": {
+        "address": "Golf Graha Famili, Surabaya",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e13-sby-2025",
+      "title": "Haul Sunan Ampel di Masjid Agung Sunan Ampel",
+      "description": "Peringatan tahunan Haul Sunan Ampel yang diadakan di kompleks Masjid Agung Sunan Ampel.",
+      "start_date_time": "2025-02-15T00:00:00+07:00",
+      "end_date_time": "2025-02-15T23:59:59+07:00",
+      "labels": [
+        "religi",
+        "budaya"
+      ],
+      "location": {
+        "address": "Masjid Agung Sunan Ampel, Surabaya",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e14-sby-2025",
+      "title": "The Script & Hoobastank di Jatim Expo",
+      "description": "Konser musik internasional yang menampilkan band The Script dan Hoobastank di Jatim Expo.",
+      "start_date_time": "2025-02-16T00:00:00+07:00",
+      "end_date_time": "2025-02-16T23:59:59+07:00",
+      "labels": [
+        "musik",
+        "konser"
+      ],
+      "location": {
+        "address": "Jatim Expo, Surabaya",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e15-sby-2025",
+      "title": "Galaxy Mall Foam Run di Galaxy Mall",
+      "description": "Acara lari santai dengan tema busa (foam) yang diadakan di Galaxy Mall.",
+      "start_date_time": "2025-02-16T00:00:00+07:00",
+      "end_date_time": "2025-02-16T23:59:59+07:00",
+      "labels": [
+        "olahraga",
+        "lari"
+      ],
+      "location": {
+        "address": "Galaxy Mall, Surabaya",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e16-sby-2025",
+      "title": "Vegan Fest & Vegan Power Run 2025 di Grand City Mall & Convex",
+      "description": "Festival kuliner vegan yang disertai dengan acara lari 'Vegan Power Run' di Grand City Mall & Convex.",
+      "start_date_time": "2025-02-20T00:00:00+07:00",
+      "end_date_time": "2025-02-23T23:59:59+07:00",
+      "labels": [
+        "kuliner",
+        "olahraga",
+        "festival"
+      ],
+      "location": {
+        "address": "Grand City Mall & Convex, Surabaya",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e17-sby-2025",
+      "title": "Kya-kya Fest Cap Go Meh",
+      "description": "Perayaan Cap Go Meh yang dimeriahkan dengan festival kuliner dan budaya di kawasan Kya-kya.",
+      "start_date_time": "2025-02-21T00:00:00+07:00",
+      "end_date_time": "2025-02-23T23:59:59+07:00",
+      "labels": [
+        "budaya",
+        "kuliner",
+        "festival"
+      ],
+      "location": {
+        "address": "Kawasan Kya-kya, Surabaya",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e18-sby-2025",
+      "title": "Parade Surya Senja di Kota Lama Surabaya",
+      "description": "Acara parade budaya 'Surya Senja' yang diselenggarakan di kawasan Kota Lama Surabaya.",
+      "start_date_time": "2025-02-27T00:00:00+07:00",
+      "end_date_time": "2025-02-27T23:59:59+07:00",
+      "labels": [
+        "parade",
+        "budaya"
+      ],
+      "location": {
+        "address": "Kota Lama Surabaya",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e19-sby-2025",
+      "title": "Pasar Malam Tjap Toendjoengan di Food Junction",
+      "description": "Pasar malam dengan nuansa tempo dulu yang diadakan di Food Junction Grand Pakuwon.",
+      "start_date_time": "2025-02-28T00:00:00+07:00",
+      "end_date_time": "2025-04-06T23:59:59+07:00",
+      "labels": [
+        "pasar",
+        "kuliner",
+        "hiburan"
+      ],
+      "location": {
+        "address": "Food Junction Grand Pakuwon, Surabaya",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e21-sby-2025",
+      "title": "Majestic Ramadhan di Royal Plaza",
+      "description": "Rangkaian acara dan bazar spesial bulan Ramadhan di Royal Plaza.",
+      "start_date_time": "2025-03-01T00:00:00+07:00",
+      "end_date_time": "2025-04-13T23:59:59+07:00",
+      "labels": [
+        "ramadhan",
+        "belanja"
+      ],
+      "location": {
+        "address": "Royal Plaza, Surabaya",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e20-sby-2025",
+      "title": "Premiere Wedding Fair di Grand City Mall & Convex",
+      "description": "Pameran pernikahan 'Premiere Wedding Fair' di Grand City Mall & Convex.",
+      "start_date_time": "2025-03-07T00:00:00+07:00",
+      "end_date_time": "2025-03-07T23:59:59+07:00",
+      "labels": [
+        "pameran",
+        "pernikahan"
+      ],
+      "location": {
+        "address": "Grand City Mall & Convex, Surabaya",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e22-sby-2025",
+      "title": "Ramadhan Beach Fest di THP Kenjeran Utara",
+      "description": "Festival Ramadhan dengan suasana pantai yang diadakan di Taman Hiburan Pantai Kenjeran.",
+      "start_date_time": "2025-03-12T00:00:00+07:00",
+      "end_date_time": "2025-03-16T23:59:59+07:00",
+      "labels": [
+        "ramadhan",
+        "festival"
+      ],
+      "location": {
+        "address": "THP Kenjeran Utara, Surabaya",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e23-sby-2025",
+      "title": "Big Bang Festival Edisi Ramadan di Grand City Mall & Convex",
+      "description": "Festival belanja 'Big Bang' edisi spesial Ramadhan yang menawarkan diskon besar di Grand City Mall & Convex.",
+      "start_date_time": "2025-03-14T00:00:00+07:00",
+      "end_date_time": "2025-03-23T23:59:59+07:00",
+      "labels": [
+        "ramadhan",
+        "belanja",
+        "festival"
+      ],
+      "location": {
+        "address": "Grand City Mall & Convex, Surabaya",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e24-sby-2025",
+      "title": "Ramadhan Kreatif Fest di Kota Lama Surabaya",
+      "description": "Festival kreatif selama bulan Ramadhan yang diadakan di kawasan Kota Lama Surabaya.",
+      "start_date_time": "2025-03-14T00:00:00+07:00",
+      "end_date_time": "2025-03-23T23:59:59+07:00",
+      "labels": [
+        "ramadhan",
+        "kreatif",
+        "festival"
+      ],
+      "location": {
+        "address": "Kota Lama Surabaya",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e25-sby-2025",
+      "title": "Sparkling Ramadhan di Balai Pemuda (Alun-Alun Surabaya)",
+      "description": "Acara Ramadhan yang meriah di kompleks Balai Pemuda dan Alun-Alun Surabaya.",
+      "start_date_time": "2025-03-14T00:00:00+07:00",
+      "end_date_time": "2025-03-16T23:59:59+07:00",
+      "labels": [
+        "ramadhan",
+        "hiburan"
+      ],
+      "location": {
+        "address": "Balai Pemuda (Alun-Alun Surabaya)",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e26-sby-2025",
+      "title": "Ngabuburit di Tugu Pahlawan",
+      "description": "Kegiatan menunggu waktu berbuka puasa (ngabuburit) dengan berbagai acara di Tugu Pahlawan.",
+      "start_date_time": "2025-03-15T00:00:00+07:00",
+      "end_date_time": "2025-03-16T23:59:59+07:00",
+      "labels": [
+        "ramadhan",
+        "komunitas"
+      ],
+      "location": {
+        "address": "Tugu Pahlawan, Surabaya",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e27-sby-2025",
+      "title": "Global Unity Fair Ramadhan di Kampus ITS",
+      "description": "Pameran internasional edisi Ramadhan yang diselenggarakan di lingkungan Kampus ITS.",
+      "start_date_time": "2025-03-20T00:00:00+07:00",
+      "end_date_time": "2025-03-20T23:59:59+07:00",
+      "labels": [
+        "ramadhan",
+        "pameran"
+      ],
+      "location": {
+        "address": "Kampus ITS, Surabaya",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e28-sby-2025",
+      "title": "Upacara Melasti di THP Kenjeran",
+      "description": "Upacara penyucian diri umat Hindu menjelang Hari Raya Nyepi yang dilaksanakan di Taman Hiburan Pantai Kenjeran.",
+      "start_date_time": "2025-03-23T00:00:00+07:00",
+      "end_date_time": "2025-03-23T23:59:59+07:00",
+      "labels": [
+        "adat",
+        "religi"
+      ],
+      "location": {
+        "address": "THP Kenjeran, Surabaya",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e29-sby-2025",
+      "title": "Bararti International",
+      "description": "Acara internasional yang diadakan serentak di berbagai lokasi olahraga ikonik di Surabaya.",
+      "start_date_time": "2025-04-15T00:00:00+07:00",
+      "end_date_time": "2025-04-20T23:59:59+07:00",
+      "labels": [
+        "internasional",
+        "olahraga"
+      ],
+      "location": {
+        "address": "GBT, Lapangan Thor, Lapangan Bogowonto, Stadion Gelora 10 November & komplek Balai Pemuda",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e30-sby-2025",
+      "title": "Fadhillah Intan In Concert di Balai Pemuda Surabaya",
+      "description": "Konser tunggal oleh Fadhillah Intan yang digelar di Balai Pemuda Surabaya.",
+      "start_date_time": "2025-04-20T00:00:00+07:00",
+      "end_date_time": "2025-04-21T23:59:59+07:00",
+      "labels": [
+        "musik",
+        "konser"
+      ],
+      "location": {
+        "address": "Balai Pemuda Surabaya",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e31-sby-2025",
+      "title": "Disney on Ice di Jatim Expo Surabaya",
+      "description": "Pertunjukan spektakuler di atas es yang menampilkan karakter-karakter Disney, diadakan di Jatim Expo.",
+      "start_date_time": "2025-04-23T00:00:00+07:00",
+      "end_date_time": "2025-04-27T23:59:59+07:00",
+      "labels": [
+        "hiburan",
+        "keluarga"
+      ],
+      "location": {
+        "address": "Jatim Expo Surabaya",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e32-sby-2025",
+      "title": "Batik Bordir & Aksesoris Fest di Grand City Mall & Convex",
+      "description": "Festival yang memamerkan produk batik, bordir, dan aksesoris di Grand City Mall & Convex.",
+      "start_date_time": "2025-04-30T00:00:00+07:00",
+      "end_date_time": "2025-05-04T23:59:59+07:00",
+      "labels": [
+        "fashion",
+        "pameran"
+      ],
+      "location": {
+        "address": "Grand City Mall & Convex, Surabaya",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e33-sby-2025",
+      "title": "Surabaya Shopping Festival",
+      "description": "Festival belanja besar-besaran yang diikuti oleh seluruh mal di Surabaya untuk merayakan hari jadi kota.",
+      "start_date_time": "2025-05-01T00:00:00+07:00",
+      "end_date_time": "2025-05-31T23:59:59+07:00",
+      "labels": [
+        "belanja",
+        "festival"
+      ],
+      "location": {
+        "address": "Seluruh Mal di Surabaya",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e34-sby-2025",
+      "title": "Medic Air Run 2025 di FK Unair",
+      "description": "Acara lari yang diselenggarakan oleh Fakultas Kedokteran Universitas Airlangga.",
+      "start_date_time": "2025-05-04T00:00:00+07:00",
+      "end_date_time": "2025-05-04T23:59:59+07:00",
+      "labels": [
+        "olahraga",
+        "lari"
+      ],
+      "location": {
+        "address": "FK Unair, Surabaya",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e35-sby-2025",
+      "title": "Munaslub VII Apeksi 2025 di Surabaya",
+      "description": "Musyawarah Nasional Luar Biasa ke-7 Asosiasi Pemerintah Kota Seluruh Indonesia (Apeksi) yang diadakan di Surabaya.",
+      "start_date_time": "2025-05-06T00:00:00+07:00",
+      "end_date_time": "2025-05-10T23:59:59+07:00",
+      "labels": [
+        "pemerintahan",
+        "konferensi"
+      ],
+      "location": {
+        "address": "Surabaya",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e36-sby-2025",
+      "title": "Festival Kuliner Legendaris Surabaya di Grand City Mall & Convex",
+      "description": "Festival yang menyajikan berbagai makanan legendaris khas Surabaya dan sekitarnya.",
+      "start_date_time": "2025-05-08T00:00:00+07:00",
+      "end_date_time": "2025-05-10T23:59:59+07:00",
+      "labels": [
+        "kuliner",
+        "festival"
+      ],
+      "location": {
+        "address": "Grand City Mall & Convex, Surabaya",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e37-sby-2025",
+      "title": "Indonesia City Expo di Grand City Mall & Convex",
+      "description": "Pameran yang menampilkan potensi dan keunggulan kota-kota di seluruh Indonesia.",
+      "start_date_time": "2025-05-09T00:00:00+07:00",
+      "end_date_time": "2025-05-09T23:59:59+07:00",
+      "labels": [
+        "pameran",
+        "pemerintahan"
+      ],
+      "location": {
+        "address": "Grand City Mall & Convex, Surabaya",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e38-sby-2025",
+      "title": "Creative Community Days di Komplek Balai Pemuda",
+      "description": "Acara yang didedikasikan untuk komunitas kreatif di Surabaya, diadakan di Komplek Balai Pemuda.",
+      "start_date_time": "2025-05-09T00:00:00+07:00",
+      "end_date_time": "2025-05-11T23:59:59+07:00",
+      "labels": [
+        "komunitas",
+        "kreatif"
+      ],
+      "location": {
+        "address": "Komplek Balai Pemuda, Surabaya",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e39-sby-2025",
+      "title": "Karnaval Budaya Apeksi & Pameran Cross Musea",
+      "description": "Karnaval budaya sebagai bagian dari rangkaian acara Apeksi, serta pameran lintas museum di Museum Dr Soetomo.",
+      "start_date_time": "2025-05-14T00:00:00+07:00",
+      "end_date_time": "2025-05-14T23:59:59+07:00",
+      "labels": [
+        "karnaval",
+        "budaya",
+        "pameran"
+      ],
+      "location": {
+        "address": "Museum Dr Soetomo, Surabaya",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e40-sby-2025",
+      "title": "Bursa Pariwisata di Grand City Mall & Convex",
+      "description": "Pameran pariwisata yang menawarkan berbagai paket perjalanan dan promosi wisata.",
+      "start_date_time": "2025-05-15T00:00:00+07:00",
+      "end_date_time": "2025-05-18T23:59:59+07:00",
+      "labels": [
+        "pariwisata",
+        "pameran"
+      ],
+      "location": {
+        "address": "Grand City Mall & Convex, Surabaya",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e41-sby-2025",
+      "title": "Festival Rujak Uleg",
+      "description": "Festival tahunan ikonik untuk merayakan Hari Jadi Kota Surabaya, di mana ribuan peserta membuat rujak uleg bersama.",
+      "start_date_time": "2025-05-17T00:00:00+07:00",
+      "end_date_time": "2025-05-18T23:59:59+07:00",
+      "labels": [
+        "kuliner",
+        "budaya",
+        "festival"
+      ],
+      "location": {
+        "address": "Surabaya Expo Center",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e42-sby-2025",
+      "title": "Lomba Perahu Layar",
+      "description": "Kompetisi perahu layar yang diadakan di perairan sekitar Surabaya.",
+      "start_date_time": "2025-05-17T00:00:00+07:00",
+      "end_date_time": "2025-05-17T23:59:59+07:00",
+      "labels": [
+        "olahraga",
+        "kompetisi"
+      ],
+      "location": {
+        "address": "Surabaya",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e43-sby-2025",
+      "title": "Hospital Expo'25 di Grand City Mall & Convex",
+      "description": "Pameran industri rumah sakit dan kesehatan di Grand City Mall & Convex.",
+      "start_date_time": "2025-05-21T00:00:00+07:00",
+      "end_date_time": "2025-05-23T23:59:59+07:00",
+      "labels": [
+        "pameran",
+        "kesehatan"
+      ],
+      "location": {
+        "address": "Grand City Mall & Convex, Surabaya",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e44-sby-2025",
+      "title": "Festival Musik Surabaya Hebat",
+      "description": "Festival musik untuk merayakan semangat 'Surabaya Hebat'.",
+      "start_date_time": "2025-05-24T00:00:00+07:00",
+      "end_date_time": "2025-05-24T23:59:59+07:00",
+      "labels": [
+        "musik",
+        "festival"
+      ],
+      "location": {
+        "address": "Surabaya",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e45-sby-2025",
+      "title": "Indonesia International Motor Show di Grand City Mall & Convex",
+      "description": "Pameran otomotif internasional (IIMS) yang menampilkan berbagai kendaraan terbaru dan teknologi otomotif.",
+      "start_date_time": "2025-05-28T00:00:00+07:00",
+      "end_date_time": "2025-06-01T23:59:59+07:00",
+      "labels": [
+        "otomotif",
+        "pameran"
+      ],
+      "location": {
+        "address": "Grand City Mall & Convex, Surabaya",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e46-sby-2025",
+      "title": "Surabaya Pestapora di THP Kenjeran",
+      "description": "Festival musik 'Pestapora' edisi Surabaya yang diadakan di Taman Hiburan Pantai Kenjeran.",
+      "start_date_time": "2025-05-29T00:00:00+07:00",
+      "end_date_time": "2025-06-01T23:59:59+07:00",
+      "labels": [
+        "musik",
+        "festival"
+      ],
+      "location": {
+        "address": "THP Kenjeran, Surabaya",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e47-sby-2025",
+      "title": "Surabaya Tourism Awards di Ciputra World Mall",
+      "description": "Malam penganugerahan bagi para pelaku industri pariwisata di Surabaya.",
+      "start_date_time": "2025-05-31T00:00:00+07:00",
+      "end_date_time": "2025-05-31T23:59:59+07:00",
+      "labels": [
+        "pariwisata",
+        "penghargaan"
+      ],
+      "location": {
+        "address": "Ciputra World Mall, Surabaya",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e48-sby-2025",
+      "title": "Ruwatan & Pagelaran Wayang Kulit di Tugu Pahlawan",
+      "description": "Acara ruwatan massal yang diikuti dengan pertunjukan wayang kulit semalam suntuk di Tugu Pahlawan.",
+      "start_date_time": "2025-05-31T00:00:00+07:00",
+      "end_date_time": "2025-05-31T23:59:59+07:00",
+      "labels": [
+        "adat",
+        "budaya",
+        "wayang"
+      ],
+      "location": {
+        "address": "Tugu Pahlawan, Surabaya",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e49-sby-2025",
+      "title": "Konser HJKS: NDX Aka",
+      "description": "Konser musik oleh NDX Aka dalam rangka perayaan Hari Jadi Kota Surabaya (HJKS).",
+      "start_date_time": "2025-05-31T00:00:00+07:00",
+      "end_date_time": "2025-05-31T23:59:59+07:00",
+      "labels": [
+        "musik",
+        "konser"
+      ],
+      "location": {
+        "address": "Surabaya",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e50-sby-2025",
+      "title": "Surabaya Music Expo di Grand City Mall & Convex",
+      "description": "Pameran industri musik yang menampilkan alat musik, teknologi audio, dan lainnya.",
+      "start_date_time": "2025-06-05T00:00:00+07:00",
+      "end_date_time": "2025-06-08T23:59:59+07:00",
+      "labels": [
+        "musik",
+        "pameran"
+      ],
+      "location": {
+        "address": "Grand City Mall & Convex, Surabaya",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e51-sby-2025",
+      "title": "Festival Cinema Australia-Indonesia di XXI Ciputra World",
+      "description": "Festival yang memutar film-film terbaik dari Australia dan Indonesia.",
+      "start_date_time": "2025-06-14T00:00:00+07:00",
+      "end_date_time": "2025-06-14T23:59:59+07:00",
+      "labels": [
+        "film",
+        "festival"
+      ],
+      "location": {
+        "address": "XXI Ciputra World, Surabaya",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e52-sby-2025",
+      "title": "Jatim Environment Exhibition & Forum",
+      "description": "Pameran dan forum yang berfokus pada isu-isu lingkungan di Jawa Timur.",
+      "start_date_time": "2025-06-25T00:00:00+07:00",
+      "end_date_time": "2025-06-29T23:59:59+07:00",
+      "labels": [
+        "lingkungan",
+        "pameran"
+      ],
+      "location": {
+        "address": "Grand City Mall & Convex, Surabaya",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e54-sby-2025",
+      "title": "Halal Market di Balai Pemuda (Alun-alun Surabaya)",
+      "description": "Pasar yang menyediakan berbagai produk halal, mulai dari makanan hingga fashion.",
+      "start_date_time": "2025-06-27T00:00:00+07:00",
+      "end_date_time": "2025-06-29T23:59:59+07:00",
+      "labels": [
+        "pasar",
+        "kuliner",
+        "halal"
+      ],
+      "location": {
+        "address": "Balai Pemuda (Alun-alun Surabaya)",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e55-sby-2025",
+      "title": "Pemilihan Cak Dan Ning Cilik",
+      "description": "Ajang pemilihan duta wisata cilik Kota Surabaya.",
+      "start_date_time": "2025-06-28T00:00:00+07:00",
+      "end_date_time": "2025-06-28T23:59:59+07:00",
+      "labels": [
+        "kompetisi",
+        "budaya"
+      ],
+      "location": {
+        "address": "Surabaya",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e56-sby-2025",
+      "title": "De Poppin Rythm Festival",
+      "description": "Festival musik dengan irama yang enerjik dan meriah.",
+      "start_date_time": "2025-06-28T00:00:00+07:00",
+      "end_date_time": "2025-06-28T23:59:59+07:00",
+      "labels": [
+        "musik",
+        "festival"
+      ],
+      "location": {
+        "address": "Surabaya",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e57-sby-2025",
+      "title": "Indo Livestock Expo & Forum 2025 di Grand City Mall & Convex",
+      "description": "Pameran dan forum internasional industri peternakan, pakan ternak, dan perikanan.",
+      "start_date_time": "2025-07-02T00:00:00+07:00",
+      "end_date_time": "2025-07-04T23:59:59+07:00",
+      "labels": [
+        "pameran",
+        "agribisnis"
+      ],
+      "location": {
+        "address": "Grand City Mall & Convex, Surabaya",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e58-sby-2025",
+      "title": "Halu Fest: Yura, Yovie Nuno, Dikta, NDX Aka",
+      "description": "Festival musik yang dimeriahkan oleh Yura Yunita, Yovie & Nuno, Dikta, dan NDX Aka.",
+      "start_date_time": "2025-07-05T00:00:00+07:00",
+      "end_date_time": "2025-07-06T23:59:59+07:00",
+      "labels": [
+        "musik",
+        "festival",
+        "konser"
+      ],
+      "location": {
+        "address": "Surabaya",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e59-sby-2025",
+      "title": "Green Force Run",
+      "description": "Acara lari yang diadakan untuk para pendukung Persebaya Surabaya.",
+      "start_date_time": "2025-07-06T00:00:00+07:00",
+      "end_date_time": "2025-07-06T23:59:59+07:00",
+      "labels": [
+        "olahraga",
+        "lari"
+      ],
+      "location": {
+        "address": "Surabaya",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e60-sby-2025",
+      "title": "Fide Rated International Standart & Blitz Chess di BG Junction",
+      "description": "Turnamen catur internasional standar dan kilat yang terdaftar di FIDE.",
+      "start_date_time": "2025-07-09T00:00:00+07:00",
+      "end_date_time": "2025-07-13T23:59:59+07:00",
+      "labels": [
+        "olahraga",
+        "kompetisi",
+        "catur"
+      ],
+      "location": {
+        "address": "BG Junction, Surabaya",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e61-sby-2025",
+      "title": "Manufacturing Surabaya Expo di Grand City Mall & Convex",
+      "description": "Pameran industri manufaktur yang menampilkan mesin, peralatan, dan teknologi terbaru.",
+      "start_date_time": "2025-07-16T00:00:00+07:00",
+      "end_date_time": "2025-07-19T23:59:59+07:00",
+      "labels": [
+        "pameran",
+        "industri"
+      ],
+      "location": {
+        "address": "Grand City Mall & Convex, Surabaya",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e62-sby-2025",
+      "title": "East Java Trade Expo & Forum '25 di Grand City Mall & Convex",
+      "description": "Pameran perdagangan dan forum bisnis untuk mempromosikan potensi ekonomi Jawa Timur.",
+      "start_date_time": "2025-07-16T00:00:00+07:00",
+      "end_date_time": "2025-07-19T23:59:59+07:00",
+      "labels": [
+        "pameran",
+        "bisnis"
+      ],
+      "location": {
+        "address": "Grand City Mall & Convex, Surabaya",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e63-sby-2025",
+      "title": "Sounds Of Downtown",
+      "description": "Festival musik yang menampilkan berbagai musisi di jantung kota Surabaya.",
+      "start_date_time": "2025-08-01T00:00:00+07:00",
+      "end_date_time": "2025-08-03T23:59:59+07:00",
+      "labels": [
+        "musik",
+        "festival"
+      ],
+      "location": {
+        "address": "Surabaya",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e64-sby-2025",
+      "title": "Java Coffee Culture",
+      "description": "Festival yang merayakan budaya kopi Jawa, dari hulu hingga hilir.",
+      "start_date_time": "2025-08-01T00:00:00+07:00",
+      "end_date_time": "2025-08-03T23:59:59+07:00",
+      "labels": [
+        "kuliner",
+        "kopi",
+        "festival"
+      ],
+      "location": {
+        "address": "Surabaya",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e65-sby-2025",
+      "title": "Artsubs 2025 di Balai Pemuda (Alun-Alun Surabaya)",
+      "description": "Acara seni rupa tahunan yang menampilkan karya seniman-seniman Surabaya.",
+      "start_date_time": "2025-08-02T00:00:00+07:00",
+      "end_date_time": "2025-08-07T23:59:59+07:00",
+      "labels": [
+        "seni",
+        "pameran"
+      ],
+      "location": {
+        "address": "Balai Pemuda (Alun-Alun Surabaya)",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e66-sby-2025",
+      "title": "Surabaya Great Expo di Grand City Mall & Convex",
+      "description": "Pameran besar yang menampilkan berbagai produk unggulan dan potensi Kota Surabaya.",
+      "start_date_time": "2025-08-13T00:00:00+07:00",
+      "end_date_time": "2025-08-17T23:59:59+07:00",
+      "labels": [
+        "pameran"
+      ],
+      "location": {
+        "address": "Grand City Mall & Convex, Surabaya",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e67-sby-2025",
+      "title": "Pameran Cross Musea di Museum Dr Soetomo",
+      "description": "Pameran lintas museum yang diadakan di Museum Dr Soetomo.",
+      "start_date_time": "2025-08-20T00:00:00+07:00",
+      "end_date_time": "2025-08-20T23:59:59+07:00",
+      "labels": [
+        "pameran",
+        "sejarah"
+      ],
+      "location": {
+        "address": "Museum Dr Soetomo, Surabaya",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e68-sby-2025",
+      "title": "Gaikindo Indonesia International Auto Show di Grand City Mall & Convex",
+      "description": "Pameran otomotif internasional GIIAS yang menampilkan mobil dan motor terbaru.",
+      "start_date_time": "2025-08-27T00:00:00+07:00",
+      "end_date_time": "2025-08-31T23:59:59+07:00",
+      "labels": [
+        "otomotif",
+        "pameran"
+      ],
+      "location": {
+        "address": "Grand City Mall & Convex, Surabaya",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e69-sby-2025",
+      "title": "Festival Layang-Layang & Women's U-21 Volley World Championship",
+      "description": "Festival layang-layang yang meriah bersamaan dengan Kejuaraan Dunia Voli U-21 Wanita.",
+      "start_date_time": "2025-08-27T00:00:00+07:00",
+      "end_date_time": "2025-08-31T23:59:59+07:00",
+      "labels": [
+        "festival",
+        "olahraga"
+      ],
+      "location": {
+        "address": "Pakuwon City, Surabaya",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e70-sby-2025",
+      "title": "Pemilihan Cak dan Ning Surabaya",
+      "description": "Ajang pemilihan duta wisata Kota Surabaya.",
+      "start_date_time": "2025-09-09T00:00:00+07:00",
+      "end_date_time": "2025-09-09T23:59:59+07:00",
+      "labels": [
+        "kompetisi",
+        "budaya"
+      ],
+      "location": {
+        "address": "Surabaya",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e71-sby-2025",
+      "title": "Teatrikal Perobekan Bendera di Hotel Majapahit",
+      "description": "Rekonstruksi peristiwa perobekan bendera Belanda di Hotel Majapahit (dulu Hotel Yamato).",
+      "start_date_time": "2025-09-19T00:00:00+07:00",
+      "end_date_time": "2025-09-19T23:59:59+07:00",
+      "labels": [
+        "sejarah",
+        "teater"
+      ],
+      "location": {
+        "address": "Hotel Majapahit, Surabaya",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e72-sby-2025",
+      "title": "Jazz Traffic Festival di Grand City Mall & Convex",
+      "description": "Festival jazz tahunan yang menghadirkan musisi jazz ternama dari dalam dan luar negeri.",
+      "start_date_time": "2025-09-27T00:00:00+07:00",
+      "end_date_time": "2025-09-28T23:59:59+07:00",
+      "labels": [
+        "musik",
+        "jazz",
+        "festival"
+      ],
+      "location": {
+        "address": "Grand City Mall & Convex, Surabaya",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e73-sby-2025",
+      "title": "Festival Kuliner Halal Nusantara di Balai Pemuda",
+      "description": "Festival yang menyajikan berbagai kuliner halal dari seluruh nusantara.",
+      "start_date_time": "2025-09-27T00:00:00+07:00",
+      "end_date_time": "2025-09-28T23:59:59+07:00",
+      "labels": [
+        "kuliner",
+        "halal",
+        "festival"
+      ],
+      "location": {
+        "address": "Balai Pemuda, Surabaya",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e74-sby-2025",
+      "title": "Sedekah Bumi di Kelurahan Made",
+      "description": "Upacara adat sebagai bentuk rasa syukur atas hasil bumi yang melimpah.",
+      "start_date_time": "2025-09-27T00:00:00+07:00",
+      "end_date_time": "2025-09-28T23:59:59+07:00",
+      "labels": [
+        "adat",
+        "budaya"
+      ],
+      "location": {
+        "address": "Kelurahan Made, Surabaya",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e75-sby-2025",
+      "title": "Jatim Fest 2025 di Grand City Mall & Convex",
+      "description": "Festival yang merayakan berbagai potensi dan kebudayaan Jawa Timur.",
+      "start_date_time": "2025-10-01T00:00:00+07:00",
+      "end_date_time": "2025-10-05T23:59:59+07:00",
+      "labels": [
+        "festival",
+        "budaya"
+      ],
+      "location": {
+        "address": "Grand City Mall & Convex, Surabaya",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e76-sby-2025",
+      "title": "Pekan Raya Jatim di Grand City Mall & Convex",
+      "description": "Pameran raya tahunan Provinsi Jawa Timur yang menampilkan berbagai produk dan hiburan.",
+      "start_date_time": "2025-10-09T00:00:00+07:00",
+      "end_date_time": "2025-10-18T23:59:59+07:00",
+      "labels": [
+        "pameran",
+        "hiburan"
+      ],
+      "location": {
+        "address": "Grand City Mall & Convex, Surabaya",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e77-sby-2025",
+      "title": "Global Unity Fair di Kampus ITS",
+      "description": "Pameran yang mempromosikan persatuan dan keragaman budaya internasional di Kampus ITS.",
+      "start_date_time": "2025-10-16T00:00:00+07:00",
+      "end_date_time": "2025-10-16T23:59:59+07:00",
+      "labels": [
+        "pameran",
+        "internasional"
+      ],
+      "location": {
+        "address": "Kampus ITS, Surabaya",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e78-sby-2025",
+      "title": "IsoPlus Run 2025",
+      "description": "Acara lari yang disponsori oleh IsoPlus.",
+      "start_date_time": "2025-10-19T00:00:00+07:00",
+      "end_date_time": "2025-10-19T23:59:59+07:00",
+      "labels": [
+        "olahraga",
+        "lari"
+      ],
+      "location": {
+        "address": "Surabaya",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e79-sby-2025",
+      "title": "Pesona Indonesia Festival di Balai Pemuda (Alun-Alun Surabaya)",
+      "description": "Festival yang menampilkan pesona budaya dan pariwisata Indonesia.",
+      "start_date_time": "2025-10-24T00:00:00+07:00",
+      "end_date_time": "2025-10-26T23:59:59+07:00",
+      "labels": [
+        "festival",
+        "budaya",
+        "pariwisata"
+      ],
+      "location": {
+        "address": "Balai Pemuda (Alun-Alun Surabaya)",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e80-sby-2025",
+      "title": "Tjangkroekan Djoeang di Tugu Pahlawan",
+      "description": "Acara santai untuk mengenang semangat perjuangan di Tugu Pahlawan.",
+      "start_date_time": "2025-10-31T00:00:00+07:00",
+      "end_date_time": "2025-11-01T23:59:59+07:00",
+      "labels": [
+        "sejarah",
+        "komunitas"
+      ],
+      "location": {
+        "address": "Tugu Pahlawan, Surabaya",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e81-sby-2025",
+      "title": "Herock MOB di Kota Lama Surabaya",
+      "description": "Acara musik rock yang diadakan di kawasan bersejarah Kota Lama Surabaya.",
+      "start_date_time": "2025-11-01T00:00:00+07:00",
+      "end_date_time": "2025-11-01T23:59:59+07:00",
+      "labels": [
+        "musik",
+        "rock"
+      ],
+      "location": {
+        "address": "Kota Lama Surabaya",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e82-sby-2025",
+      "title": "Parade Surabaya Juang",
+      "description": "Parade tahunan untuk memperingati Hari Pahlawan dengan rute dari Tugu Pahlawan hingga Balai Kota.",
+      "start_date_time": "2025-11-02T00:00:00+07:00",
+      "end_date_time": "2025-11-02T23:59:59+07:00",
+      "labels": [
+        "parade",
+        "sejarah"
+      ],
+      "location": {
+        "address": "Rute Tugu Pahlawan - Balai Kota, Surabaya",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e-sby-25-11-1",
+      "title": "Surabaya Membara",
+      "description": "Sebuah pertunjukan teatrikal kolosal yang merekonstruksi peristiwa heroik Pertempuran 10 November 1945 di Surabaya. Acara ini diadakan di sepanjang Jalan Pahlawan dan melibatkan ratusan pemain serta masyarakat untuk mengenang semangat juang para pahlawan.",
+      "start_date_time": "2025-11-09T19:00:00+07:00",
+      "end_date_time": "2025-11-09T22:00:00+07:00",
+      "labels": [
+        "sejarah",
+        "budaya",
+        "teater",
+        "gratis"
+      ],
+      "location": {
+        "address": "Sepanjang Jalan Pahlawan, depan Kantor Gubernur Jatim, Surabaya",
+        "link_to_maps": "https://maps.app.goo.gl/P4y4W9s82t45P81463"
+      },
+      "image": "https://cdn.idntimes.com/content-images/community/2023/11/img-20231110-wa0018-b80c102a9f73f0c3a8126b86b4618e47.jpg",
+      "source": {
+        "name": "Disbudporapar Surabaya",
+        "link": "https://disbudporapar.surabaya.go.id/"
+      }
+    },
+    {
+      "id": "e-sby-25-11-2",
+      "title": "Upacara Peringatan Hari Pahlawan",
+      "description": "Upacara kenegaraan untuk menghormati jasa para pahlawan yang gugur dalam Pertempuran Surabaya. Acara ini dipusatkan di Tugu Pahlawan dan dihadiri oleh pejabat pemerintah, veteran, serta masyarakat umum.",
+      "start_date_time": "2025-11-10T08:00:00+07:00",
+      "end_date_time": "2025-11-10T10:00:00+07:00",
+      "labels": [
+        "sejarah",
+        "upacara",
+        "nasional"
+      ],
+      "location": {
+        "address": "Tugu Pahlawan, Jl. Pahlawan, Alun-alun Contong, Bubutan, Surabaya",
+        "link_to_maps": "https://maps.app.goo.gl/bM5f2Q1JbH7UuW2E7"
+      },
+      "image": "https://cdn1.katadata.co.id/media/images/2022/11/10/Upacara_Peringatan_Hari_Pahlawan_di_Surabaya-2022_11_10-14_07_58_3430671404c05f0391d4e0e22a578a1a.jpg",
+      "source": {
+        "name": "Pemerintah Kota Surabaya",
+        "link": "https://www.surabaya.go.id/"
+      }
+    },
+    {
+      "id": "e83-sby-2025",
+      "title": "Surabaya World Choral Festival",
+      "description": "Festival paduan suara tingkat dunia yang diikuti oleh berbagai kelompok dari banyak negara.",
+      "start_date_time": "2025-11-12T00:00:00+07:00",
+      "end_date_time": "2025-11-15T23:59:59+07:00",
+      "labels": [
+        "musik",
+        "paduan-suara",
+        "festival"
+      ],
+      "location": {
+        "address": "Surabaya",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e84-sby-2025",
+      "title": "Batik Fashion Fair di Grand City Mall & Convex",
+      "description": "Pameran busana yang secara khusus menampilkan kreasi fashion dari kain batik.",
+      "start_date_time": "2025-11-12T00:00:00+07:00",
+      "end_date_time": "2025-11-16T23:59:59+07:00",
+      "labels": [
+        "fashion",
+        "batik",
+        "pameran"
+      ],
+      "location": {
+        "address": "Grand City Mall & Convex, Surabaya",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e85-sby-2025",
+      "title": "Christmas Wonderland di Pakuwon City Mall",
+      "description": "Acara tematik Natal dengan dekorasi dan hiburan meriah di Pakuwon City Mall.",
+      "start_date_time": "2025-11-13T00:00:00+07:00",
+      "end_date_time": "2026-01-01T23:59:59+07:00",
+      "labels": [
+        "natal",
+        "hiburan",
+        "keluarga"
+      ],
+      "location": {
+        "address": "Pakuwon City Mall, Surabaya",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e86-sby-2025",
+      "title": "Malam Kesenian Arek Suroboyo",
+      "description": "Pagelaran seni yang menampilkan talenta dan budaya khas Arek Suroboyo.",
+      "start_date_time": "2025-11-15T00:00:00+07:00",
+      "end_date_time": "2025-11-15T23:59:59+07:00",
+      "labels": [
+        "seni",
+        "budaya"
+      ],
+      "location": {
+        "address": "Surabaya",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e87-sby-2025",
+      "title": "Pameran Cross Musea di Tugu Pahlawan",
+      "description": "Pameran lintas museum yang diadakan di kompleks Monumen Tugu Pahlawan.",
+      "start_date_time": "2025-11-20T00:00:00+07:00",
+      "end_date_time": "2025-11-20T23:59:59+07:00",
+      "labels": [
+        "pameran",
+        "sejarah"
+      ],
+      "location": {
+        "address": "Tugu Pahlawan, Surabaya",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e88-sby-2025",
+      "title": "Festival Cinema Perancis di IFI Surabaya",
+      "description": "Festival yang memutar film-film pilihan dari sinema Perancis.",
+      "start_date_time": "2025-11-20T00:00:00+07:00",
+      "end_date_time": "2025-11-20T23:59:59+07:00",
+      "labels": [
+        "film",
+        "festival"
+      ],
+      "location": {
+        "address": "IFI Surabaya",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e-sby-25-11-3",
+      "title": "Surabaya SoundFest 2025",
+      "description": "Festival musik tahunan yang menghadirkan musisi-musisi papan atas nasional dari berbagai genre. Menjadi ajang berkumpulnya para penikmat musik di Jawa Timur. Tanggal merupakan estimasi.",
+      "start_date_time": "2025-11-22T15:00:00+07:00",
+      "end_date_time": "2025-11-23T23:00:00+07:00",
+      "labels": [
+        "musik",
+        "festival",
+        "konser"
+      ],
+      "location": {
+        "address": "Parkir Timur Plaza Surabaya, Jl. Pemuda No.33-37, Embong Kaliasin, Genteng, Surabaya",
+        "link_to_maps": "https://maps.app.goo.gl/P4y4W9s82t45P81464"
+      },
+      "image": "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/music-festival-flyer-design-template-3882895f9038c5b05809df8e1e5b8e99_screen.jpg?ts=1698335965",
+      "source": {
+        "name": "Event Surabaya",
+        "link": "https://www.instagram.com/eventsurabaya/"
+      }
+    },
+    {
+      "id": "e-sby-25-12-1",
+      "title": "Jatim Fair 2025: Pameran Ekonomi Kreatif & UKM",
+      "description": "Pameran multiproduk terbesar di Jawa Timur yang menampilkan produk unggulan dari sektor industri kreatif, UKM, BUMN, dan pemerintah daerah. Dilengkapi dengan panggung hiburan dan beragam kuliner.",
+      "start_date_time": "2025-12-04T10:00:00+07:00",
+      "end_date_time": "2025-12-08T21:00:00+07:00",
+      "labels": [
+        "pameran",
+        "ekonomi",
+        "ukm",
+        "belanja"
+      ],
+      "location": {
+        "address": "Grand City Convex, Jl. Walikota Mustajab No.1, Ketabang, Genteng, Surabaya",
+        "link_to_maps": "https://maps.app.goo.gl/P4y4W9s82t45P81465"
+      },
+      "image": "https://www.jatimfair.com/wp-content/uploads/2023/07/slider-2-JF-2023-1.jpg",
+      "source": {
+        "name": "Jatim Fair",
+        "link": "https://www.jatimfair.com/"
+      }
+    },
+    {
+      "id": "e89-sby-2025",
+      "title": "Hari Armada",
+      "description": "Peringatan Hari Armada Republik Indonesia yang biasanya dimeriahkan dengan pameran alutsista dan berbagai acara maritim.",
+      "start_date_time": "2025-12-05T00:00:00+07:00",
+      "end_date_time": "2025-12-15T23:59:59+07:00",
+      "labels": [
+        "militer",
+        "pameran"
+      ],
+      "location": {
+        "address": "Surabaya",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "User Provided",
+        "link": null
+      }
+    },
+    {
+      "id": "e90-sby-2025",
+      "title": "New Year Eve Festival",
+      "description": "Perayaan malam tahun baru yang diselenggarakan oleh Pemerintah Kota Surabaya. Acara ini biasanya dimeriahkan dengan panggung hiburan musik, pertunjukan seni, doa bersama, dan ditutup dengan pesta kembang api.",
+      "start_date_time": "2025-12-31T00:00:00+07:00",
+      "end_date_time": "2025-12-31T23:59:59+07:00",
+      "labels": [
+        "tahun-baru",
+        "hiburan",
+        "gratis",
+        "kembang-api"
+      ],
+      "location": {
+        "address": "Kota Lama, Balai Kota, dan Jembatan Suroboyo",
+        "link_to_maps": "https://maps.app.goo.gl/P4y4W9s82t45P81466"
+      },
+      "image": "https://cdn-2.tstatic.net/suryamalang/foto/bank/images/suasana-malam-tahun-baru-2020-di-halaman-balai-kota-surabaya.jpg",
+      "source": {
+        "name": "Pemerintah Kota Surabaya",
+        "link": "https://www.surabaya.go.id/"
+      }
     }
   ]
 }

@@ -11,7 +11,7 @@ import { DayView } from '@/components/calendar/DayView'
 import { EventDetails } from '@/components/events/EventDetails'
 import { DailyEventsList } from '@/components/events/DailyEventsList'
 import { BottomSheet } from '@/components/events/BottomSheet'
-import { Event, RegionEvent } from '@/lib/types/event'
+import { RegionEvent } from '@/lib/types/event'
 
 type ViewMode = 'year' | 'month' | 'week' | 'day'
 
@@ -45,34 +45,41 @@ export default function Home() {
 
   useEffect(() => {
     const regionMap: { [key: string]: string } = {
-        YO: 'yogyakarta',
-        SB: 'surabaya'
+      YO: 'yogyakarta',
+      SB: 'surabaya'
     };
     const regionFileName = regionMap[region];
 
     const fetchEvents = async () => {
-        try {
-            const regionEventsPromise = regionFileName && region !== '-' ? import(`@/data/id/y${year}/id_${year}_${regionFileName}.json`) : Promise.resolve({ regions: [] });
-            const nationalEventsPromise = import(`@/data/id/y${year}/id_${year}_national.json`);
+      try {
+        const regionEventsPromise = regionFileName && region !== '-' ? import(`@/data/id/y${year}/id_${year}_${regionFileName}.json`) : Promise.resolve({ events: [] });
+        const nationalEventsPromise = import(`@/data/id/y${year}/id_${year}_national.json`);
 
-            const [regionEvents, nationalEvents] = await Promise.all([
-                regionEventsPromise.catch(e => ({ regions: [] })),
-                nationalEventsPromise.catch(e => ({ regions: [] }))
-            ]);
+        const [regionModule, nationalModule] = await Promise.all([
+          regionEventsPromise.catch(e => ({ default: { events: [] } })),
+          nationalEventsPromise.catch(e => ({ default: { events: [] } }))
+        ]);
 
-            const allEvents = [
-                ...regionEvents.regions.flatMap(r => r.events),
-                ...nationalEvents.regions.flatMap(r => r.events)
-            ];
-            setEvents(allEvents);
-        } catch (error) {
-            console.error("Error loading events for year:", year, error);
-            setEvents([]);
-        }
+        const regionEvents = regionModule.default ? regionModule.default.events : [];
+        const nationalEvents = nationalModule.default ? nationalModule.default.events : [];
+
+        const allEvents = [...regionEvents, ...nationalEvents].map((e: any) => ({
+          ...e,
+          startDate: new Date(e.start_date_time),
+          endDate: new Date(e.end_date_time),
+          isPublicHoliday: e.is_public_holiday,
+          isOptionalHoliday: e.is_optional_holiday,
+        }));
+
+        setEvents(allEvents);
+      } catch (error) {
+        console.error("Error loading events for year:", year, error);
+        setEvents([]);
+      }
     };
 
     fetchEvents();
-}, [year, region]);
+  }, [year, region]);
 
   const handleDateSelect = (date: Date) => {
     setSelectedDate(date);
@@ -228,38 +235,39 @@ export default function Home() {
       {/* Left panel - Calendar (50% on md, 68% on lg) */}
       <div className="flex flex-col gap-2 md:gap-4 border-b border-gray-200 p-2 md:p-4 dark:border-slate-700 md:border-b-0 md:border-r md:w-[50vw] lg:w-[68vw] w-full min-w-0">
         <div className="flex items-center justify-between">
-            <Logo />
-            <div className="flex items-center gap-1 md:gap-2">
-                            <div className="hidden md:flex items-center gap-1 md:gap-2">
-                              <button onClick={handleToday} className="rounded px-3 py-1 bg-primary-500 text-white hover:bg-primary-600 transition-colors text-sm">Today</button>
-                            </div>
-                            <button
-                              onClick={() => setShowEvents(!showEvents)}
-                              className={`rounded p-2 md:px-3 md:py-1 border text-xs md:text-sm flex items-center gap-1 ${showEvents ? 'bg-primary-100 dark:bg-primary-800' : ''}`}
-                            >
-                              {showEvents ? (
-                                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-1.293-1.293a3 3 0 014.242 0l1.293 1.293m-3.232 3.232l3.232-3.232M3 3l18 18" />
-                                </svg>
-                              ) : (
-                                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.522 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.478 0-8.268-2.943-9.542-7z" />
-                                </svg>
-                              )}
-                              <span className="hidden md:inline">{showEvents ? 'Hide Events' : 'Show Events'}</span>
-                            </button>
-                            <ThemeToggle />
-                            <button onClick={() => setIsDrawerOpen(true)} className="p-1.5 md:p-2 rounded-md hover:bg-gray-100 dark:hover:bg-slate-800 z-50 flex">
-                              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 md:h-6 md:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                              </svg>
-                            </button>            </div>
+          <Logo />
+          <div className="flex items-center gap-1 md:gap-2">
+            <div className="hidden md:flex items-center gap-1 md:gap-2">
+              <button onClick={handleToday} className="rounded px-3 py-1 bg-primary-500 text-white hover:bg-primary-600 transition-colors text-sm">Today</button>
+            </div>
+            <button
+              onClick={() => setShowEvents(!showEvents)}
+              className={`rounded p-2 md:px-3 md:py-1 border text-xs md:text-sm flex items-center gap-1 ${showEvents ? 'bg-primary-100 dark:bg-primary-800' : ''}`}
+            >
+              {showEvents ? (
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-1.293-1.293a3 3 0 014.242 0l1.293 1.293m-3.232 3.232l3.232-3.232M3 3l18 18" />
+                </svg>
+              ) : (
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.522 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.478 0-8.268-2.943-9.542-7z" />
+                </svg>
+              )}
+              <span className="hidden md:inline">{showEvents ? 'Hide Events' : 'Show Events'}</span>
+            </button>
+            <ThemeToggle />
+            <button onClick={() => setIsDrawerOpen(true)} className="p-1.5 md:p-2 rounded-md hover:bg-gray-100 dark:hover:bg-slate-800 z-50 flex">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 md:h-6 md:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+          </div>
         </div>
         {/* Action Bar */}
         <div className="border rounded-lg p-2 md:p-3 dark:border-slate-700">
           <div className="flex flex-col gap-2 md:gap-3">
-            
+
             {/* Controls Bar */}
             <div className="flex flex-wrap items-center gap-1 md:gap-2 text-xs">
               <div className="flex items-center gap-1 md:gap-2 order-2 md:order-1">
@@ -301,7 +309,7 @@ export default function Home() {
                 )}
               </div>
             </div>
-            
+
             {/* Date Navigation */}
             <div className="flex items-center gap-1 md:gap-2">
               <button onClick={handlePrev} className="rounded-md p-2 hover:bg-gray-100 dark:hover:bg-slate-800 border border-gray-300 dark:border-slate-700" aria-label="Previous">
@@ -310,37 +318,37 @@ export default function Home() {
                 </svg>
               </button>
               <span className="font-semibold text-sm md:text-lg flex-1 text-center truncate">
-              {viewMode === 'year' && year}
-              {viewMode === 'month' && (
-                <>
-                  <span className="hidden md:inline">
-                    {currentDate.toLocaleString('default', { month: 'long', year: 'numeric' })}
-                  </span>
-                  <span className="md:hidden">
-                    {currentDate.toLocaleString('default', { month: 'short', year: 'numeric' })}
-                  </span>
-                </>
-              )}
-              {viewMode === 'week' && (
-                <>
-                  <span className="hidden md:inline">
-                    Week of {currentDate.toLocaleDateString(undefined, { month: 'long', day: 'numeric' })}
-                  </span>
-                  <span className="md:hidden">
-                    Week of {currentDate.toLocaleDateString(undefined, { month: 'short', day: 'numeric' })}
-                  </span>
-                </>
-              )}
-              {viewMode === 'day' && (
-                <>
-                  <span className="hidden md:inline">
-                    {currentDate.toLocaleDateString(undefined, { weekday: 'long', month: 'long', day: 'numeric' })}
-                  </span>
-                  <span className="md:hidden">
-                    {currentDate.toLocaleDateString(undefined, { weekday: 'short', month: 'short', day: 'numeric' })}
-                  </span>
-                </>
-              )}
+                {viewMode === 'year' && year}
+                {viewMode === 'month' && (
+                  <>
+                    <span className="hidden md:inline">
+                      {currentDate.toLocaleString('default', { month: 'long', year: 'numeric' })}
+                    </span>
+                    <span className="md:hidden">
+                      {currentDate.toLocaleString('default', { month: 'short', year: 'numeric' })}
+                    </span>
+                  </>
+                )}
+                {viewMode === 'week' && (
+                  <>
+                    <span className="hidden md:inline">
+                      Week of {currentDate.toLocaleDateString(undefined, { month: 'long', day: 'numeric' })}
+                    </span>
+                    <span className="md:hidden">
+                      Week of {currentDate.toLocaleDateString(undefined, { month: 'short', day: 'numeric' })}
+                    </span>
+                  </>
+                )}
+                {viewMode === 'day' && (
+                  <>
+                    <span className="hidden md:inline">
+                      {currentDate.toLocaleDateString(undefined, { weekday: 'long', month: 'long', day: 'numeric' })}
+                    </span>
+                    <span className="md:hidden">
+                      {currentDate.toLocaleDateString(undefined, { weekday: 'short', month: 'short', day: 'numeric' })}
+                    </span>
+                  </>
+                )}
               </span>
               <button onClick={handleNext} className="rounded-md p-2 hover:bg-gray-100 dark:hover:bg-slate-800 border border-gray-300 dark:border-slate-700" aria-label="Next">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -427,8 +435,8 @@ export default function Home() {
             />
           )}
           {viewMode === 'day' && (
-            <DayView 
-              date={currentDate} 
+            <DayView
+              date={currentDate}
               events={events.map(e => ({
                 id: e.id,
                 title: e.title,
@@ -514,11 +522,11 @@ export default function Home() {
           <div className="bg-white dark:bg-slate-800 rounded-lg shadow-xl p-6 max-w-lg w-full">
             <h3 className="text-lg font-bold mb-4">Terms of Use</h3>
             <div className="text-sm space-y-4 max-h-96 overflow-y-auto">
-                <p>Welcome to Calendr. By using our website, you agree to these terms. Please read them carefully.</p>
-                <p><strong>Content:</strong> Our content is for informational purposes only. We do not guarantee its accuracy and are not liable for any errors.</p>
-                <p><strong>Use of Website:</strong> You may use our website for personal, non-commercial purposes. You may not modify, copy, distribute, transmit, display, perform, reproduce, publish, license, create derivative works from, transfer, or sell any information, software, products or services obtained from this website.</p>
-                <p><strong>Disclaimer:</strong> The materials on Calendr's website are provided on an 'as is' basis. Calendr makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties including, without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights.</p>
-                <p><strong>Limitation of Liability:</strong> In no event shall Calendr or its suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use the materials on Calendr's website, even if Calendr or a Calendr authorized representative has been notified orally or in writing of the possibility of such damage.</p>
+              <p>Welcome to Calendr. By using our website, you agree to these terms. Please read them carefully.</p>
+              <p><strong>Content:</strong> Our content is for informational purposes only. We do not guarantee its accuracy and are not liable for any errors.</p>
+              <p><strong>Use of Website:</strong> You may use our website for personal, non-commercial purposes. You may not modify, copy, distribute, transmit, display, perform, reproduce, publish, license, create derivative works from, transfer, or sell any information, software, products or services obtained from this website.</p>
+              <p><strong>Disclaimer:</strong> The materials on Calendr's website are provided on an 'as is' basis. Calendr makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties including, without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights.</p>
+              <p><strong>Limitation of Liability:</strong> In no event shall Calendr or its suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use the materials on Calendr's website, even if Calendr or a Calendr authorized representative has been notified orally or in writing of the possibility of such damage.</p>
             </div>
             <button onClick={() => setShowTerms(false)} className="mt-4 rounded-md bg-primary-600 px-4 py-2 text-sm font-medium text-white hover:bg-primary-700">Close</button>
           </div>

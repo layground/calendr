@@ -1,50 +1,24 @@
-export type AccessLabel = 'parking' | 'wheelchair' | 'kids' | 'public-transport' | 'free-entry'
-
-export interface Event {
-  id: string
-  title: string
-  description: string
-  startDate: Date
-  endDate: Date
-  location: {
-    name: string
-    coordinates?: {
-      lat: number
-      lng: number
-    }
-  }
-  coverImage?: string
-  accessLabels?: AccessLabel[] | string[]
-  isPublicHoliday: boolean
-  isOptionalHoliday: boolean
-  articleUrl?: string
-  region: string
-  country: string
-}
-
 export interface RegionEvent {
   id: string;
   title: string;
   description: string;
-  startDate: string;
-  endDate: string;
-  location: any;
+  startDate: Date;
+  endDate: Date;
   isPublicHoliday: boolean;
-  isOptionalHoliday?: boolean;
+  isOptionalHoliday: boolean;
+  labels: string[];
+  location: {
+    address: string;
+    link_to_maps?: string | null;
+  };
+  image?: string | null;
+  source?: {
+    name: string;
+    link?: string | null;
+  };
+  region?: string;
+  country?: string;
   coverImage?: string;
   accessLabels?: string[];
   articleUrl?: string;
-  region?: string;
-  country?: string;
-}
-
-export interface Country {
-  code: string
-  name: string
-  regions: Region[]
-}
-
-export interface Region {
-  code: string
-  name: string
 }

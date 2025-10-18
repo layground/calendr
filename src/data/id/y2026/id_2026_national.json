@@ -1,335 +1,492 @@
-
 {
+  "year": 2026,
   "country": "Indonesia",
-  "countryCode": "ID",
-  "regions": [
+  "country_code": "ID",
+  "region": "National",
+  "region_code": "NATIONAL",
+  "events": [
     {
-      "region": "National",
-      "regionCode": "NATIONAL",
-      "events": [
-        {
-          "id": "ph1-2026",
-          "title": "Tahun Baru Masehi",
-          "description": "New Year's Day",
-          "startDate": "2026-01-01T00:00:00+07:00",
-          "endDate": "2026-01-01T23:59:59+07:00",
-          "location": {
-            "name": "Indonesia"
-          },
-          "isPublicHoliday": true,
-          "isOptionalHoliday": false,
-          "region": "National",
-          "country": "Indonesia"
-        },
-        {
-          "id": "ph2-2026",
-          "title": "Isra Mi'raj",
-          "description": "Commemorates the Prophet Muhammad's night journey and ascension to heaven.",
-          "startDate": "2026-01-16T00:00:00+07:00",
-          "endDate": "2026-01-16T23:59:59+07:00",
-          "location": {
-            "name": "Indonesia"
-          },
-          "isPublicHoliday": true,
-          "isOptionalHoliday": false,
-          "region": "National",
-          "country": "Indonesia"
-        },
-        {
-          "id": "ph3-2026",
-          "title": "Cuti Bersama Tahun Baru Imlek",
-          "description": "Joint leave for Chinese New Year",
-          "startDate": "2026-02-16T00:00:00+07:00",
-          "endDate": "2026-02-16T23:59:59+07:00",
-          "location": {
-            "name": "Indonesia"
-          },
-          "isPublicHoliday": true,
-          "isOptionalHoliday": true,
-          "region": "National",
-          "country": "Indonesia"
-        },
-        {
-          "id": "ph4-2026",
-          "title": "Tahun Baru Imlek",
-          "description": "Chinese New Year",
-          "startDate": "2026-02-17T00:00:00+07:00",
-          "endDate": "2026-02-17T23:59:59+07:00",
-          "location": {
-            "name": "Indonesia"
-          },
-          "isPublicHoliday": true,
-          "isOptionalHoliday": false,
-          "region": "National",
-          "country": "Indonesia"
-        },
-        {
-          "id": "ph5-2026",
-          "title": "Cuti Bersama Hari Suci Nyepi",
-          "description": "Joint leave for Nyepi",
-          "startDate": "2026-03-18T00:00:00+07:00",
-          "endDate": "2026-03-18T23:59:59+07:00",
-          "location": {
-            "name": "Indonesia"
-          },
-          "isPublicHoliday": true,
-          "isOptionalHoliday": true,
-          "region": "National",
-          "country": "Indonesia"
-        },
-        {
-          "id": "ph6-2026",
-          "title": "Hari Suci Nyepi",
-          "description": "Day of Silence",
-          "startDate": "2026-03-19T00:00:00+07:00",
-          "endDate": "2026-03-19T23:59:59+07:00",
-          "location": {
-            "name": "Indonesia"
-          },
-          "isPublicHoliday": true,
-          "isOptionalHoliday": false,
-          "region": "National",
-          "country": "Indonesia"
-        },
-        {
-          "id": "ph7-2026",
-          "title": "Cuti Bersama Lebaran",
-          "description": "Joint leave for Eid al-Fitr",
-          "startDate": "2026-03-20T00:00:00+07:00",
-          "endDate": "2026-03-20T23:59:59+07:00",
-          "location": {
-            "name": "Indonesia"
-          },
-          "isPublicHoliday": true,
-          "isOptionalHoliday": true,
-          "region": "National",
-          "country": "Indonesia"
-        },
-        {
-          "id": "ph8-2026",
-          "title": "Hari Raya Idul Fitri",
-          "description": "Eid al-Fitr",
-          "startDate": "2026-03-21T00:00:00+07:00",
-          "endDate": "2026-03-22T23:59:59+07:00",
-          "location": {
-            "name": "Indonesia"
-          },
-          "isPublicHoliday": true,
-          "isOptionalHoliday": false,
-          "region": "National",
-          "country": "Indonesia"
-        },
-        {
-          "id": "ph9-2026",
-          "title": "Cuti Bersama Lebaran",
-          "description": "Joint leave for Eid al-Fitr",
-          "startDate": "2026-03-23T00:00:00+07:00",
-          "endDate": "2026-03-24T23:59:59+07:00",
-          "location": {
-            "name": "Indonesia"
-          },
-          "isPublicHoliday": true,
-          "isOptionalHoliday": true,
-          "region": "National",
-          "country": "Indonesia"
-        },
-        {
-          "id": "ph10-2026",
-          "title": "Jumat Agung",
-          "description": "Good Friday",
-          "startDate": "2026-04-03T00:00:00+07:00",
-          "endDate": "2026-04-03T23:59:59+07:00",
-          "location": {
-            "name": "Indonesia"
-          },
-          "isPublicHoliday": true,
-          "isOptionalHoliday": false,
-          "region": "National",
-          "country": "Indonesia"
-        },
-        {
-          "id": "ph11-2026",
-          "title": "Paskah",
-          "description": "Easter",
-          "startDate": "2026-04-05T00:00:00+07:00",
-          "endDate": "2026-04-05T23:59:59+07:00",
-          "location": {
-            "name": "Indonesia"
-          },
-          "isPublicHoliday": true,
-          "isOptionalHoliday": false,
-          "region": "National",
-          "country": "Indonesia"
-        },
-        {
-          "id": "ph12-2026",
-          "title": "Hari Buruh",
-          "description": "Labour Day",
-          "startDate": "2026-05-01T00:00:00+07:00",
-          "endDate": "2026-05-01T23:59:59+07:00",
-          "location": {
-            "name": "Indonesia"
-          },
-          "isPublicHoliday": true,
-          "isOptionalHoliday": false,
-          "region": "National",
-          "country": "Indonesia"
-        },
-        {
-          "id": "ph13-2026",
-          "title": "Kenaikan Isa Almasih",
-          "description": "Ascension of Jesus Christ",
-          "startDate": "2026-05-14T00:00:00+07:00",
-          "endDate": "2026-05-14T23:59:59+07:00",
-          "location": {
-            "name": "Indonesia"
-          },
-          "isPublicHoliday": true,
-          "isOptionalHoliday": false,
-          "region": "National",
-          "country": "Indonesia"
-        },
-        {
-          "id": "ph14-2026",
-          "title": "Cuti Bersama Kenaikan Isa Almasih",
-          "description": "Joint leave for Ascension of Jesus Christ",
-          "startDate": "2026-05-15T00:00:00+07:00",
-          "endDate": "2026-05-15T23:59:59+07:00",
-          "location": {
-            "name": "Indonesia"
-          },
-          "isPublicHoliday": true,
-          "isOptionalHoliday": true,
-          "region": "National",
-          "country": "Indonesia"
-        },
-        {
-          "id": "ph15-2026",
-          "title": "Idul Adha",
-          "description": "Feast of the Sacrifice",
-          "startDate": "2026-05-27T00:00:00+07:00",
-          "endDate": "2026-05-27T23:59:59+07:00",
-          "location": {
-            "name": "Indonesia"
-          },
-          "isPublicHoliday": true,
-          "isOptionalHoliday": false,
-          "region": "National",
-          "country": "Indonesia"
-        },
-        {
-          "id": "ph16-2026",
-          "title": "Cuti Bersama Idul Adha",
-          "description": "Joint leave for Feast of the Sacrifice",
-          "startDate": "2026-05-28T00:00:00+07:00",
-          "endDate": "2026-05-28T23:59:59+07:00",
-          "location": {
-            "name": "Indonesia"
-          },
-          "isPublicHoliday": true,
-          "isOptionalHoliday": true,
-          "region": "National",
-          "country": "Indonesia"
-        },
-        {
-          "id": "ph17-2026",
-          "title": "Hari Waisak",
-          "description": "Vesak Day",
-          "startDate": "2026-05-31T00:00:00+07:00",
-          "endDate": "2026-05-31T23:59:59+07:00",
-          "location": {
-            "name": "Indonesia"
-          },
-          "isPublicHoliday": true,
-          "isOptionalHoliday": false,
-          "region": "National",
-          "country": "Indonesia"
-        },
-        {
-          "id": "ph18-2026",
-          "title": "Hari Lahir Pancasila",
-          "description": "Pancasila Day",
-          "startDate": "2026-06-01T00:00:00+07:00",
-          "endDate": "2026-06-01T23:59:59+07:00",
-          "location": {
-            "name": "Indonesia"
-          },
-          "isPublicHoliday": true,
-          "isOptionalHoliday": false,
-          "region": "National",
-          "country": "Indonesia"
-        },
-        {
-          "id": "ph19-2026",
-          "title": "Tahun Baru Islam",
-          "description": "Islamic New Year",
-          "startDate": "2026-06-16T00:00:00+07:00",
-          "endDate": "2026-06-16T23:59:59+07:00",
-          "location": {
-            "name": "Indonesia"
-          },
-          "isPublicHoliday": true,
-          "isOptionalHoliday": false,
-          "region": "National",
-          "country": "Indonesia"
-        },
-        {
-          "id": "ph20-2026",
-          "title": "Hari Kemerdekaan",
-          "description": "Independence Day",
-          "startDate": "2026-08-17T00:00:00+07:00",
-          "endDate": "2026-08-17T23:59:59+07:00",
-          "location": {
-            "name": "Indonesia"
-          },
-          "isPublicHoliday": true,
-          "isOptionalHoliday": false,
-          "region": "National",
-          "country": "Indonesia"
-        },
-        {
-          "id": "ph21-2026",
-          "title": "Maulid Nabi Muhammad SAW",
-          "description": "Prophet Muhammad's Birthday",
-          "startDate": "2026-08-25T00:00:00+07:00",
-          "endDate": "2026-08-25T23:59:59+07:00",
-          "location": {
-            "name": "Indonesia"
-          },
-          "isPublicHoliday": true,
-          "isOptionalHoliday": false,
-          "region": "National",
-          "country": "Indonesia"
-        },
-        {
-          "id": "ph22-2026",
-          "title": "Cuti Bersama Hari Natal",
-          "description": "Joint leave for Christmas",
-          "startDate": "2026-12-24T00:00:00+07:00",
-          "endDate": "2026-12-24T23:59:59+07:00",
-          "location": {
-            "name": "Indonesia"
-          },
-          "isPublicHoliday": true,
-          "isOptionalHoliday": true,
-          "region": "National",
-          "country": "Indonesia"
-        },
-        {
-          "id": "ph23-2026",
-          "title": "Hari Natal",
-          "description": "Christmas Day",
-          "startDate": "2026-12-25T00:00:00+07:00",
-          "endDate": "2026-12-25T23:59:59+07:00",
-          "location": {
-            "name": "Indonesia"
-          },
-          "isPublicHoliday": true,
-          "isOptionalHoliday": false,
-          "region": "National",
-          "country": "Indonesia"
-        }
-      ]
+      "id": "ph1-2026",
+      "title": "Tahun Baru Masehi",
+      "description": "Perayaan hari pertama dalam setahun pada kalender Masehi.",
+      "start_date_time": "2026-01-01T00:00:00+07:00",
+      "end_date_time": "2026-01-01T23:59:59+07:00",
+      "is_public_holiday": true,
+      "is_optional_holiday": false,
+      "labels": [
+        "libur-nasional"
+      ],
+      "location": {
+        "address": "Seluruh Indonesia",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "Pemerintah Indonesia",
+        "link": null
+      }
+    },
+    {
+      "id": "ph2-2026",
+      "title": "Isra Mi'raj",
+      "description": "Memperingati perjalanan malam Nabi Muhammad SAW dan kenaikan beliau ke surga.",
+      "start_date_time": "2026-01-16T00:00:00+07:00",
+      "end_date_time": "2026-01-16T23:59:59+07:00",
+      "is_public_holiday": true,
+      "is_optional_holiday": false,
+      "labels": [
+        "libur-nasional"
+      ],
+      "location": {
+        "address": "Seluruh Indonesia",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "Pemerintah Indonesia",
+        "link": null
+      }
+    },
+    {
+      "id": "ph3-2026",
+      "title": "Cuti Bersama Tahun Baru Imlek",
+      "description": "Hari libur tambahan yang dianjurkan pemerintah terkait perayaan Tahun Baru Imlek.",
+      "start_date_time": "2026-02-16T00:00:00+07:00",
+      "end_date_time": "2026-02-16T23:59:59+07:00",
+      "is_public_holiday": true,
+      "is_optional_holiday": true,
+      "labels": [
+        "cuti-bersama"
+      ],
+      "location": {
+        "address": "Seluruh Indonesia",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "Pemerintah Indonesia",
+        "link": null
+      }
+    },
+    {
+      "id": "ph4-2026",
+      "title": "Tahun Baru Imlek",
+      "description": "Perayaan Tahun Baru dalam kalender Tionghoa.",
+      "start_date_time": "2026-02-17T00:00:00+07:00",
+      "end_date_time": "2026-02-17T23:59:59+07:00",
+      "is_public_holiday": true,
+      "is_optional_holiday": false,
+      "labels": [
+        "libur-nasional"
+      ],
+      "location": {
+        "address": "Seluruh Indonesia",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "Pemerintah Indonesia",
+        "link": null
+      }
+    },
+    {
+      "id": "ph5-2026",
+      "title": "Cuti Bersama Hari Suci Nyepi",
+      "description": "Hari libur tambahan yang dianjurkan pemerintah terkait perayaan Hari Suci Nyepi.",
+      "start_date_time": "2026-03-18T00:00:00+07:00",
+      "end_date_time": "2026-03-18T23:59:59+07:00",
+      "is_public_holiday": true,
+      "is_optional_holiday": true,
+      "labels": [
+        "cuti-bersama"
+      ],
+      "location": {
+        "address": "Seluruh Indonesia",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "Pemerintah Indonesia",
+        "link": null
+      }
+    },
+    {
+      "id": "ph6-2026",
+      "title": "Hari Suci Nyepi",
+      "description": "Hari raya umat Hindu yang dirayakan dengan keheningan.",
+      "start_date_time": "2026-03-19T00:00:00+07:00",
+      "end_date_time": "2026-03-19T23:59:59+07:00",
+      "is_public_holiday": true,
+      "is_optional_holiday": false,
+      "labels": [
+        "libur-nasional"
+      ],
+      "location": {
+        "address": "Seluruh Indonesia",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "Pemerintah Indonesia",
+        "link": null
+      }
+    },
+    {
+      "id": "ph7-2026",
+      "title": "Cuti Bersama Lebaran",
+      "description": "Hari libur tambahan yang dianjurkan pemerintah terkait Hari Raya Idul Fitri.",
+      "start_date_time": "2026-03-20T00:00:00+07:00",
+      "end_date_time": "2026-03-20T23:59:59+07:00",
+      "is_public_holiday": true,
+      "is_optional_holiday": true,
+      "labels": [
+        "cuti-bersama"
+      ],
+      "location": {
+        "address": "Seluruh Indonesia",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "Pemerintah Indonesia",
+        "link": null
+      }
+    },
+    {
+      "id": "ph8-2026",
+      "title": "Hari Raya Idul Fitri",
+      "description": "Hari raya umat Islam menandai berakhirnya bulan Ramadhan.",
+      "start_date_time": "2026-03-21T00:00:00+07:00",
+      "end_date_time": "2026-03-22T23:59:59+07:00",
+      "is_public_holiday": true,
+      "is_optional_holiday": false,
+      "labels": [
+        "libur-nasional"
+      ],
+      "location": {
+        "address": "Seluruh Indonesia",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "Pemerintah Indonesia",
+        "link": null
+      }
+    },
+    {
+      "id": "ph9-2026",
+      "title": "Cuti Bersama Lebaran",
+      "description": "Hari libur tambahan yang dianjurkan pemerintah terkait Hari Raya Idul Fitri.",
+      "start_date_time": "2026-03-23T00:00:00+07:00",
+      "end_date_time": "2026-03-24T23:59:59+07:00",
+      "is_public_holiday": true,
+      "is_optional_holiday": true,
+      "labels": [
+        "cuti-bersama"
+      ],
+      "location": {
+        "address": "Seluruh Indonesia",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "Pemerintah Indonesia",
+        "link": null
+      }
+    },
+    {
+      "id": "ph10-2026",
+      "title": "Jumat Agung",
+      "description": "Hari libur umat Kristen untuk memperingati wafatnya Isa Almasih.",
+      "start_date_time": "2026-04-03T00:00:00+07:00",
+      "end_date_time": "2026-04-03T23:59:59+07:00",
+      "is_public_holiday": true,
+      "is_optional_holiday": false,
+      "labels": [
+        "libur-nasional"
+      ],
+      "location": {
+        "address": "Seluruh Indonesia",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "Pemerintah Indonesia",
+        "link": null
+      }
+    },
+    {
+      "id": "ph11-2026",
+      "title": "Paskah",
+      "description": "Hari raya umat Kristen untuk merayakan kebangkitan Isa Almasih.",
+      "start_date_time": "2026-04-05T00:00:00+07:00",
+      "end_date_time": "2026-04-05T23:59:59+07:00",
+      "is_public_holiday": true,
+      "is_optional_holiday": false,
+      "labels": [
+        "libur-nasional"
+      ],
+      "location": {
+        "address": "Seluruh Indonesia",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "Pemerintah Indonesia",
+        "link": null
+      }
+    },
+    {
+      "id": "ph12-2026",
+      "title": "Hari Buruh",
+      "description": "Hari Buruh Internasional.",
+      "start_date_time": "2026-05-01T00:00:00+07:00",
+      "end_date_time": "2026-05-01T23:59:59+07:00",
+      "is_public_holiday": true,
+      "is_optional_holiday": false,
+      "labels": [
+        "libur-nasional"
+      ],
+      "location": {
+        "address": "Seluruh Indonesia",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "Pemerintah Indonesia",
+        "link": null
+      }
+    },
+    {
+      "id": "ph13-2026",
+      "title": "Kenaikan Isa Almasih",
+      "description": "Hari raya umat Kristen untuk merayakan kenaikan Isa Almasih ke surga.",
+      "start_date_time": "2026-05-14T00:00:00+07:00",
+      "end_date_time": "2026-05-14T23:59:59+07:00",
+      "is_public_holiday": true,
+      "is_optional_holiday": false,
+      "labels": [
+        "libur-nasional"
+      ],
+      "location": {
+        "address": "Seluruh Indonesia",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "Pemerintah Indonesia",
+        "link": null
+      }
+    },
+    {
+      "id": "ph14-2026",
+      "title": "Cuti Bersama Kenaikan Isa Almasih",
+      "description": "Hari libur tambahan yang dianjurkan pemerintah terkait hari Kenaikan Isa Almasih.",
+      "start_date_time": "2026-05-15T00:00:00+07:00",
+      "end_date_time": "2026-05-15T23:59:59+07:00",
+      "is_public_holiday": true,
+      "is_optional_holiday": true,
+      "labels": [
+        "cuti-bersama"
+      ],
+      "location": {
+        "address": "Seluruh Indonesia",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "Pemerintah Indonesia",
+        "link": null
+      }
+    },
+    {
+      "id": "ph15-2026",
+      "title": "Idul Adha",
+      "description": "Hari raya kurban bagi umat Islam.",
+      "start_date_time": "2026-05-27T00:00:00+07:00",
+      "end_date_time": "2026-05-27T23:59:59+07:00",
+      "is_public_holiday": true,
+      "is_optional_holiday": false,
+      "labels": [
+        "libur-nasional"
+      ],
+      "location": {
+        "address": "Seluruh Indonesia",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "Pemerintah Indonesia",
+        "link": null
+      }
+    },
+    {
+      "id": "ph16-2026",
+      "title": "Cuti Bersama Idul Adha",
+      "description": "Hari libur tambahan yang dianjurkan pemerintah terkait Hari Raya Idul Adha.",
+      "start_date_time": "2026-05-28T00:00:00+07:00",
+      "end_date_time": "2026-05-28T23:59:59+07:00",
+      "is_public_holiday": true,
+      "is_optional_holiday": true,
+      "labels": [
+        "cuti-bersama"
+      ],
+      "location": {
+        "address": "Seluruh Indonesia",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "Pemerintah Indonesia",
+        "link": null
+      }
+    },
+    {
+      "id": "ph17-2026",
+      "title": "Hari Waisak",
+      "description": "Hari raya umat Buddha untuk memperingati tiga peristiwa penting dalam kehidupan Buddha.",
+      "start_date_time": "2026-05-31T00:00:00+07:00",
+      "end_date_time": "2026-05-31T23:59:59+07:00",
+      "is_public_holiday": true,
+      "is_optional_holiday": false,
+      "labels": [
+        "libur-nasional"
+      ],
+      "location": {
+        "address": "Seluruh Indonesia",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "Pemerintah Indonesia",
+        "link": null
+      }
+    },
+    {
+      "id": "ph18-2026",
+      "title": "Hari Lahir Pancasila",
+      "description": "Memperingati hari lahirnya Pancasila sebagai dasar negara Indonesia.",
+      "start_date_time": "2026-06-01T00:00:00+07:00",
+      "end_date_time": "2026-06-01T23:59:59+07:00",
+      "is_public_holiday": true,
+      "is_optional_holiday": false,
+      "labels": [
+        "libur-nasional"
+      ],
+      "location": {
+        "address": "Seluruh Indonesia",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "Pemerintah Indonesia",
+        "link": null
+      }
+    },
+    {
+      "id": "ph19-2026",
+      "title": "Tahun Baru Islam",
+      "description": "Perayaan Tahun Baru dalam kalender Hijriah.",
+      "start_date_time": "2026-06-16T00:00:00+07:00",
+      "end_date_time": "2026-06-16T23:59:59+07:00",
+      "is_public_holiday": true,
+      "is_optional_holiday": false,
+      "labels": [
+        "libur-nasional"
+      ],
+      "location": {
+        "address": "Seluruh Indonesia",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "Pemerintah Indonesia",
+        "link": null
+      }
+    },
+    {
+      "id": "ph20-2026",
+      "title": "Hari Kemerdekaan",
+      "description": "Perayaan Hari Kemerdekaan Republik Indonesia.",
+      "start_date_time": "2026-08-17T00:00:00+07:00",
+      "end_date_time": "2026-08-17T23:59:59+07:00",
+      "is_public_holiday": true,
+      "is_optional_holiday": false,
+      "labels": [
+        "libur-nasional"
+      ],
+      "location": {
+        "address": "Seluruh Indonesia",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "Pemerintah Indonesia",
+        "link": null
+      }
+    },
+    {
+      "id": "ph21-2026",
+      "title": "Maulid Nabi Muhammad SAW",
+      "description": "Memperingati hari kelahiran Nabi Muhammad SAW.",
+      "start_date_time": "2026-08-25T00:00:00+07:00",
+      "end_date_time": "2026-08-25T23:59:59+07:00",
+      "is_public_holiday": true,
+      "is_optional_holiday": false,
+      "labels": [
+        "libur-nasional"
+      ],
+      "location": {
+        "address": "Seluruh Indonesia",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "Pemerintah Indonesia",
+        "link": null
+      }
+    },
+    {
+      "id": "ph22-2026",
+      "title": "Cuti Bersama Hari Natal",
+      "description": "Hari libur tambahan yang dianjurkan pemerintah terkait perayaan Hari Raya Natal.",
+      "start_date_time": "2026-12-24T00:00:00+07:00",
+      "end_date_time": "2026-12-24T23:59:59+07:00",
+      "is_public_holiday": true,
+      "is_optional_holiday": true,
+      "labels": [
+        "cuti-bersama"
+      ],
+      "location": {
+        "address": "Seluruh Indonesia",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "Pemerintah Indonesia",
+        "link": null
+      }
+    },
+    {
+      "id": "ph23-2026",
+      "title": "Hari Natal",
+      "description": "Hari raya umat Kristen untuk merayakan kelahiran Isa Almasih.",
+      "start_date_time": "2026-12-25T00:00:00+07:00",
+      "end_date_time": "2026-12-25T23:59:59+07:00",
+      "is_public_holiday": true,
+      "is_optional_holiday": false,
+      "labels": [
+        "libur-nasional"
+      ],
+      "location": {
+        "address": "Seluruh Indonesia",
+        "link_to_maps": null
+      },
+      "image": null,
+      "source": {
+        "name": "Pemerintah Indonesia",
+        "link": null
+      }
     }
   ]
 }
