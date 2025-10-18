@@ -11,14 +11,14 @@ import { DayView } from '@/components/calendar/DayView'
 import { EventDetails } from '@/components/events/EventDetails'
 import { DailyEventsList } from '@/components/events/DailyEventsList'
 import { BottomSheet } from '@/components/events/BottomSheet'
-import { RegionEvent } from '@/lib/types/event'
+import { Event } from '@/lib/types/event'
 
 type ViewMode = 'year' | 'month' | 'week' | 'day'
 
 interface Region {
   region: string
   regionCode: string
-  events: RegionEvent[]
+  events: Event[]
 }
 
 interface CountryData {
@@ -31,13 +31,13 @@ export default function Home() {
 
   const [selectedDate, setSelectedDate] = useState<Date | null>(null)
   const [currentDate, setCurrentDate] = useState(new Date())
-  const [selectedEvent, setSelectedEvent] = useState<RegionEvent | null>(null)
-  const [dailyEvents, setDailyEvents] = useState<RegionEvent[] | null>(null)
+  const [selectedEvent, setSelectedEvent] = useState<Event | null>(null)
+  const [dailyEvents, setDailyEvents] = useState<Event[] | null>(null)
   const [viewMode, setViewMode] = useState<ViewMode>('month')
   const [year, setYear] = useState(currentDate.getFullYear())
   const [country, setCountry] = useState('ID')
   const [region, setRegion] = useState('-')
-  const [events, setEvents] = useState<RegionEvent[]>([])
+  const [events, setEvents] = useState<Event[]>([])
   const [showEvents, setShowEvents] = useState(false)
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [showLegend, setShowLegend] = useState(false);
@@ -52,23 +52,24 @@ export default function Home() {
 
     const fetchEvents = async () => {
       try {
-        const regionEventsPromise = regionFileName && region !== '-' ? import(`@/data/id/y${year}/id_${year}_${regionFileName}.json`) : Promise.resolve({ events: [] });
+        const EventsPromise = regionFileName && region !== '-' ? import(`@/data/id/y${year}/id_${year}_${regionFileName}.json`) : Promise.resolve({ events: [] });
         const nationalEventsPromise = import(`@/data/id/y${year}/id_${year}_national.json`);
 
         const [regionModule, nationalModule] = await Promise.all([
-          regionEventsPromise.catch(e => ({ default: { events: [] } })),
+          EventsPromise.catch(e => ({ default: { events: [] } })),
           nationalEventsPromise.catch(e => ({ default: { events: [] } }))
         ]);
 
-        const regionEvents = regionModule.default ? regionModule.default.events : [];
+        const Events = regionModule.default ? regionModule.default.events : [];
         const nationalEvents = nationalModule.default ? nationalModule.default.events : [];
 
-        const allEvents = [...regionEvents, ...nationalEvents].map((e: any) => ({
+        const allEvents = [...Events, ...nationalEvents].map((e: any) => ({
           ...e,
           startDate: new Date(e.start_date_time),
           endDate: new Date(e.end_date_time),
           isPublicHoliday: e.is_public_holiday,
           isOptionalHoliday: e.is_optional_holiday,
+          labels: e.labels || [],
         }));
 
         setEvents(allEvents);
@@ -368,21 +369,7 @@ export default function Home() {
               onDateSelect={handleDateSelect}
               today={new Date()}
               selectedDate={selectedDate}
-              events={events.map(e => ({
-                id: e.id,
-                title: e.title,
-                description: e.description,
-                startDate: new Date(e.startDate),
-                endDate: new Date(e.endDate),
-                location: e.location,
-                coverImage: e.coverImage,
-                accessLabels: e.accessLabels || [],
-                isPublicHoliday: e.isPublicHoliday,
-                isOptionalHoliday: e.isOptionalHoliday || false,
-                articleUrl: e.articleUrl,
-                region: e.region || 'Yogyakarta',
-                country: e.country || 'Indonesia',
-              }))}
+              events={events}
               showEvents={showEvents}
             />
           )}
@@ -390,21 +377,7 @@ export default function Home() {
             <MonthView
               year={year}
               month={currentDate.getMonth()}
-              events={events.map(e => ({
-                id: e.id,
-                title: e.title,
-                description: e.description,
-                startDate: new Date((e as any).startDate || (e as any).date),
-                endDate: new Date((e as any).startDate || (e as any).date),
-                location: typeof e.location === 'string' ? { name: e.location } : e.location,
-                coverImage: (e as any).coverImage,
-                accessLabels: (e as any).accessLabels || [],
-                isPublicHoliday: e.isPublicHoliday,
-                isOptionalHoliday: (e as any).isOptionalHoliday || false,
-                articleUrl: (e as any).articleUrl,
-                region: (e as any).region || 'Yogyakarta',
-                country: (e as any).country || 'Indonesia',
-              }))}
+              events={events}
               onSelectDate={handleDateSelect}
               onDoubleClickDate={handleDateDoubleClick}
               today={new Date()}
@@ -416,42 +389,14 @@ export default function Home() {
             <WeekView
               weekStart={currentDate}
               onDaySelect={d => { setViewMode('day'); setCurrentDate(d); setSelectedDate(d); }}
-              events={events.map(e => ({
-                id: e.id,
-                title: e.title,
-                description: e.description,
-                startDate: new Date(e.startDate),
-                endDate: new Date(e.endDate),
-                location: typeof e.location === 'string' ? { name: e.location } : e.location,
-                coverImage: (e as any).coverImage,
-                accessLabels: (e as any).accessLabels || [],
-                isPublicHoliday: e.isPublicHoliday,
-                isOptionalHoliday: (e as any).isOptionalHoliday || false,
-                articleUrl: (e as any).articleUrl,
-                region: (e as any).region || 'Yogyakarta',
-                country: (e as any).country || 'Indonesia',
-              }))}
+              events={events}
               onEventSelect={handleEventSelect}
             />
           )}
           {viewMode === 'day' && (
             <DayView
               date={currentDate}
-              events={events.map(e => ({
-                id: e.id,
-                title: e.title,
-                description: e.description,
-                startDate: new Date(e.startDate),
-                endDate: new Date(e.endDate),
-                location: typeof e.location === 'string' ? { name: e.location } : e.location,
-                coverImage: (e as any).coverImage,
-                accessLabels: (e as any).accessLabels || [],
-                isPublicHoliday: e.isPublicHoliday,
-                isOptionalHoliday: (e as any).isOptionalHoliday || false,
-                articleUrl: (e as any).articleUrl,
-                region: (e as any).region || 'Yogyakarta',
-                country: (e as any).country || 'Indonesia',
-              }))}
+              events={events}
               onEventSelect={handleEventSelect}
             />
           )}
@@ -465,21 +410,7 @@ export default function Home() {
         ) : selectedEvent ? (
           <div className="flex flex-col h-full">
             <div className="flex-grow">
-              <EventDetails onBack={() => setSelectedEvent(null)} event={{
-                id: selectedEvent.id,
-                title: selectedEvent.title,
-                description: selectedEvent.description,
-                startDate: new Date(selectedEvent.startDate),
-                endDate: new Date(selectedEvent.endDate),
-                location: selectedEvent.location,
-                coverImage: selectedEvent.coverImage,
-                accessLabels: selectedEvent.accessLabels || [],
-                isPublicHoliday: selectedEvent.isPublicHoliday,
-                isOptionalHoliday: selectedEvent.isOptionalHoliday || false,
-                articleUrl: selectedEvent.articleUrl,
-                region: selectedEvent.region || 'Yogyakarta',
-                country: selectedEvent.country || 'Indonesia',
-              }} />
+              <EventDetails onBack={() => setSelectedEvent(null)} event={selectedEvent} />
             </div>
           </div>
         ) : (
@@ -492,21 +423,7 @@ export default function Home() {
       {/* Bottom sheet - Event Details (mobile) */}
       <div className="md:hidden">
         <BottomSheet
-          event={selectedEvent ? {
-            id: selectedEvent.id,
-            title: selectedEvent.title,
-            description: selectedEvent.description,
-            startDate: new Date(selectedEvent.startDate),
-            endDate: new Date(selectedEvent.endDate),
-            location: selectedEvent.location,
-            coverImage: selectedEvent.coverImage,
-            accessLabels: selectedEvent.accessLabels || [],
-            isPublicHoliday: selectedEvent.isPublicHoliday,
-            isOptionalHoliday: selectedEvent.isOptionalHoliday || false,
-            articleUrl: selectedEvent.articleUrl,
-            region: selectedEvent.region || 'Yogyakarta',
-            country: selectedEvent.country || 'Indonesia',
-          } : null}
+          event={selectedEvent}
           onClose={() => setSelectedEvent(null)}
         />
       </div>

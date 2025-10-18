@@ -1,12 +1,12 @@
-export interface RegionEvent {
-  id: string;
+export interface Event {
+  id?: string;
   title: string;
   description: string;
   startDate: Date;
   endDate: Date;
   isPublicHoliday: boolean;
   isOptionalHoliday: boolean;
-  labels: string[];
+  labels?: string[];
   location: {
     address: string;
     link_to_maps?: string | null;
@@ -19,6 +19,5 @@ export interface RegionEvent {
   region?: string;
   country?: string;
   coverImage?: string;
-  accessLabels?: string[];
   articleUrl?: string;
 }

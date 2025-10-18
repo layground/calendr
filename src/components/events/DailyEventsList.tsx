@@ -1,9 +1,9 @@
 import { FC } from 'react';
-import { RegionEvent } from '@/lib/types/event';
+import { Event } from '@/lib/types/event';
 
 interface DailyEventsListProps {
-  events: RegionEvent[];
-  onEventSelect: (event: RegionEvent) => void;
+  events: Event[];
+  onEventSelect: (event: Event) => void;
 }
 
 export const DailyEventsList: FC<DailyEventsListProps> = ({ events, onEventSelect }) => {
@@ -14,9 +14,9 @@ export const DailyEventsList: FC<DailyEventsListProps> = ({ events, onEventSelec
       </h2>
       <div className="flex flex-col gap-2">
         {events.map(event => (
-          <div 
-            key={event.id} 
-            className="p-4 border rounded-lg cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-800" 
+          <div
+            key={event.id}
+            className="p-4 border rounded-lg cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-800"
             onClick={() => onEventSelect(event)}
           >
             <p className="font-bold truncate">{event.title}</p>

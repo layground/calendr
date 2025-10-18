@@ -74,7 +74,7 @@ export const EventDetails = ({ event, onBack }: EventDetailsProps) => {
                 event.title
               )}&dates=${startTime}/${endTime}&details=${encodeURIComponent(
                 event.description
-              )}&location=${encodeURIComponent(event.location.name)}`
+              )}&location=${encodeURIComponent(event.location.address)}`
               window.open(url, '_blank')
             }}
             className="mt-2 rounded-md bg-primary-600 px-2 py-1 text-xs text-white hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 dark:focus:ring-offset-slate-900"
@@ -87,23 +87,21 @@ export const EventDetails = ({ event, onBack }: EventDetailsProps) => {
           <h3 className="font-medium">Location</h3>
           <p className="mt-1 text-sm text-gray-600 dark:text-slate-400">
             <a
-              href={event.location.coordinates 
-                ? `https://www.google.com/maps?q=${event.location.coordinates.lat},${event.location.coordinates.lng}`
-                : `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(event.location.name)}`}
+              href={`https://maps.google.com/?q=${encodeURIComponent(event.location.address)}`}
               target="_blank"
               rel="noopener noreferrer"
               className="text-primary-600 hover:underline dark:text-primary-400"
             >
-              {event.location.name}
+              {event.location.address}
             </a>
           </p>
         </div>
 
-        {event.accessLabels.length > 0 && (
+        {event.labels && event.labels.length > 0 && (
           <div>
             <h3 className="font-medium">Access Information</h3>
             <div className="mt-2 flex flex-wrap gap-2">
-              {event.accessLabels.map(label => (
+              {event.labels.map(label => (
                 <div
                   key={label}
                   className="flex items-center gap-1 rounded-full bg-gray-100 px-3 py-1 text-sm dark:bg-slate-800"
@@ -121,9 +119,9 @@ export const EventDetails = ({ event, onBack }: EventDetailsProps) => {
           <p className="mt-1 text-sm text-gray-600 dark:text-slate-400">
             {event.description}
           </p>
-          {event.articleUrl && (
+          {event.source?.link && (
             <a
-              href={event.articleUrl}
+              href={event.source.link}
               target="_blank"
               rel="noopener noreferrer"
               className="mt-2 inline-block text-sm text-primary-600 hover:underline dark:text-primary-400"
