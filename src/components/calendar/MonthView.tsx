@@ -1,6 +1,6 @@
 'use client'
 
-import { useMemo } from 'react'
+import { useMemo, useRef, useState } from 'react'
 import { Event } from '@/lib/types/event'
 import { formatDate, getMonthGridDays, isWeekend } from '@/lib/utils/dates'
 import { triggerHapticFeedback } from '@/lib/utils/haptics'
@@ -10,20 +10,57 @@ interface MonthViewProps {
   month: number
   events: Event[]
   onSelectDate: (date: Date) => void
+  onSelectEvents: (events: Event[]) => void
   onDoubleClickDate?: (date: Date) => void
   today?: Date
   selectedDate?: Date | null
   showEvents?: boolean
 }
 
-export const MonthView = ({ year, month, events, onSelectDate, onDoubleClickDate, today, selectedDate, showEvents = false }: MonthViewProps) => {
+export const MonthView = ({ year, month, events, onSelectDate, onSelectEvents, onDoubleClickDate, today, selectedDate, showEvents = false }: MonthViewProps) => {
   const days = useMemo(() => getMonthGridDays(year, month), [year, month])
   const weekDays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
 
+  const longPressTimer = useRef<NodeJS.Timeout | null>(null);
+  const [isLongPressHandled, setIsLongPressHandled] = useState(false);
+
+  const handleTouchStart = (date: Date) => {
+    longPressTimer.current = setTimeout(() => {
+      triggerHapticFeedback();
+      const eventsForDate = getEventsForDate(date);
+      if (eventsForDate.length > 0) {
+        onSelectEvents(eventsForDate);
+      }
+      setIsLongPressHandled(true);
+    }, 500); // 500ms for long press
+  };
+
+  const handleTouchEnd = (date: Date) => {
+    if (longPressTimer.current) {
+      clearTimeout(longPressTimer.current);
+    }
+    if (!isLongPressHandled) {
+      triggerHapticFeedback();
+      onSelectDate(date);
+    }
+    setIsLongPressHandled(false);
+  };
+
+  const handleTouchMove = () => {
+    if (longPressTimer.current) {
+      clearTimeout(longPressTimer.current);
+      setIsLongPressHandled(false);
+    }
+  };
+
   const handleDateClick = (date: Date) => {
-    triggerHapticFeedback()
-    onSelectDate(date)
-  }
+    triggerHapticFeedback();
+    onSelectDate(date);
+    const eventsForDate = getEventsForDate(date);
+    if (eventsForDate.length > 0) {
+      onSelectEvents(eventsForDate);
+    }
+  };
 
   const getEventsForDate = (date: Date) => {
     return events.filter(event => {
@@ -73,19 +110,26 @@ export const MonthView = ({ year, month, events, onSelectDate, onDoubleClickDate
 
           const dateColorClass =
             onWeekend && isPublicHoliday ? 'text-purple-500 dark:text-purple-400' :
-            onWeekend ? 'text-red-500 dark:text-red-400' :
-            isPublicHoliday ? 'text-red-500 dark:text-red-400' : '';
+              onWeekend ? 'text-red-500 dark:text-red-400' :
+                isPublicHoliday ? 'text-red-500 dark:text-red-400' : '';
 
           const inactiveDateColorClass =
             onWeekend && isPublicHoliday ? 'text-purple-500 opacity-50 dark:text-purple-400' :
-            onWeekend ? 'text-red-500 opacity-50 dark:text-red-400' :
-            isPublicHoliday ? 'text-red-500 opacity-50 dark:text-red-400' : 'text-gray-400 dark:text-slate-500';
+              onWeekend ? 'text-red-500 opacity-50 dark:text-red-400' :
+                isPublicHoliday ? 'text-red-500 opacity-50 dark:text-red-400' : 'text-gray-400 dark:text-slate-500';
 
           return (
             <button
               key={date.toISOString()}
-              onClick={() => handleDateClick(date)}
+              onClick={() => {
+                if (window.innerWidth >= 768) { // Desktop click
+                  handleDateClick(date);
+                }
+              }}
               onDoubleClick={() => onDoubleClickDate && onDoubleClickDate(date)}
+              onTouchStart={() => handleTouchStart(date)}
+              onTouchEnd={() => handleTouchEnd(date)}
+              onTouchMove={handleTouchMove}
               className={`
                 relative rounded-lg p-2 text-base h-full min-h-[3.5rem] flex flex-col items-center justify-start
                 hover:bg-gray-100 dark:hover:bg-slate-800
@@ -100,40 +144,30 @@ export const MonthView = ({ year, month, events, onSelectDate, onDoubleClickDate
               {isOptionalHoliday && isCurrentMonth && <div className="w-1 h-1 bg-red-500 rounded-full mt-1"></div>}
               <div className="flex flex-col gap-1 w-full mt-1 overflow-hidden">
                 {isCurrentMonth && mandatoryPublicHolidays.map(event => (
-                    <div
+                  <div
                     key={event.id}
                     className={`rounded-md px-1 py-0.5 text-xs text-left truncate bg-red-500 text-white`}
-                    >
+                  >
                     {event.title}
-                    </div>
+                  </div>
                 ))}
                 {showEvents && isCurrentMonth && (
                   <>
-                    {otherEvents.length <= 4 && otherEvents.map(event => (
+                    {otherEvents.length > 0 && (
                       <div
-                        key={event.id}
+                        key={otherEvents[0].id}
                         className={`rounded-md px-1 py-0.5 text-xs text-left truncate bg-primary-100 dark:bg-primary-800`}
                       >
-                        {event.title}
+                        {otherEvents[0].title}
                       </div>
-                    ))}
-                    {otherEvents.length > 4 && (
-                      <>
-                        {otherEvents.slice(0, 3).map(event => (
-                          <div
-                            key={event.id}
-                            className={`rounded-md px-1 py-0.5 text-xs text-left truncate bg-primary-100 dark:bg-primary-800`}
-                          >
-                            {event.title}
-                          </div>
-                        ))}
-                        <div
-                          key="more-events"
-                          className="rounded-md px-1 py-0.5 text-xs text-left truncate bg-gray-200 dark:bg-slate-700"
-                        >
-                          ({otherEvents.length - 3}) more events
-                        </div>
-                      </>
+                    )}
+                    {otherEvents.length > 1 && (
+                      <div
+                        key="more-events"
+                        className="rounded-md px-1 py-0.5 text-xs text-left truncate bg-gray-200 dark:bg-slate-700"
+                      >
+                        ({otherEvents.length - 1}) more events
+                      </div>
                     )}
                   </>
                 )}

@@ -379,6 +379,14 @@ export default function Home() {
               month={currentDate.getMonth()}
               events={events}
               onSelectDate={handleDateSelect}
+              onSelectEvents={(eventsForDate) => {
+                if (eventsForDate.length === 1) {
+                  setSelectedEvent(eventsForDate[0]);
+                } else if (eventsForDate.length > 1) {
+                  setDailyEvents(eventsForDate);
+                  setSelectedEvent(null);
+                }
+              }}
               onDoubleClickDate={handleDateDoubleClick}
               today={new Date()}
               selectedDate={selectedDate}
@@ -424,7 +432,15 @@ export default function Home() {
       <div className="md:hidden">
         <BottomSheet
           event={selectedEvent}
-          onClose={() => setSelectedEvent(null)}
+          dailyEvents={dailyEvents}
+          onClose={() => {
+            setSelectedEvent(null);
+            setDailyEvents(null);
+          }}
+          onSelectEventFromList={(event) => {
+            setSelectedEvent(event);
+            setDailyEvents(null);
+          }}
         />
       </div>
       <div className="md:hidden fixed bottom-4 right-4 z-10">
