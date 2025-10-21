@@ -32,86 +32,6 @@ interface Event {
 
 type View = 'Year' | 'Month' | 'Week' | 'Day';
 
-// --- MOCK DATA ---
-const MOCK_PUBLIC_HOLIDAYS_2025 = {
-  year: 2025,
-  country: "Indonesia",
-  country_id: "ID",
-  events: [
-    {
-      id: 1,
-      title: "Tahun Baru Masehi",
-      description: "Merayakan hari pertama dalam setahun pada kalender Gregorian.",
-      start_date_time: "2025-01-01T00:00:00+07:00",
-      end_date_time: "2025-01-01T23:59:59+07:00",
-      is_public_holiday: true,
-      is_joint_holiday: false,
-      location: { address: "Seluruh Indonesia", link_to_maps: null },
-      image: "https://placehold.co/600x400/3b82f6/ffffff?text=Event+Image",
-      source: { name: "SKB 3 Menteri", link: "#" },
-      labels: ["National Holiday"]
-    },
-    {
-      id: 2,
-      title: "Cuti Bersama Imlek",
-      description: "Cuti bersama untuk merayakan Tahun Baru Imlek 2576 Kongzili.",
-      start_date_time: "2025-01-28T00:00:00+07:00",
-      end_date_time: "2025-01-28T23:59:59+07:00",
-      is_public_holiday: false,
-      is_joint_holiday: true,
-      location: { address: "Indonesia", link_to_maps: null },
-      image: "https://placehold.co/600x400/f97316/ffffff?text=Imlek",
-      source: { name: "SKB 3 Menteri", link: "#" },
-      labels: ["Joint Holiday"]
-    },
-    {
-      id: 3,
-      title: "Tahun Baru Imlek 2576 Kongzili",
-      description: "Perayaan tahun baru dalam penanggalan Tionghoa.",
-      start_date_time: "2025-01-29T00:00:00+07:00",
-      end_date_time: "2025-01-29T23:59:59+07:00",
-      is_public_holiday: true,
-      is_joint_holiday: false,
-      location: { address: "Seluruh Indonesia", link_to_maps: null },
-      image: "https://placehold.co/600x400/ef4444/ffffff?text=Imlek",
-      source: { name: "SKB 3 Menteri", link: "#" },
-      labels: ["National Holiday", "Cultural"]
-    },
-  ]
-};
-
-const MOCK_REGIONAL_EVENTS_2025 = {
-  year: 2025,
-  region: "Yogyakarta",
-  events: [
-    {
-      id: 4,
-      title: "Yogyakarta Art Festival",
-      description: "A week-long celebration of local and international art in the heart of Yogyakarta. Features exhibitions, workshops, and performances.",
-      start_date_time: "2025-07-20T09:00:00+07:00",
-      end_date_time: "2025-07-26T21:00:00+07:00",
-      is_public_holiday: false,
-      is_joint_holiday: false,
-      location: { address: "Taman Budaya Yogyakarta, Jl. Sriwedani No.1, Yogyakarta", link_to_maps: "https://maps.google.com" },
-      image: "https://placehold.co/600x400/8b5cf6/ffffff?text=Art+Fest",
-      source: { name: "Yogya Tourism Board", link: "#" },
-      labels: ["Free Entry", "Wheelchair Accessible", "Art", "Culture"]
-    },
-    {
-      id: 5,
-      title: "Prambanan Jazz Festival",
-      description: "International jazz festival held at the magnificent Prambanan Temple compound.",
-      start_date_time: "2025-08-15T16:00:00+07:00",
-      end_date_time: "2025-08-17T23:00:00+07:00",
-      is_public_holiday: false,
-      is_joint_holiday: false,
-      location: { address: "Prambanan Temple, Yogyakarta", link_to_maps: "https://maps.google.com" },
-      image: "https://placehold.co/600x400/10b981/ffffff?text=Jazz+Fest",
-      source: { name: "Official Website", link: "#" },
-      labels: ["Music", "Parking Available"]
-    }
-  ]
-};
 
 // --- HELPER FUNCTIONS & UTILS ---
 function cn(...inputs: ClassValue[]) {
@@ -289,7 +209,11 @@ interface CalendarViewProps {
 function MonthView({ currentDate, selectedDate, onDateClick, getEventsForDate, showEventDots, todayRef, onNavigate, allEvents }: CalendarViewProps) {
   const year = currentDate.getFullYear(), month = currentDate.getMonth(), today = new Date();
   const daysInMonth = getDaysInMonth(year, month), firstDay = getFirstDayOfMonth(year, month);
-  const weeksInMonth = Math.ceil((firstDay + daysInMonth) / 7);
+  const leadingDays = Array.from({ length: firstDay }, (_, i) => addDays(new Date(year, month, 1), -(i + 1))).reverse();
+  const days = Array.from({ length: daysInMonth }, (_, i) => new Date(year, month, i + 1));
+  const totalCells = Math.ceil((firstDay + daysInMonth) / 7) * 7;
+  const trailingDays = Array.from({ length: totalCells - (leadingDays.length + days.length) }, (_, i) => addDays(new Date(year, month, daysInMonth), i + 1));
+  const allDays = [...leadingDays, ...days, ...trailingDays];
 
   const monthHolidays = useMemo(() => {
     return allEvents
@@ -305,80 +229,43 @@ function MonthView({ currentDate, selectedDate, onDateClick, getEventsForDate, s
       <div className="grid grid-cols-7 border-b" role="rowheader">
         {['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'].map(day => <div key={day} className="text-center text-sm font-medium text-slate-500 p-3" role="columnheader" aria-label={day}><span className="hidden sm:inline">{day}</span><span className="sm:hidden">{day.substring(0, 3)}</span></div>)}
       </div>
-      <div className="grid grid-cols-1">
-        {Array.from({ length: weeksInMonth }).map((_, weekIndex) => {
-          const firstDayOfWeek = addDays(new Date(year, month, 1), weekIndex * 7 - firstDay);
-          const weekEvents = [];
-          for (let i = 0; i < 7; i++) {
-            const day = addDays(firstDayOfWeek, i);
-            weekEvents.push(...getEventsForDate(day).map(e => ({ ...e, date: day })));
-          }
-          const multiDayEvents = useMemo(() => {
-            const processed = new Set();
-            return weekEvents.filter(e => {
-              const start = new Date(e.start_date_time);
-              const end = new Date(e.end_date_time);
-              const diff = (end.getTime() - start.getTime()) / (1000 * 3600 * 24);
-              if (diff > 0) {
-                if (processed.has(e.id)) return false;
-                processed.add(e.id);
-                return true;
-              }
-              return false;
-            });
-          }, [weekEvents]);
+      <div className="grid grid-cols-7">
+        {allDays.map((day, index) => {
+          const isCurrentMonth = day.getMonth() === month;
+          const isToday = isSameDay(day, today);
+          const dayEvents = getEventsForDate(day);
+          const hasPublicHoliday = dayEvents.some(e => e.is_public_holiday);
+          const isDayWeekend = isWeekend(day);
+          const textColor = isCurrentMonth
+            ? hasPublicHoliday && isDayWeekend ? 'text-purple-500 dark:text-purple-400'
+              : hasPublicHoliday || isDayWeekend ? 'text-red-500 dark:text-red-400'
+                : 'text-slate-800 dark:text-slate-200'
+            : isDayWeekend ? 'text-red-500/40 dark:text-red-400/30' : 'text-slate-500/40 dark:text-slate-400/30';
+
+          const handleCellClick = () => {
+            if (dayEvents.length > 0) onDateClick(day);
+            else onNavigate('Week', day);
+          };
 
           return (
-            <div key={weekIndex} className="grid grid-cols-7 relative border-b last:border-b-0" role="row">
-              {Array.from({ length: 7 }).map((_, dayIndex) => {
-                const day = addDays(firstDayOfWeek, dayIndex);
-                const isCurrentMonth = day.getMonth() === month;
-                const isToday = isSameDay(day, today);
-                const dayEvents = getEventsForDate(day).filter(e => {
-                  const start = new Date(e.start_date_time);
-                  const end = new Date(e.end_date_time);
-                  return (end.getTime() - start.getTime()) / (1000 * 3600 * 24) === 0;
-                });
-                const hasPublicHoliday = getEventsForDate(day).some(e => e.is_public_holiday);
-                const isDayWeekend = isWeekend(day);
-                const textColor = isCurrentMonth
-                  ? hasPublicHoliday && isDayWeekend ? 'text-purple-500 dark:text-purple-400'
-                    : hasPublicHoliday || isDayWeekend ? 'text-red-500 dark:text-red-400'
-                      : 'text-slate-800 dark:text-slate-200'
-                  : isDayWeekend ? 'text-red-500/40 dark:text-red-400/30' : 'text-slate-500/40 dark:text-slate-400/30';
-
-                const handleCellClick = () => {
-                  if (getEventsForDate(day).length > 0) onDateClick(day);
-                  else onNavigate('Week', day);
-                };
-                return (
-                  <div key={dayIndex} onClick={handleCellClick} onKeyDown={(e) => handleKeyboardActivation(e, handleCellClick)} ref={isToday ? todayRef : null} className="border-r last:border-r-0 h-32 p-1.5 cursor-pointer transition-colors duration-200 ease-in-out hover:bg-slate-100 dark:hover:bg-slate-800/50 group overflow-hidden focus:outline-none focus:ring-2 focus:ring-slate-400 focus:z-10" role="gridcell" tabIndex={0} aria-label={`${day.toDateString()} ${dayEvents.length} events`}>
-                    <div className={cn("flex items-center justify-center w-7 h-7 rounded-md", isSameDay(day, selectedDate) ? "bg-slate-900 text-slate-50 dark:bg-slate-50 dark:text-slate-900" : isToday ? "bg-blue-500" : "group-hover:bg-slate-200 dark:group-hover:bg-slate-700")}>
-                      <span className={cn("text-base font-bold", isToday ? "text-white" : !isSameDay(day, selectedDate) && textColor)}>{day.getDate()}</span>
-                    </div>
-                    <div className="mt-1 space-y-1">
-                      {dayEvents.slice(0, 2).map(event => (
-                        <div key={event.id} className="px-1.5 py-0.5 rounded-sm text-[11px] font-medium leading-tight truncate bg-blue-50 text-blue-800 dark:bg-blue-900/50 dark:text-blue-200">
-                          {event.title}
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                )
-              })}
-              <div className="absolute top-12 left-0 right-0 h-20 px-1 space-y-1">
-                {multiDayEvents.map((event, index) => {
-                  const start = new Date(event.start_date_time);
-                  const end = new Date(event.end_date_time);
-                  const startDay = start < firstDayOfWeek ? 0 : start.getDay();
-                  const endDay = end > addDays(firstDayOfWeek, 6) ? 6 : end.getDay();
-                  const duration = endDay - startDay + 1;
-                  const left = `${(startDay / 7) * 100}%`;
-                  const width = `${(duration / 7) * 100}%`;
-
-                  return <div key={event.id} style={{ top: `${index * 1.25}rem`, left, width }} className="absolute h-4 px-1.5 py-0.5 rounded-sm text-[11px] font-medium leading-tight truncate bg-green-50 text-green-800 dark:bg-green-900/50 dark:text-green-200"> {event.title}</div>
-                })}
+            <div key={index} onClick={handleCellClick} onKeyDown={(e) => handleKeyboardActivation(e, handleCellClick)} ref={isToday ? todayRef : null} className={cn("border-b border-r last:border-r-0 h-32 p-1.5 cursor-pointer transition-colors duration-200 ease-in-out hover:bg-slate-100 dark:hover:bg-slate-800/50 group overflow-hidden focus:outline-none focus:ring-2 focus:ring-slate-400 focus:z-10", (index + 1) % 7 === 0 && "border-r-0", index >= (allDays.length - 7) && "border-b-0")} role="gridcell" tabIndex={0} aria-label={`${day.toDateString()} ${dayEvents.length} events`}>
+              <div className={cn("flex items-center justify-center w-7 h-7 rounded-md", isSameDay(day, selectedDate) ? "bg-slate-900 text-slate-50 dark:bg-slate-50 dark:text-slate-900" : isToday ? "bg-blue-500" : "group-hover:bg-slate-200 dark:group-hover:bg-slate-700")}>
+                <span className={cn("text-base font-bold", isToday ? "text-white" : !isSameDay(day, selectedDate) && textColor)}>{day.getDate()}</span>
               </div>
+              {isCurrentMonth && (
+                <div className="mt-1 space-y-1">
+                  {dayEvents.slice(0, 1).map(event => (
+                    <div key={event.id} className={cn("px-1.5 py-0.5 rounded-sm text-[11px] font-medium leading-tight truncate", event.is_public_holiday || event.is_joint_holiday ? 'bg-red-50 text-red-800 dark:bg-red-900/50 dark:text-red-200' : 'bg-blue-50 text-blue-800 dark:bg-blue-900/50 dark:text-blue-200')}>
+                      {event.title}
+                    </div>
+                  ))}
+                  {dayEvents.length > 1 && (
+                    <div className="px-1.5 py-0.5 rounded-sm text-[11px] font-medium leading-tight truncate bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-300">
+                      + {dayEvents.length - 1} more
+                    </div>
+                  )}
+                </div>
+              )}
             </div>
           );
         })}
@@ -721,25 +608,57 @@ export default function CalendrApp() {
   const fetchEvents = useCallback(async () => {
     setIsLoading(true);
     setError(null);
+    const year = currentDate.getFullYear();
+    const region = selectedRegion; // Use selectedRegion from state
+
     try {
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      const combinedEvents: Event[] = [
-        ...MOCK_PUBLIC_HOLIDAYS_2025.events,
-        ...MOCK_REGIONAL_EVENTS_2025.events
-      ];
-      setEvents(combinedEvents);
+      const regionMap: { [key: string]: string } = {
+        YOG: 'yogyakarta', // Changed from YO to YOG to match selectedRegion state
+        SB: 'surabaya'
+      };
+      const regionFileName = regionMap[region];
+
+      const EventsPromise = regionFileName && region !== '-'
+        ? import(`../data/id/y${year}/id_${year}_${regionFileName}.json`)
+        : Promise.resolve({ default: { events: [] } }); // Ensure default property for consistency
+      const nationalEventsPromise = import(`../data/id/y${year}/id_${year}_national.json`);
+
+      const [regionModule, nationalModule] = await Promise.all([
+        EventsPromise.catch(e => {
+          console.warn(`Could not load regional events for ${regionFileName} in ${year}:`, e);
+          return { default: { events: [] } };
+        }),
+        nationalEventsPromise.catch(e => {
+          console.warn(`Could not load national events for ${year}:`, e);
+          return { default: { events: [] } };
+        })
+      ]);
+
+      const regionalEvents = regionModule.default ? regionModule.default.events : [];
+      const nationalEvents = nationalModule.default ? nationalModule.default.events : [];
+
+      const allEvents: Event[] = [...regionalEvents, ...nationalEvents].map((e: any) => ({
+        ...e,
+        startDate: new Date(e.start_date_time),
+        endDate: new Date(e.end_date_time),
+        isPublicHoliday: e.is_public_holiday,
+        isOptionalHoliday: e.is_optional_holiday,
+        labels: e.labels || [],
+      }));
+
+      setEvents(allEvents);
     } catch (error) {
-      console.error("Failed to fetch event data:", error);
+      console.error("Error loading events for year:", year, error);
       setError(error instanceof Error ? error.message : "An unknown error occurred.");
       setEvents([]);
     } finally {
       setIsLoading(false);
     }
-  }, []);
+  }, [currentDate, selectedRegion]); // Dependencies for useCallback
 
   useEffect(() => {
     fetchEvents();
-  }, [fetchEvents]);
+  }, [fetchEvents]); // Only fetchEvents as a dependency, as it already depends on currentDate and selectedRegion
 
   useEffect(() => { document.documentElement.classList.toggle('dark', theme === 'dark'); }, [theme]);
 
@@ -756,6 +675,7 @@ export default function CalendrApp() {
         current = addDays(current, 1);
       }
     });
+    console.log("Events by date map:", map);
     return map;
   }, [events]);
 
@@ -879,4 +799,3 @@ export default function CalendrApp() {
     </div>
   );
 }
-
