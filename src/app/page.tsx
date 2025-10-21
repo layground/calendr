@@ -455,9 +455,16 @@ interface EventDetailsPanelProps {
 
 function EventDetailsPanel({ date, events, onAddToCalendar }: EventDetailsPanelProps) {
   const [selectedEventId, setSelectedEventId] = useState<number | null>(null);
-  const selectedEvent = useMemo(() => events.find(e => e.id === selectedEventId) || events[0], [events, selectedEventId]);
 
-  useEffect(() => { setSelectedEventId(events[0]?.id || null); }, [events, date]);
+  useEffect(() => {
+    if (events.length === 1) {
+      setSelectedEventId(events[0].id);
+    } else {
+      setSelectedEventId(null);
+    }
+  }, [events, date]);
+
+  const selectedEvent = useMemo(() => events.find(e => e.id === selectedEventId), [events, selectedEventId]);
 
   if (!events || events.length === 0) {
     return (
@@ -469,19 +476,41 @@ function EventDetailsPanel({ date, events, onAddToCalendar }: EventDetailsPanelP
     )
   }
 
+  // If there are multiple events AND no specific one is selected yet, show the list.
+  if (events.length > 1 && !selectedEvent) {
+    return (
+      <div className="p-6 h-full flex flex-col space-y-4">
+        <CardTitle suppressHydrationWarning>Events on {date.toLocaleString('default', { month: 'long', day: 'numeric' })}</CardTitle>
+        <ul className="space-y-2">
+          {events.map((event, index) => (
+            <li
+              key={event.id}
+              onClick={() => setSelectedEventId(event.id)}
+              onKeyDown={(e) => handleKeyboardActivation(e, () => setSelectedEventId(event.id))}
+              className={cn(
+                "p-2 rounded-md cursor-pointer transition-colors text-sm focus:outline-none focus:ring-2 focus:ring-slate-400",
+                index % 2 === 0 ? "bg-slate-200 dark:bg-slate-800" : "bg-slate-300 dark:bg-slate-900", // Stripped background
+                selectedEvent?.id === event.id ? "ring-2 ring-blue-500" : "hover:bg-slate-200 dark:hover:bg-slate-700" // Highlight selected and hover
+              )}
+              role="button"
+              tabIndex={0}
+            >
+              <p className="font-semibold truncate">{event.title}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+    );
+  }
+
+  // If an event is selected (either automatically because it's the only one, or by user click)
   return (
     <div className="p-6 h-full flex flex-col space-y-4">
-      <CardTitle suppressHydrationWarning>Events on {date.toLocaleString('default', { month: 'long', day: 'numeric' })}</CardTitle>
       {events.length > 1 && (
-        <div className="border-b pb-4">
-          <ul className="space-y-2">
-            {events.map(event => (
-              <li key={event.id} onClick={() => setSelectedEventId(event.id)} onKeyDown={(e) => handleKeyboardActivation(e, () => setSelectedEventId(event.id))} className={cn("p-2 rounded-md cursor-pointer transition-colors text-sm focus:outline-none focus:ring-2 focus:ring-slate-400", selectedEvent?.id === event.id ? 'bg-slate-100 dark:bg-slate-800' : 'hover:bg-slate-100/50 dark:hover:bg-slate-800/50')} role="button" tabIndex={0}>
-                <p className="font-semibold truncate">{event.title}</p>
-              </li>
-            ))}
-          </ul>
-        </div>
+        <Button variant="ghost" onClick={() => setSelectedEventId(null)} className="self-start -ml-2">
+          <ArrowLeft className="w-4 h-4 mr-2" />
+          Back to list
+        </Button>
       )}
       {selectedEvent && <EventFullDetails event={selectedEvent} onAddToCalendar={onAddToCalendar} />}
     </div>
@@ -507,7 +536,7 @@ function EventFullDetails({ event, onAddToCalendar }: EventFullDetailsProps) {
         <p suppressHydrationWarning>{start.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })} - {end.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</p>
       </div>
 
-      <Button onClick={() => onAddToCalendar(event)} variant="secondary" className="w-full"><CalendarIcon className="w-4 h-4 mr-2" />Add to Calendar</Button>
+      <Button onClick={() => onAddToCalendar(event)} variant="secondary" className="w-full bg-slate-300 dark:bg-slate-700"><CalendarIcon className="w-4 h-4 mr-2" />Add to Calendar</Button>
 
       {event.location?.address && (
         <div>
@@ -790,7 +819,7 @@ export default function CalendrApp() {
               </div>
             )}
           </div>
-          <div className="hidden lg:block w-[35%] border-l border-slate-200 dark:border-slate-800 overflow-y-auto">
+          <div className="hidden lg:block w-[35%] bg-slate-50 dark:bg-slate-950 border-l border-slate-200 dark:border-slate-800 overflow-y-auto">
             <EventDetailsPanel date={selectedDate} events={selectedDateEvents} onAddToCalendar={handleAddToCalendar} />
           </div>
         </main>
