@@ -23,7 +23,7 @@ interface Event {
   start_date_time: string;
   end_date_time: string;
   is_public_holiday: boolean;
-  is_joint_holiday: boolean;
+  is_optional_holiday: boolean;
   location: Location;
   image: string | null;
   source: Source;
@@ -219,13 +219,13 @@ function MonthView({ currentDate, selectedDate, onDateClick, getEventsForDate, s
     return allEvents
       .filter(event => {
         const eventDate = new Date(event.start_date_time);
-        return eventDate.getFullYear() === year && eventDate.getMonth() === month && (event.is_public_holiday || event.is_joint_holiday);
+        return eventDate.getFullYear() === year && eventDate.getMonth() === month && (event.is_public_holiday || event.is_optional_holiday);
       })
       .sort((a, b) => new Date(a.start_date_time).getDate() - new Date(b.start_date_time).getDate());
   }, [allEvents, year, month]);
 
   return (
-    <Card>
+    <Card className='mb-14 md:mb-0'>
       <div className="grid grid-cols-7 border-b" role="rowheader">
         {['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'].map(day => <div key={day} className="text-center text-sm font-medium text-slate-500 p-3" role="columnheader" aria-label={day}><span className="hidden sm:inline">{day}</span><span className="sm:hidden">{day.substring(0, 3)}</span></div>)}
       </div>
@@ -255,7 +255,7 @@ function MonthView({ currentDate, selectedDate, onDateClick, getEventsForDate, s
               {isCurrentMonth && (
                 <div className="mt-1 space-y-1">
                   {dayEvents.slice(0, 1).map(event => (
-                    <div key={event.id} className={cn("px-1.5 py-0.5 rounded-sm text-[11px] font-medium leading-tight truncate", event.is_public_holiday || event.is_joint_holiday ? 'bg-red-50 text-red-800 dark:bg-red-900/50 dark:text-red-200' : 'bg-blue-50 text-blue-800 dark:bg-blue-900/50 dark:text-blue-200')}>
+                    <div key={event.id} className={cn("px-1.5 py-0.5 rounded-sm text-[11px] font-medium leading-tight truncate", event.is_public_holiday || event.is_optional_holiday ? 'bg-red-50 text-red-800 dark:bg-red-900/50 dark:text-red-200' : 'bg-blue-50 text-blue-800 dark:bg-blue-900/50 dark:text-blue-200')}>
                       {event.title}
                     </div>
                   ))}
@@ -326,7 +326,7 @@ function MiniMonth({ year, month, onDateClick, getEventsForDate, showEventDots, 
     return allEvents
       .filter(event => {
         const eventDate = new Date(event.start_date_time);
-        return eventDate.getFullYear() === year && eventDate.getMonth() === month && (event.is_public_holiday || event.is_joint_holiday);
+        return eventDate.getFullYear() === year && eventDate.getMonth() === month && (event.is_public_holiday || event.is_optional_holiday);
       })
       .sort((a, b) => new Date(a.start_date_time).getDate() - new Date(b.start_date_time).getDate());
   }, [allEvents, year, month]);
@@ -338,9 +338,9 @@ function MiniMonth({ year, month, onDateClick, getEventsForDate, showEventDots, 
         {allDays.map((dayDate, i) => {
           const isCurrentMonthDay = dayDate.getMonth() === month, dayEvents = getEventsForDate(dayDate);
           const hasPublicHoliday = dayEvents.some(e => e.is_public_holiday), isDayWeekend = isWeekend(dayDate), isToday = isSameDay(dayDate, today);
-          const hasJointHoliday = dayEvents.some(e => e.is_joint_holiday), hasRegularEvent = dayEvents.some(e => !e.is_public_holiday && !e.is_joint_holiday);
+          const hasJointHoliday = dayEvents.some(e => e.is_optional_holiday), hasRegularEvent = dayEvents.some(e => !e.is_public_holiday && !e.is_optional_holiday);
           const textColor = isCurrentMonthDay
-            ? (hasPublicHoliday && isDayWeekend ? 'text-purple-500' : (hasPublicHoliday || isDayWeekend ? 'text-red-500' : 'text-slate-800 dark:text-slate-200'))
+            ? (hasPublicHoliday && isDayWeekend ? 'text-purple-500' : ((hasPublicHoliday && !hasJointHoliday) || isDayWeekend ? 'text-red-500' : 'text-slate-800 dark:text-slate-200'))
             : (isDayWeekend ? 'text-red-500/40 dark:text-red-400/30' : 'text-slate-500/40 dark:text-slate-400/30');
 
           const handleDayClick = () => {
