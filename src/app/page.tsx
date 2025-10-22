@@ -90,7 +90,7 @@ const CardFooter = ({ className, ...props }: React.HTMLAttributes<HTMLDivElement
 
 const SelectPrimitive = ({ children, className, ...props }: React.SelectHTMLAttributes<HTMLSelectElement>) => (
   <div className="relative">
-    <select className={cn("appearance-none h-10 w-full rounded-md border border-slate-200 bg-transparent pl-3 pr-8 text-sm ring-offset-white focus:outline-none focus:ring-2 focus:ring-slate-400 disabled:cursor-not-allowed disabled:opacity-50 dark:border-slate-800 dark:ring-offset-slate-950", className)} {...props}>
+    <select className={cn("appearance-none h-10 w-full rounded-md border border-slate-200 bg-transparent pl-3 pr-8 text-sm ring-offset-white focus:outline-none focus:ring-2 focus:ring-slate-400 disabled:cursor-not-allowed disabled:opacity-50 dark:bg-slate-900 dark:border-slate-800 dark:text-slate-50", className)} {...props}>
       {children}
     </select>
     <ChevronRight className="h-4 w-4 absolute top-1/2 right-2 -translate-y-1/2 rotate-90 text-slate-400" />
@@ -149,20 +149,20 @@ function ActionBar({ currentDate, view, onViewChange, onPrev, onNext, onDotsTogg
 
   return (
     <div className="flex-shrink-0 border-b border-slate-200 dark:border-slate-800 p-3 sm:p-4 bg-white dark:bg-slate-900">
-      <div className="flex flex-wrap items-center justify-between gap-2">
-        <div className="flex items-center space-x-2">
-          <SelectPrimitive value={selectedCountry} onChange={(e) => onCountryChange(e.target.value)} aria-label="Select Country"><option value="ID">Indonesia</option></SelectPrimitive>
-          <SelectPrimitive value={selectedRegion} onChange={(e) => onRegionChange(e.target.value)} aria-label="Select Region"><option value="YOG">Yogyakarta</option></SelectPrimitive>
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+        <div className="flex items-center justify-between space-x-2 w-full sm:w-auto">
+          {/* <SelectPrimitive value={selectedCountry} onChange={(e) => onCountryChange(e.target.value)} aria-label="Select Country" className="w-full"><option value="ID">Indonesia</option></SelectPrimitive> */}
+          <SelectPrimitive value={selectedRegion} onChange={(e) => onRegionChange(e.target.value)} aria-label="Select Region" className="w-full"><option value="YOG">Yogyakarta</option></SelectPrimitive>
+          <div className="flex items-center space-x-1 sm:space-x-2">
+            <div className="w-24 sm:w-28"><SelectPrimitive value={view} onChange={(e) => onViewChange(e.target.value as View)} aria-label="Select calendar view"><option>Year</option><option>Month</option><option>Week</option><option>Day</option></SelectPrimitive></div>
+            <Button onClick={onDotsToggle} variant="ghost" size="icon" aria-label={showEventDots ? "Hide event indicators" : "Show event indicators"}><Dot className={cn("h-12 w-12", showEventDots ? 'text-blue-600' : 'text-slate-400')} /></Button>
+            <LegendPopover />
+          </div>
         </div>
-        <div className="flex items-center justify-center">
+        <div className="flex items-center justify-between w-full sm:w-auto mt-2 sm:mt-0">
           <Button onClick={onPrev} variant="ghost" size="icon" aria-label={`Previous ${view}`}><ChevronLeft className="h-5 w-5" /></Button>
-          <h2 className="w-40 sm:w-48 text-center text-md sm:text-lg font-semibold" suppressHydrationWarning>{viewTitles[view]}</h2>
+          <h2 className="w-32 sm:w-48 text-center text-md sm:text-lg font-semibold" suppressHydrationWarning>{viewTitles[view]}</h2>
           <Button onClick={onNext} variant="ghost" size="icon" aria-label={`Next ${view}`}><ChevronRight className="h-5 w-5" /></Button>
-        </div>
-        <div className="flex items-center space-x-2">
-          <LegendPopover />
-          <div className="w-28"><SelectPrimitive value={view} onChange={(e) => onViewChange(e.target.value as View)} aria-label="Select calendar view"><option>Year</option><option>Month</option><option>Week</option><option>Day</option></SelectPrimitive></div>
-          <Button onClick={onDotsToggle} variant="ghost" size="icon" aria-label={showEventDots ? "Hide event indicators" : "Show event indicators"}><Dot className={cn("h-6 w-6", showEventDots ? 'text-blue-500' : 'text-slate-400')} /></Button>
         </div>
       </div>
     </div>
@@ -177,7 +177,7 @@ function LegendPopover() {
       {isOpen && (
         <>
           <div onClick={() => setIsOpen(false)} className="fixed inset-0 z-10"></div>
-          <Card className="absolute top-full right-0 mt-2 w-64 z-20">
+          <Card className="absolute top-full left-0 mt-2 w-64 z-20">
             <CardHeader><CardTitle>Legend</CardTitle></CardHeader>
             <CardContent>
               <ul className="space-y-3 text-sm">
@@ -248,11 +248,11 @@ function MonthView({ currentDate, selectedDate, onDateClick, getEventsForDate, s
           };
 
           return (
-            <div key={index} onClick={handleCellClick} onKeyDown={(e) => handleKeyboardActivation(e, handleCellClick)} ref={isToday ? todayRef : null} className={cn("border-b border-r last:border-r-0 h-32 p-1.5 cursor-pointer transition-colors duration-200 ease-in-out hover:bg-slate-100 dark:hover:bg-slate-800/50 group overflow-hidden focus:outline-none focus:ring-2 focus:ring-slate-400 focus:z-10", (index + 1) % 7 === 0 && "border-r-0", index >= (allDays.length - 7) && "border-b-0")} role="gridcell" tabIndex={0} aria-label={`${day.toDateString()} ${dayEvents.length} events`}>
-              <div className={cn("flex items-center justify-center w-7 h-7 rounded-md", isSameDay(day, selectedDate) ? "bg-slate-900 text-slate-50 dark:bg-slate-50 dark:text-slate-900" : isToday ? "bg-blue-500" : "group-hover:bg-slate-200 dark:group-hover:bg-slate-700")}>
+            <div key={index} onClick={handleCellClick} onKeyDown={(e) => handleKeyboardActivation(e, handleCellClick)} ref={isToday ? todayRef : null} className={cn("border-b border-r last:border-r-0 h-28 sm:h-32 p-1.5 cursor-pointer transition-colors duration-200 ease-in-out hover:bg-slate-100 dark:hover:bg-slate-800/50 group overflow-hidden focus:outline-none focus:ring-2 focus:ring-slate-400 focus:z-10", (index + 1) % 7 === 0 && "border-r-0", index >= (allDays.length - 7) && "border-b-0")} role="gridcell" tabIndex={0} aria-label={`${day.toDateString()} ${dayEvents.length} events`}>
+              <div className={cn("flex items-center justify-center w-7 h-7 rounded-md", isToday ? "bg-blue-500 text-white" : isSameDay(day, selectedDate) ? "bg-slate-900 text-slate-50 dark:bg-slate-50 dark:text-slate-900" : "group-hover:bg-slate-200 dark:group-hover:bg-slate-700")}>
                 <span className={cn("text-base font-bold", isToday ? "text-white" : !isSameDay(day, selectedDate) && textColor)}>{day.getDate()}</span>
               </div>
-              {isCurrentMonth && (
+              {isCurrentMonth && showEventDots && (
                 <div className="mt-1 space-y-1">
                   {dayEvents.slice(0, 1).map(event => (
                     <div key={event.id} className={cn("px-1.5 py-0.5 rounded-sm text-[11px] font-medium leading-tight truncate", event.is_public_holiday || event.is_optional_holiday ? 'bg-red-50 text-red-800 dark:bg-red-900/50 dark:text-red-200' : 'bg-blue-50 text-blue-800 dark:bg-blue-900/50 dark:text-blue-200')}>
@@ -352,7 +352,7 @@ function MiniMonth({ year, month, onDateClick, getEventsForDate, showEventDots, 
           };
 
           return (
-            <div key={i} ref={isToday ? todayRef : null} onClick={handleDayClick} onKeyDown={(e) => handleKeyboardActivation(e, handleDayClick)} className="relative cursor-pointer flex flex-col items-center justify-center p-1 rounded-md hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-slate-400" role="button" tabIndex={0} aria-label={`${dayDate.toDateString()} ${dayEvents.length} events`}>
+            <div key={`${year}-${month}-${i}`} ref={isToday ? todayRef : null} onClick={handleDayClick} onKeyDown={(e) => handleKeyboardActivation(e, handleDayClick)} className="relative cursor-pointer flex flex-col items-center justify-center p-1 rounded-md hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-slate-400" role="button" tabIndex={0} aria-label={`${dayDate.toDateString()} ${dayEvents.length} events`}>
               <span className={cn("text-sm font-bold w-5 h-5 flex items-center justify-center rounded-md", isToday ? 'bg-blue-500 text-white' : textColor)}>{dayDate.getDate()}</span>
               <div className="absolute bottom-0 flex items-center space-x-0.5">
                 {isCurrentMonthDay && hasJointHoliday && <span className="block w-1 h-1 bg-red-500 rounded-full"></span>}
@@ -482,19 +482,8 @@ function EventDetailsPanel({ date, events, onAddToCalendar }: EventDetailsPanelP
       <div className="p-6 h-full flex flex-col space-y-4">
         <CardTitle suppressHydrationWarning>Events on {date.toLocaleString('default', { month: 'long', day: 'numeric' })}</CardTitle>
         <ul className="space-y-2">
-          {events.map((event, index) => (
-            <li
-              key={event.id}
-              onClick={() => setSelectedEventId(event.id)}
-              onKeyDown={(e) => handleKeyboardActivation(e, () => setSelectedEventId(event.id))}
-              className={cn(
-                "p-2 rounded-md cursor-pointer transition-colors text-sm focus:outline-none focus:ring-2 focus:ring-slate-400",
-                index % 2 === 0 ? "bg-slate-200 dark:bg-slate-800" : "bg-slate-300 dark:bg-slate-900", // Stripped background
-                selectedEvent?.id === event.id ? "ring-2 ring-blue-500" : "hover:bg-slate-200 dark:hover:bg-slate-700" // Highlight selected and hover
-              )}
-              role="button"
-              tabIndex={0}
-            >
+          {events.map(event => (
+            <li key={event.id} onClick={() => setSelectedEventId(event.id)} onKeyDown={(e) => handleKeyboardActivation(e, () => setSelectedEventId(event.id))} className="p-2 rounded-md cursor-pointer transition-colors text-sm focus:outline-none focus:ring-2 focus:ring-slate-400 hover:bg-slate-100/50 dark:hover:bg-slate-800/50" role="button" tabIndex={0}>
               <p className="font-semibold truncate">{event.title}</p>
             </li>
           ))}
