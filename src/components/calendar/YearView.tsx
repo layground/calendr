@@ -1,126 +1,27 @@
-import { FC, useMemo } from 'react'
-import { getMonthGridDays, isWeekend } from '@/lib/utils/dates'
-import { MonthView } from './MonthView'
-import { Event } from '@/lib/types/event'
+import React from 'react';
+import { Card, CardHeader, CardTitle, CardContent } from '../ui/card';
+import { MiniMonth } from './MiniMonth';
+import { handleKeyboardActivation } from '../../lib/utils/keyboard';
+import { CalendarViewProps } from './MonthView'; // Re-using the interface from MonthView
 
-interface YearViewProps {
-  year: number
-  onMonthSelect: (month: number) => void
-  onDateSelect?: (date: Date) => void
-  events?: Event[]
-  today?: Date
-  selectedDate?: Date | null
-  showEvents?: boolean
-}
+function YearView({ currentDate, onDateClick, getEventsForDate, showEventDots, todayRef, onNavigate, allEvents }: CalendarViewProps) {
+  const year = currentDate.getFullYear();
+  const months = Array.from({ length: 12 }, (_, i) => i);
 
-export const YearView: FC<YearViewProps> = ({ year, onMonthSelect, onDateSelect, events = [], today, selectedDate, showEvents = false }) => {
-  // Mini month grid for year view (compact, not stretched)
   return (
-    <div id="year-view-scroll-container" className="h-[calc(100vh-12rem)] overflow-y-auto mobile-snap-y">
-      <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-4 md:gap-6 p-2 md:p-4">
-        {Array.from({ length: 12 }).map((_, i) => {
-          const days = useMemo(() => getMonthGridDays(year, i), [year, i])
-          const weekDays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
-          const monthHolidays = events.filter(e => {
-            const eventDate = new Date(e.startDate);
-            return e.isPublicHoliday && !e.isOptionalHoliday && eventDate.getMonth() === i && e.region === 'National';
-          });
-
-          return (
-            <div id={`month-grid-${i}`} key={i} className="rounded-lg border bg-white dark:bg-slate-900 p-2 md:p-3 shadow-sm hover:shadow-md transition mobile-snap-center dark:border-slate-700">
-              <div
-                className="text-center font-semibold mb-2 text-primary-700 dark:text-primary-400 text-sm cursor-pointer"
-                onClick={() => onMonthSelect(i)}
-              >
-                {new Date(year, i, 1).toLocaleString('default', { month: 'long' })}
-              </div>
-              <div className="grid grid-cols-7 gap-0.5 mb-1">
-                {weekDays.map((day, idx) => (
-                  <div
-                    key={day}
-                    className={`text-center font-medium ${idx === 0 ? 'text-red-500' : idx === 6 ? 'text-red-500' : ''}`}
-                  >
-                    <span className="hidden md:inline text-sm">{day}</span>
-                    <span className="md:hidden text-xs">{day[0]}</span>
-                  </div>
-                ))}
-              </div>
-              <div className="grid grid-cols-7 gap-1">
-                {days.map(({ date, isCurrentMonth }) => {
-                  const isToday = today &&
-                    date.getFullYear() === today.getFullYear() &&
-                    date.getMonth() === today.getMonth() &&
-                    date.getDate() === today.getDate()
-                  const isSelected = selectedDate &&
-                    date.getFullYear() === selectedDate.getFullYear() &&
-                    date.getMonth() === selectedDate.getMonth() &&
-                    date.getDate() === selectedDate.getDate()
-                  
-                  const dayEvents = events.filter(e => {
-                    const startDate = new Date(e.startDate);
-                    const endDate = new Date(e.endDate);
-                    const currentDate = new Date(date);
-
-                    // Normalize dates to midnight to compare only the date part
-                    startDate.setHours(0, 0, 0, 0);
-                    endDate.setHours(0, 0, 0, 0);
-                    currentDate.setHours(0, 0, 0, 0);
-
-                    return currentDate >= startDate && currentDate <= endDate;
-                  });
-
-                  const isPublicHoliday = dayEvents.some(e => e.isPublicHoliday && !e.isOptionalHoliday);
-                  const isOptionalHoliday = dayEvents.some(e => e.isOptionalHoliday);
-                  const onWeekend = isWeekend(date);
-
-                  const dateColorClass = 
-                    onWeekend && isPublicHoliday ? 'text-purple-500 dark:text-purple-400' :
-                    onWeekend ? 'text-red-500 dark:text-red-400' :
-                    isPublicHoliday ? 'text-red-500 dark:text-red-400' : '';
-
-                  const inactiveDateColorClass =
-                    onWeekend && isPublicHoliday ? 'text-purple-500 opacity-50 dark:text-purple-400' :
-                    onWeekend ? 'text-red-500 opacity-50 dark:text-red-400' :
-                    isPublicHoliday ? 'text-red-500 opacity-50 dark:text-red-400' : 'text-gray-400 dark:text-slate-500';
-
-                  return (
-                    <div
-                      key={date.toISOString()}
-                      className={`
-                        flex flex-col items-center justify-center text-center text-xs rounded cursor-pointer
-                        aspect-square select-none
-                        ${isCurrentMonth ? dateColorClass : inactiveDateColorClass}
-                        ${isSelected ? 'bg-primary-200 dark:bg-primary-700' : (isToday ? 'ring-1 ring-primary-500 bg-primary-100 dark:bg-primary-800' : (onWeekend && isCurrentMonth ? 'bg-gray-50 dark:bg-slate-800' : ''))}
-                        group
-                      `}
-                      onClick={() => onDateSelect && onDateSelect(date)}
-                    >
-                      <span className="font-extrabold">{date.getDate()}</span>
-                      <div className="flex items-center justify-center gap-1 mt-0.5 h-1">
-                        {isOptionalHoliday && isCurrentMonth && (
-                          <span className="inline-block h-1 w-1 rounded-full bg-red-500"></span>
-                        )}
-                        {showEvents && isCurrentMonth && dayEvents.some(e => !e.isPublicHoliday && !e.isOptionalHoliday) && (
-                          <span className="inline-block h-1 w-1 rounded-full bg-gray-500"></span>
-                        )}
-                      </div>
-                    </div>
-                  )
-                })}
-              </div>
-              <div className="mt-2 text-xs">
-                <ul>
-                  {monthHolidays.map(holiday => (
-                    <li key={holiday.id} className="text-red-500 dark:text-red-400 truncate">
-                      {new Date(holiday.startDate).getDate()} - {holiday.title}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          )
-        })}
-      </div>
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {months.map(month => (
+        <Card key={month} className="flex flex-col">
+          <CardHeader onClick={() => onNavigate('Month', new Date(year, month, 1))} onKeyDown={(e) => handleKeyboardActivation(e, () => onNavigate('Month', new Date(year, month, 1)))} className="p-3 text-center cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors rounded-t-lg focus:outline-none focus:ring-2 focus:ring-slate-400" role="button" tabIndex={0}>
+            <CardTitle className="text-lg" suppressHydrationWarning>{new Date(year, month).toLocaleString('default', { month: 'long' })}</CardTitle>
+          </CardHeader>
+          <CardContent className="p-3 pt-0 flex-1">
+            <MiniMonth year={year} month={month} onDateClick={onDateClick} getEventsForDate={getEventsForDate} showEventDots={showEventDots} todayRef={todayRef} onNavigate={onNavigate} allEvents={allEvents} />
+          </CardContent>
+        </Card>
+      ))}
     </div>
-  )
+  );
 }
+
+export { YearView };

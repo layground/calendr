@@ -1,23 +1,27 @@
-export interface Event {
-  id?: string;
+interface Location {
+  address: string;
+  link_to_maps: string | null;
+}
+
+interface Source {
+  name: string;
+  link: string;
+}
+
+interface Event {
+  id: number;
   title: string;
   description: string;
-  startDate: Date;
-  endDate: Date;
-  isPublicHoliday: boolean;
-  isOptionalHoliday: boolean;
-  labels?: string[];
-  location: {
-    address: string;
-    link_to_maps?: string | null;
-  };
-  image?: string | null;
-  source?: {
-    name: string;
-    link?: string | null;
-  };
-  region?: string;
-  country?: string;
-  coverImage?: string;
-  articleUrl?: string;
+  start_date_time: string;
+  end_date_time: string;
+  is_public_holiday: boolean;
+  is_optional_holiday: boolean;
+  location: Location;
+  image: string | null;
+  source: Source;
+  labels: string[];
 }
+
+type View = 'Year' | 'Month' | 'Week' | 'Day';
+
+export type { Location, Source, Event, View };

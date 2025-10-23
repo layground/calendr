@@ -1,51 +1,33 @@
-import { FC } from 'react'
-import { Event } from '@/lib/types/event'
+import React from 'react';
+import { cn } from '../../lib/utils/cn';
+import { isSameDay } from '../../lib/utils/dates';
+import { Card, CardHeader, CardTitle } from '../ui/card';
+import { CalendarViewProps } from './MonthView'; // Re-using the interface from MonthView
 
-interface DayViewProps {
-  date: Date
-  events: Event[]
-  onEventSelect: (eventId: string) => void
-}
-
-export const DayView: FC<DayViewProps> = ({ date, events, onEventSelect }) => {
-  const hours = Array.from({ length: 24 }, (_, i) => i)
-
-  const getEventsForHour = (hour: number) => {
-    return events.filter(event => {
-      const eventStart = new Date(event.startDate);
-      return (
-        eventStart.getFullYear() === date.getFullYear() &&
-        eventStart.getMonth() === date.getMonth() &&
-        eventStart.getDate() === date.getDate() &&
-        eventStart.getHours() === hour
-      );
-    });
-  };
+function DayView({ currentDate, getEventsForDate, todayRef }: Pick<CalendarViewProps, 'currentDate' | 'getEventsForDate' | 'todayRef'>) {
+  const events = getEventsForDate(currentDate), hours = Array.from({ length: 24 }, (_, i) => i), today = new Date();
 
   return (
-    <div className="overflow-y-auto max-h-[70vh] w-full">
-      <div className="sticky top-0 z-10 bg-white dark:bg-gray-900 text-center font-bold py-2 border-b">
-        {date.toLocaleDateString(undefined, { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' })}
-      </div>
-      {hours.map(h => {
-        const eventsForHour = getEventsForHour(h);
-        return (
-          <div key={h} className="h-16 border-b flex items-start pl-20 pt-2 text-gray-500 text-sm relative">
-            <span className="absolute left-2 top-2 text-xs">{h === 0 ? '12 AM' : h < 12 ? `${h} AM` : h === 12 ? '12 PM' : `${h - 12} PM`}</span>
-            <div className="flex flex-col gap-1 w-full">
-              {eventsForHour.map(event => (
-                <button
-                  key={event.id}
-                  className="w-full bg-primary-100 dark:bg-primary-900 rounded-md p-1 text-xs text-left truncate"
-                  onClick={() => onEventSelect(event.id)}
-                >
-                  {event.title}
-                </button>
-              ))}
+    <Card ref={isSameDay(currentDate, today) ? todayRef : null} className="h-[75vh] overflow-y-auto">
+      <CardHeader className={cn(isSameDay(currentDate, today) && 'bg-blue-50 dark:bg-blue-900/30')}><CardTitle suppressHydrationWarning>{currentDate.toLocaleString('default', { weekday: 'long', month: 'long', day: 'numeric' })}</CardTitle></CardHeader>
+      <div className="relative">
+        {hours.map(hour => (
+          <div key={hour} className="flex h-16 border-b"><div className="w-16 text-right pr-2 pt-1 text-sm text-slate-500">{hour === 0 ? '12 AM' : hour < 12 ? `${hour} AM` : hour === 12 ? '12 PM' : `${hour - 12} PM`}</div><div className="flex-1 border-l"></div></div>
+        ))}
+        {events.map(event => {
+          const start = new Date(event.start_date_time), end = new Date(event.end_date_time);
+          const top = start.getHours() * 64 + (start.getMinutes() / 60) * 64;
+          const height = Math.max(32, ((end.getTime() - start.getTime()) / (1000 * 60 * 60)) * 64);
+          return (
+            <div key={event.id} style={{ top: `${top}px`, height: `${height}px` }} className="absolute left-16 right-0 ml-2 mr-4 bg-blue-50 dark:bg-blue-900/50 border-l-4 border-blue-500 p-2 rounded-r-md">
+              <p className="font-bold text-sm text-blue-800 dark:text-blue-200 truncate">{event.title}</p>
+              <p className="text-xs text-blue-600 dark:text-blue-300">{start.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })} - {end.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</p>
             </div>
-          </div>
-        )
-      })}
-    </div>
-  )
+          );
+        })}
+      </div>
+    </Card>
+  );
 }
+
+export { DayView };

@@ -1,181 +1,101 @@
-'use client'
+import React, { useMemo } from 'react';
+import { Calendar as CalendarIcon } from 'lucide-react';
+import { cn } from '../../lib/utils/cn';
+import { getDaysInMonth, getFirstDayOfMonth, addDays, isSameDay, isWeekend } from '../../lib/utils/dates';
+import { handleKeyboardActivation } from '../../lib/utils/keyboard';
+import { Card, CardContent, CardTitle, CardDescription } from '../ui/card';
+import { Event, View } from '../../lib/types/event';
 
-import { useMemo, useRef, useState } from 'react'
-import { Event } from '@/lib/types/event'
-import { formatDate, getMonthGridDays, isWeekend } from '@/lib/utils/dates'
-import { triggerHapticFeedback } from '@/lib/utils/haptics'
-
-interface MonthViewProps {
-  year: number
-  month: number
-  events: Event[]
-  onSelectDate: (date: Date) => void
-  onSelectEvents: (events: Event[]) => void
-  onDoubleClickDate?: (date: Date) => void
-  today?: Date
-  selectedDate?: Date | null
-  showEvents?: boolean
+interface CalendarViewProps {
+  currentDate: Date;
+  selectedDate: Date;
+  onDateClick: (date: Date) => void;
+  getEventsForDate: (date: Date) => Event[];
+  showEventDots: boolean;
+  todayRef: React.RefObject<HTMLDivElement>;
+  onNavigate: (view: View, date: Date) => void;
+  allEvents: Event[];
 }
 
-export const MonthView = ({ year, month, events, onSelectDate, onSelectEvents, onDoubleClickDate, today, selectedDate, showEvents = false }: MonthViewProps) => {
-  const days = useMemo(() => getMonthGridDays(year, month), [year, month])
-  const weekDays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
+function MonthView({ currentDate, selectedDate, onDateClick, getEventsForDate, showEventDots, todayRef, onNavigate, allEvents }: CalendarViewProps) {
+  const year = currentDate.getFullYear(), month = currentDate.getMonth(), today = new Date();
+  const daysInMonth = getDaysInMonth(year, month), firstDay = getFirstDayOfMonth(year, month);
+  const leadingDays = Array.from({ length: firstDay }, (_, i) => addDays(new Date(year, month, 1), -(i + 1))).reverse();
+  const days = Array.from({ length: daysInMonth }, (_, i) => new Date(year, month, i + 1));
+  const totalCells = Math.ceil((firstDay + daysInMonth) / 7) * 7;
+  const trailingDays = Array.from({ length: totalCells - (leadingDays.length + days.length) }, (_, i) => addDays(new Date(year, month, daysInMonth), i + 1));
+  const allDays = [...leadingDays, ...days, ...trailingDays];
 
-  const longPressTimer = useRef<NodeJS.Timeout | null>(null);
-  const [isLongPressHandled, setIsLongPressHandled] = useState(false);
-
-  const handleTouchStart = (date: Date) => {
-    longPressTimer.current = setTimeout(() => {
-      triggerHapticFeedback();
-      const eventsForDate = getEventsForDate(date);
-      if (eventsForDate.length > 0) {
-        onSelectEvents(eventsForDate);
-      }
-      setIsLongPressHandled(true);
-    }, 500); // 500ms for long press
-  };
-
-  const handleTouchEnd = (date: Date) => {
-    if (longPressTimer.current) {
-      clearTimeout(longPressTimer.current);
-    }
-    if (!isLongPressHandled) {
-      triggerHapticFeedback();
-      onSelectDate(date);
-    }
-    setIsLongPressHandled(false);
-  };
-
-  const handleTouchMove = () => {
-    if (longPressTimer.current) {
-      clearTimeout(longPressTimer.current);
-      setIsLongPressHandled(false);
-    }
-  };
-
-  const handleDateClick = (date: Date) => {
-    triggerHapticFeedback();
-    onSelectDate(date);
-    const eventsForDate = getEventsForDate(date);
-    if (eventsForDate.length > 0) {
-      onSelectEvents(eventsForDate);
-    }
-  };
-
-  const getEventsForDate = (date: Date) => {
-    return events.filter(event => {
-      const startDate = new Date(event.startDate);
-      const endDate = new Date(event.endDate);
-      const currentDate = new Date(date);
-
-      // Normalize dates to midnight to compare only the date part
-      startDate.setHours(0, 0, 0, 0);
-      endDate.setHours(0, 0, 0, 0);
-      currentDate.setHours(0, 0, 0, 0);
-
-      return currentDate >= startDate && currentDate <= endDate;
-    });
-  }
-
-  const isSameDay = (d1: Date, d2: Date) =>
-    d1.getFullYear() === d2.getFullYear() &&
-    d1.getMonth() === d2.getMonth() &&
-    d1.getDate() === d2.getDate()
+  const monthHolidays = useMemo(() => {
+    return allEvents
+      .filter(event => {
+        const eventDate = new Date(event.start_date_time);
+        return eventDate.getFullYear() === year && eventDate.getMonth() === month && (event.is_public_holiday || event.is_optional_holiday);
+      })
+      .sort((a, b) => new Date(a.start_date_time).getDate() - new Date(b.start_date_time).getDate());
+  }, [allEvents, year, month]);
 
   return (
-    <div className="w-full pb-2 flex flex-col h-full">
-      <div className="mb-4 grid grid-cols-7 gap-1">
-        {weekDays.map((day, idx) => (
-          <div
-            key={day}
-            className={`flex items-center justify-center text-center text-sm font-medium ${idx === 0 ? 'text-red-500' : idx === 6 ? 'text-red-500' : ''}`}
-          >
-            {day}
-          </div>
-        ))}
+    <Card className='mb-14 md:mb-0'>
+      <div className="grid grid-cols-7 border-b" role="rowheader">
+        {['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'].map(day => <div key={day} className="text-center text-sm font-medium text-slate-500 p-3" role="columnheader" aria-label={day}><span className="hidden sm:inline">{day}</span><span className="sm:hidden">{day.substring(0, 3)}</span></div>)}
       </div>
-      <div
-        className="grid grid-cols-7 gap-1 flex-1"
-        style={{ height: `calc(100vh - 10rem)`, minHeight: '24rem', maxHeight: '100vh' }}
-      >
-        {days.map(({ date, isCurrentMonth }) => {
-          const dateEvents = getEventsForDate(date)
-          const isToday = today && isSameDay(date, today)
-          const isSelected = selectedDate && isSameDay(date, selectedDate)
-          const isPublicHoliday = dateEvents.some(e => e.isPublicHoliday && !e.isOptionalHoliday);
-          const isOptionalHoliday = dateEvents.some(e => e.isOptionalHoliday);
-          const onWeekend = isWeekend(date);
-          const mandatoryPublicHolidays = dateEvents.filter(e => e.isPublicHoliday && !e.isOptionalHoliday);
-          const otherEvents = dateEvents.filter(e => !e.isPublicHoliday || e.isOptionalHoliday);
+      <div className="grid grid-cols-7">
+        {allDays.map((day, index) => {
+          const isCurrentMonth = day.getMonth() === month;
+          const isToday = isSameDay(day, today);
+          const dayEvents = getEventsForDate(day);
+          const hasPublicHoliday = dayEvents.some(e => e.is_public_holiday);
+          const isDayWeekend = isWeekend(day);
+          const textColor = isCurrentMonth
+            ? hasPublicHoliday && isDayWeekend ? 'text-purple-500 dark:text-purple-400'
+              : hasPublicHoliday || isDayWeekend ? 'text-red-500 dark:text-red-400'
+                : 'text-slate-800 dark:text-slate-200'
+            : isDayWeekend ? 'text-red-500/40 dark:text-red-400/30' : 'text-slate-500/40 dark:text-slate-400/30';
 
-          const dateColorClass =
-            onWeekend && isPublicHoliday ? 'text-purple-500 dark:text-purple-400' :
-              onWeekend ? 'text-red-500 dark:text-red-400' :
-                isPublicHoliday ? 'text-red-500 dark:text-red-400' : '';
-
-          const inactiveDateColorClass =
-            onWeekend && isPublicHoliday ? 'text-purple-500 opacity-50 dark:text-purple-400' :
-              onWeekend ? 'text-red-500 opacity-50 dark:text-red-400' :
-                isPublicHoliday ? 'text-red-500 opacity-50 dark:text-red-400' : 'text-gray-400 dark:text-slate-500';
+          const handleCellClick = () => {
+            if (dayEvents.length > 0) onDateClick(day);
+            else onNavigate('Week', day);
+          };
 
           return (
-            <button
-              key={date.toISOString()}
-              onClick={() => {
-                if (window.innerWidth >= 768) { // Desktop click
-                  handleDateClick(date);
-                }
-              }}
-              onDoubleClick={() => onDoubleClickDate && onDoubleClickDate(date)}
-              onTouchStart={() => handleTouchStart(date)}
-              onTouchEnd={() => handleTouchEnd(date)}
-              onTouchMove={handleTouchMove}
-              className={`
-                relative rounded-lg p-2 text-base h-full min-h-[3.5rem] flex flex-col items-center justify-start
-                hover:bg-gray-100 dark:hover:bg-slate-800
-                focus:outline-none
-                ${isSelected ? 'bg-primary-200 dark:bg-primary-700' : (isToday ? 'bg-primary-100 dark:bg-primary-800' : (onWeekend && isCurrentMonth ? 'bg-gray-50 dark:bg-slate-800' : ''))}
-                ${isCurrentMonth ? dateColorClass : inactiveDateColorClass}
-                ${isToday ? 'ring-2 ring-primary-500' : ''}
-                group
-              `}
-            >
-              <span className="font-extrabold">{date.getDate()}</span>
-              {isOptionalHoliday && isCurrentMonth && <div className="w-1 h-1 bg-red-500 rounded-full mt-1"></div>}
-              <div className="flex flex-col gap-1 w-full mt-1 overflow-hidden">
-                {isCurrentMonth && mandatoryPublicHolidays.map(event => (
-                  <div
-                    key={event.id}
-                    className={`rounded-md px-1 py-0.5 text-xs text-left truncate bg-red-500 text-white`}
-                  >
-                    {event.title}
-                  </div>
-                ))}
-                {showEvents && isCurrentMonth && (
-                  <>
-                    {otherEvents.length > 0 && (
-                      <div
-                        key={otherEvents[0].id}
-                        className={`rounded-md px-1 py-0.5 text-xs text-left truncate bg-primary-100 dark:bg-primary-800`}
-                      >
-                        {otherEvents[0].title}
-                      </div>
-                    )}
-                    {otherEvents.length > 1 && (
-                      <div
-                        key="more-events"
-                        className="rounded-md px-1 py-0.5 text-xs text-left truncate bg-gray-200 dark:bg-slate-700"
-                      >
-                        ({otherEvents.length - 1}) more events
-                      </div>
-                    )}
-                  </>
-                )}
+            <div key={index} onClick={handleCellClick} onKeyDown={(e) => handleKeyboardActivation(e, handleCellClick)} ref={isToday ? todayRef : null} className={cn("border-b border-r last:border-r-0 h-28 sm:h-32 p-1.5 cursor-pointer transition-colors duration-200 ease-in-out hover:bg-slate-100 dark:hover:bg-slate-800/50 group overflow-hidden focus:outline-none focus:ring-2 focus:ring-slate-400 focus:z-10", (index + 1) % 7 === 0 && "border-r-0", index >= (allDays.length - 7) && "border-b-0")} role="gridcell" tabIndex={0} aria-label={`${day.toDateString()} ${dayEvents.length} events`}>
+              <div className={cn("flex items-center justify-center w-7 h-7 rounded-md", isToday ? "bg-blue-500 text-white" : isSameDay(day, selectedDate) ? "bg-slate-900 text-slate-50 dark:bg-slate-50 dark:text-slate-900" : "group-hover:bg-slate-200 dark:group-hover:bg-slate-700")}>
+                <span className={cn("text-base font-bold", isToday ? "text-white" : !isSameDay(day, selectedDate) && textColor)}>{day.getDate()}</span>
               </div>
-            </button>
-          )
+              {isCurrentMonth && showEventDots && (
+                <div className="mt-1 space-y-1">
+                  {dayEvents.slice(0, 1).map(event => (
+                    <div key={event.id} className={cn("px-1.5 py-0.5 rounded-sm text-[11px] font-medium leading-tight truncate", event.is_public_holiday || event.is_optional_holiday ? 'bg-red-50 text-red-800 dark:bg-red-900/50 dark:text-red-200' : 'bg-blue-50 text-blue-800 dark:bg-blue-900/50 dark:text-blue-200')}>
+                      {event.title}
+                    </div>
+                  ))}
+                  {dayEvents.length > 1 && (
+                    <div className="px-1.5 py-0.5 rounded-sm text-[11px] font-medium leading-tight truncate bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-300">
+                      + {dayEvents.length - 1} more
+                    </div>
+                  )}
+                </div>
+              )}
+            </div>
+          );
         })}
       </div>
-    </div>
-  )
+      {monthHolidays.length > 0 && (
+        <div className="p-4 border-t">
+          <h4 className="font-semibold mb-2 text-sm">Public Holidays</h4>
+          <ul className="space-y-1 text-sm">
+            {monthHolidays.map(event => (
+              <li key={event.id} className="flex items-start">
+                <span className="w-6 font-semibold text-red-600 dark:text-red-400">{new Date(event.start_date_time).getDate()}</span>
+                <span className="flex-1 text-slate-800 dark:text-slate-200">{event.title}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+    </Card>
+  );
 }
+
+export { MonthView, type CalendarViewProps };

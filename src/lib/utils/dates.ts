@@ -1,76 +1,10 @@
-export const isWeekend = (date: Date): boolean => {
-  const day = date.getDay()
-  return day === 0 || day === 6
-}
+const getDaysInMonth = (year: number, month: number) => new Date(year, month + 1, 0).getDate();
+const getFirstDayOfMonth = (year: number, month: number) => new Date(year, month, 1).getDay();
+const addMonths = (date: Date, months: number) => { const d = new Date(date); d.setMonth(d.getMonth() + months); return d; };
+const addYears = (date: Date, years: number) => { const d = new Date(date); d.setFullYear(d.getFullYear() + years); return d; };
+const addWeeks = (date: Date, weeks: number) => { const d = new Date(date); d.setDate(d.getDate() + weeks * 7); return d; };
+const addDays = (date: Date, days: number) => { const d = new Date(date); d.setDate(d.getDate() + days); return d; };
+const isSameDay = (d1: Date, d2: Date) => d1 && d2 && d1.getFullYear() === d2.getFullYear() && d1.getMonth() === d2.getMonth() && d1.getDate() === d2.getDate();
+const isWeekend = (date: Date) => date.getDay() === 0 || date.getDay() === 6;
 
-export const isSameDay = (date1: Date, date2: Date): boolean => {
-  return (
-    date1.getFullYear() === date2.getFullYear() &&
-    date1.getMonth() === date2.getMonth() &&
-    date1.getDate() === date2.getDate()
-  )
-}
-
-export const getMonthDays = (year: number, month: number): Date[] => {
-  const result: Date[] = []
-  const date = new Date(year, month, 1)
-  
-  while (date.getMonth() === month) {
-    result.push(new Date(date))
-    date.setDate(date.getDate() + 1)
-  }
-  
-  return result
-}
-
-export const getWeekDays = (date: Date): Date[] => {
-  const result: Date[] = []
-  const startOfWeek = new Date(date)
-  startOfWeek.setDate(date.getDate() - date.getDay())
-  
-  for (let i = 0; i < 7; i++) {
-    const day = new Date(startOfWeek)
-    day.setDate(startOfWeek.getDate() + i)
-    result.push(day)
-  }
-  
-  return result
-}
-
-export const formatDate = (date: Date): string => {
-  return new Intl.DateTimeFormat('en-US', {
-    weekday: 'long',
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-  }).format(date)
-}
-
-export const formatTime = (date: Date): string => {
-  return new Intl.DateTimeFormat('en-US', {
-    hour: 'numeric',
-    minute: 'numeric',
-    hour12: true,
-  }).format(date)
-}
-
-export const getMonthGridDays = (year: number, month: number): { date: Date, isCurrentMonth: boolean }[] => {
-  const days = [];
-  const firstDay = new Date(year, month, 1);
-  const firstDayOfWeek = firstDay.getDay(); // 0 for Sunday, 1 for Monday, etc.
-
-  // Start from the first day of the week of the first day of the month
-  const startDate = new Date(firstDay);
-  startDate.setDate(startDate.getDate() - firstDayOfWeek);
-
-  for (let i = 0; i < 42; i++) {
-    const date = new Date(startDate);
-    date.setDate(startDate.getDate() + i);
-    days.push({
-      date: date,
-      isCurrentMonth: date.getMonth() === month,
-    });
-  }
-
-  return days;
-};
+export { getDaysInMonth, getFirstDayOfMonth, addMonths, addYears, addWeeks, addDays, isSameDay, isWeekend };

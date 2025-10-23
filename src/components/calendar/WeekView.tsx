@@ -1,86 +1,49 @@
-import { FC } from 'react'
-import { Event } from '@/lib/types/event'
+import React from 'react';
+import { cn } from '../../lib/utils/cn';
+import { addDays, isSameDay } from '../../lib/utils/dates';
+import { handleKeyboardActivation } from '../../lib/utils/keyboard';
+import { Card } from '../ui/card';
+import { CalendarViewProps } from './MonthView'; // Re-using the interface from MonthView
 
-interface WeekViewProps {
-  weekStart: Date
-  onDaySelect: (date: Date) => void
-  events: Event[]
-  onEventSelect: (eventId: string) => void
-}
-
-function getWeekDays(start: Date) {
-  const days = []
-  const d = new Date(start)
-  d.setDate(d.getDate() - d.getDay()) // Sunday
-  for (let i = 0; i < 7; i++) {
-    days.push(new Date(d))
-    d.setDate(d.getDate() + 1)
-  }
-  return days
-}
-
-export const WeekView: FC<WeekViewProps> = ({ weekStart, onDaySelect, events, onEventSelect }) => {
-  const weekDays = getWeekDays(weekStart);
-  const hours = Array.from({ length: 24 }, (_, i) => i);
-
-  const getEventsForSlot = (date: Date, hour: number) => {
-    return events.filter(event => {
-      const eventStart = new Date(event.startDate);
-      return (
-        eventStart.getFullYear() === date.getFullYear() &&
-        eventStart.getMonth() === date.getMonth() &&
-        eventStart.getDate() === date.getDate() &&
-        eventStart.getHours() === hour
-      );
-    });
-  };
+function WeekView({ currentDate, onDateClick, getEventsForDate, todayRef, onNavigate }: Omit<CalendarViewProps, 'allEvents' | 'selectedDate' | 'showEventDots'>) {
+  const startOfWeek = new Date(currentDate);
+  startOfWeek.setDate(currentDate.getDate() - currentDate.getDay());
+  const weekDays = Array.from({ length: 7 }, (_, i) => addDays(startOfWeek, i));
+  const today = new Date();
 
   return (
-    <div className="h-[calc(100vh-12rem)] overflow-y-auto relative">
-      <table className="w-full border-collapse table-fixed">
-        <thead className="sticky top-0 bg-white dark:bg-gray-900 z-10">
-          <tr>
-            <th className="w-16 border-r border-b" />
-            {weekDays.map((date, idx) => (
-              <th key={idx} className="border-r border-b last:border-r-0 text-center py-2 font-normal">
-                <button
-                  className="text-xs font-bold hover:text-primary-600 dark:hover:text-primary-400"
-                  onClick={() => onDaySelect(date)}
-                >
-                  {date.toLocaleDateString(undefined, { weekday: 'short', month: 'short', day: 'numeric' })}
-                </button>
-              </th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-          {hours.map(h => (
-            <tr key={h}>
-              <td className="h-14 border-r border-b text-xs text-gray-400 text-right pr-2 align-top pt-1">
-                {h === 0 ? '12am' : h < 12 ? `${h}am` : h === 12 ? '12pm' : `${h - 12}pm`}
-              </td>
-              {weekDays.map((date, idx) => {
-                const eventsForSlot = getEventsForSlot(date, h);
-                return (
-                  <td key={idx} className="h-14 border-r border-b last:border-r-0 p-1 relative hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
-                    <div className="flex flex-col gap-1 h-full overflow-y-auto">
-                      {eventsForSlot.map(event => (
-                        <button
-                          key={event.id}
-                          className="w-full bg-primary-100 dark:bg-primary-900 rounded-md p-1 text-xs text-left truncate flex-shrink-0"
-                          onClick={() => onEventSelect(event.id)}
-                        >
-                          {event.title}
-                        </button>
-                      ))}
-                    </div>
-                  </td>
-                )
-              })}
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
+    <Card className="overflow-hidden">
+      <div className="grid grid-cols-7">
+        {weekDays.map(day => (
+          <div key={day.toISOString()} onClick={() => onNavigate('Day', day)} onKeyDown={(e) => handleKeyboardActivation(e, () => onNavigate('Day', day))} className={cn("text-center p-3 border-b border-r last:border-r-0 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400", isSameDay(day, today) && 'bg-blue-50 dark:bg-blue-900/30')} role="button" tabIndex={0} aria-label={`View details for ${day.toDateString()}`}>
+            <p className="text-xs text-slate-500">{day.toLocaleString('default', { weekday: 'short' })}</p>
+            <p className={cn("text-xl font-semibold mt-1", isSameDay(day, today) ? 'text-blue-500' : 'text-slate-700 dark:text-slate-300')}>{day.getDate()}</p>
+          </div>
+        ))}
+      </div>
+      <div className="grid grid-cols-7 h-[60vh] overflow-y-auto">
+        {weekDays.map(day => {
+          const dayEvents = getEventsForDate(day);
+          const handleCellClick = () => {
+            if (dayEvents.length > 0) {
+              onDateClick(day);
+            } else {
+              onNavigate('Day', day);
+            }
+          };
+          return (
+            <div key={day.toISOString()} ref={isSameDay(day, today) ? todayRef : null} onClick={handleCellClick} onKeyDown={(e) => handleKeyboardActivation(e, handleCellClick)} className={cn("border-r last:border-r-0 p-2 space-y-2 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-800/50 focus:outline-none focus:ring-2 focus:ring-slate-400", isSameDay(day, today) && 'bg-blue-50/50 dark:bg-blue-900/20')} role="button" tabIndex={0} aria-label={`${day.toDateString()} ${dayEvents.length} events`}>
+              {dayEvents.map(event => (
+                <div key={event.id} className="p-1.5 rounded-md text-xs bg-blue-50 dark:bg-blue-900/50 text-blue-800 dark:text-blue-200 truncate">
+                  <p className="font-semibold truncate">{event.title}</p>
+                </div>
+              ))}
+            </div>
+          );
+        })}
+      </div>
+    </Card>
   );
-};
+}
+
+export { WeekView };
