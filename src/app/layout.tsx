@@ -1,12 +1,5 @@
 import type { Metadata } from "next";
-import { DM_Sans } from "next/font/google";
 import "./globals.css";
-
-const dm_sans = DM_Sans({
-  subsets: ["latin"],
-  variable: "--font-dm-sans",
-});
-
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://calendr.layground.com'),
@@ -53,7 +46,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${dm_sans.variable} font-sans bg-white text-gray-900 antialiased dark:bg-slate-900 dark:text-slate-200`}
+        className={`font-sans bg-white text-gray-900 antialiased dark:bg-slate-900 dark:text-slate-200`}
       >
         <div className="flex flex-col min-h-screen">
           <main className="flex-grow">{children}</main>

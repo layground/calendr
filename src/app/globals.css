@@ -1,3 +1,19 @@
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('/assets/fonts/DM_Sans/DMSans-VariableFont_opsz,wght.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'DM Sans';
+  font-style: italic;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('/assets/fonts/DM_Sans/DMSans-Italic-VariableFont_opsz,wght.ttf') format('truetype');
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -8,7 +24,7 @@
 
 /* Apply Inter font variable from next/font */
 html {
-  font-family: var(--font-inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial);
+  font-family: var("DM Sans", system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;
