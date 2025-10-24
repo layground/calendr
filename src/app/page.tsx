@@ -13,7 +13,9 @@ import { MonthView } from '../components/calendar/MonthView';
 import { YearView } from '../components/calendar/YearView';
 import { WeekView } from '../components/calendar/WeekView';
 import { DayView } from '../components/calendar/DayView';
+import { AgendaView } from '../components/calendar/AgendaView';
 import { EventDetailsPanel } from '../components/events/DailyEventsList';
+import { EventFullDetails } from '../components/events/EventDetails';
 import { MobileEventSheet } from '../components/events/BottomSheet';
 import { SideDrawer } from '../components/layout/SideDrawer';
 import { Skeleton } from '../components/ui/skeleton';
@@ -25,13 +27,14 @@ import { Button } from '../components/ui/button';
 export default function CalendrApp() {
   const [currentDate, setCurrentDate] = useState(new Date());
   const [selectedDate, setSelectedDate] = useState(new Date());
-  const [view, setView] = useState<View>('Month');
+  const [selectedEvent, setSelectedEvent] = useState<Event | null>(null);
+  const [view, setView] = useState<View>('Year');
   const [viewHistory, setViewHistory] = useState<View[]>([]);
   const [theme, setTheme] = useState('light');
   const [events, setEvents] = useState<Event[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [showEventDots, setShowEventDots] = useState(true);
+  const [showEventDots, setShowEventDots] = useState(false);
   const [isMobileSheetOpen, setIsMobileSheetOpen] = useState(false);
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [selectedCountry, setSelectedCountry] = useState('ID');
@@ -43,18 +46,18 @@ export default function CalendrApp() {
     setIsLoading(true);
     setError(null);
     const year = currentDate.getFullYear();
-    const region = selectedRegion; // Use selectedRegion from state
+    const region = selectedRegion;
 
     try {
       const regionMap: { [key: string]: string } = {
-        YOG: 'yogyakarta', // Changed from YO to YOG to match selectedRegion state
+        YOG: 'yogyakarta',
         SB: 'surabaya'
       };
       const regionFileName = regionMap[region];
 
       const EventsPromise = regionFileName && region !== '-'
         ? import(`../data/id/y${year}/id_${year}_${regionFileName}.json`)
-        : Promise.resolve({ default: { events: [] } }); // Ensure default property for consistency
+        : Promise.resolve({ default: { events: [] } });
       const nationalEventsPromise = import(`../data/id/y${year}/id_${year}_national.json`);
 
       const [regionModule, nationalModule] = await Promise.all([
@@ -88,11 +91,11 @@ export default function CalendrApp() {
     } finally {
       setIsLoading(false);
     }
-  }, [currentDate, selectedRegion]); // Dependencies for useCallback
+  }, [currentDate, selectedRegion]);
 
   useEffect(() => {
     fetchEvents();
-  }, [fetchEvents]); // Only fetchEvents as a dependency, as it already depends on currentDate and selectedRegion
+  }, [fetchEvents]);
 
   useEffect(() => { document.documentElement.classList.toggle('dark', theme === 'dark'); }, [theme]);
 
@@ -122,6 +125,7 @@ export default function CalendrApp() {
       Month: (d) => addMonths(d, sign),
       Week: (d) => addWeeks(d, sign),
       Day: (d) => addDays(d, sign),
+      Agenda: (d) => addYears(d, sign),
     };
     setCurrentDate(navActions[view](currentDate));
   };
@@ -130,11 +134,18 @@ export default function CalendrApp() {
     const today = new Date();
     setCurrentDate(today);
     setSelectedDate(today);
+    setSelectedEvent(null);
     setTimeout(() => todayRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'center' }), 100);
   };
 
   const handleDateClick = (date: Date) => {
     setSelectedDate(date);
+    setSelectedEvent(null);
+    if (window.innerWidth < 1024) setIsMobileSheetOpen(true);
+  };
+
+  const handleEventSelect = (event: Event) => {
+    setSelectedEvent(event);
     if (window.innerWidth < 1024) setIsMobileSheetOpen(true);
   };
 
@@ -192,13 +203,14 @@ export default function CalendrApp() {
     if (error) {
       return <ErrorDisplay message={error} onRetry={fetchEvents} />
     }
-    const props = { currentDate, selectedDate, onDateClick: handleDateClick, getEventsForDate, showEventDots, todayRef, onNavigate: handleNavigate, allEvents: events };
+    const props = { currentDate, selectedDate, onDateClick: handleDateClick, getEventsForDate, showEventDots, todayRef, onNavigate: handleNavigate, allEvents: events, onEventSelect: handleEventSelect };
     return (
       <div key={view + currentDate.toISOString()} className="animate-fade-in">
         {view === 'Year' && <YearView {...props} />}
         {view === 'Month' && <MonthView {...props} />}
         {view === 'Week' && <WeekView {...props} />}
         {view === 'Day' && <DayView {...props} />}
+        {view === 'Agenda' && <AgendaView {...props} />}
       </div>
     );
   };
@@ -224,12 +236,22 @@ export default function CalendrApp() {
               </div>
             )}
           </div>
-          <div className="hidden lg:block w-[35%] bg-slate-50 dark:bg-slate-950 border-l border-slate-200 dark:border-slate-800 overflow-y-auto">
-            <EventDetailsPanel date={selectedDate} events={selectedDateEvents} onAddToCalendar={handleAddToCalendar} />
+          <div className="hidden lg:block w-[35%] bg-slate-50 dark:bg-slate-950 border-l border-slate-200 dark:border-slate-800 overflow-y-auto p-6">
+            {selectedEvent ? (
+              <>
+                <Button variant="outline" onClick={() => setSelectedEvent(null)} className="mb-4 -ml-2">
+                  <ArrowLeft className="w-4 h-4 mr-2" />
+                  Back
+                </Button>
+                <EventFullDetails event={selectedEvent} onAddToCalendar={handleAddToCalendar} />
+              </>
+            ) : (
+              <EventDetailsPanel date={selectedDate} events={selectedDateEvents} onAddToCalendar={handleAddToCalendar} />
+            )}
           </div>
         </main>
       </div>
-      <MobileEventSheet isOpen={isMobileSheetOpen} setIsOpen={setIsMobileSheetOpen} date={selectedDate} events={selectedDateEvents} onAddToCalendar={handleAddToCalendar} />
+      <MobileEventSheet isOpen={isMobileSheetOpen} setIsOpen={setIsMobileSheetOpen} date={selectedDate} events={selectedDateEvents} onAddToCalendar={handleAddToCalendar} selectedEvent={selectedEvent} onEventSelect={handleEventSelect} />
     </div>
   );
 }

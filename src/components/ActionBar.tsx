@@ -26,6 +26,7 @@ function ActionBar({ currentDate, view, onViewChange, onPrev, onNext, onDotsTogg
         Month: currentDate.toLocaleString('default', { month: 'long', year: 'numeric' }),
         Week: `Week of ${currentDate.toLocaleString('default', { month: 'short', day: 'numeric' })}`,
         Day: currentDate.toLocaleString('default', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }),
+        Agenda: currentDate.getFullYear().toString(),
     };
 
     return (
@@ -35,7 +36,7 @@ function ActionBar({ currentDate, view, onViewChange, onPrev, onNext, onDotsTogg
                     {/* <SelectPrimitive value={selectedCountry} onChange={(e) => onCountryChange(e.target.value)} aria-label="Select Country" className="w-full"><option value="ID">Indonesia</option></SelectPrimitive> */}
                     <SelectPrimitive value={selectedRegion} onChange={(e) => onRegionChange(e.target.value)} aria-label="Select Region" className="w-full"><option value="YOG">Yogyakarta</option></SelectPrimitive>
                     <div className="flex items-center space-x-1 sm:space-x-2">
-                        <div className="w-24 sm:w-28"><SelectPrimitive value={view} onChange={(e) => onViewChange(e.target.value as View)} aria-label="Select calendar view"><option>Year</option><option>Month</option><option>Week</option><option>Day</option></SelectPrimitive></div>
+                        <div className="w-24 sm:w-28"><SelectPrimitive value={view} onChange={(e) => onViewChange(e.target.value as View)} aria-label="Select calendar view"><option>Year</option><option>Month</option><option>Week</option><option>Day</option><option>Agenda</option></SelectPrimitive></div>
                         <Button onClick={onDotsToggle} variant="ghost" size="icon" aria-label={showEventDots ? "Hide event indicators" : "Show event indicators"}><Dot className={cn("h-12 w-12", showEventDots ? 'text-blue-600' : 'text-slate-400')} /></Button>
                         <LegendPopover />
                     </div>

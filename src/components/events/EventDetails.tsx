@@ -23,8 +23,6 @@ function EventFullDetails({ event, onAddToCalendar }: EventFullDetailsProps) {
         <p suppressHydrationWarning>{start.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })} - {end.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</p>
       </div>
 
-      <Button onClick={() => onAddToCalendar(event)} variant="secondary" className="w-full bg-slate-300 dark:bg-slate-700"><CalendarIcon className="w-4 h-4 mr-2" />Add to Calendar</Button>
-
       {event.location?.address && (
         <div>
           <h4 className="font-semibold mb-1 flex items-center"><MapPin className="w-4 h-4 mr-2 text-slate-500" />Location</h4>
@@ -43,6 +41,8 @@ function EventFullDetails({ event, onAddToCalendar }: EventFullDetailsProps) {
           {event.labels.map(label => <Badge key={label} className="bg-slate-100 dark:bg-slate-800">{label}</Badge>)}
         </div>
       )}
+
+      <Button onClick={() => onAddToCalendar(event)} variant="secondary" className="w-full bg-slate-300 dark:bg-slate-700"><CalendarIcon className="w-4 h-4 mr-2" />Add to Calendar</Button>
     </div>
   );
 }

@@ -22,6 +22,6 @@ interface Event {
   labels: string[];
 }
 
-type View = 'Year' | 'Month' | 'Week' | 'Day';
+type View = 'Year' | 'Month' | 'Week' | 'Day' | 'Agenda';
 
 export type { Location, Source, Event, View };

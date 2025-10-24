@@ -39,10 +39,10 @@ function EventDetailsPanel({ date, events, onAddToCalendar }: EventDetailsPanelP
   // If there are multiple events AND no specific one is selected yet, show the list.
   if (events.length > 1 && !selectedEvent) {
     return (
-      <div className="p-6 h-full flex flex-col space-y-4">
-        <CardTitle suppressHydrationWarning>Events on {date.toLocaleString('default', { month: 'long', day: 'numeric' })}</CardTitle>
+      <div className="p-2 md:p-0 h-full flex flex-col space-y-4">
+        <CardTitle className="mb-2" suppressHydrationWarning>Events on {date.toLocaleString('default', { month: 'long', day: 'numeric' })}</CardTitle>
         <ul className="space-y-2">
-          {events.map(event => {
+          {[...events].sort((a, b) => new Date(b.start_date_time).getTime() - new Date(a.start_date_time).getTime()).map(event => {
             const start = new Date(event.start_date_time);
             const end = new Date(event.end_date_time);
             return (
@@ -71,9 +71,9 @@ function EventDetailsPanel({ date, events, onAddToCalendar }: EventDetailsPanelP
 
   // If an event is selected (either automatically because it's the only one, or by user click)
   return (
-    <div className="p-6 h-full flex flex-col space-y-4">
+    <div className="p-2 md:p-0 h-full flex flex-col space-y-4">
       {events.length > 1 && (
-        <Button variant="ghost" onClick={() => setSelectedEventId(null)} className="self-start -ml-2">
+        <Button variant="outline" onClick={() => setSelectedEventId(null)} className="self-start -ml-2">
           <ArrowLeft className="w-4 h-4 mr-2" />
           Back to list
         </Button>
