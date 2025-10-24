@@ -10,6 +10,7 @@ interface EventWithLayout extends Event {
   height: number;
   left: number; // pixel value
   width: number; // pixel value
+  end: Date; // Capped end time for layout
   // zIndex: number; // Removed
   // colorClass: string; // Removed
 }
@@ -29,7 +30,7 @@ function getEventLayout(events: Event[]): EventWithLayout[] {
   });
 
   const laidOutEvents: EventWithLayout[] = [];
-  const columns: { end: Date; event: EventWithLayout }[][] = []; // Each column is an array of events
+  const columns: EventWithLayout[][] = []; // Each column is an array of events
 
   sortedEvents.forEach((event, eventIndex) => {
     const start = new Date(event.start_date_time);
@@ -74,7 +75,7 @@ function getEventLayout(events: Event[]): EventWithLayout[] {
       end: end // Store capped end time
     };
 
-    columns[column].push({ end, event: newEvent });
+    columns[column].push(newEvent);
     laidOutEvents.push(newEvent);
 
     // Update layout for all active events
@@ -82,8 +83,8 @@ function getEventLayout(events: Event[]): EventWithLayout[] {
 
     columns.forEach((col, colIndex) => {
       col.forEach(ae => {
-        ae.event.width = 150; // Fixed width of 150px
-        ae.event.left = colIndex * 160; // 160px offset (150px width + 10px gap)
+        ae.width = 150; // Fixed width of 150px
+        ae.left = colIndex * 160; // 160px offset (150px width + 10px gap)
       });
     });
   });
