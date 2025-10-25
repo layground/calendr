@@ -6,10 +6,9 @@ import { Event } from '../../lib/types/event';
 
 interface EventFullDetailsProps {
   event: Event;
-  onAddToCalendar: (event: Event) => void;
 }
 
-function EventFullDetails({ event, onAddToCalendar }: EventFullDetailsProps) {
+function EventFullDetails({ event }: EventFullDetailsProps) {
   const start = new Date(event.start_date_time);
   const end = new Date(event.end_date_time);
 
@@ -42,7 +41,6 @@ function EventFullDetails({ event, onAddToCalendar }: EventFullDetailsProps) {
         </div>
       )}
 
-      <Button onClick={() => onAddToCalendar(event)} variant="secondary" className="w-full bg-slate-300 dark:bg-slate-700"><CalendarIcon className="w-4 h-4 mr-2" />Add to Calendar</Button>
     </div>
   );
 }

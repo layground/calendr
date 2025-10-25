@@ -1,5 +1,5 @@
 import React from 'react';
-import { X, ArrowLeft } from 'lucide-react';
+import { X, ArrowLeft, Calendar as CalendarIcon } from 'lucide-react';
 import { cn } from '../../lib/utils/cn';
 import { Button } from '../ui/button';
 import { Event } from '../../lib/types/event';
@@ -26,11 +26,17 @@ function MobileEventSheet({ isOpen, setIsOpen, date, events, onAddToCalendar, se
         <div className="overflow-y-auto p-6">
           {selectedEvent ? (
             <>
-              <Button variant="ghost" onClick={() => onEventSelect(null)} className="mb-4 -ml-2">
-                <ArrowLeft className="w-4 h-4 mr-2" />
-                Back
-              </Button>
-              <EventFullDetails event={selectedEvent} onAddToCalendar={onAddToCalendar} />
+              <div className="flex justify-between items-center mb-4">
+                <Button variant="ghost" onClick={() => onEventSelect(null)} className="-ml-2">
+                  <ArrowLeft className="w-4 h-4 mr-2" />
+                  Back
+                </Button>
+                <Button onClick={() => onAddToCalendar(selectedEvent)} variant="secondary" className="bg-primary-200 dark:bg-none">
+                  <CalendarIcon className="w-4 h-4 mr-2" />
+                  Add to Calendar
+                </Button>
+              </div>
+              <EventFullDetails event={selectedEvent} />
             </>
           ) : (
             <EventDetailsPanel date={date} events={events} onAddToCalendar={onAddToCalendar} />

@@ -170,32 +170,49 @@ export default function CalendrApp() {
   };
 
   const handleAddToCalendar = (event: Event) => {
-    const formatICSDate = (date: Date) => {
+    const formatForCalendar = (date: Date) => {
       return date.toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
-    }
-    const icsContent = [
-      'BEGIN:VCALENDAR',
-      'VERSION:2.0',
-      'BEGIN:VEVENT',
-      `UID:${event.id}@calendr.app`,
-      `DTSTAMP:${formatICSDate(new Date())}`,
-      `DTSTART:${formatICSDate(new Date(event.start_date_time))}`,
-      `DTEND:${formatICSDate(new Date(event.end_date_time))}`,
-      `SUMMARY:${event.title}`,
-      `DESCRIPTION:${event.description.replace(/\n/g, '\\n')}`,
-      `LOCATION:${event.location.address}`,
-      'END:VEVENT',
-      'END:VCALENDAR'
-    ].join('\n');
+    };
 
-    const blob = new Blob([icsContent], { type: 'text/calendar' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = `${event.title.replace(/ /g, '_')}.ics`;
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
+    const startDate = new Date(event.start_date_time);
+    const endDate = new Date(event.end_date_time);
+
+    const baseUrl = 'https://calendar.google.com/calendar/render';
+    const params = new URLSearchParams({
+      action: 'TEMPLATE',
+      text: event.title,
+      dates: `${formatForCalendar(startDate)}/${formatForCalendar(endDate)}`,
+      details: event.description,
+      location: event.location.address,
+    });
+
+    const calendarUrl = `${baseUrl}?${params.toString()}`;
+    window.open(calendarUrl, '_blank', 'noopener,noreferrer');
+
+    /* const icsContent = [
+        'BEGIN:VCALENDAR',
+        'VERSION:2.0',
+        'BEGIN:VEVENT',
+        `UID:${event.id}@calendr.app`,
+        `DTSTAMP:${formatForCalendar(new Date())}`,
+        `DTSTART:${formatForCalendar(new Date(event.start_date_time))}`,
+        `DTEND:${formatForCalendar(new Date(event.end_date_time))}`,
+        `SUMMARY:${event.title}`,
+        `DESCRIPTION:${event.description.replace(/\n/g, '\\n')}`,
+        `LOCATION:${event.location.address}`,
+        'END:VEVENT',
+        'END:VCALENDAR'
+      ].join('\n');
+
+      const blob = new Blob([icsContent], { type: 'text/calendar' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `${event.title.replace(/ /g, '_')}.ics`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url); */
   };
 
   const renderCalendarView = () => {
@@ -231,7 +248,7 @@ export default function CalendrApp() {
             <div className="flex-1 overflow-auto p-4 sm:p-6">{renderCalendarView()}</div>
             {previousView && (
               <div className="absolute bottom-32 sm:bottom-8 left-1/2 -translate-x-1/2 z-10">
-                <Button onClick={handleBack} variant="ghost" className="bg-primary-200 hover:bg-primary-100 shadow-lg">
+                <Button onClick={handleBack} variant="secondary" className="bg-primary-200 hover:bg-primary-100 shadow-lg dark:bg-none">
                   <ArrowLeft className="w-4 h-4 mr-2" />
                   Back to {previousView} View
                 </Button>
@@ -241,11 +258,17 @@ export default function CalendrApp() {
           <div className="hidden lg:block w-[35%] bg-slate-50 dark:bg-slate-950 border-l border-slate-200 dark:border-slate-800 overflow-y-auto p-6">
             {selectedEvent ? (
               <>
-                <Button variant="outline" onClick={() => setSelectedEvent(null)} className="mb-4 -ml-2">
-                  <ArrowLeft className="w-4 h-4 mr-2" />
-                  Back
-                </Button>
-                <EventFullDetails event={selectedEvent} onAddToCalendar={handleAddToCalendar} />
+                <div className="flex justify-between items-center mb-4">
+                  <Button variant="outline" onClick={() => setSelectedEvent(null)} className="-ml-2">
+                    <ArrowLeft className="w-4 h-4 mr-2" />
+                    Back
+                  </Button>
+                  <Button onClick={() => handleAddToCalendar(selectedEvent)} variant="secondary" className="bg-primary-200 dark:bg-none">
+                    <CalendarIcon className="w-4 h-4 mr-2" />
+                    Add to Calendar
+                  </Button>
+                </div>
+                <EventFullDetails event={selectedEvent} />
               </>
             ) : (
               <EventDetailsPanel date={selectedDate} events={selectedDateEvents} onAddToCalendar={handleAddToCalendar} />
