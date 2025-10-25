@@ -230,8 +230,8 @@ export default function CalendrApp() {
             <ActionBar currentDate={currentDate} view={view} onViewChange={handleViewChange} onPrev={() => handleNav('prev')} onNext={() => handleNav('next')} onDotsToggle={() => setShowEventDots(!showEventDots)} showEventDots={showEventDots} selectedCountry={selectedCountry} onCountryChange={setSelectedCountry} selectedRegion={selectedRegion} onRegionChange={setSelectedRegion} />
             <div className="flex-1 overflow-auto p-4 sm:p-6">{renderCalendarView()}</div>
             {previousView && (
-              <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10">
-                <Button onClick={handleBack} variant="secondary" className="shadow-lg">
+              <div className="absolute bottom-32 sm:bottom-8 left-1/2 -translate-x-1/2 z-10">
+                <Button onClick={handleBack} variant="ghost" className="bg-primary-200 hover:bg-primary-100 shadow-lg">
                   <ArrowLeft className="w-4 h-4 mr-2" />
                   Back to {previousView} View
                 </Button>

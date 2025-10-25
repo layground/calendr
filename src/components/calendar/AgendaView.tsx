@@ -14,7 +14,7 @@ export function AgendaView({ allEvents, onEventSelect, showEventDots }: AgendaVi
   const sortedEvents = [...filteredEvents].sort((a, b) => new Date(a.start_date_time).getTime() - new Date(b.start_date_time).getTime());
 
   return (
-    <Card>
+    <Card className="mb-20 md:mb-0">
       <CardHeader>
         <CardTitle>Agenda</CardTitle>
       </CardHeader>

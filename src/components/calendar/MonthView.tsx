@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useRef } from 'react';
 import { Calendar as CalendarIcon } from 'lucide-react';
 import { cn } from '../../lib/utils/cn';
 import { getDaysInMonth, getFirstDayOfMonth, addDays, isSameDay, isWeekend } from '../../lib/utils/dates';
@@ -25,6 +25,7 @@ function MonthView({ currentDate, selectedDate, onDateClick, getEventsForDate, s
   const totalCells = Math.ceil((firstDay + daysInMonth) / 7) * 7;
   const trailingDays = Array.from({ length: totalCells - (leadingDays.length + days.length) }, (_, i) => addDays(new Date(year, month, daysInMonth), i + 1));
   const allDays = [...leadingDays, ...days, ...trailingDays];
+  const clickTimeout = useRef<NodeJS.Timeout | null>(null);
 
   const monthHolidays = useMemo(() => {
     return allEvents
@@ -36,7 +37,7 @@ function MonthView({ currentDate, selectedDate, onDateClick, getEventsForDate, s
   }, [allEvents, year, month]);
 
   return (
-    <Card className='mb-14 md:mb-0'>
+    <Card className='mb-20 md:mb-0'>
       <div className="grid grid-cols-7 border-b" role="rowheader">
         {['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'].map(day => <div key={day} className="text-center text-sm font-medium text-slate-500 p-3" role="columnheader" aria-label={day}><span className="hidden sm:inline">{day}</span><span className="sm:hidden">{day.substring(0, 3)}</span></div>)}
       </div>
@@ -54,12 +55,24 @@ function MonthView({ currentDate, selectedDate, onDateClick, getEventsForDate, s
             : isDayWeekend ? 'text-red-500/40 dark:text-red-400/30' : 'text-slate-500/40 dark:text-slate-400/30';
 
           const handleCellClick = () => {
-            if (dayEvents.length > 0) onDateClick(day);
-            else onNavigate('Week', day);
+            if (clickTimeout.current) {
+              clearTimeout(clickTimeout.current);
+              clickTimeout.current = null;
+              onNavigate('Week', day);
+            } else {
+              clickTimeout.current = setTimeout(() => {
+                if (dayEvents.length > 0) {
+                  onDateClick(day);
+                } else {
+                  onNavigate('Week', day);
+                }
+                clickTimeout.current = null;
+              }, 250);
+            }
           };
 
           return (
-            <div key={index} onClick={handleCellClick} onDoubleClick={() => onNavigate('Week', day)} onKeyDown={(e) => handleKeyboardActivation(e, handleCellClick)} ref={isToday ? todayRef : null} className={cn("border-b border-r border-slate-200 dark:border-slate-800 last:border-r-0 h-28 sm:h-32 p-1.5 cursor-pointer transition-colors duration-200 ease-in-out hover:bg-slate-100 dark:hover:bg-slate-800/50 group overflow-hidden focus:outline-none focus:ring-2 focus:ring-slate-400 focus:z-10", (index + 1) % 7 === 0 && "border-r-0", index >= (allDays.length - 7) && "border-b-0")} role="gridcell" tabIndex={0} aria-label={`${day.toDateString()} ${dayEvents.length} events`}>
+            <div key={index} onClick={handleCellClick} onKeyDown={(e) => handleKeyboardActivation(e, handleCellClick)} ref={isToday ? todayRef : null} className={cn("border-b border-r border-slate-200 dark:border-slate-800 last:border-r-0 h-28 sm:h-32 p-1.5 cursor-pointer transition-colors duration-200 ease-in-out hover:bg-slate-100 dark:hover:bg-slate-800/50 group overflow-hidden focus:outline-none focus:ring-2 focus:ring-slate-400 focus:z-10", (index + 1) % 7 === 0 && "border-r-0", index >= (allDays.length - 7) && "border-b-0")} role="gridcell" tabIndex={0} aria-label={`${day.toDateString()} ${dayEvents.length} events`}>
               <div className={cn("flex items-center justify-center w-7 h-7 rounded-md", isToday ? "bg-blue-500 text-white" : isSameDay(day, selectedDate) ? "bg-slate-900 text-slate-50 dark:bg-slate-50 dark:text-slate-900" : "group-hover:bg-slate-200 dark:group-hover:bg-slate-700")}>
                 <span className={cn("text-base font-bold", isToday ? "text-white" : !isSameDay(day, selectedDate) && textColor)}>{day.getDate()}</span>
               </div>

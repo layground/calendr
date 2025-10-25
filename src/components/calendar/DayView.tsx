@@ -100,7 +100,7 @@ function DayView({ currentDate, getEventsForDate, todayRef }: Pick<CalendarViewP
   const laidOutEvents = useMemo(() => getEventLayout(events), [events]);
 
   return (
-    <Card ref={isSameDay(currentDate, today) ? todayRef : null} className="h-[75vh] overflow-y-auto">
+    <Card ref={isSameDay(currentDate, today) ? todayRef : null} className="h-[75vh] overflow-y-auto mb-20 md:mb-0">
       <CardHeader className={cn(isSameDay(currentDate, today) && 'bg-blue-50 dark:bg-blue-900/30')}><CardTitle suppressHydrationWarning>{currentDate.toLocaleString('default', { weekday: 'long', month: 'long', day: 'numeric' })}</CardTitle></CardHeader>
       <div className="relative">
         {hours.map(hour => (
