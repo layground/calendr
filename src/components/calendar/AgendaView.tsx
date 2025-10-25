@@ -34,7 +34,14 @@ export function AgendaView({ allEvents, onEventSelect, showEventDots }: AgendaVi
               return (
                 <div key={event.id} className="flex items-start p-4 rounded-md border bg-card text-card-foreground shadow-sm cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-800" onClick={() => onEventSelect(event)}>
                   <div className="flex flex-col items-center mr-4 w-20">
-                    <p className="text-3xl font-bold">{day}</p>
+                    <p className={cn(
+                      "text-3xl font-bold",
+                      (!event.is_public_holiday)
+                        ? "text-black dark:text-slate-200"
+                        : !event.is_optional_holiday
+                          ? "text-red-600"
+                          : "text-black dark:text-slate-200 underline decoration-red-500"
+                    )}>{day}</p>
                     <p className="text-lg">{month}</p>
                     <p className="text-xs text-muted-foreground text-center dark:text-slate-400">{timeRange}</p>
                   </div>
@@ -45,7 +52,7 @@ export function AgendaView({ allEvents, onEventSelect, showEventDots }: AgendaVi
                         ? "text-black dark:text-slate-200"
                         : !event.is_optional_holiday
                           ? "text-red-600"
-                          : "text-black dark:text-slate-200 underline decoration-red-500"
+                          : "text-black dark:text-slate-200"
                     )}>{event.title}</p>
                     {event.location?.address && (
                       <p className="text-sm underline dark:text-slate-400">
@@ -57,7 +64,7 @@ export function AgendaView({ allEvents, onEventSelect, showEventDots }: AgendaVi
                         )}
                       </p>
                     )}
-                    <p className="text-sm dark:text-slate-400">{event.description}</p>
+                    <p className="text-sm text-slate-700 dark:text-slate-400">{event.description}</p>
                   </div>
                 </div>
               )
