@@ -144,9 +144,11 @@ export default function CalendrApp() {
     if (window.innerWidth < 1024) setIsMobileSheetOpen(true);
   };
 
-  const handleEventSelect = (event: Event) => {
+  const handleEventSelect = (event: Event | null) => {
     setSelectedEvent(event);
-    if (window.innerWidth < 1024) setIsMobileSheetOpen(true);
+    if (event && window.innerWidth < 1024) {
+      setIsMobileSheetOpen(true);
+    }
   };
 
   const handleNavigate = (newView: View, newDate: Date) => {
