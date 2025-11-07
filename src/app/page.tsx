@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useMemo, useRef, useCallback } from 'react';
-import { Calendar as CalendarIcon, ArrowLeft } from 'lucide-react';
+import { Calendar as CalendarIcon, ArrowLeft, PanelRight, PanelLeft } from 'lucide-react';
 
 import { cn } from '../lib/utils/cn';
 import { addMonths, addYears, addWeeks, addDays } from '../lib/utils/dates';
@@ -37,6 +37,7 @@ export default function CalendrApp() {
   const [showEventDots, setShowEventDots] = useState(false);
   const [isMobileSheetOpen, setIsMobileSheetOpen] = useState(false);
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  const [isRightPanelVisible, setIsRightPanelVisible] = useState(true);
   const [selectedCountry, setSelectedCountry] = useState('ID');
   const [selectedRegion, setSelectedRegion] = useState('YOG');
   const todayRef = useRef<HTMLDivElement>(null);
@@ -225,7 +226,7 @@ export default function CalendrApp() {
     const props = { currentDate, selectedDate, onDateClick: handleDateClick, getEventsForDate, showEventDots, todayRef, onNavigate: handleNavigate, allEvents: events, onEventSelect: handleEventSelect };
     return (
       <div key={view + currentDate.toISOString()} className="animate-fade-in">
-        {view === 'Year' && <YearView {...props} />}
+        {view === 'Year' && <YearView {...props} isRightPanelVisible={isRightPanelVisible} />}
         {view === 'Month' && <MonthView {...props} />}
         {view === 'Week' && <WeekView {...props} />}
         {view === 'Day' && <DayView {...props} />}
@@ -242,8 +243,8 @@ export default function CalendrApp() {
       <SideDrawer isOpen={isDrawerOpen} setIsOpen={setIsDrawerOpen} />
       <div className="flex flex-1 flex-col">
         <main className="flex flex-1 overflow-hidden">
-          <div className="flex flex-1 flex-col lg:w-[65%] lg:flex-none relative">
-            <Header onMenuClick={() => setIsDrawerOpen(true)} onTodayClick={goToToday} onThemeToggle={() => setTheme(theme === 'light' ? 'dark' : 'light')} theme={theme} />
+          <div className={cn("flex flex-1 flex-col relative", isRightPanelVisible ? "lg:w-[65%]" : "w-full")}>
+            <Header onMenuClick={() => setIsDrawerOpen(true)} onTodayClick={goToToday} onThemeToggle={() => setTheme(theme === 'light' ? 'dark' : 'light')} theme={theme} onToggleRightPanel={() => setIsRightPanelVisible(!isRightPanelVisible)} isRightPanelVisible={isRightPanelVisible} />
             <ActionBar currentDate={currentDate} view={view} onViewChange={handleViewChange} onPrev={() => handleNav('prev')} onNext={() => handleNav('next')} onDotsToggle={() => setShowEventDots(!showEventDots)} showEventDots={showEventDots} selectedCountry={selectedCountry} onCountryChange={setSelectedCountry} selectedRegion={selectedRegion} onRegionChange={setSelectedRegion} />
             <div className="flex-1 overflow-auto p-4 sm:p-6">{renderCalendarView()}</div>
             {previousView && (
@@ -255,25 +256,27 @@ export default function CalendrApp() {
               </div>
             )}
           </div>
-          <div className="hidden lg:block w-[35%] bg-slate-50 dark:bg-slate-950 border-l border-slate-200 dark:border-slate-800 overflow-y-auto p-6">
-            {selectedEvent ? (
-              <>
-                <div className="flex justify-between items-center mb-4">
-                  <Button variant="outline" onClick={() => setSelectedEvent(null)} className="-ml-2">
-                    <ArrowLeft className="w-4 h-4 mr-2" />
-                    Back
-                  </Button>
-                  <Button onClick={() => handleAddToCalendar(selectedEvent)} variant="secondary" className="bg-primary-200 dark:bg-none">
-                    <CalendarIcon className="w-4 h-4 mr-2" />
-                    Add to Calendar
-                  </Button>
-                </div>
-                <EventFullDetails event={selectedEvent} />
-              </>
-            ) : (
-              <EventDetailsPanel date={selectedDate} events={selectedDateEvents} onAddToCalendar={handleAddToCalendar} />
-            )}
-          </div>
+          {isRightPanelVisible && (
+            <div className="hidden lg:block w-[35%] bg-slate-50 dark:bg-slate-950 border-l border-slate-200 dark:border-slate-800 overflow-y-auto p-6">
+              {selectedEvent ? (
+                <>
+                  <div className="flex justify-between items-center mb-4">
+                    <Button variant="outline" onClick={() => setSelectedEvent(null)} className="-ml-2">
+                      <ArrowLeft className="w-4 h-4 mr-2" />
+                      Back
+                    </Button>
+                    <Button onClick={() => handleAddToCalendar(selectedEvent)} variant="secondary" className="bg-primary-200 dark:bg-none">
+                      <CalendarIcon className="w-4 h-4 mr-2" />
+                      Add to Calendar
+                    </Button>
+                  </div>
+                  <EventFullDetails event={selectedEvent} />
+                </>
+              ) : (
+                <EventDetailsPanel date={selectedDate} events={selectedDateEvents} onAddToCalendar={handleAddToCalendar} />
+              )}
+            </div>
+          )}
         </main>
       </div>
       <MobileEventSheet isOpen={isMobileSheetOpen} setIsOpen={setIsMobileSheetOpen} date={selectedDate} events={selectedDateEvents} onAddToCalendar={handleAddToCalendar} selectedEvent={selectedEvent} onEventSelect={handleEventSelect} />
